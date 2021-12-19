@@ -1,0 +1,19 @@
+package db
+
+type Pagination struct {
+	Skip int32
+
+	PageSize int32
+
+	PageToken string
+}
+
+func (p Pagination) Offset() int32 {
+	return 0
+}
+
+// Maximum number of records to return. Default limit is 25.
+// Maximum limit is 1000. Anything higher will return an error.
+func (p Pagination) Limit() int32 {
+	return 0
+}
