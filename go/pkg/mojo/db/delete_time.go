@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+const DeleteTimeTypeName = "mojo.db.DeleteTime"
+
 func (m DeleteTime) ToTime() time.Time {
 	return m.Val.ToTime()
 }
