@@ -8,11 +8,11 @@ func (d *UniDb) Table(name string) *UniTable {
 	return nil
 }
 
-func (d *UniDb) RenameTable()  {
+func (d *UniDb) RenameTable() {
 }
 
-func (d *UniDb) ListTables()  {
+func (d *UniDb) ListTables() {
 }
 
-func (d *UniDb) DropTable()  {
+func (d *UniDb) DropTable() {
 }

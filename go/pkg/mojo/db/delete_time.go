@@ -1,11 +1,12 @@
 package db
 
 import (
-	"github.com/mojo-lang/core/go/pkg/mojo/core"
 	"time"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
-const DeleteTimeTypeName = "mojo.db.DeleteTime"
+const DeleteTimeTypeFullName = "mojo.db.DeleteTime"
 
 func (m DeleteTime) ToTime() time.Time {
 	return m.Val.ToTime()

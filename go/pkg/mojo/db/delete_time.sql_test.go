@@ -9,7 +9,6 @@
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 
-
 package db
 
 import (
