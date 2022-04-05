@@ -1,3 +1,4 @@
 package db
 
-const JSONAttributeName = "db.json"
+const JSONAttributeName = "json"
+const JSONAttributeFullName = "db.json"

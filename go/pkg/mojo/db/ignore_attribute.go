@@ -1,3 +1,4 @@
 package db
 
-const IgnoreAttributeName = "db.ignore"
+const IgnoreAttributeName = "ignore"
+const IgnoreAttributeFullName = "db.ignore"

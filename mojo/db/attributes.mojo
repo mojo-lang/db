@@ -2,10 +2,10 @@
 attribute explode: String
 
 ///
-attribute ignore: Bool
+attribute ignore: Bool = true
 
 ///
 attribute index: String
 
 /// 
-attribute json: Bool
+attribute json: Bool = true

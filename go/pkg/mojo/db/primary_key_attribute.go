@@ -1,3 +1,4 @@
 package db
 
-const PrimaryKeyAttributeName = "db.primary_key"
+const PrimaryKeyAttributeName = "primary_key"
+const PrimaryKeyAttributeFullName = "db.primary_key"

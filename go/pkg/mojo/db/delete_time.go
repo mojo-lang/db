@@ -1,18 +1,18 @@
 package db
 
 import (
-	"time"
+    "time"
 
-	"github.com/mojo-lang/core/go/pkg/mojo/core"
+    "github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 const DeleteTimeTypeFullName = "mojo.db.DeleteTime"
 
-func (m DeleteTime) ToTime() time.Time {
-	return m.Val.ToTime()
+func (x DeleteTime) ToTime() time.Time {
+    return x.Val.ToTime()
 }
 
-func (m *DeleteTime) FromTime(t time.Time) {
-	m.Val = &core.Timestamp{}
-	m.Val.FromTime(t)
+func (x *DeleteTime) FromTime(t time.Time) {
+    x.Val = &core.Timestamp{}
+    x.Val.FromTime(t)
 }

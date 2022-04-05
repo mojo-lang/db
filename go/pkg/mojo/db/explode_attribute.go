@@ -1,3 +1,4 @@
 package db
 
-const ExplodeAttributeName = "db.explode"
+const ExplodeAttributeName = "explode"
+const ExplodeAttributeFullName = "db.explode"

@@ -1,3 +1,4 @@
 package db
 
-const IndexAttributeName = "db.index"
+const IndexAttributeName = "index"
+const IndexAttributeFullName = "db.index"

@@ -349,7 +349,7 @@ private static final long serialVersionUID = 0L;
     if (deleteTime_ != null) {
       output.writeMessage(7, getDeleteTime());
     }
-    if (!getTableNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, tableName_);
     }
     unknownFields.writeTo(output);
@@ -381,7 +381,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getDeleteTime());
     }
-    if (!getTableNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, tableName_);
     }
     size += unknownFields.getSerializedSize();
