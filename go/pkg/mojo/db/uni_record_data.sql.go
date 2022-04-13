@@ -25,6 +25,7 @@ import (
 
 func (x *UniRecordData) Value() (driver.Value, error) {
 	return JSONValuer{}.Value(x.Object)
+
 }
 
 func (x *UniRecordData) Scan(value interface{}) error {
@@ -34,4 +35,8 @@ func (x *UniRecordData) Scan(value interface{}) error {
 
 func (x *UniRecordData) GormDBDataType(gdb *gorm.DB, field *schema.Field) string {
 	return JSONDbDataType{}.GormDBDataType(gdb, field)
+}
+
+func (x *UniRecordData) GormDataType() string {
+	return "string"
 }
