@@ -9,6 +9,8 @@ require (
 	github.com/stretchr/testify v1.7.0
 	golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1 // indirect
 	google.golang.org/protobuf v1.28.0
+	gorm.io/driver/mysql v1.3.3 // indirect
+	gorm.io/driver/postgres v1.3.5 // indirect
 	gorm.io/driver/sqlite v1.3.1
 	gorm.io/gorm v1.23.4
 )
