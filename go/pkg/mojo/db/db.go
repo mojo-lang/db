@@ -18,7 +18,7 @@ type DB struct {
     Config *Config
 }
 
-func NewDb(cfg *Config) *DB {
+func New(cfg *Config) *DB {
     db := &DB{
         Config: cfg,
     }
@@ -32,7 +32,7 @@ func NewDb(cfg *Config) *DB {
     }
 
     if db.Config.Driver == PostgresDriverName {
-        if d, err := gorm.Open(postgres.Open(db.Config.DSN), &gorm.Config{}); err != nil {
+        if d, err := gorm.Open(postgres.Open(db.Config.Dsn), &gorm.Config{}); err != nil {
             return nil
         } else {
             db.DB = d
@@ -40,14 +40,14 @@ func NewDb(cfg *Config) *DB {
             return db
         }
     } else if db.Config.Driver == MysqlDriverName {
-        if d, err := gorm.Open(mysql.Open(db.Config.DSN), &gorm.Config{}); err != nil {
+        if d, err := gorm.Open(mysql.Open(db.Config.Dsn), &gorm.Config{}); err != nil {
             return nil
         } else {
             db.DB = config(d)
             return db
         }
     } else if db.Config.Driver == SqliteDriverName {
-        if d, err := gorm.Open(sqlite.Open(db.Config.DSN), &gorm.Config{}); err != nil {
+        if d, err := gorm.Open(sqlite.Open(db.Config.Dsn), &gorm.Config{}); err != nil {
             return nil
         } else {
             db.DB = d

@@ -8,7 +8,7 @@ package mojo.db {
     }]
     
     dependencies: {
-        'mojo.core': {path: '../core', version: '^0.1'}
+        'mojo.core': {repository: 'github.com/mojo-lang/core', version: '^0.1'}
     }
     repository: 'github.com/mojo-lang/db'
 }
