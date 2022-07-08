@@ -114,4 +114,10 @@ public interface ConfigOrBuilder extends
    * @return The enableLogAccessResponse.
    */
   boolean getEnableLogAccessResponse();
+
+  /**
+   * <code>bool disable_auto_migrate = 20;</code>
+   * @return The disableAutoMigrate.
+   */
+  boolean getDisableAutoMigrate();
 }

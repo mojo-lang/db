@@ -14,4 +14,6 @@ type Config {
     enable_log_access: Bool @11
     enable_log_access_request: Bool @12
     enable_log_access_response: Bool @13
+
+    disable_auto_migrate: Bool @20 //< disable auto migration for the init the database
 }

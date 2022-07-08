@@ -133,6 +133,11 @@ private static final long serialVersionUID = 0L;
             enableLogAccessResponse_ = input.readBool();
             break;
           }
+          case 160: {
+
+            disableAutoMigrate_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -392,6 +397,17 @@ private static final long serialVersionUID = 0L;
     return enableLogAccessResponse_;
   }
 
+  public static final int DISABLE_AUTO_MIGRATE_FIELD_NUMBER = 20;
+  private boolean disableAutoMigrate_;
+  /**
+   * <code>bool disable_auto_migrate = 20;</code>
+   * @return The disableAutoMigrate.
+   */
+  @java.lang.Override
+  public boolean getDisableAutoMigrate() {
+    return disableAutoMigrate_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -444,6 +460,9 @@ private static final long serialVersionUID = 0L;
     }
     if (enableLogAccessResponse_ != false) {
       output.writeBool(13, enableLogAccessResponse_);
+    }
+    if (disableAutoMigrate_ != false) {
+      output.writeBool(20, disableAutoMigrate_);
     }
     unknownFields.writeTo(output);
   }
@@ -504,6 +523,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(13, enableLogAccessResponse_);
     }
+    if (disableAutoMigrate_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(20, disableAutoMigrate_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -551,6 +574,8 @@ private static final long serialVersionUID = 0L;
         != other.getEnableLogAccessRequest()) return false;
     if (getEnableLogAccessResponse()
         != other.getEnableLogAccessResponse()) return false;
+    if (getDisableAutoMigrate()
+        != other.getDisableAutoMigrate()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -599,6 +624,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENABLE_LOG_ACCESS_RESPONSE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableLogAccessResponse());
+    hash = (37 * hash) + DISABLE_AUTO_MIGRATE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDisableAutoMigrate());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -766,6 +794,8 @@ private static final long serialVersionUID = 0L;
 
       enableLogAccessResponse_ = false;
 
+      disableAutoMigrate_ = false;
+
       return this;
     }
 
@@ -813,6 +843,7 @@ private static final long serialVersionUID = 0L;
       result.enableLogAccess_ = enableLogAccess_;
       result.enableLogAccessRequest_ = enableLogAccessRequest_;
       result.enableLogAccessResponse_ = enableLogAccessResponse_;
+      result.disableAutoMigrate_ = disableAutoMigrate_;
       onBuilt();
       return result;
     }
@@ -901,6 +932,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEnableLogAccessResponse() != false) {
         setEnableLogAccessResponse(other.getEnableLogAccessResponse());
+      }
+      if (other.getDisableAutoMigrate() != false) {
+        setDisableAutoMigrate(other.getDisableAutoMigrate());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1596,6 +1630,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnableLogAccessResponse() {
       
       enableLogAccessResponse_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableAutoMigrate_ ;
+    /**
+     * <code>bool disable_auto_migrate = 20;</code>
+     * @return The disableAutoMigrate.
+     */
+    @java.lang.Override
+    public boolean getDisableAutoMigrate() {
+      return disableAutoMigrate_;
+    }
+    /**
+     * <code>bool disable_auto_migrate = 20;</code>
+     * @param value The disableAutoMigrate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableAutoMigrate(boolean value) {
+      
+      disableAutoMigrate_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool disable_auto_migrate = 20;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableAutoMigrate() {
+      
+      disableAutoMigrate_ = false;
       onChanged();
       return this;
     }

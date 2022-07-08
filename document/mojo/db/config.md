@@ -13,3 +13,4 @@
 | `enableLogAccess` | `boolean` |  | N |  |
 | `enableLogAccessRequest` | `boolean` |  | N |  |
 | `enableLogAccessResponse` | `boolean` |  | N |  |
+| `disableAutoMigrate` | `boolean` |  | N |  | disable auto migration for the init the database |

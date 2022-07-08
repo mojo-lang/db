@@ -25,4 +25,5 @@ message Config {
     bool enable_log_access = 11;
     bool enable_log_access_request = 12;
     bool enable_log_access_response = 13;
+    bool disable_auto_migrate = 20;
 }
