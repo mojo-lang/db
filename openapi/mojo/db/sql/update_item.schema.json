@@ -1,0 +1,14 @@
+{
+    "title": "mojo.db.sql.UpdateItem",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "columnName": {
+            "title": "mojo.core.String",
+            "type": "string"
+        },
+        "value": {
+            "$ref": "#/components/schemas/mojo.db.sql.Expression"
+        }
+    }
+}

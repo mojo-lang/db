@@ -1,0 +1,56 @@
+{
+    "title": "mojo.db.sql.Expression",
+    "oneOf": [
+        {
+            "$ref": "#/components/schemas/mojo.lang.NullLiteralExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.lang.BoolLiteralExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.lang.IntegerLiteralExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.lang.FloatLiteralExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.lang.StringLiteralExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.BlobLiteralExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.IdentifierExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.BindParameterExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.ColumnRefExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.PrefixUnaryExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.PostfixUnaryExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.BinaryExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.BetweenExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.InExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.CaseExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.FunctionCallExpr"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.SubqueryExpr"
+        }
+    ]
+}

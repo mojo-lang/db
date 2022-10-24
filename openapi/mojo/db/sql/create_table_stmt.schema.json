@@ -1,0 +1,22 @@
+{
+    "title": "mojo.db.sql.CreateTableStmt",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.CreateStmt"
+        },
+        {
+            "title": "mojo.db.sql.CreateTableStmt",
+            "type": "object",
+            "properties": {
+                "ifNotExists": {
+                    "title": "mojo.core.Bool",
+                    "type": "boolean"
+                },
+                "tableName": {
+                    "$ref": "#/components/schemas/mojo.db.sql.TableName"
+                }
+            }
+        }
+    ]
+}

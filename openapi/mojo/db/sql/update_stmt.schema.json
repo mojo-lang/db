@@ -1,0 +1,33 @@
+{
+    "title": "mojo.db.sql.UpdateStmt",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.DataManipulationStmt"
+        },
+        {
+            "title": "mojo.db.sql.UpdateStmt",
+            "type": "object",
+            "properties": {
+                "from": {
+                    "$ref": "#/components/schemas/mojo.db.sql.FromClause"
+                },
+                "returning": {
+                    "$ref": "#/components/schemas/mojo.db.sql.ReturningClause"
+                },
+                "set": {
+                    "$ref": "#/components/schemas/mojo.db.sql.SetClause"
+                },
+                "update": {
+                    "$ref": "#/components/schemas/mojo.db.sql.UpdateClause"
+                },
+                "where": {
+                    "$ref": "#/components/schemas/mojo.db.sql.WhereClause"
+                },
+                "with": {
+                    "$ref": "#/components/schemas/mojo.db.sql.WithClause"
+                }
+            }
+        }
+    ]
+}

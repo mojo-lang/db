@@ -1,0 +1,14 @@
+{
+    "title": "mojo.db.sql.SourceFile",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "statements": {
+            "title": "mojo.core.Array",
+            "type": "array",
+            "items": {
+                "$ref": "#/components/schemas/mojo.db.sql.Statement"
+            }
+        }
+    }
+}

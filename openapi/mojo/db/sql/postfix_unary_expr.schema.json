@@ -1,0 +1,24 @@
+{
+    "title": "mojo.db.sql.PostfixUnaryExpr",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.UnaryExpr"
+        },
+        {
+            "title": "mojo.db.sql.PostfixUnaryExpr",
+            "type": "object",
+            "properties": {
+                "operator": {
+                    "title": "mojo.db.sql.PostfixUnaryExpr.Operator",
+                    "type": "string",
+                    "enum": [
+                        "is_null",
+                        "not_null",
+                        "extended"
+                    ]
+                }
+            }
+        }
+    ]
+}

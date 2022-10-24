@@ -1,0 +1,27 @@
+{
+    "title": "mojo.db.sql.PrefixUnaryExpr",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.UnaryExpr"
+        },
+        {
+            "title": "mojo.db.sql.PrefixUnaryExpr",
+            "type": "object",
+            "properties": {
+                "operator": {
+                    "title": "mojo.db.sql.PrefixUnaryExpr.Operator",
+                    "type": "string",
+                    "enum": [
+                        "minus",
+                        "plus",
+                        "tilde",
+                        "not",
+                        "bit_not",
+                        "extended"
+                    ]
+                }
+            }
+        }
+    ]
+}

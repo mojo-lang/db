@@ -1,0 +1,33 @@
+{
+    "title": "mojo.db.sql.DeleteStmt",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.DataManipulationStmt"
+        },
+        {
+            "title": "mojo.db.sql.DeleteStmt",
+            "type": "object",
+            "properties": {
+                "from": {
+                    "$ref": "#/components/schemas/mojo.db.sql.FromClause"
+                },
+                "limit": {
+                    "$ref": "#/components/schemas/mojo.db.sql.LimitClause"
+                },
+                "orderBy": {
+                    "$ref": "#/components/schemas/mojo.db.sql.OrderByClause"
+                },
+                "returning": {
+                    "$ref": "#/components/schemas/mojo.db.sql.ReturningClause"
+                },
+                "where": {
+                    "$ref": "#/components/schemas/mojo.db.sql.WhereClause"
+                },
+                "with": {
+                    "$ref": "#/components/schemas/mojo.db.sql.WithClause"
+                }
+            }
+        }
+    ]
+}

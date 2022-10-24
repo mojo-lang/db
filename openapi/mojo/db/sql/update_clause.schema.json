@@ -1,0 +1,18 @@
+{
+    "title": "mojo.db.sql.UpdateClause",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": "#/components/schemas/mojo.db.sql.Clause"
+        },
+        {
+            "title": "mojo.db.sql.UpdateClause",
+            "type": "object",
+            "properties": {
+                "tableName": {
+                    "$ref": "#/components/schemas/mojo.db.sql.TableName"
+                }
+            }
+        }
+    ]
+}

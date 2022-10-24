@@ -1,0 +1,9 @@
+{
+    "title": "mojo.db.sql.InExpr",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": "#/components/schemas/mojo.lang.Expr"
+        }
+    ]
+}
