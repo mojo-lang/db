@@ -48,4 +48,10 @@ public interface CommitStmtOrBuilder extends
    * @return The implicit.
    */
   boolean getImplicit();
+
+  /**
+   * <code>bool transaction = 10;</code>
+   * @return The transaction.
+   */
+  boolean getTransaction();
 }

@@ -30,26 +30,26 @@ public final class DeleteStmtProto {
     java.lang.String[] descriptorData = {
       "\n\035mojo/db/sql/delete_stmt.proto\022\013mojo.db" +
       ".sql\032(mojo/db/sql/data_manipulation_stmt" +
+      ".proto\032&mojo/db/sql/qualified_table_name" +
       ".proto\032\"mojo/db/sql/returning_clause.pro" +
       "to\032\025mojo/db/sql/sql.proto\032\024mojo/lang/lan" +
-      "g.proto\"\203\003\n\nDeleteStmt\022+\n\016start_position" +
+      "g.proto\"\272\002\n\nDeleteStmt\022+\n\016start_position" +
       "\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014end_posit" +
       "ion\030\002 \001(\0132\023.mojo.lang.Position\022\014\n\004kind\030\004" +
       " \001(\003\022\020\n\010implicit\030\005 \001(\010\022%\n\004with\030\n \001(\0132\027.m" +
-      "ojo.db.sql.WithClause\022%\n\004from\030\013 \001(\0132\027.mo" +
-      "jo.db.sql.FromClause\022\'\n\005where\030\014 \001(\0132\030.mo" +
-      "jo.db.sql.WhereClause\022/\n\treturning\030\017 \001(\013" +
-      "2\034.mojo.db.sql.ReturningClause\022,\n\010order_" +
-      "by\030\022 \001(\0132\032.mojo.db.sql.OrderByClause\022\'\n\005" +
-      "limit\030\023 \001(\0132\030.mojo.db.sql.LimitClauseB^\n" +
-      "\031org.mojo-lang.mojo.db.sqlB\017DeleteStmtPr" +
-      "otoP\001Z.github.com/mojo-lang/db/go/pkg/mo" +
-      "jo/db/sql;sqlb\006proto3"
+      "ojo.db.sql.WithClause\0223\n\ntable_name\030\013 \001(" +
+      "\0132\037.mojo.db.sql.QualifiedTableName\022\'\n\005wh" +
+      "ere\030\014 \001(\0132\030.mojo.db.sql.WhereClause\022/\n\tr" +
+      "eturning\030\017 \001(\0132\034.mojo.db.sql.ReturningCl" +
+      "auseB^\n\031org.mojo-lang.mojo.db.sqlB\017Delet" +
+      "eStmtProtoP\001Z.github.com/mojo-lang/db/go" +
+      "/pkg/mojo/db/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.mojo-lang.mojo.db.sql.DataManipulationStmtProto.getDescriptor(),
+          org.mojo-lang.mojo.db.sql.QualifiedTableNameProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.ReturningClauseProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor(),
           org.mojolang.mojo.lang.LangProto.getDescriptor(),
@@ -59,8 +59,9 @@ public final class DeleteStmtProto {
     internal_static_mojo_db_sql_DeleteStmt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_DeleteStmt_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "From", "Where", "Returning", "OrderBy", "Limit", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "TableName", "Where", "Returning", });
     org.mojo-lang.mojo.db.sql.DataManipulationStmtProto.getDescriptor();
+    org.mojo-lang.mojo.db.sql.QualifiedTableNameProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.ReturningClauseProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor();
     org.mojolang.mojo.lang.LangProto.getDescriptor();

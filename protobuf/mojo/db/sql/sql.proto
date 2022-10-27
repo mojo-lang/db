@@ -96,15 +96,16 @@ message CompoundSelect {
         SelectClause select_clause = 11;
         CompoundSelect compound_select = 12;
     }
-    FromClause from = 13;
-    WhereClause where = 14;
-    GroupByClause group_by = 15;
-    HavingClause having = 16;
-    OrderByClause order_by = 17;
-    LimitClause limit = 18;
-    Operator operator = 20;
-    CompoundSelect left = 21;
-    CompoundSelect right = 22;
+    ValuesClause values = 13;
+    FromClause from = 14;
+    WhereClause where = 15;
+    GroupByClause group_by = 16;
+    HavingClause having = 17;
+    OrderByClause order_by = 20;
+    LimitClause limit = 21;
+    Operator operator = 30;
+    CompoundSelect left = 31;
+    CompoundSelect right = 32;
 }
 
 message Expression {
@@ -266,12 +267,13 @@ message SelectStmt {
         SelectClause select_clause = 11;
         CompoundSelect compound_select = 12;
     }
-    FromClause from = 13;
-    WhereClause where = 14;
-    GroupByClause group_by = 15;
-    HavingClause having = 16;
-    OrderByClause order_by = 17;
-    LimitClause limit = 18;
+    ValuesClause values = 13;
+    FromClause from = 14;
+    WhereClause where = 15;
+    GroupByClause group_by = 16;
+    HavingClause having = 17;
+    OrderByClause order_by = 20;
+    LimitClause limit = 21;
 }
 
 message SubqueryExpr {
@@ -316,6 +318,14 @@ message UnaryExpr {
     bool implicit = 5;
     string operator_symbol = 10;
     Expression argument = 11;
+}
+
+message ValuesClause {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int64 kind = 4;
+    bool implicit = 5;
+    repeated Expression values = 10;
 }
 
 message WhereClause {

@@ -18,8 +18,20 @@
                 "set": {
                     "$ref": "#/components/schemas/mojo.db.sql.SetClause"
                 },
-                "update": {
-                    "$ref": "#/components/schemas/mojo.db.sql.UpdateClause"
+                "tableName": {
+                    "$ref": "#/components/schemas/mojo.db.sql.QualifiedTableName"
+                },
+                "type": {
+                    "title": "mojo.db.sql.UpdateStmt.Type",
+                    "type": "string",
+                    "enum": [
+                        "update",
+                        "update_or_replace",
+                        "update_or_rollback",
+                        "update_or_abort",
+                        "update_or_fail",
+                        "update_or_ignore"
+                    ]
                 },
                 "where": {
                     "$ref": "#/components/schemas/mojo.db.sql.WhereClause"

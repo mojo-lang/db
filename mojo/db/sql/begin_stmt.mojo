@@ -13,4 +13,15 @@
 // limitations under the License.
 
 type BeginStmt: lang.Stmt {
+    enum Type {
+        unspecified @0
+        deferred    @1
+        immediate   @2
+        exclusive   @3
+    }
+
+    type: Type @10
+
+    transaction: Bool @11
+    name: String @12
 }

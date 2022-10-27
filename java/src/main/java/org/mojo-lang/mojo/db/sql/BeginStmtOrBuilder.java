@@ -48,4 +48,33 @@ public interface BeginStmtOrBuilder extends
    * @return The implicit.
    */
   boolean getImplicit();
+
+  /**
+   * <code>.mojo.db.sql.BeginStmt.Type type = 10;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   * <code>.mojo.db.sql.BeginStmt.Type type = 10;</code>
+   * @return The type.
+   */
+  org.mojo-lang.mojo.db.sql.BeginStmt.Type getType();
+
+  /**
+   * <code>bool transaction = 11;</code>
+   * @return The transaction.
+   */
+  boolean getTransaction();
+
+  /**
+   * <code>string name = 12;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 12;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

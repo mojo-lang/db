@@ -29,11 +29,12 @@ public final class SourceFileProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\035mojo/db/sql/source_file.proto\022\013mojo.db" +
-      ".sql\032\033mojo/db/sql/statement.proto\"8\n\nSou" +
-      "rceFile\022*\n\nstatements\030\n \003(\0132\026.mojo.db.sq" +
-      "l.StatementB^\n\031org.mojo-lang.mojo.db.sql" +
-      "B\017SourceFileProtoP\001Z.github.com/mojo-lan" +
-      "g/db/go/pkg/mojo/db/sql;sqlb\006proto3"
+      ".sql\032\033mojo/db/sql/statement.proto\"Y\n\nSou" +
+      "rceFile\022\014\n\004name\030\001 \001(\t\022\021\n\tfull_name\030\002 \001(\t" +
+      "\022*\n\nstatements\030\014 \003(\0132\026.mojo.db.sql.State" +
+      "mentB^\n\031org.mojo-lang.mojo.db.sqlB\017Sourc" +
+      "eFileProtoP\001Z.github.com/mojo-lang/db/go" +
+      "/pkg/mojo/db/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -45,7 +46,7 @@ public final class SourceFileProto {
     internal_static_mojo_db_sql_SourceFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_SourceFile_descriptor,
-        new java.lang.String[] { "Statements", });
+        new java.lang.String[] { "Name", "FullName", "Statements", });
     org.mojo-lang.mojo.db.sql.StatementProto.getDescriptor();
   }
 

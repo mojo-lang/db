@@ -4,9 +4,11 @@ syntax = "proto3";
 
 package mojo.db.sql;
 
+import "mojo/db/sql/as_subquery_clause.proto";
 import "mojo/db/sql/create_stmt.proto";
 import "mojo/db/sql/data_definition_stmt.proto";
 import "mojo/db/sql/sql.proto";
+import "mojo/db/sql/table_definition.proto";
 import "mojo/lang/lang.proto";
 
 option go_package = "github.com/mojo-lang/db/go/pkg/mojo/db/sql;sql";
@@ -21,4 +23,8 @@ message CreateTableStmt {
     bool implicit = 5;
     bool if_not_exists = 10;
     TableName table_name = 11;
+    oneof definition {
+        TableDefinition table_definition = 14;
+        AsSubqueryClause as_subquery_clause = 15;
+    }
 }

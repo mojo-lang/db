@@ -41,6 +41,9 @@
             "$ref": "#/components/schemas/mojo.db.sql.DropStmt"
         },
         {
+            "$ref": "#/components/schemas/mojo.db.sql.EndStmt"
+        },
+        {
             "$ref": "#/components/schemas/mojo.db.sql.InsertStmt"
         },
         {

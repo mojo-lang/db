@@ -4,6 +4,7 @@ syntax = "proto3";
 
 package mojo.db.sql;
 
+import "mojo/db/sql/end_stmt.proto";
 import "mojo/lang/lang.proto";
 
 option go_package = "github.com/mojo-lang/db/go/pkg/mojo/db/sql;sql";
@@ -16,4 +17,5 @@ message CommitStmt {
     mojo.lang.Position end_position = 2;
     int64 kind = 4;
     bool implicit = 5;
+    bool transaction = 10;
 }

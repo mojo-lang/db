@@ -13,4 +13,5 @@
 // limitations under the License.
 
 type VacuumStmt: lang.Stmt {
+    schema: String @10
 }

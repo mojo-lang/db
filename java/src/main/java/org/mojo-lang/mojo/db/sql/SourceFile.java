@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SourceFile() {
+    name_ = "";
+    fullName_ = "";
     statements_ = java.util.Collections.emptyList();
   }
 
@@ -50,7 +52,19 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 82: {
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            fullName_ = s;
+            break;
+          }
+          case 98: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               statements_ = new java.util.ArrayList<org.mojo-lang.mojo.db.sql.Statement>();
               mutable_bitField0_ |= 0x00000001;
@@ -94,17 +108,93 @@ private static final long serialVersionUID = 0L;
             org.mojo-lang.mojo.db.sql.SourceFile.class, org.mojo-lang.mojo.db.sql.SourceFile.Builder.class);
   }
 
-  public static final int STATEMENTS_FIELD_NUMBER = 10;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
+  /**
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FULL_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object fullName_;
+  /**
+   * <code>string full_name = 2;</code>
+   * @return The fullName.
+   */
+  @java.lang.Override
+  public java.lang.String getFullName() {
+    java.lang.Object ref = fullName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fullName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string full_name = 2;</code>
+   * @return The bytes for fullName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFullNameBytes() {
+    java.lang.Object ref = fullName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      fullName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATEMENTS_FIELD_NUMBER = 12;
   private java.util.List<org.mojo-lang.mojo.db.sql.Statement> statements_;
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   @java.lang.Override
   public java.util.List<org.mojo-lang.mojo.db.sql.Statement> getStatementsList() {
     return statements_;
   }
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   @java.lang.Override
   public java.util.List<? extends org.mojo-lang.mojo.db.sql.StatementOrBuilder> 
@@ -112,21 +202,21 @@ private static final long serialVersionUID = 0L;
     return statements_;
   }
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   @java.lang.Override
   public int getStatementsCount() {
     return statements_.size();
   }
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   @java.lang.Override
   public org.mojo-lang.mojo.db.sql.Statement getStatements(int index) {
     return statements_.get(index);
   }
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   @java.lang.Override
   public org.mojo-lang.mojo.db.sql.StatementOrBuilder getStatementsOrBuilder(
@@ -148,8 +238,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fullName_);
+    }
     for (int i = 0; i < statements_.size(); i++) {
-      output.writeMessage(10, statements_.get(i));
+      output.writeMessage(12, statements_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -160,9 +256,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fullName_);
+    }
     for (int i = 0; i < statements_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, statements_.get(i));
+        .computeMessageSize(12, statements_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -179,6 +281,10 @@ private static final long serialVersionUID = 0L;
     }
     org.mojo-lang.mojo.db.sql.SourceFile other = (org.mojo-lang.mojo.db.sql.SourceFile) obj;
 
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getFullName()
+        .equals(other.getFullName())) return false;
     if (!getStatementsList()
         .equals(other.getStatementsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -192,6 +298,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FULL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFullName().hashCode();
     if (getStatementsCount() > 0) {
       hash = (37 * hash) + STATEMENTS_FIELD_NUMBER;
       hash = (53 * hash) + getStatementsList().hashCode();
@@ -330,6 +440,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
+      fullName_ = "";
+
       if (statementsBuilder_ == null) {
         statements_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -363,6 +477,8 @@ private static final long serialVersionUID = 0L;
     public org.mojo-lang.mojo.db.sql.SourceFile buildPartial() {
       org.mojo-lang.mojo.db.sql.SourceFile result = new org.mojo-lang.mojo.db.sql.SourceFile(this);
       int from_bitField0_ = bitField0_;
+      result.name_ = name_;
+      result.fullName_ = fullName_;
       if (statementsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           statements_ = java.util.Collections.unmodifiableList(statements_);
@@ -420,6 +536,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.mojo-lang.mojo.db.sql.SourceFile other) {
       if (other == org.mojo-lang.mojo.db.sql.SourceFile.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getFullName().isEmpty()) {
+        fullName_ = other.fullName_;
+        onChanged();
+      }
       if (statementsBuilder_ == null) {
         if (!other.statements_.isEmpty()) {
           if (statements_.isEmpty()) {
@@ -476,6 +600,158 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
+    private java.lang.Object name_ = "";
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fullName_ = "";
+    /**
+     * <code>string full_name = 2;</code>
+     * @return The fullName.
+     */
+    public java.lang.String getFullName() {
+      java.lang.Object ref = fullName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fullName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string full_name = 2;</code>
+     * @return The bytes for fullName.
+     */
+    public com.google.protobuf.ByteString
+        getFullNameBytes() {
+      java.lang.Object ref = fullName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fullName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string full_name = 2;</code>
+     * @param value The fullName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFullName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fullName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string full_name = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFullName() {
+      
+      fullName_ = getDefaultInstance().getFullName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string full_name = 2;</code>
+     * @param value The bytes for fullName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFullNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fullName_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<org.mojo-lang.mojo.db.sql.Statement> statements_ =
       java.util.Collections.emptyList();
     private void ensureStatementsIsMutable() {
@@ -489,7 +765,7 @@ private static final long serialVersionUID = 0L;
         org.mojo-lang.mojo.db.sql.Statement, org.mojo-lang.mojo.db.sql.Statement.Builder, org.mojo-lang.mojo.db.sql.StatementOrBuilder> statementsBuilder_;
 
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public java.util.List<org.mojo-lang.mojo.db.sql.Statement> getStatementsList() {
       if (statementsBuilder_ == null) {
@@ -499,7 +775,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public int getStatementsCount() {
       if (statementsBuilder_ == null) {
@@ -509,7 +785,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public org.mojo-lang.mojo.db.sql.Statement getStatements(int index) {
       if (statementsBuilder_ == null) {
@@ -519,7 +795,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public Builder setStatements(
         int index, org.mojo-lang.mojo.db.sql.Statement value) {
@@ -536,7 +812,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public Builder setStatements(
         int index, org.mojo-lang.mojo.db.sql.Statement.Builder builderForValue) {
@@ -550,7 +826,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public Builder addStatements(org.mojo-lang.mojo.db.sql.Statement value) {
       if (statementsBuilder_ == null) {
@@ -566,7 +842,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public Builder addStatements(
         int index, org.mojo-lang.mojo.db.sql.Statement value) {
@@ -583,7 +859,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public Builder addStatements(
         org.mojo-lang.mojo.db.sql.Statement.Builder builderForValue) {
@@ -597,7 +873,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public Builder addStatements(
         int index, org.mojo-lang.mojo.db.sql.Statement.Builder builderForValue) {
@@ -611,7 +887,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public Builder addAllStatements(
         java.lang.Iterable<? extends org.mojo-lang.mojo.db.sql.Statement> values) {
@@ -626,7 +902,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public Builder clearStatements() {
       if (statementsBuilder_ == null) {
@@ -639,7 +915,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public Builder removeStatements(int index) {
       if (statementsBuilder_ == null) {
@@ -652,14 +928,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public org.mojo-lang.mojo.db.sql.Statement.Builder getStatementsBuilder(
         int index) {
       return getStatementsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public org.mojo-lang.mojo.db.sql.StatementOrBuilder getStatementsOrBuilder(
         int index) {
@@ -669,7 +945,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public java.util.List<? extends org.mojo-lang.mojo.db.sql.StatementOrBuilder> 
          getStatementsOrBuilderList() {
@@ -680,14 +956,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public org.mojo-lang.mojo.db.sql.Statement.Builder addStatementsBuilder() {
       return getStatementsFieldBuilder().addBuilder(
           org.mojo-lang.mojo.db.sql.Statement.getDefaultInstance());
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public org.mojo-lang.mojo.db.sql.Statement.Builder addStatementsBuilder(
         int index) {
@@ -695,7 +971,7 @@ private static final long serialVersionUID = 0L;
           index, org.mojo-lang.mojo.db.sql.Statement.getDefaultInstance());
     }
     /**
-     * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+     * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
      */
     public java.util.List<org.mojo-lang.mojo.db.sql.Statement.Builder> 
          getStatementsBuilderList() {

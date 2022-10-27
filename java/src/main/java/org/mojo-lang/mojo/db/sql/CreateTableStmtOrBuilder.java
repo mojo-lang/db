@@ -69,4 +69,36 @@ public interface CreateTableStmtOrBuilder extends
    * <code>.mojo.db.sql.TableName table_name = 11;</code>
    */
   org.mojo-lang.mojo.db.sql.TableNameOrBuilder getTableNameOrBuilder();
+
+  /**
+   * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+   * @return Whether the tableDefinition field is set.
+   */
+  boolean hasTableDefinition();
+  /**
+   * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+   * @return The tableDefinition.
+   */
+  org.mojo-lang.mojo.db.sql.TableDefinition getTableDefinition();
+  /**
+   * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+   */
+  org.mojo-lang.mojo.db.sql.TableDefinitionOrBuilder getTableDefinitionOrBuilder();
+
+  /**
+   * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+   * @return Whether the asSubqueryClause field is set.
+   */
+  boolean hasAsSubqueryClause();
+  /**
+   * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+   * @return The asSubqueryClause.
+   */
+  org.mojo-lang.mojo.db.sql.AsSubqueryClause getAsSubqueryClause();
+  /**
+   * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+   */
+  org.mojo-lang.mojo.db.sql.AsSubqueryClauseOrBuilder getAsSubqueryClauseOrBuilder();
+
+  public org.mojo-lang.mojo.db.sql.CreateTableStmt.DefinitionCase getDefinitionCase();
 }

@@ -29,25 +29,32 @@ public final class CreateTableStmtProto {
   static {
     java.lang.String[] descriptorData = {
       "\n#mojo/db/sql/create_table_stmt.proto\022\013m" +
-      "ojo.db.sql\032\035mojo/db/sql/create_stmt.prot" +
-      "o\032&mojo/db/sql/data_definition_stmt.prot" +
-      "o\032\025mojo/db/sql/sql.proto\032\024mojo/lang/lang" +
-      ".proto\"\314\001\n\017CreateTableStmt\022+\n\016start_posi" +
-      "tion\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014end_p" +
-      "osition\030\002 \001(\0132\023.mojo.lang.Position\022\014\n\004ki" +
-      "nd\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022\025\n\rif_not_exi" +
-      "sts\030\n \001(\010\022*\n\ntable_name\030\013 \001(\0132\026.mojo.db." +
-      "sql.TableNameBc\n\031org.mojo-lang.mojo.db.s" +
-      "qlB\024CreateTableStmtProtoP\001Z.github.com/m" +
-      "ojo-lang/db/go/pkg/mojo/db/sql;sqlb\006prot" +
-      "o3"
+      "ojo.db.sql\032$mojo/db/sql/as_subquery_clau" +
+      "se.proto\032\035mojo/db/sql/create_stmt.proto\032" +
+      "&mojo/db/sql/data_definition_stmt.proto\032" +
+      "\025mojo/db/sql/sql.proto\032\"mojo/db/sql/tabl" +
+      "e_definition.proto\032\024mojo/lang/lang.proto" +
+      "\"\321\002\n\017CreateTableStmt\022+\n\016start_position\030\001" +
+      " \001(\0132\023.mojo.lang.Position\022)\n\014end_positio" +
+      "n\030\002 \001(\0132\023.mojo.lang.Position\022\014\n\004kind\030\004 \001" +
+      "(\003\022\020\n\010implicit\030\005 \001(\010\022\025\n\rif_not_exists\030\n " +
+      "\001(\010\022*\n\ntable_name\030\013 \001(\0132\026.mojo.db.sql.Ta" +
+      "bleName\0228\n\020table_definition\030\016 \001(\0132\034.mojo" +
+      ".db.sql.TableDefinitionH\000\022;\n\022as_subquery" +
+      "_clause\030\017 \001(\0132\035.mojo.db.sql.AsSubqueryCl" +
+      "auseH\000B\014\n\ndefinitionBc\n\031org.mojo-lang.mo" +
+      "jo.db.sqlB\024CreateTableStmtProtoP\001Z.githu" +
+      "b.com/mojo-lang/db/go/pkg/mojo/db/sql;sq" +
+      "lb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          org.mojo-lang.mojo.db.sql.AsSubqueryClauseProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.CreateStmtProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.DataDefinitionStmtProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor(),
+          org.mojo-lang.mojo.db.sql.TableDefinitionProto.getDescriptor(),
           org.mojolang.mojo.lang.LangProto.getDescriptor(),
         });
     internal_static_mojo_db_sql_CreateTableStmt_descriptor =
@@ -55,10 +62,12 @@ public final class CreateTableStmtProto {
     internal_static_mojo_db_sql_CreateTableStmt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_CreateTableStmt_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "IfNotExists", "TableName", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "IfNotExists", "TableName", "TableDefinition", "AsSubqueryClause", "Definition", });
+    org.mojo-lang.mojo.db.sql.AsSubqueryClauseProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.CreateStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.DataDefinitionStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor();
+    org.mojo-lang.mojo.db.sql.TableDefinitionProto.getDescriptor();
     org.mojolang.mojo.lang.LangProto.getDescriptor();
   }
 

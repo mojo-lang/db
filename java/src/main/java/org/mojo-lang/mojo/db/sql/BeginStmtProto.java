@@ -29,13 +29,17 @@ public final class BeginStmtProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\034mojo/db/sql/begin_stmt.proto\022\013mojo.db." +
-      "sql\032\024mojo/lang/lang.proto\"\203\001\n\tBeginStmt\022" +
+      "sql\032\024mojo/lang/lang.proto\"\252\002\n\tBeginStmt\022" +
       "+\n\016start_position\030\001 \001(\0132\023.mojo.lang.Posi" +
       "tion\022)\n\014end_position\030\002 \001(\0132\023.mojo.lang.P" +
-      "osition\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010B" +
-      "]\n\031org.mojo-lang.mojo.db.sqlB\016BeginStmtP" +
-      "rotoP\001Z.github.com/mojo-lang/db/go/pkg/m" +
-      "ojo/db/sql;sqlb\006proto3"
+      "osition\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022" +
+      ")\n\004type\030\n \001(\0162\033.mojo.db.sql.BeginStmt.Ty" +
+      "pe\022\023\n\013transaction\030\013 \001(\010\022\014\n\004name\030\014 \001(\t\"W\n" +
+      "\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\021\n\rTYPE_DEFE" +
+      "RRED\020\001\022\022\n\016TYPE_IMMEDIATE\020\002\022\022\n\016TYPE_EXCLU" +
+      "SIVE\020\003B]\n\031org.mojo-lang.mojo.db.sqlB\016Beg" +
+      "inStmtProtoP\001Z.github.com/mojo-lang/db/g" +
+      "o/pkg/mojo/db/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -47,7 +51,7 @@ public final class BeginStmtProto {
     internal_static_mojo_db_sql_BeginStmt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_BeginStmt_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "Type", "Transaction", "Name", });
     org.mojolang.mojo.lang.LangProto.getDescriptor();
   }
 

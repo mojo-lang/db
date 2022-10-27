@@ -3,7 +3,7 @@
     "description": "",
     "allOf": [
         {
-            "$ref": "#/components/schemas/mojo.lang.Stmt"
+            "$ref": "#/components/schemas/mojo.db.sql.EndStmt"
         }
     ]
 }

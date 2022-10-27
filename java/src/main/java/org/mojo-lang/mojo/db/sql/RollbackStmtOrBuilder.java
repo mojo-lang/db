@@ -48,4 +48,22 @@ public interface RollbackStmtOrBuilder extends
    * @return The implicit.
    */
   boolean getImplicit();
+
+  /**
+   * <code>bool transaction = 10;</code>
+   * @return The transaction.
+   */
+  boolean getTransaction();
+
+  /**
+   * <code>string save_point = 11;</code>
+   * @return The savePoint.
+   */
+  java.lang.String getSavePoint();
+  /**
+   * <code>string save_point = 11;</code>
+   * @return The bytes for savePoint.
+   */
+  com.google.protobuf.ByteString
+      getSavePointBytes();
 }

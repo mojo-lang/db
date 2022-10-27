@@ -29,13 +29,14 @@ public final class RollbackStmtProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\037mojo/db/sql/rollback_stmt.proto\022\013mojo." +
-      "db.sql\032\024mojo/lang/lang.proto\"\206\001\n\014Rollbac" +
+      "db.sql\032\024mojo/lang/lang.proto\"\257\001\n\014Rollbac" +
       "kStmt\022+\n\016start_position\030\001 \001(\0132\023.mojo.lan" +
       "g.Position\022)\n\014end_position\030\002 \001(\0132\023.mojo." +
       "lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030" +
-      "\005 \001(\010B`\n\031org.mojo-lang.mojo.db.sqlB\021Roll" +
-      "backStmtProtoP\001Z.github.com/mojo-lang/db" +
-      "/go/pkg/mojo/db/sql;sqlb\006proto3"
+      "\005 \001(\010\022\023\n\013transaction\030\n \001(\010\022\022\n\nsave_point" +
+      "\030\013 \001(\tB`\n\031org.mojo-lang.mojo.db.sqlB\021Rol" +
+      "lbackStmtProtoP\001Z.github.com/mojo-lang/d" +
+      "b/go/pkg/mojo/db/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -47,7 +48,7 @@ public final class RollbackStmtProto {
     internal_static_mojo_db_sql_RollbackStmt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_RollbackStmt_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "Transaction", "SavePoint", });
     org.mojolang.mojo.lang.LangProto.getDescriptor();
   }
 

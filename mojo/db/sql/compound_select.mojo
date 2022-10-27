@@ -20,8 +20,8 @@ type CompoundSelect: SelectStmt @ignore_fields(order_by, limit) {
         except @3
     }
 
-    operator: Operator @20
+    operator: Operator @30
 
-    left: CompoundSelect @21
-    right: CompoundSelect @22
+    left: CompoundSelect @31
+    right: CompoundSelect @32
 }

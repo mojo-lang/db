@@ -48,19 +48,4 @@ public interface UpdateClauseOrBuilder extends
    * @return The implicit.
    */
   boolean getImplicit();
-
-  /**
-   * <code>.mojo.db.sql.TableName table_name = 10;</code>
-   * @return Whether the tableName field is set.
-   */
-  boolean hasTableName();
-  /**
-   * <code>.mojo.db.sql.TableName table_name = 10;</code>
-   * @return The tableName.
-   */
-  org.mojo-lang.mojo.db.sql.TableName getTableName();
-  /**
-   * <code>.mojo.db.sql.TableName table_name = 10;</code>
-   */
-  org.mojo-lang.mojo.db.sql.TableNameOrBuilder getTableNameOrBuilder();
 }

@@ -16,4 +16,6 @@ message AnalyzeSmt {
     mojo.lang.Position end_position = 2;
     int64 kind = 4;
     bool implicit = 5;
+    string schema_name = 10;
+    string name = 11;
 }

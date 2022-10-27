@@ -65,49 +65,60 @@ public interface InsertStmtOrBuilder extends
   org.mojo-lang.mojo.db.sql.WithClauseOrBuilder getWithOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.IntoClause into = 11;</code>
+   * <code>.mojo.db.sql.InsertStmt.Type type = 11;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   * <code>.mojo.db.sql.InsertStmt.Type type = 11;</code>
+   * @return The type.
+   */
+  org.mojo-lang.mojo.db.sql.InsertStmt.Type getType();
+
+  /**
+   * <code>.mojo.db.sql.IntoClause into = 12;</code>
    * @return Whether the into field is set.
    */
   boolean hasInto();
   /**
-   * <code>.mojo.db.sql.IntoClause into = 11;</code>
+   * <code>.mojo.db.sql.IntoClause into = 12;</code>
    * @return The into.
    */
   org.mojo-lang.mojo.db.sql.IntoClause getInto();
   /**
-   * <code>.mojo.db.sql.IntoClause into = 11;</code>
+   * <code>.mojo.db.sql.IntoClause into = 12;</code>
    */
   org.mojo-lang.mojo.db.sql.IntoClauseOrBuilder getIntoOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.ValuesClause values = 12;</code>
-   * @return Whether the values field is set.
+   * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
+   * @return Whether the valuesClause field is set.
    */
-  boolean hasValues();
+  boolean hasValuesClause();
   /**
-   * <code>.mojo.db.sql.ValuesClause values = 12;</code>
-   * @return The values.
+   * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
+   * @return The valuesClause.
    */
-  org.mojo-lang.mojo.db.sql.ValuesClause getValues();
+  org.mojo-lang.mojo.db.sql.ValuesClause getValuesClause();
   /**
-   * <code>.mojo.db.sql.ValuesClause values = 12;</code>
+   * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
    */
-  org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder getValuesOrBuilder();
+  org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder getValuesClauseOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
-   * @return Whether the subquery field is set.
+   * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
+   * @return Whether the selectStmt field is set.
    */
-  boolean hasSubquery();
+  boolean hasSelectStmt();
   /**
-   * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
-   * @return The subquery.
+   * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
+   * @return The selectStmt.
    */
-  org.mojo-lang.mojo.db.sql.SelectStmt getSubquery();
+  org.mojo-lang.mojo.db.sql.SelectStmt getSelectStmt();
   /**
-   * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
+   * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
    */
-  org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder getSubqueryOrBuilder();
+  org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder getSelectStmtOrBuilder();
 
   /**
    * <code>.mojo.db.sql.UpsertClause upsert = 15;</code>
@@ -138,4 +149,6 @@ public interface InsertStmtOrBuilder extends
    * <code>.mojo.db.sql.ReturningClause returning = 16;</code>
    */
   org.mojo-lang.mojo.db.sql.ReturningClauseOrBuilder getReturningOrBuilder();
+
+  public org.mojo-lang.mojo.db.sql.InsertStmt.ValuesCase getValuesCase();
 }

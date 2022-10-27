@@ -4,6 +4,19 @@
     "allOf": [
         {
             "$ref": "#/components/schemas/mojo.db.sql.CreateStmt"
+        },
+        {
+            "title": "mojo.db.sql.CreateTriggerStmt",
+            "type": "object",
+            "properties": {
+                "ifNotExists": {
+                    "title": "mojo.core.Bool",
+                    "type": "boolean"
+                },
+                "triggerName": {
+                    "$ref": "#/components/schemas/mojo.db.sql.TriggerName"
+                }
+            }
         }
     ]
 }

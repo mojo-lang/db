@@ -48,4 +48,25 @@ public interface CreateTriggerStmtOrBuilder extends
    * @return The implicit.
    */
   boolean getImplicit();
+
+  /**
+   * <code>bool if_not_exists = 10;</code>
+   * @return The ifNotExists.
+   */
+  boolean getIfNotExists();
+
+  /**
+   * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+   * @return Whether the triggerName field is set.
+   */
+  boolean hasTriggerName();
+  /**
+   * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+   * @return The triggerName.
+   */
+  org.mojo-lang.mojo.db.sql.TriggerName getTriggerName();
+  /**
+   * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+   */
+  org.mojo-lang.mojo.db.sql.TriggerNameOrBuilder getTriggerNameOrBuilder();
 }

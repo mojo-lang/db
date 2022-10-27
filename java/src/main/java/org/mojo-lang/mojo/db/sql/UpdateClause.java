@@ -84,19 +84,6 @@ private static final long serialVersionUID = 0L;
             implicit_ = input.readBool();
             break;
           }
-          case 82: {
-            org.mojo-lang.mojo.db.sql.TableName.Builder subBuilder = null;
-            if (tableName_ != null) {
-              subBuilder = tableName_.toBuilder();
-            }
-            tableName_ = input.readMessage(org.mojo-lang.mojo.db.sql.TableName.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(tableName_);
-              tableName_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -203,32 +190,6 @@ private static final long serialVersionUID = 0L;
     return implicit_;
   }
 
-  public static final int TABLE_NAME_FIELD_NUMBER = 10;
-  private org.mojo-lang.mojo.db.sql.TableName tableName_;
-  /**
-   * <code>.mojo.db.sql.TableName table_name = 10;</code>
-   * @return Whether the tableName field is set.
-   */
-  @java.lang.Override
-  public boolean hasTableName() {
-    return tableName_ != null;
-  }
-  /**
-   * <code>.mojo.db.sql.TableName table_name = 10;</code>
-   * @return The tableName.
-   */
-  @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.TableName getTableName() {
-    return tableName_ == null ? org.mojo-lang.mojo.db.sql.TableName.getDefaultInstance() : tableName_;
-  }
-  /**
-   * <code>.mojo.db.sql.TableName table_name = 10;</code>
-   */
-  @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.TableNameOrBuilder getTableNameOrBuilder() {
-    return getTableName();
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -255,9 +216,6 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       output.writeBool(5, implicit_);
     }
-    if (tableName_ != null) {
-      output.writeMessage(10, getTableName());
-    }
     unknownFields.writeTo(output);
   }
 
@@ -282,10 +240,6 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, implicit_);
-    }
-    if (tableName_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getTableName());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -316,11 +270,6 @@ private static final long serialVersionUID = 0L;
         != other.getKind()) return false;
     if (getImplicit()
         != other.getImplicit()) return false;
-    if (hasTableName() != other.hasTableName()) return false;
-    if (hasTableName()) {
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
-    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -346,10 +295,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IMPLICIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getImplicit());
-    if (hasTableName()) {
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
-    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -499,12 +444,6 @@ private static final long serialVersionUID = 0L;
 
       implicit_ = false;
 
-      if (tableNameBuilder_ == null) {
-        tableName_ = null;
-      } else {
-        tableName_ = null;
-        tableNameBuilder_ = null;
-      }
       return this;
     }
 
@@ -543,11 +482,6 @@ private static final long serialVersionUID = 0L;
       }
       result.kind_ = kind_;
       result.implicit_ = implicit_;
-      if (tableNameBuilder_ == null) {
-        result.tableName_ = tableName_;
-      } else {
-        result.tableName_ = tableNameBuilder_.build();
-      }
       onBuilt();
       return result;
     }
@@ -607,9 +541,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getImplicit() != false) {
         setImplicit(other.getImplicit());
-      }
-      if (other.hasTableName()) {
-        mergeTableName(other.getTableName());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -938,125 +869,6 @@ private static final long serialVersionUID = 0L;
       implicit_ = false;
       onChanged();
       return this;
-    }
-
-    private org.mojo-lang.mojo.db.sql.TableName tableName_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.TableName, org.mojo-lang.mojo.db.sql.TableName.Builder, org.mojo-lang.mojo.db.sql.TableNameOrBuilder> tableNameBuilder_;
-    /**
-     * <code>.mojo.db.sql.TableName table_name = 10;</code>
-     * @return Whether the tableName field is set.
-     */
-    public boolean hasTableName() {
-      return tableNameBuilder_ != null || tableName_ != null;
-    }
-    /**
-     * <code>.mojo.db.sql.TableName table_name = 10;</code>
-     * @return The tableName.
-     */
-    public org.mojo-lang.mojo.db.sql.TableName getTableName() {
-      if (tableNameBuilder_ == null) {
-        return tableName_ == null ? org.mojo-lang.mojo.db.sql.TableName.getDefaultInstance() : tableName_;
-      } else {
-        return tableNameBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.mojo.db.sql.TableName table_name = 10;</code>
-     */
-    public Builder setTableName(org.mojo-lang.mojo.db.sql.TableName value) {
-      if (tableNameBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        tableName_ = value;
-        onChanged();
-      } else {
-        tableNameBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.TableName table_name = 10;</code>
-     */
-    public Builder setTableName(
-        org.mojo-lang.mojo.db.sql.TableName.Builder builderForValue) {
-      if (tableNameBuilder_ == null) {
-        tableName_ = builderForValue.build();
-        onChanged();
-      } else {
-        tableNameBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.TableName table_name = 10;</code>
-     */
-    public Builder mergeTableName(org.mojo-lang.mojo.db.sql.TableName value) {
-      if (tableNameBuilder_ == null) {
-        if (tableName_ != null) {
-          tableName_ =
-            org.mojo-lang.mojo.db.sql.TableName.newBuilder(tableName_).mergeFrom(value).buildPartial();
-        } else {
-          tableName_ = value;
-        }
-        onChanged();
-      } else {
-        tableNameBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.TableName table_name = 10;</code>
-     */
-    public Builder clearTableName() {
-      if (tableNameBuilder_ == null) {
-        tableName_ = null;
-        onChanged();
-      } else {
-        tableName_ = null;
-        tableNameBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.TableName table_name = 10;</code>
-     */
-    public org.mojo-lang.mojo.db.sql.TableName.Builder getTableNameBuilder() {
-      
-      onChanged();
-      return getTableNameFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.mojo.db.sql.TableName table_name = 10;</code>
-     */
-    public org.mojo-lang.mojo.db.sql.TableNameOrBuilder getTableNameOrBuilder() {
-      if (tableNameBuilder_ != null) {
-        return tableNameBuilder_.getMessageOrBuilder();
-      } else {
-        return tableName_ == null ?
-            org.mojo-lang.mojo.db.sql.TableName.getDefaultInstance() : tableName_;
-      }
-    }
-    /**
-     * <code>.mojo.db.sql.TableName table_name = 10;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.TableName, org.mojo-lang.mojo.db.sql.TableName.Builder, org.mojo-lang.mojo.db.sql.TableNameOrBuilder> 
-        getTableNameFieldBuilder() {
-      if (tableNameBuilder_ == null) {
-        tableNameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.mojo-lang.mojo.db.sql.TableName, org.mojo-lang.mojo.db.sql.TableName.Builder, org.mojo-lang.mojo.db.sql.TableNameOrBuilder>(
-                getTableName(),
-                getParentForChildren(),
-                isClean());
-        tableName_ = null;
-      }
-      return tableNameBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

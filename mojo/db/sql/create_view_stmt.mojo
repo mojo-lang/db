@@ -13,4 +13,9 @@
 // limitations under the License.
 
 type CreateViewStmt: CreateStmt {
+    if_not_exists: Bool @10
+    view_name: ViewName @11
+
+    columns: [String] @13
+    query: SelectStmt @14 @required
 }

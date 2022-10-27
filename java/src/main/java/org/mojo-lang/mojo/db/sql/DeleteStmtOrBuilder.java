@@ -65,19 +65,19 @@ public interface DeleteStmtOrBuilder extends
   org.mojo-lang.mojo.db.sql.WithClauseOrBuilder getWithOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.FromClause from = 11;</code>
-   * @return Whether the from field is set.
+   * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
+   * @return Whether the tableName field is set.
    */
-  boolean hasFrom();
+  boolean hasTableName();
   /**
-   * <code>.mojo.db.sql.FromClause from = 11;</code>
-   * @return The from.
+   * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
+   * @return The tableName.
    */
-  org.mojo-lang.mojo.db.sql.FromClause getFrom();
+  org.mojo-lang.mojo.db.sql.QualifiedTableName getTableName();
   /**
-   * <code>.mojo.db.sql.FromClause from = 11;</code>
+   * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
    */
-  org.mojo-lang.mojo.db.sql.FromClauseOrBuilder getFromOrBuilder();
+  org.mojo-lang.mojo.db.sql.QualifiedTableNameOrBuilder getTableNameOrBuilder();
 
   /**
    * <code>.mojo.db.sql.WhereClause where = 12;</code>
@@ -108,34 +108,4 @@ public interface DeleteStmtOrBuilder extends
    * <code>.mojo.db.sql.ReturningClause returning = 15;</code>
    */
   org.mojo-lang.mojo.db.sql.ReturningClauseOrBuilder getReturningOrBuilder();
-
-  /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-   * @return Whether the orderBy field is set.
-   */
-  boolean hasOrderBy();
-  /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-   * @return The orderBy.
-   */
-  org.mojo-lang.mojo.db.sql.OrderByClause getOrderBy();
-  /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-   */
-  org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder getOrderByOrBuilder();
-
-  /**
-   * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-   * @return Whether the limit field is set.
-   */
-  boolean hasLimit();
-  /**
-   * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-   * @return The limit.
-   */
-  org.mojo-lang.mojo.db.sql.LimitClause getLimit();
-  /**
-   * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-   */
-  org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder getLimitOrBuilder();
 }

@@ -342,6 +342,20 @@ private static final long serialVersionUID = 0L;
             statementCase_ = 27;
             break;
           }
+          case 242: {
+            org.mojo-lang.mojo.db.sql.EndStmt.Builder subBuilder = null;
+            if (statementCase_ == 30) {
+              subBuilder = ((org.mojo-lang.mojo.db.sql.EndStmt) statement_).toBuilder();
+            }
+            statement_ =
+                input.readMessage(org.mojo-lang.mojo.db.sql.EndStmt.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((org.mojo-lang.mojo.db.sql.EndStmt) statement_);
+              statement_ = subBuilder.buildPartial();
+            }
+            statementCase_ = 30;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -392,6 +406,7 @@ private static final long serialVersionUID = 0L;
     DELETE_STMT_VAL(17),
     DETACH_STMT_VAL(18),
     DROP_STMT_VAL(19),
+    END_STMT_VAL(30),
     INSERT_STMT_VAL(20),
     PRAGMA_STMT_VAL(21),
     REINDEX_STMT_VAL(22),
@@ -430,6 +445,7 @@ private static final long serialVersionUID = 0L;
         case 17: return DELETE_STMT_VAL;
         case 18: return DETACH_STMT_VAL;
         case 19: return DROP_STMT_VAL;
+        case 30: return END_STMT_VAL;
         case 20: return INSERT_STMT_VAL;
         case 21: return PRAGMA_STMT_VAL;
         case 22: return REINDEX_STMT_VAL;
@@ -856,6 +872,37 @@ private static final long serialVersionUID = 0L;
     return org.mojo-lang.mojo.db.sql.DropStmt.getDefaultInstance();
   }
 
+  public static final int END_STMT_VAL_FIELD_NUMBER = 30;
+  /**
+   * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+   * @return Whether the endStmtVal field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndStmtVal() {
+    return statementCase_ == 30;
+  }
+  /**
+   * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+   * @return The endStmtVal.
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.EndStmt getEndStmtVal() {
+    if (statementCase_ == 30) {
+       return (org.mojo-lang.mojo.db.sql.EndStmt) statement_;
+    }
+    return org.mojo-lang.mojo.db.sql.EndStmt.getDefaultInstance();
+  }
+  /**
+   * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.EndStmtOrBuilder getEndStmtValOrBuilder() {
+    if (statementCase_ == 30) {
+       return (org.mojo-lang.mojo.db.sql.EndStmt) statement_;
+    }
+    return org.mojo-lang.mojo.db.sql.EndStmt.getDefaultInstance();
+  }
+
   public static final int INSERT_STMT_VAL_FIELD_NUMBER = 20;
   /**
    * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
@@ -1181,6 +1228,9 @@ private static final long serialVersionUID = 0L;
     if (statementCase_ == 27) {
       output.writeMessage(27, (org.mojo-lang.mojo.db.sql.VacuumStmt) statement_);
     }
+    if (statementCase_ == 30) {
+      output.writeMessage(30, (org.mojo-lang.mojo.db.sql.EndStmt) statement_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1274,6 +1324,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(27, (org.mojo-lang.mojo.db.sql.VacuumStmt) statement_);
     }
+    if (statementCase_ == 30) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(30, (org.mojo-lang.mojo.db.sql.EndStmt) statement_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1342,6 +1396,10 @@ private static final long serialVersionUID = 0L;
       case 19:
         if (!getDropStmtVal()
             .equals(other.getDropStmtVal())) return false;
+        break;
+      case 30:
+        if (!getEndStmtVal()
+            .equals(other.getEndStmtVal())) return false;
         break;
       case 20:
         if (!getInsertStmtVal()
@@ -1441,6 +1499,10 @@ private static final long serialVersionUID = 0L;
       case 19:
         hash = (37 * hash) + DROP_STMT_VAL_FIELD_NUMBER;
         hash = (53 * hash) + getDropStmtVal().hashCode();
+        break;
+      case 30:
+        hash = (37 * hash) + END_STMT_VAL_FIELD_NUMBER;
+        hash = (53 * hash) + getEndStmtVal().hashCode();
         break;
       case 20:
         hash = (37 * hash) + INSERT_STMT_VAL_FIELD_NUMBER;
@@ -1729,6 +1791,13 @@ private static final long serialVersionUID = 0L;
           result.statement_ = dropStmtValBuilder_.build();
         }
       }
+      if (statementCase_ == 30) {
+        if (endStmtValBuilder_ == null) {
+          result.statement_ = statement_;
+        } else {
+          result.statement_ = endStmtValBuilder_.build();
+        }
+      }
       if (statementCase_ == 20) {
         if (insertStmtValBuilder_ == null) {
           result.statement_ = statement_;
@@ -1885,6 +1954,10 @@ private static final long serialVersionUID = 0L;
         }
         case DROP_STMT_VAL: {
           mergeDropStmtVal(other.getDropStmtVal());
+          break;
+        }
+        case END_STMT_VAL: {
+          mergeEndStmtVal(other.getEndStmtVal());
           break;
         }
         case INSERT_STMT_VAL: {
@@ -3798,6 +3871,147 @@ private static final long serialVersionUID = 0L;
       statementCase_ = 19;
       onChanged();;
       return dropStmtValBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.EndStmt, org.mojo-lang.mojo.db.sql.EndStmt.Builder, org.mojo-lang.mojo.db.sql.EndStmtOrBuilder> endStmtValBuilder_;
+    /**
+     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     * @return Whether the endStmtVal field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndStmtVal() {
+      return statementCase_ == 30;
+    }
+    /**
+     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     * @return The endStmtVal.
+     */
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.EndStmt getEndStmtVal() {
+      if (endStmtValBuilder_ == null) {
+        if (statementCase_ == 30) {
+          return (org.mojo-lang.mojo.db.sql.EndStmt) statement_;
+        }
+        return org.mojo-lang.mojo.db.sql.EndStmt.getDefaultInstance();
+      } else {
+        if (statementCase_ == 30) {
+          return endStmtValBuilder_.getMessage();
+        }
+        return org.mojo-lang.mojo.db.sql.EndStmt.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     */
+    public Builder setEndStmtVal(org.mojo-lang.mojo.db.sql.EndStmt value) {
+      if (endStmtValBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        statement_ = value;
+        onChanged();
+      } else {
+        endStmtValBuilder_.setMessage(value);
+      }
+      statementCase_ = 30;
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     */
+    public Builder setEndStmtVal(
+        org.mojo-lang.mojo.db.sql.EndStmt.Builder builderForValue) {
+      if (endStmtValBuilder_ == null) {
+        statement_ = builderForValue.build();
+        onChanged();
+      } else {
+        endStmtValBuilder_.setMessage(builderForValue.build());
+      }
+      statementCase_ = 30;
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     */
+    public Builder mergeEndStmtVal(org.mojo-lang.mojo.db.sql.EndStmt value) {
+      if (endStmtValBuilder_ == null) {
+        if (statementCase_ == 30 &&
+            statement_ != org.mojo-lang.mojo.db.sql.EndStmt.getDefaultInstance()) {
+          statement_ = org.mojo-lang.mojo.db.sql.EndStmt.newBuilder((org.mojo-lang.mojo.db.sql.EndStmt) statement_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          statement_ = value;
+        }
+        onChanged();
+      } else {
+        if (statementCase_ == 30) {
+          endStmtValBuilder_.mergeFrom(value);
+        }
+        endStmtValBuilder_.setMessage(value);
+      }
+      statementCase_ = 30;
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     */
+    public Builder clearEndStmtVal() {
+      if (endStmtValBuilder_ == null) {
+        if (statementCase_ == 30) {
+          statementCase_ = 0;
+          statement_ = null;
+          onChanged();
+        }
+      } else {
+        if (statementCase_ == 30) {
+          statementCase_ = 0;
+          statement_ = null;
+        }
+        endStmtValBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.EndStmt.Builder getEndStmtValBuilder() {
+      return getEndStmtValFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     */
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.EndStmtOrBuilder getEndStmtValOrBuilder() {
+      if ((statementCase_ == 30) && (endStmtValBuilder_ != null)) {
+        return endStmtValBuilder_.getMessageOrBuilder();
+      } else {
+        if (statementCase_ == 30) {
+          return (org.mojo-lang.mojo.db.sql.EndStmt) statement_;
+        }
+        return org.mojo-lang.mojo.db.sql.EndStmt.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.EndStmt, org.mojo-lang.mojo.db.sql.EndStmt.Builder, org.mojo-lang.mojo.db.sql.EndStmtOrBuilder> 
+        getEndStmtValFieldBuilder() {
+      if (endStmtValBuilder_ == null) {
+        if (!(statementCase_ == 30)) {
+          statement_ = org.mojo-lang.mojo.db.sql.EndStmt.getDefaultInstance();
+        }
+        endStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojo-lang.mojo.db.sql.EndStmt, org.mojo-lang.mojo.db.sql.EndStmt.Builder, org.mojo-lang.mojo.db.sql.EndStmtOrBuilder>(
+                (org.mojo-lang.mojo.db.sql.EndStmt) statement_,
+                getParentForChildren(),
+                isClean());
+        statement_ = null;
+      }
+      statementCase_ = 30;
+      onChanged();;
+      return endStmtValBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

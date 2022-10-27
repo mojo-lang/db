@@ -40,45 +40,47 @@ public final class StatementProto {
       "/sql/create_virtual_table_stmt.proto\032\035mo" +
       "jo/db/sql/delete_stmt.proto\032\035mojo/db/sql" +
       "/detach_stmt.proto\032\033mojo/db/sql/drop_stm" +
-      "t.proto\032\035mojo/db/sql/insert_stmt.proto\032\035" +
-      "mojo/db/sql/pragma_stmt.proto\032\036mojo/db/s" +
-      "ql/reindex_stmt.proto\032\036mojo/db/sql/relea" +
-      "se_stmt.proto\032\037mojo/db/sql/rollback_stmt" +
-      ".proto\032\025mojo/db/sql/sql.proto\032\035mojo/db/s" +
-      "ql/update_stmt.proto\032\035mojo/db/sql/vacuum" +
-      "_stmt.proto\"\257\t\n\tStatement\022;\n\024alter_table" +
-      "_stmt_val\030\001 \001(\0132\033.mojo.db.sql.AlterTable" +
-      "StmtH\000\0222\n\017analyze_smt_val\030\002 \001(\0132\027.mojo.d" +
-      "b.sql.AnalyzeSmtH\000\0222\n\017attach_stmt_val\030\003 " +
-      "\001(\0132\027.mojo.db.sql.AttachStmtH\000\0220\n\016begin_" +
-      "stmt_val\030\005 \001(\0132\026.mojo.db.sql.BeginStmtH\000" +
-      "\0222\n\017commit_stmt_val\030\006 \001(\0132\027.mojo.db.sql." +
-      "CommitStmtH\000\022=\n\025create_index_stmt_val\030\n " +
-      "\001(\0132\034.mojo.db.sql.CreateIndexStmtH\000\022=\n\025c" +
-      "reate_table_stmt_val\030\013 \001(\0132\034.mojo.db.sql" +
-      ".CreateTableStmtH\000\022A\n\027create_trigger_stm" +
-      "t_val\030\014 \001(\0132\036.mojo.db.sql.CreateTriggerS" +
-      "tmtH\000\022;\n\024create_view_stmt_val\030\r \001(\0132\033.mo" +
-      "jo.db.sql.CreateViewStmtH\000\022L\n\035create_vir" +
-      "tual_table_stmt_val\030\016 \001(\0132#.mojo.db.sql." +
-      "CreateVirtualTableStmtH\000\0222\n\017delete_stmt_" +
-      "val\030\021 \001(\0132\027.mojo.db.sql.DeleteStmtH\000\0222\n\017" +
-      "detach_stmt_val\030\022 \001(\0132\027.mojo.db.sql.Deta" +
-      "chStmtH\000\022.\n\rdrop_stmt_val\030\023 \001(\0132\025.mojo.d" +
-      "b.sql.DropStmtH\000\0222\n\017insert_stmt_val\030\024 \001(" +
-      "\0132\027.mojo.db.sql.InsertStmtH\000\0222\n\017pragma_s" +
-      "tmt_val\030\025 \001(\0132\027.mojo.db.sql.PragmaStmtH\000" +
-      "\0224\n\020reindex_stmt_val\030\026 \001(\0132\030.mojo.db.sql" +
-      ".ReindexStmtH\000\0224\n\020release_stmt_val\030\027 \001(\013" +
-      "2\030.mojo.db.sql.ReleaseStmtH\000\0226\n\021rollback" +
-      "_stmt_val\030\030 \001(\0132\031.mojo.db.sql.RollbackSt" +
-      "mtH\000\0222\n\017select_stmt_val\030\031 \001(\0132\027.mojo.db." +
-      "sql.SelectStmtH\000\0222\n\017update_stmt_val\030\032 \001(" +
-      "\0132\027.mojo.db.sql.UpdateStmtH\000\0222\n\017vacuum_s" +
-      "tmt_val\030\033 \001(\0132\027.mojo.db.sql.VacuumStmtH\000" +
-      "B\013\n\tstatementB]\n\031org.mojo-lang.mojo.db.s" +
-      "qlB\016StatementProtoP\001Z.github.com/mojo-la" +
-      "ng/db/go/pkg/mojo/db/sql;sqlb\006proto3"
+      "t.proto\032\032mojo/db/sql/end_stmt.proto\032\035moj" +
+      "o/db/sql/insert_stmt.proto\032\035mojo/db/sql/" +
+      "pragma_stmt.proto\032\036mojo/db/sql/reindex_s" +
+      "tmt.proto\032\036mojo/db/sql/release_stmt.prot" +
+      "o\032\037mojo/db/sql/rollback_stmt.proto\032\025mojo" +
+      "/db/sql/sql.proto\032\035mojo/db/sql/update_st" +
+      "mt.proto\032\035mojo/db/sql/vacuum_stmt.proto\"" +
+      "\335\t\n\tStatement\022;\n\024alter_table_stmt_val\030\001 " +
+      "\001(\0132\033.mojo.db.sql.AlterTableStmtH\000\0222\n\017an" +
+      "alyze_smt_val\030\002 \001(\0132\027.mojo.db.sql.Analyz" +
+      "eSmtH\000\0222\n\017attach_stmt_val\030\003 \001(\0132\027.mojo.d" +
+      "b.sql.AttachStmtH\000\0220\n\016begin_stmt_val\030\005 \001" +
+      "(\0132\026.mojo.db.sql.BeginStmtH\000\0222\n\017commit_s" +
+      "tmt_val\030\006 \001(\0132\027.mojo.db.sql.CommitStmtH\000" +
+      "\022=\n\025create_index_stmt_val\030\n \001(\0132\034.mojo.d" +
+      "b.sql.CreateIndexStmtH\000\022=\n\025create_table_" +
+      "stmt_val\030\013 \001(\0132\034.mojo.db.sql.CreateTable" +
+      "StmtH\000\022A\n\027create_trigger_stmt_val\030\014 \001(\0132" +
+      "\036.mojo.db.sql.CreateTriggerStmtH\000\022;\n\024cre" +
+      "ate_view_stmt_val\030\r \001(\0132\033.mojo.db.sql.Cr" +
+      "eateViewStmtH\000\022L\n\035create_virtual_table_s" +
+      "tmt_val\030\016 \001(\0132#.mojo.db.sql.CreateVirtua" +
+      "lTableStmtH\000\0222\n\017delete_stmt_val\030\021 \001(\0132\027." +
+      "mojo.db.sql.DeleteStmtH\000\0222\n\017detach_stmt_" +
+      "val\030\022 \001(\0132\027.mojo.db.sql.DetachStmtH\000\022.\n\r" +
+      "drop_stmt_val\030\023 \001(\0132\025.mojo.db.sql.DropSt" +
+      "mtH\000\022,\n\014end_stmt_val\030\036 \001(\0132\024.mojo.db.sql" +
+      ".EndStmtH\000\0222\n\017insert_stmt_val\030\024 \001(\0132\027.mo" +
+      "jo.db.sql.InsertStmtH\000\0222\n\017pragma_stmt_va" +
+      "l\030\025 \001(\0132\027.mojo.db.sql.PragmaStmtH\000\0224\n\020re" +
+      "index_stmt_val\030\026 \001(\0132\030.mojo.db.sql.Reind" +
+      "exStmtH\000\0224\n\020release_stmt_val\030\027 \001(\0132\030.moj" +
+      "o.db.sql.ReleaseStmtH\000\0226\n\021rollback_stmt_" +
+      "val\030\030 \001(\0132\031.mojo.db.sql.RollbackStmtH\000\0222" +
+      "\n\017select_stmt_val\030\031 \001(\0132\027.mojo.db.sql.Se" +
+      "lectStmtH\000\0222\n\017update_stmt_val\030\032 \001(\0132\027.mo" +
+      "jo.db.sql.UpdateStmtH\000\0222\n\017vacuum_stmt_va" +
+      "l\030\033 \001(\0132\027.mojo.db.sql.VacuumStmtH\000B\013\n\tst" +
+      "atementB]\n\031org.mojo-lang.mojo.db.sqlB\016St" +
+      "atementProtoP\001Z.github.com/mojo-lang/db/" +
+      "go/pkg/mojo/db/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -96,6 +98,7 @@ public final class StatementProto {
           org.mojo-lang.mojo.db.sql.DeleteStmtProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.DetachStmtProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.DropStmtProto.getDescriptor(),
+          org.mojo-lang.mojo.db.sql.EndStmtProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.InsertStmtProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.PragmaStmtProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.ReindexStmtProto.getDescriptor(),
@@ -110,7 +113,7 @@ public final class StatementProto {
     internal_static_mojo_db_sql_Statement_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_Statement_descriptor,
-        new java.lang.String[] { "AlterTableStmtVal", "AnalyzeSmtVal", "AttachStmtVal", "BeginStmtVal", "CommitStmtVal", "CreateIndexStmtVal", "CreateTableStmtVal", "CreateTriggerStmtVal", "CreateViewStmtVal", "CreateVirtualTableStmtVal", "DeleteStmtVal", "DetachStmtVal", "DropStmtVal", "InsertStmtVal", "PragmaStmtVal", "ReindexStmtVal", "ReleaseStmtVal", "RollbackStmtVal", "SelectStmtVal", "UpdateStmtVal", "VacuumStmtVal", "Statement", });
+        new java.lang.String[] { "AlterTableStmtVal", "AnalyzeSmtVal", "AttachStmtVal", "BeginStmtVal", "CommitStmtVal", "CreateIndexStmtVal", "CreateTableStmtVal", "CreateTriggerStmtVal", "CreateViewStmtVal", "CreateVirtualTableStmtVal", "DeleteStmtVal", "DetachStmtVal", "DropStmtVal", "EndStmtVal", "InsertStmtVal", "PragmaStmtVal", "ReindexStmtVal", "ReleaseStmtVal", "RollbackStmtVal", "SelectStmtVal", "UpdateStmtVal", "VacuumStmtVal", "Statement", });
     org.mojo-lang.mojo.db.sql.AlterTableStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.AnalyzeStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.AttachStmtProto.getDescriptor();
@@ -124,6 +127,7 @@ public final class StatementProto {
     org.mojo-lang.mojo.db.sql.DeleteStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.DetachStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.DropStmtProto.getDescriptor();
+    org.mojo-lang.mojo.db.sql.EndStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.InsertStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.PragmaStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.ReindexStmtProto.getDescriptor();

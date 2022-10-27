@@ -8,25 +8,49 @@ public interface SourceFileOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <code>string full_name = 2;</code>
+   * @return The fullName.
+   */
+  java.lang.String getFullName();
+  /**
+   * <code>string full_name = 2;</code>
+   * @return The bytes for fullName.
+   */
+  com.google.protobuf.ByteString
+      getFullNameBytes();
+
+  /**
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   java.util.List<org.mojo-lang.mojo.db.sql.Statement> 
       getStatementsList();
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   org.mojo-lang.mojo.db.sql.Statement getStatements(int index);
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   int getStatementsCount();
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   java.util.List<? extends org.mojo-lang.mojo.db.sql.StatementOrBuilder> 
       getStatementsOrBuilderList();
   /**
-   * <code>repeated .mojo.db.sql.Statement statements = 10;</code>
+   * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
    */
   org.mojo-lang.mojo.db.sql.StatementOrBuilder getStatementsOrBuilder(
       int index);

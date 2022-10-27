@@ -13,12 +13,23 @@
 // limitations under the License.
 
 type UpdateStmt: DataManipulationStmt {
+    enum Type {
+        update @0
+        update_or_replace  @5
+        update_or_rollback @6
+        update_or_abort    @7
+        update_or_fail     @8
+        update_or_ignore   @9
+    }
+
     with: WithClause @10
-    update: UpdateClause @11
 
-    set: SetClause @12
-    from: FromClause @13
-    where: WhereClause @14
+    type: Type @11
+    table_name: QualifiedTableName @12
 
-    returning: ReturningClause @15
+    set: SetClause @13
+    from: FromClause @14
+    where: WhereClause @15
+
+    returning: ReturningClause @16
 }

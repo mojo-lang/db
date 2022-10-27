@@ -13,4 +13,6 @@
 // limitations under the License.
 
 type CreateTriggerStmt: CreateStmt {
+    if_not_exists: Bool @10
+    trigger_name: TriggerName @11
 }

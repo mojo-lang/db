@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private InsertStmt() {
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -97,7 +98,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 90: {
+          case 88: {
+            int rawValue = input.readEnum();
+
+            type_ = rawValue;
+            break;
+          }
+          case 98: {
             org.mojo-lang.mojo.db.sql.IntoClause.Builder subBuilder = null;
             if (into_ != null) {
               subBuilder = into_.toBuilder();
@@ -110,30 +117,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 98: {
+          case 106: {
             org.mojo-lang.mojo.db.sql.ValuesClause.Builder subBuilder = null;
-            if (values_ != null) {
-              subBuilder = values_.toBuilder();
+            if (valuesCase_ == 13) {
+              subBuilder = ((org.mojo-lang.mojo.db.sql.ValuesClause) values_).toBuilder();
             }
-            values_ = input.readMessage(org.mojo-lang.mojo.db.sql.ValuesClause.parser(), extensionRegistry);
+            values_ =
+                input.readMessage(org.mojo-lang.mojo.db.sql.ValuesClause.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(values_);
+              subBuilder.mergeFrom((org.mojo-lang.mojo.db.sql.ValuesClause) values_);
               values_ = subBuilder.buildPartial();
             }
-
+            valuesCase_ = 13;
             break;
           }
-          case 106: {
+          case 114: {
             org.mojo-lang.mojo.db.sql.SelectStmt.Builder subBuilder = null;
-            if (subquery_ != null) {
-              subBuilder = subquery_.toBuilder();
+            if (valuesCase_ == 14) {
+              subBuilder = ((org.mojo-lang.mojo.db.sql.SelectStmt) values_).toBuilder();
             }
-            subquery_ = input.readMessage(org.mojo-lang.mojo.db.sql.SelectStmt.parser(), extensionRegistry);
+            values_ =
+                input.readMessage(org.mojo-lang.mojo.db.sql.SelectStmt.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(subquery_);
-              subquery_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom((org.mojo-lang.mojo.db.sql.SelectStmt) values_);
+              values_ = subBuilder.buildPartial();
             }
-
+            valuesCase_ = 14;
             break;
           }
           case 122: {
@@ -192,6 +201,200 @@ private static final long serialVersionUID = 0L;
     return org.mojo-lang.mojo.db.sql.InsertStmtProto.internal_static_mojo_db_sql_InsertStmt_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             org.mojo-lang.mojo.db.sql.InsertStmt.class, org.mojo-lang.mojo.db.sql.InsertStmt.Builder.class);
+  }
+
+  /**
+   * Protobuf enum {@code mojo.db.sql.InsertStmt.Type}
+   */
+  public enum Type
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>TYPE_INSERT = 0;</code>
+     */
+    TYPE_INSERT(0),
+    /**
+     * <code>TYPE_REPLACE = 1;</code>
+     */
+    TYPE_REPLACE(1),
+    /**
+     * <code>TYPE_INSERT_OR_REPLACE = 5;</code>
+     */
+    TYPE_INSERT_OR_REPLACE(5),
+    /**
+     * <code>TYPE_INSERT_OR_ROLLBACK = 6;</code>
+     */
+    TYPE_INSERT_OR_ROLLBACK(6),
+    /**
+     * <code>TYPE_INSERT_OR_ABORT = 7;</code>
+     */
+    TYPE_INSERT_OR_ABORT(7),
+    /**
+     * <code>TYPE_INSERT_OR_FAIL = 8;</code>
+     */
+    TYPE_INSERT_OR_FAIL(8),
+    /**
+     * <code>TYPE_INSERT_OR_IGNORE = 9;</code>
+     */
+    TYPE_INSERT_OR_IGNORE(9),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>TYPE_INSERT = 0;</code>
+     */
+    public static final int TYPE_INSERT_VALUE = 0;
+    /**
+     * <code>TYPE_REPLACE = 1;</code>
+     */
+    public static final int TYPE_REPLACE_VALUE = 1;
+    /**
+     * <code>TYPE_INSERT_OR_REPLACE = 5;</code>
+     */
+    public static final int TYPE_INSERT_OR_REPLACE_VALUE = 5;
+    /**
+     * <code>TYPE_INSERT_OR_ROLLBACK = 6;</code>
+     */
+    public static final int TYPE_INSERT_OR_ROLLBACK_VALUE = 6;
+    /**
+     * <code>TYPE_INSERT_OR_ABORT = 7;</code>
+     */
+    public static final int TYPE_INSERT_OR_ABORT_VALUE = 7;
+    /**
+     * <code>TYPE_INSERT_OR_FAIL = 8;</code>
+     */
+    public static final int TYPE_INSERT_OR_FAIL_VALUE = 8;
+    /**
+     * <code>TYPE_INSERT_OR_IGNORE = 9;</code>
+     */
+    public static final int TYPE_INSERT_OR_IGNORE_VALUE = 9;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0: return TYPE_INSERT;
+        case 1: return TYPE_REPLACE;
+        case 5: return TYPE_INSERT_OR_REPLACE;
+        case 6: return TYPE_INSERT_OR_ROLLBACK;
+        case 7: return TYPE_INSERT_OR_ABORT;
+        case 8: return TYPE_INSERT_OR_FAIL;
+        case 9: return TYPE_INSERT_OR_IGNORE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Type> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.mojo-lang.mojo.db.sql.InsertStmt.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mojo.db.sql.InsertStmt.Type)
+  }
+
+  private int valuesCase_ = 0;
+  private java.lang.Object values_;
+  public enum ValuesCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    VALUES_CLAUSE(13),
+    SELECT_STMT(14),
+    VALUES_NOT_SET(0);
+    private final int value;
+    private ValuesCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ValuesCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ValuesCase forNumber(int value) {
+      switch (value) {
+        case 13: return VALUES_CLAUSE;
+        case 14: return SELECT_STMT;
+        case 0: return VALUES_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ValuesCase
+  getValuesCase() {
+    return ValuesCase.forNumber(
+        valuesCase_);
   }
 
   public static final int START_POSITION_FIELD_NUMBER = 1;
@@ -294,10 +497,29 @@ private static final long serialVersionUID = 0L;
     return getWith();
   }
 
-  public static final int INTO_FIELD_NUMBER = 11;
+  public static final int TYPE_FIELD_NUMBER = 11;
+  private int type_;
+  /**
+   * <code>.mojo.db.sql.InsertStmt.Type type = 11;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override public int getTypeValue() {
+    return type_;
+  }
+  /**
+   * <code>.mojo.db.sql.InsertStmt.Type type = 11;</code>
+   * @return The type.
+   */
+  @java.lang.Override public org.mojo-lang.mojo.db.sql.InsertStmt.Type getType() {
+    @SuppressWarnings("deprecation")
+    org.mojo-lang.mojo.db.sql.InsertStmt.Type result = org.mojo-lang.mojo.db.sql.InsertStmt.Type.valueOf(type_);
+    return result == null ? org.mojo-lang.mojo.db.sql.InsertStmt.Type.UNRECOGNIZED : result;
+  }
+
+  public static final int INTO_FIELD_NUMBER = 12;
   private org.mojo-lang.mojo.db.sql.IntoClause into_;
   /**
-   * <code>.mojo.db.sql.IntoClause into = 11;</code>
+   * <code>.mojo.db.sql.IntoClause into = 12;</code>
    * @return Whether the into field is set.
    */
   @java.lang.Override
@@ -305,7 +527,7 @@ private static final long serialVersionUID = 0L;
     return into_ != null;
   }
   /**
-   * <code>.mojo.db.sql.IntoClause into = 11;</code>
+   * <code>.mojo.db.sql.IntoClause into = 12;</code>
    * @return The into.
    */
   @java.lang.Override
@@ -313,63 +535,73 @@ private static final long serialVersionUID = 0L;
     return into_ == null ? org.mojo-lang.mojo.db.sql.IntoClause.getDefaultInstance() : into_;
   }
   /**
-   * <code>.mojo.db.sql.IntoClause into = 11;</code>
+   * <code>.mojo.db.sql.IntoClause into = 12;</code>
    */
   @java.lang.Override
   public org.mojo-lang.mojo.db.sql.IntoClauseOrBuilder getIntoOrBuilder() {
     return getInto();
   }
 
-  public static final int VALUES_FIELD_NUMBER = 12;
-  private org.mojo-lang.mojo.db.sql.ValuesClause values_;
+  public static final int VALUES_CLAUSE_FIELD_NUMBER = 13;
   /**
-   * <code>.mojo.db.sql.ValuesClause values = 12;</code>
-   * @return Whether the values field is set.
+   * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
+   * @return Whether the valuesClause field is set.
    */
   @java.lang.Override
-  public boolean hasValues() {
-    return values_ != null;
+  public boolean hasValuesClause() {
+    return valuesCase_ == 13;
   }
   /**
-   * <code>.mojo.db.sql.ValuesClause values = 12;</code>
-   * @return The values.
+   * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
+   * @return The valuesClause.
    */
   @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.ValuesClause getValues() {
-    return values_ == null ? org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance() : values_;
+  public org.mojo-lang.mojo.db.sql.ValuesClause getValuesClause() {
+    if (valuesCase_ == 13) {
+       return (org.mojo-lang.mojo.db.sql.ValuesClause) values_;
+    }
+    return org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.ValuesClause values = 12;</code>
+   * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
    */
   @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder getValuesOrBuilder() {
-    return getValues();
+  public org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder getValuesClauseOrBuilder() {
+    if (valuesCase_ == 13) {
+       return (org.mojo-lang.mojo.db.sql.ValuesClause) values_;
+    }
+    return org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance();
   }
 
-  public static final int SUBQUERY_FIELD_NUMBER = 13;
-  private org.mojo-lang.mojo.db.sql.SelectStmt subquery_;
+  public static final int SELECT_STMT_FIELD_NUMBER = 14;
   /**
-   * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
-   * @return Whether the subquery field is set.
+   * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
+   * @return Whether the selectStmt field is set.
    */
   @java.lang.Override
-  public boolean hasSubquery() {
-    return subquery_ != null;
+  public boolean hasSelectStmt() {
+    return valuesCase_ == 14;
   }
   /**
-   * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
-   * @return The subquery.
+   * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
+   * @return The selectStmt.
    */
   @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.SelectStmt getSubquery() {
-    return subquery_ == null ? org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance() : subquery_;
+  public org.mojo-lang.mojo.db.sql.SelectStmt getSelectStmt() {
+    if (valuesCase_ == 14) {
+       return (org.mojo-lang.mojo.db.sql.SelectStmt) values_;
+    }
+    return org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
+   * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
    */
   @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder getSubqueryOrBuilder() {
-    return getSubquery();
+  public org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder getSelectStmtOrBuilder() {
+    if (valuesCase_ == 14) {
+       return (org.mojo-lang.mojo.db.sql.SelectStmt) values_;
+    }
+    return org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance();
   }
 
   public static final int UPSERT_FIELD_NUMBER = 15;
@@ -453,14 +685,17 @@ private static final long serialVersionUID = 0L;
     if (with_ != null) {
       output.writeMessage(10, getWith());
     }
+    if (type_ != org.mojo-lang.mojo.db.sql.InsertStmt.Type.TYPE_INSERT.getNumber()) {
+      output.writeEnum(11, type_);
+    }
     if (into_ != null) {
-      output.writeMessage(11, getInto());
+      output.writeMessage(12, getInto());
     }
-    if (values_ != null) {
-      output.writeMessage(12, getValues());
+    if (valuesCase_ == 13) {
+      output.writeMessage(13, (org.mojo-lang.mojo.db.sql.ValuesClause) values_);
     }
-    if (subquery_ != null) {
-      output.writeMessage(13, getSubquery());
+    if (valuesCase_ == 14) {
+      output.writeMessage(14, (org.mojo-lang.mojo.db.sql.SelectStmt) values_);
     }
     if (upsert_ != null) {
       output.writeMessage(15, getUpsert());
@@ -497,17 +732,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getWith());
     }
+    if (type_ != org.mojo-lang.mojo.db.sql.InsertStmt.Type.TYPE_INSERT.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(11, type_);
+    }
     if (into_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getInto());
+        .computeMessageSize(12, getInto());
     }
-    if (values_ != null) {
+    if (valuesCase_ == 13) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getValues());
+        .computeMessageSize(13, (org.mojo-lang.mojo.db.sql.ValuesClause) values_);
     }
-    if (subquery_ != null) {
+    if (valuesCase_ == 14) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getSubquery());
+        .computeMessageSize(14, (org.mojo-lang.mojo.db.sql.SelectStmt) values_);
     }
     if (upsert_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -551,20 +790,11 @@ private static final long serialVersionUID = 0L;
       if (!getWith()
           .equals(other.getWith())) return false;
     }
+    if (type_ != other.type_) return false;
     if (hasInto() != other.hasInto()) return false;
     if (hasInto()) {
       if (!getInto()
           .equals(other.getInto())) return false;
-    }
-    if (hasValues() != other.hasValues()) return false;
-    if (hasValues()) {
-      if (!getValues()
-          .equals(other.getValues())) return false;
-    }
-    if (hasSubquery() != other.hasSubquery()) return false;
-    if (hasSubquery()) {
-      if (!getSubquery()
-          .equals(other.getSubquery())) return false;
     }
     if (hasUpsert() != other.hasUpsert()) return false;
     if (hasUpsert()) {
@@ -575,6 +805,19 @@ private static final long serialVersionUID = 0L;
     if (hasReturning()) {
       if (!getReturning()
           .equals(other.getReturning())) return false;
+    }
+    if (!getValuesCase().equals(other.getValuesCase())) return false;
+    switch (valuesCase_) {
+      case 13:
+        if (!getValuesClause()
+            .equals(other.getValuesClause())) return false;
+        break;
+      case 14:
+        if (!getSelectStmt()
+            .equals(other.getSelectStmt())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -605,17 +848,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WITH_FIELD_NUMBER;
       hash = (53 * hash) + getWith().hashCode();
     }
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     if (hasInto()) {
       hash = (37 * hash) + INTO_FIELD_NUMBER;
       hash = (53 * hash) + getInto().hashCode();
-    }
-    if (hasValues()) {
-      hash = (37 * hash) + VALUES_FIELD_NUMBER;
-      hash = (53 * hash) + getValues().hashCode();
-    }
-    if (hasSubquery()) {
-      hash = (37 * hash) + SUBQUERY_FIELD_NUMBER;
-      hash = (53 * hash) + getSubquery().hashCode();
     }
     if (hasUpsert()) {
       hash = (37 * hash) + UPSERT_FIELD_NUMBER;
@@ -624,6 +861,18 @@ private static final long serialVersionUID = 0L;
     if (hasReturning()) {
       hash = (37 * hash) + RETURNING_FIELD_NUMBER;
       hash = (53 * hash) + getReturning().hashCode();
+    }
+    switch (valuesCase_) {
+      case 13:
+        hash = (37 * hash) + VALUES_CLAUSE_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesClause().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + SELECT_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getSelectStmt().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -780,23 +1029,13 @@ private static final long serialVersionUID = 0L;
         with_ = null;
         withBuilder_ = null;
       }
+      type_ = 0;
+
       if (intoBuilder_ == null) {
         into_ = null;
       } else {
         into_ = null;
         intoBuilder_ = null;
-      }
-      if (valuesBuilder_ == null) {
-        values_ = null;
-      } else {
-        values_ = null;
-        valuesBuilder_ = null;
-      }
-      if (subqueryBuilder_ == null) {
-        subquery_ = null;
-      } else {
-        subquery_ = null;
-        subqueryBuilder_ = null;
       }
       if (upsertBuilder_ == null) {
         upsert_ = null;
@@ -810,6 +1049,8 @@ private static final long serialVersionUID = 0L;
         returning_ = null;
         returningBuilder_ = null;
       }
+      valuesCase_ = 0;
+      values_ = null;
       return this;
     }
 
@@ -853,20 +1094,25 @@ private static final long serialVersionUID = 0L;
       } else {
         result.with_ = withBuilder_.build();
       }
+      result.type_ = type_;
       if (intoBuilder_ == null) {
         result.into_ = into_;
       } else {
         result.into_ = intoBuilder_.build();
       }
-      if (valuesBuilder_ == null) {
-        result.values_ = values_;
-      } else {
-        result.values_ = valuesBuilder_.build();
+      if (valuesCase_ == 13) {
+        if (valuesClauseBuilder_ == null) {
+          result.values_ = values_;
+        } else {
+          result.values_ = valuesClauseBuilder_.build();
+        }
       }
-      if (subqueryBuilder_ == null) {
-        result.subquery_ = subquery_;
-      } else {
-        result.subquery_ = subqueryBuilder_.build();
+      if (valuesCase_ == 14) {
+        if (selectStmtBuilder_ == null) {
+          result.values_ = values_;
+        } else {
+          result.values_ = selectStmtBuilder_.build();
+        }
       }
       if (upsertBuilder_ == null) {
         result.upsert_ = upsert_;
@@ -878,6 +1124,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.returning_ = returningBuilder_.build();
       }
+      result.valuesCase_ = valuesCase_;
       onBuilt();
       return result;
     }
@@ -941,20 +1188,30 @@ private static final long serialVersionUID = 0L;
       if (other.hasWith()) {
         mergeWith(other.getWith());
       }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
+      }
       if (other.hasInto()) {
         mergeInto(other.getInto());
-      }
-      if (other.hasValues()) {
-        mergeValues(other.getValues());
-      }
-      if (other.hasSubquery()) {
-        mergeSubquery(other.getSubquery());
       }
       if (other.hasUpsert()) {
         mergeUpsert(other.getUpsert());
       }
       if (other.hasReturning()) {
         mergeReturning(other.getReturning());
+      }
+      switch (other.getValuesCase()) {
+        case VALUES_CLAUSE: {
+          mergeValuesClause(other.getValuesClause());
+          break;
+        }
+        case SELECT_STMT: {
+          mergeSelectStmt(other.getSelectStmt());
+          break;
+        }
+        case VALUES_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -984,6 +1241,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int valuesCase_ = 0;
+    private java.lang.Object values_;
+    public ValuesCase
+        getValuesCase() {
+      return ValuesCase.forNumber(
+          valuesCase_);
+    }
+
+    public Builder clearValues() {
+      valuesCase_ = 0;
+      values_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private org.mojolang.mojo.lang.Position startPosition_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1404,18 +1676,72 @@ private static final long serialVersionUID = 0L;
       return withBuilder_;
     }
 
+    private int type_ = 0;
+    /**
+     * <code>.mojo.db.sql.InsertStmt.Type type = 11;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.mojo.db.sql.InsertStmt.Type type = 11;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.InsertStmt.Type type = 11;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.InsertStmt.Type getType() {
+      @SuppressWarnings("deprecation")
+      org.mojo-lang.mojo.db.sql.InsertStmt.Type result = org.mojo-lang.mojo.db.sql.InsertStmt.Type.valueOf(type_);
+      return result == null ? org.mojo-lang.mojo.db.sql.InsertStmt.Type.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.mojo.db.sql.InsertStmt.Type type = 11;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(org.mojo-lang.mojo.db.sql.InsertStmt.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.InsertStmt.Type type = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = 0;
+      onChanged();
+      return this;
+    }
+
     private org.mojo-lang.mojo.db.sql.IntoClause into_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.IntoClause, org.mojo-lang.mojo.db.sql.IntoClause.Builder, org.mojo-lang.mojo.db.sql.IntoClauseOrBuilder> intoBuilder_;
     /**
-     * <code>.mojo.db.sql.IntoClause into = 11;</code>
+     * <code>.mojo.db.sql.IntoClause into = 12;</code>
      * @return Whether the into field is set.
      */
     public boolean hasInto() {
       return intoBuilder_ != null || into_ != null;
     }
     /**
-     * <code>.mojo.db.sql.IntoClause into = 11;</code>
+     * <code>.mojo.db.sql.IntoClause into = 12;</code>
      * @return The into.
      */
     public org.mojo-lang.mojo.db.sql.IntoClause getInto() {
@@ -1426,7 +1752,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.IntoClause into = 11;</code>
+     * <code>.mojo.db.sql.IntoClause into = 12;</code>
      */
     public Builder setInto(org.mojo-lang.mojo.db.sql.IntoClause value) {
       if (intoBuilder_ == null) {
@@ -1442,7 +1768,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.IntoClause into = 11;</code>
+     * <code>.mojo.db.sql.IntoClause into = 12;</code>
      */
     public Builder setInto(
         org.mojo-lang.mojo.db.sql.IntoClause.Builder builderForValue) {
@@ -1456,7 +1782,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.IntoClause into = 11;</code>
+     * <code>.mojo.db.sql.IntoClause into = 12;</code>
      */
     public Builder mergeInto(org.mojo-lang.mojo.db.sql.IntoClause value) {
       if (intoBuilder_ == null) {
@@ -1474,7 +1800,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.IntoClause into = 11;</code>
+     * <code>.mojo.db.sql.IntoClause into = 12;</code>
      */
     public Builder clearInto() {
       if (intoBuilder_ == null) {
@@ -1488,7 +1814,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.IntoClause into = 11;</code>
+     * <code>.mojo.db.sql.IntoClause into = 12;</code>
      */
     public org.mojo-lang.mojo.db.sql.IntoClause.Builder getIntoBuilder() {
       
@@ -1496,7 +1822,7 @@ private static final long serialVersionUID = 0L;
       return getIntoFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.IntoClause into = 11;</code>
+     * <code>.mojo.db.sql.IntoClause into = 12;</code>
      */
     public org.mojo-lang.mojo.db.sql.IntoClauseOrBuilder getIntoOrBuilder() {
       if (intoBuilder_ != null) {
@@ -1507,7 +1833,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.IntoClause into = 11;</code>
+     * <code>.mojo.db.sql.IntoClause into = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.IntoClause, org.mojo-lang.mojo.db.sql.IntoClause.Builder, org.mojo-lang.mojo.db.sql.IntoClauseOrBuilder> 
@@ -1523,242 +1849,286 @@ private static final long serialVersionUID = 0L;
       return intoBuilder_;
     }
 
-    private org.mojo-lang.mojo.db.sql.ValuesClause values_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.ValuesClause, org.mojo-lang.mojo.db.sql.ValuesClause.Builder, org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder> valuesBuilder_;
+        org.mojo-lang.mojo.db.sql.ValuesClause, org.mojo-lang.mojo.db.sql.ValuesClause.Builder, org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder> valuesClauseBuilder_;
     /**
-     * <code>.mojo.db.sql.ValuesClause values = 12;</code>
-     * @return Whether the values field is set.
+     * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
+     * @return Whether the valuesClause field is set.
      */
-    public boolean hasValues() {
-      return valuesBuilder_ != null || values_ != null;
+    @java.lang.Override
+    public boolean hasValuesClause() {
+      return valuesCase_ == 13;
     }
     /**
-     * <code>.mojo.db.sql.ValuesClause values = 12;</code>
-     * @return The values.
+     * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
+     * @return The valuesClause.
      */
-    public org.mojo-lang.mojo.db.sql.ValuesClause getValues() {
-      if (valuesBuilder_ == null) {
-        return values_ == null ? org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance() : values_;
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.ValuesClause getValuesClause() {
+      if (valuesClauseBuilder_ == null) {
+        if (valuesCase_ == 13) {
+          return (org.mojo-lang.mojo.db.sql.ValuesClause) values_;
+        }
+        return org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance();
       } else {
-        return valuesBuilder_.getMessage();
+        if (valuesCase_ == 13) {
+          return valuesClauseBuilder_.getMessage();
+        }
+        return org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.ValuesClause values = 12;</code>
+     * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
      */
-    public Builder setValues(org.mojo-lang.mojo.db.sql.ValuesClause value) {
-      if (valuesBuilder_ == null) {
+    public Builder setValuesClause(org.mojo-lang.mojo.db.sql.ValuesClause value) {
+      if (valuesClauseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         values_ = value;
         onChanged();
       } else {
-        valuesBuilder_.setMessage(value);
+        valuesClauseBuilder_.setMessage(value);
       }
-
+      valuesCase_ = 13;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ValuesClause values = 12;</code>
+     * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
      */
-    public Builder setValues(
+    public Builder setValuesClause(
         org.mojo-lang.mojo.db.sql.ValuesClause.Builder builderForValue) {
-      if (valuesBuilder_ == null) {
+      if (valuesClauseBuilder_ == null) {
         values_ = builderForValue.build();
         onChanged();
       } else {
-        valuesBuilder_.setMessage(builderForValue.build());
+        valuesClauseBuilder_.setMessage(builderForValue.build());
       }
-
+      valuesCase_ = 13;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ValuesClause values = 12;</code>
+     * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
      */
-    public Builder mergeValues(org.mojo-lang.mojo.db.sql.ValuesClause value) {
-      if (valuesBuilder_ == null) {
-        if (values_ != null) {
-          values_ =
-            org.mojo-lang.mojo.db.sql.ValuesClause.newBuilder(values_).mergeFrom(value).buildPartial();
+    public Builder mergeValuesClause(org.mojo-lang.mojo.db.sql.ValuesClause value) {
+      if (valuesClauseBuilder_ == null) {
+        if (valuesCase_ == 13 &&
+            values_ != org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance()) {
+          values_ = org.mojo-lang.mojo.db.sql.ValuesClause.newBuilder((org.mojo-lang.mojo.db.sql.ValuesClause) values_)
+              .mergeFrom(value).buildPartial();
         } else {
           values_ = value;
         }
         onChanged();
       } else {
-        valuesBuilder_.mergeFrom(value);
+        if (valuesCase_ == 13) {
+          valuesClauseBuilder_.mergeFrom(value);
+        }
+        valuesClauseBuilder_.setMessage(value);
       }
-
+      valuesCase_ = 13;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ValuesClause values = 12;</code>
+     * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
      */
-    public Builder clearValues() {
-      if (valuesBuilder_ == null) {
-        values_ = null;
-        onChanged();
+    public Builder clearValuesClause() {
+      if (valuesClauseBuilder_ == null) {
+        if (valuesCase_ == 13) {
+          valuesCase_ = 0;
+          values_ = null;
+          onChanged();
+        }
       } else {
-        values_ = null;
-        valuesBuilder_ = null;
+        if (valuesCase_ == 13) {
+          valuesCase_ = 0;
+          values_ = null;
+        }
+        valuesClauseBuilder_.clear();
       }
-
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ValuesClause values = 12;</code>
+     * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
      */
-    public org.mojo-lang.mojo.db.sql.ValuesClause.Builder getValuesBuilder() {
-      
-      onChanged();
-      return getValuesFieldBuilder().getBuilder();
+    public org.mojo-lang.mojo.db.sql.ValuesClause.Builder getValuesClauseBuilder() {
+      return getValuesClauseFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.ValuesClause values = 12;</code>
+     * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
      */
-    public org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder getValuesOrBuilder() {
-      if (valuesBuilder_ != null) {
-        return valuesBuilder_.getMessageOrBuilder();
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder getValuesClauseOrBuilder() {
+      if ((valuesCase_ == 13) && (valuesClauseBuilder_ != null)) {
+        return valuesClauseBuilder_.getMessageOrBuilder();
       } else {
-        return values_ == null ?
-            org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance() : values_;
+        if (valuesCase_ == 13) {
+          return (org.mojo-lang.mojo.db.sql.ValuesClause) values_;
+        }
+        return org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.ValuesClause values = 12;</code>
+     * <code>.mojo.db.sql.ValuesClause values_clause = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.ValuesClause, org.mojo-lang.mojo.db.sql.ValuesClause.Builder, org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder> 
-        getValuesFieldBuilder() {
-      if (valuesBuilder_ == null) {
-        valuesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getValuesClauseFieldBuilder() {
+      if (valuesClauseBuilder_ == null) {
+        if (!(valuesCase_ == 13)) {
+          values_ = org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance();
+        }
+        valuesClauseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojo-lang.mojo.db.sql.ValuesClause, org.mojo-lang.mojo.db.sql.ValuesClause.Builder, org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder>(
-                getValues(),
+                (org.mojo-lang.mojo.db.sql.ValuesClause) values_,
                 getParentForChildren(),
                 isClean());
         values_ = null;
       }
-      return valuesBuilder_;
+      valuesCase_ = 13;
+      onChanged();;
+      return valuesClauseBuilder_;
     }
 
-    private org.mojo-lang.mojo.db.sql.SelectStmt subquery_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.SelectStmt, org.mojo-lang.mojo.db.sql.SelectStmt.Builder, org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder> subqueryBuilder_;
+        org.mojo-lang.mojo.db.sql.SelectStmt, org.mojo-lang.mojo.db.sql.SelectStmt.Builder, org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder> selectStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
-     * @return Whether the subquery field is set.
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
+     * @return Whether the selectStmt field is set.
      */
-    public boolean hasSubquery() {
-      return subqueryBuilder_ != null || subquery_ != null;
+    @java.lang.Override
+    public boolean hasSelectStmt() {
+      return valuesCase_ == 14;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
-     * @return The subquery.
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
+     * @return The selectStmt.
      */
-    public org.mojo-lang.mojo.db.sql.SelectStmt getSubquery() {
-      if (subqueryBuilder_ == null) {
-        return subquery_ == null ? org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance() : subquery_;
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.SelectStmt getSelectStmt() {
+      if (selectStmtBuilder_ == null) {
+        if (valuesCase_ == 14) {
+          return (org.mojo-lang.mojo.db.sql.SelectStmt) values_;
+        }
+        return org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance();
       } else {
-        return subqueryBuilder_.getMessage();
+        if (valuesCase_ == 14) {
+          return selectStmtBuilder_.getMessage();
+        }
+        return org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
      */
-    public Builder setSubquery(org.mojo-lang.mojo.db.sql.SelectStmt value) {
-      if (subqueryBuilder_ == null) {
+    public Builder setSelectStmt(org.mojo-lang.mojo.db.sql.SelectStmt value) {
+      if (selectStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        subquery_ = value;
+        values_ = value;
         onChanged();
       } else {
-        subqueryBuilder_.setMessage(value);
+        selectStmtBuilder_.setMessage(value);
       }
-
+      valuesCase_ = 14;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
      */
-    public Builder setSubquery(
+    public Builder setSelectStmt(
         org.mojo-lang.mojo.db.sql.SelectStmt.Builder builderForValue) {
-      if (subqueryBuilder_ == null) {
-        subquery_ = builderForValue.build();
+      if (selectStmtBuilder_ == null) {
+        values_ = builderForValue.build();
         onChanged();
       } else {
-        subqueryBuilder_.setMessage(builderForValue.build());
+        selectStmtBuilder_.setMessage(builderForValue.build());
       }
-
+      valuesCase_ = 14;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
      */
-    public Builder mergeSubquery(org.mojo-lang.mojo.db.sql.SelectStmt value) {
-      if (subqueryBuilder_ == null) {
-        if (subquery_ != null) {
-          subquery_ =
-            org.mojo-lang.mojo.db.sql.SelectStmt.newBuilder(subquery_).mergeFrom(value).buildPartial();
+    public Builder mergeSelectStmt(org.mojo-lang.mojo.db.sql.SelectStmt value) {
+      if (selectStmtBuilder_ == null) {
+        if (valuesCase_ == 14 &&
+            values_ != org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance()) {
+          values_ = org.mojo-lang.mojo.db.sql.SelectStmt.newBuilder((org.mojo-lang.mojo.db.sql.SelectStmt) values_)
+              .mergeFrom(value).buildPartial();
         } else {
-          subquery_ = value;
+          values_ = value;
         }
         onChanged();
       } else {
-        subqueryBuilder_.mergeFrom(value);
+        if (valuesCase_ == 14) {
+          selectStmtBuilder_.mergeFrom(value);
+        }
+        selectStmtBuilder_.setMessage(value);
       }
-
+      valuesCase_ = 14;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
      */
-    public Builder clearSubquery() {
-      if (subqueryBuilder_ == null) {
-        subquery_ = null;
-        onChanged();
+    public Builder clearSelectStmt() {
+      if (selectStmtBuilder_ == null) {
+        if (valuesCase_ == 14) {
+          valuesCase_ = 0;
+          values_ = null;
+          onChanged();
+        }
       } else {
-        subquery_ = null;
-        subqueryBuilder_ = null;
+        if (valuesCase_ == 14) {
+          valuesCase_ = 0;
+          values_ = null;
+        }
+        selectStmtBuilder_.clear();
       }
-
       return this;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
      */
-    public org.mojo-lang.mojo.db.sql.SelectStmt.Builder getSubqueryBuilder() {
-      
-      onChanged();
-      return getSubqueryFieldBuilder().getBuilder();
+    public org.mojo-lang.mojo.db.sql.SelectStmt.Builder getSelectStmtBuilder() {
+      return getSelectStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
      */
-    public org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder getSubqueryOrBuilder() {
-      if (subqueryBuilder_ != null) {
-        return subqueryBuilder_.getMessageOrBuilder();
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder getSelectStmtOrBuilder() {
+      if ((valuesCase_ == 14) && (selectStmtBuilder_ != null)) {
+        return selectStmtBuilder_.getMessageOrBuilder();
       } else {
-        return subquery_ == null ?
-            org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance() : subquery_;
+        if (valuesCase_ == 14) {
+          return (org.mojo-lang.mojo.db.sql.SelectStmt) values_;
+        }
+        return org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt subquery = 13;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.SelectStmt, org.mojo-lang.mojo.db.sql.SelectStmt.Builder, org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder> 
-        getSubqueryFieldBuilder() {
-      if (subqueryBuilder_ == null) {
-        subqueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getSelectStmtFieldBuilder() {
+      if (selectStmtBuilder_ == null) {
+        if (!(valuesCase_ == 14)) {
+          values_ = org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance();
+        }
+        selectStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojo-lang.mojo.db.sql.SelectStmt, org.mojo-lang.mojo.db.sql.SelectStmt.Builder, org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder>(
-                getSubquery(),
+                (org.mojo-lang.mojo.db.sql.SelectStmt) values_,
                 getParentForChildren(),
                 isClean());
-        subquery_ = null;
+        values_ = null;
       }
-      return subqueryBuilder_;
+      valuesCase_ = 14;
+      onChanged();;
+      return selectStmtBuilder_;
     }
 
     private org.mojo-lang.mojo.db.sql.UpsertClause upsert_;

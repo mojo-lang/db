@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AnalyzeSmt() {
+    schemaName_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
@@ -82,6 +84,18 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             implicit_ = input.readBool();
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            schemaName_ = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
             break;
           }
           default: {
@@ -190,6 +204,82 @@ private static final long serialVersionUID = 0L;
     return implicit_;
   }
 
+  public static final int SCHEMA_NAME_FIELD_NUMBER = 10;
+  private volatile java.lang.Object schemaName_;
+  /**
+   * <code>string schema_name = 10;</code>
+   * @return The schemaName.
+   */
+  @java.lang.Override
+  public java.lang.String getSchemaName() {
+    java.lang.Object ref = schemaName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      schemaName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string schema_name = 10;</code>
+   * @return The bytes for schemaName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSchemaNameBytes() {
+    java.lang.Object ref = schemaName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      schemaName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_FIELD_NUMBER = 11;
+  private volatile java.lang.Object name_;
+  /**
+   * <code>string name = 11;</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string name = 11;</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -216,6 +306,12 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       output.writeBool(5, implicit_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, schemaName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -240,6 +336,12 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, implicit_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, schemaName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,6 +372,10 @@ private static final long serialVersionUID = 0L;
         != other.getKind()) return false;
     if (getImplicit()
         != other.getImplicit()) return false;
+    if (!getSchemaName()
+        .equals(other.getSchemaName())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -295,6 +401,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IMPLICIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getImplicit());
+    hash = (37 * hash) + SCHEMA_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getSchemaName().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,6 +554,10 @@ private static final long serialVersionUID = 0L;
 
       implicit_ = false;
 
+      schemaName_ = "";
+
+      name_ = "";
+
       return this;
     }
 
@@ -482,6 +596,8 @@ private static final long serialVersionUID = 0L;
       }
       result.kind_ = kind_;
       result.implicit_ = implicit_;
+      result.schemaName_ = schemaName_;
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -541,6 +657,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getImplicit() != false) {
         setImplicit(other.getImplicit());
+      }
+      if (!other.getSchemaName().isEmpty()) {
+        schemaName_ = other.schemaName_;
+        onChanged();
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -867,6 +991,158 @@ private static final long serialVersionUID = 0L;
     public Builder clearImplicit() {
       
       implicit_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object schemaName_ = "";
+    /**
+     * <code>string schema_name = 10;</code>
+     * @return The schemaName.
+     */
+    public java.lang.String getSchemaName() {
+      java.lang.Object ref = schemaName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schemaName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string schema_name = 10;</code>
+     * @return The bytes for schemaName.
+     */
+    public com.google.protobuf.ByteString
+        getSchemaNameBytes() {
+      java.lang.Object ref = schemaName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        schemaName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string schema_name = 10;</code>
+     * @param value The schemaName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchemaName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      schemaName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string schema_name = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSchemaName() {
+      
+      schemaName_ = getDefaultInstance().getSchemaName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string schema_name = 10;</code>
+     * @param value The bytes for schemaName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchemaNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      schemaName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <code>string name = 11;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string name = 11;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string name = 11;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 11;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
       onChanged();
       return this;
     }

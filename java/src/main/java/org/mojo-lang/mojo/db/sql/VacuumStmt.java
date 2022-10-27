@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VacuumStmt() {
+    schema_ = "";
   }
 
   @java.lang.Override
@@ -82,6 +83,12 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             implicit_ = input.readBool();
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            schema_ = s;
             break;
           }
           default: {
@@ -190,6 +197,44 @@ private static final long serialVersionUID = 0L;
     return implicit_;
   }
 
+  public static final int SCHEMA_FIELD_NUMBER = 10;
+  private volatile java.lang.Object schema_;
+  /**
+   * <code>string schema = 10;</code>
+   * @return The schema.
+   */
+  @java.lang.Override
+  public java.lang.String getSchema() {
+    java.lang.Object ref = schema_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      schema_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string schema = 10;</code>
+   * @return The bytes for schema.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSchemaBytes() {
+    java.lang.Object ref = schema_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      schema_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -216,6 +261,9 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       output.writeBool(5, implicit_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, schema_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -240,6 +288,9 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, implicit_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, schema_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,6 +321,8 @@ private static final long serialVersionUID = 0L;
         != other.getKind()) return false;
     if (getImplicit()
         != other.getImplicit()) return false;
+    if (!getSchema()
+        .equals(other.getSchema())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -295,6 +348,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IMPLICIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getImplicit());
+    hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
+    hash = (53 * hash) + getSchema().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,6 +499,8 @@ private static final long serialVersionUID = 0L;
 
       implicit_ = false;
 
+      schema_ = "";
+
       return this;
     }
 
@@ -482,6 +539,7 @@ private static final long serialVersionUID = 0L;
       }
       result.kind_ = kind_;
       result.implicit_ = implicit_;
+      result.schema_ = schema_;
       onBuilt();
       return result;
     }
@@ -541,6 +599,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getImplicit() != false) {
         setImplicit(other.getImplicit());
+      }
+      if (!other.getSchema().isEmpty()) {
+        schema_ = other.schema_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -867,6 +929,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearImplicit() {
       
       implicit_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object schema_ = "";
+    /**
+     * <code>string schema = 10;</code>
+     * @return The schema.
+     */
+    public java.lang.String getSchema() {
+      java.lang.Object ref = schema_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schema_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string schema = 10;</code>
+     * @return The bytes for schema.
+     */
+    public com.google.protobuf.ByteString
+        getSchemaBytes() {
+      java.lang.Object ref = schema_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        schema_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string schema = 10;</code>
+     * @param value The schema to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchema(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      schema_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string schema = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSchema() {
+      
+      schema_ = getDefaultInstance().getSchema();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string schema = 10;</code>
+     * @param value The bytes for schema to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchemaBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      schema_ = value;
       onChanged();
       return this;
     }

@@ -126,6 +126,19 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 106: {
+            org.mojo-lang.mojo.db.sql.ValuesClause.Builder subBuilder = null;
+            if (values_ != null) {
+              subBuilder = values_.toBuilder();
+            }
+            values_ = input.readMessage(org.mojo-lang.mojo.db.sql.ValuesClause.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(values_);
+              values_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 114: {
             org.mojo-lang.mojo.db.sql.FromClause.Builder subBuilder = null;
             if (from_ != null) {
               subBuilder = from_.toBuilder();
@@ -138,7 +151,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 114: {
+          case 122: {
             org.mojo-lang.mojo.db.sql.WhereClause.Builder subBuilder = null;
             if (where_ != null) {
               subBuilder = where_.toBuilder();
@@ -151,7 +164,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 122: {
+          case 130: {
             org.mojo-lang.mojo.db.sql.GroupByClause.Builder subBuilder = null;
             if (groupBy_ != null) {
               subBuilder = groupBy_.toBuilder();
@@ -164,7 +177,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 130: {
+          case 138: {
             org.mojo-lang.mojo.db.sql.HavingClause.Builder subBuilder = null;
             if (having_ != null) {
               subBuilder = having_.toBuilder();
@@ -177,7 +190,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 138: {
+          case 162: {
             org.mojo-lang.mojo.db.sql.OrderByClause.Builder subBuilder = null;
             if (orderBy_ != null) {
               subBuilder = orderBy_.toBuilder();
@@ -190,7 +203,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 146: {
+          case 170: {
             org.mojo-lang.mojo.db.sql.LimitClause.Builder subBuilder = null;
             if (limit_ != null) {
               subBuilder = limit_.toBuilder();
@@ -438,10 +451,36 @@ private static final long serialVersionUID = 0L;
     return org.mojo-lang.mojo.db.sql.CompoundSelect.getDefaultInstance();
   }
 
-  public static final int FROM_FIELD_NUMBER = 13;
+  public static final int VALUES_FIELD_NUMBER = 13;
+  private org.mojo-lang.mojo.db.sql.ValuesClause values_;
+  /**
+   * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+   * @return Whether the values field is set.
+   */
+  @java.lang.Override
+  public boolean hasValues() {
+    return values_ != null;
+  }
+  /**
+   * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+   * @return The values.
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.ValuesClause getValues() {
+    return values_ == null ? org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance() : values_;
+  }
+  /**
+   * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder getValuesOrBuilder() {
+    return getValues();
+  }
+
+  public static final int FROM_FIELD_NUMBER = 14;
   private org.mojo-lang.mojo.db.sql.FromClause from_;
   /**
-   * <code>.mojo.db.sql.FromClause from = 13;</code>
+   * <code>.mojo.db.sql.FromClause from = 14;</code>
    * @return Whether the from field is set.
    */
   @java.lang.Override
@@ -449,7 +488,7 @@ private static final long serialVersionUID = 0L;
     return from_ != null;
   }
   /**
-   * <code>.mojo.db.sql.FromClause from = 13;</code>
+   * <code>.mojo.db.sql.FromClause from = 14;</code>
    * @return The from.
    */
   @java.lang.Override
@@ -457,17 +496,17 @@ private static final long serialVersionUID = 0L;
     return from_ == null ? org.mojo-lang.mojo.db.sql.FromClause.getDefaultInstance() : from_;
   }
   /**
-   * <code>.mojo.db.sql.FromClause from = 13;</code>
+   * <code>.mojo.db.sql.FromClause from = 14;</code>
    */
   @java.lang.Override
   public org.mojo-lang.mojo.db.sql.FromClauseOrBuilder getFromOrBuilder() {
     return getFrom();
   }
 
-  public static final int WHERE_FIELD_NUMBER = 14;
+  public static final int WHERE_FIELD_NUMBER = 15;
   private org.mojo-lang.mojo.db.sql.WhereClause where_;
   /**
-   * <code>.mojo.db.sql.WhereClause where = 14;</code>
+   * <code>.mojo.db.sql.WhereClause where = 15;</code>
    * @return Whether the where field is set.
    */
   @java.lang.Override
@@ -475,7 +514,7 @@ private static final long serialVersionUID = 0L;
     return where_ != null;
   }
   /**
-   * <code>.mojo.db.sql.WhereClause where = 14;</code>
+   * <code>.mojo.db.sql.WhereClause where = 15;</code>
    * @return The where.
    */
   @java.lang.Override
@@ -483,17 +522,17 @@ private static final long serialVersionUID = 0L;
     return where_ == null ? org.mojo-lang.mojo.db.sql.WhereClause.getDefaultInstance() : where_;
   }
   /**
-   * <code>.mojo.db.sql.WhereClause where = 14;</code>
+   * <code>.mojo.db.sql.WhereClause where = 15;</code>
    */
   @java.lang.Override
   public org.mojo-lang.mojo.db.sql.WhereClauseOrBuilder getWhereOrBuilder() {
     return getWhere();
   }
 
-  public static final int GROUP_BY_FIELD_NUMBER = 15;
+  public static final int GROUP_BY_FIELD_NUMBER = 16;
   private org.mojo-lang.mojo.db.sql.GroupByClause groupBy_;
   /**
-   * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+   * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
    * @return Whether the groupBy field is set.
    */
   @java.lang.Override
@@ -501,7 +540,7 @@ private static final long serialVersionUID = 0L;
     return groupBy_ != null;
   }
   /**
-   * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+   * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
    * @return The groupBy.
    */
   @java.lang.Override
@@ -509,17 +548,17 @@ private static final long serialVersionUID = 0L;
     return groupBy_ == null ? org.mojo-lang.mojo.db.sql.GroupByClause.getDefaultInstance() : groupBy_;
   }
   /**
-   * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+   * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
    */
   @java.lang.Override
   public org.mojo-lang.mojo.db.sql.GroupByClauseOrBuilder getGroupByOrBuilder() {
     return getGroupBy();
   }
 
-  public static final int HAVING_FIELD_NUMBER = 16;
+  public static final int HAVING_FIELD_NUMBER = 17;
   private org.mojo-lang.mojo.db.sql.HavingClause having_;
   /**
-   * <code>.mojo.db.sql.HavingClause having = 16;</code>
+   * <code>.mojo.db.sql.HavingClause having = 17;</code>
    * @return Whether the having field is set.
    */
   @java.lang.Override
@@ -527,7 +566,7 @@ private static final long serialVersionUID = 0L;
     return having_ != null;
   }
   /**
-   * <code>.mojo.db.sql.HavingClause having = 16;</code>
+   * <code>.mojo.db.sql.HavingClause having = 17;</code>
    * @return The having.
    */
   @java.lang.Override
@@ -535,17 +574,17 @@ private static final long serialVersionUID = 0L;
     return having_ == null ? org.mojo-lang.mojo.db.sql.HavingClause.getDefaultInstance() : having_;
   }
   /**
-   * <code>.mojo.db.sql.HavingClause having = 16;</code>
+   * <code>.mojo.db.sql.HavingClause having = 17;</code>
    */
   @java.lang.Override
   public org.mojo-lang.mojo.db.sql.HavingClauseOrBuilder getHavingOrBuilder() {
     return getHaving();
   }
 
-  public static final int ORDER_BY_FIELD_NUMBER = 17;
+  public static final int ORDER_BY_FIELD_NUMBER = 20;
   private org.mojo-lang.mojo.db.sql.OrderByClause orderBy_;
   /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+   * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
    * @return Whether the orderBy field is set.
    */
   @java.lang.Override
@@ -553,7 +592,7 @@ private static final long serialVersionUID = 0L;
     return orderBy_ != null;
   }
   /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+   * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
    * @return The orderBy.
    */
   @java.lang.Override
@@ -561,17 +600,17 @@ private static final long serialVersionUID = 0L;
     return orderBy_ == null ? org.mojo-lang.mojo.db.sql.OrderByClause.getDefaultInstance() : orderBy_;
   }
   /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+   * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
    */
   @java.lang.Override
   public org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder getOrderByOrBuilder() {
     return getOrderBy();
   }
 
-  public static final int LIMIT_FIELD_NUMBER = 18;
+  public static final int LIMIT_FIELD_NUMBER = 21;
   private org.mojo-lang.mojo.db.sql.LimitClause limit_;
   /**
-   * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+   * <code>.mojo.db.sql.LimitClause limit = 21;</code>
    * @return Whether the limit field is set.
    */
   @java.lang.Override
@@ -579,7 +618,7 @@ private static final long serialVersionUID = 0L;
     return limit_ != null;
   }
   /**
-   * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+   * <code>.mojo.db.sql.LimitClause limit = 21;</code>
    * @return The limit.
    */
   @java.lang.Override
@@ -587,7 +626,7 @@ private static final long serialVersionUID = 0L;
     return limit_ == null ? org.mojo-lang.mojo.db.sql.LimitClause.getDefaultInstance() : limit_;
   }
   /**
-   * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+   * <code>.mojo.db.sql.LimitClause limit = 21;</code>
    */
   @java.lang.Override
   public org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder getLimitOrBuilder() {
@@ -629,23 +668,26 @@ private static final long serialVersionUID = 0L;
     if (selectCase_ == 12) {
       output.writeMessage(12, (org.mojo-lang.mojo.db.sql.CompoundSelect) select_);
     }
+    if (values_ != null) {
+      output.writeMessage(13, getValues());
+    }
     if (from_ != null) {
-      output.writeMessage(13, getFrom());
+      output.writeMessage(14, getFrom());
     }
     if (where_ != null) {
-      output.writeMessage(14, getWhere());
+      output.writeMessage(15, getWhere());
     }
     if (groupBy_ != null) {
-      output.writeMessage(15, getGroupBy());
+      output.writeMessage(16, getGroupBy());
     }
     if (having_ != null) {
-      output.writeMessage(16, getHaving());
+      output.writeMessage(17, getHaving());
     }
     if (orderBy_ != null) {
-      output.writeMessage(17, getOrderBy());
+      output.writeMessage(20, getOrderBy());
     }
     if (limit_ != null) {
-      output.writeMessage(18, getLimit());
+      output.writeMessage(21, getLimit());
     }
     unknownFields.writeTo(output);
   }
@@ -684,29 +726,33 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, (org.mojo-lang.mojo.db.sql.CompoundSelect) select_);
     }
+    if (values_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getValues());
+    }
     if (from_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getFrom());
+        .computeMessageSize(14, getFrom());
     }
     if (where_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, getWhere());
+        .computeMessageSize(15, getWhere());
     }
     if (groupBy_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(15, getGroupBy());
+        .computeMessageSize(16, getGroupBy());
     }
     if (having_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(16, getHaving());
+        .computeMessageSize(17, getHaving());
     }
     if (orderBy_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(17, getOrderBy());
+        .computeMessageSize(20, getOrderBy());
     }
     if (limit_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, getLimit());
+        .computeMessageSize(21, getLimit());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -741,6 +787,11 @@ private static final long serialVersionUID = 0L;
     if (hasWith()) {
       if (!getWith()
           .equals(other.getWith())) return false;
+    }
+    if (hasValues() != other.hasValues()) return false;
+    if (hasValues()) {
+      if (!getValues()
+          .equals(other.getValues())) return false;
     }
     if (hasFrom() != other.hasFrom()) return false;
     if (hasFrom()) {
@@ -813,6 +864,10 @@ private static final long serialVersionUID = 0L;
     if (hasWith()) {
       hash = (37 * hash) + WITH_FIELD_NUMBER;
       hash = (53 * hash) + getWith().hashCode();
+    }
+    if (hasValues()) {
+      hash = (37 * hash) + VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getValues().hashCode();
     }
     if (hasFrom()) {
       hash = (37 * hash) + FROM_FIELD_NUMBER;
@@ -1005,6 +1060,12 @@ private static final long serialVersionUID = 0L;
         with_ = null;
         withBuilder_ = null;
       }
+      if (valuesBuilder_ == null) {
+        values_ = null;
+      } else {
+        values_ = null;
+        valuesBuilder_ = null;
+      }
       if (fromBuilder_ == null) {
         from_ = null;
       } else {
@@ -1100,6 +1161,11 @@ private static final long serialVersionUID = 0L;
           result.select_ = compoundSelectBuilder_.build();
         }
       }
+      if (valuesBuilder_ == null) {
+        result.values_ = values_;
+      } else {
+        result.values_ = valuesBuilder_.build();
+      }
       if (fromBuilder_ == null) {
         result.from_ = from_;
       } else {
@@ -1193,6 +1259,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasWith()) {
         mergeWith(other.getWith());
+      }
+      if (other.hasValues()) {
+        mergeValues(other.getValues());
       }
       if (other.hasFrom()) {
         mergeFrom(other.getFrom());
@@ -1970,18 +2039,137 @@ private static final long serialVersionUID = 0L;
       return compoundSelectBuilder_;
     }
 
+    private org.mojo-lang.mojo.db.sql.ValuesClause values_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.ValuesClause, org.mojo-lang.mojo.db.sql.ValuesClause.Builder, org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder> valuesBuilder_;
+    /**
+     * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+     * @return Whether the values field is set.
+     */
+    public boolean hasValues() {
+      return valuesBuilder_ != null || values_ != null;
+    }
+    /**
+     * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+     * @return The values.
+     */
+    public org.mojo-lang.mojo.db.sql.ValuesClause getValues() {
+      if (valuesBuilder_ == null) {
+        return values_ == null ? org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance() : values_;
+      } else {
+        return valuesBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+     */
+    public Builder setValues(org.mojo-lang.mojo.db.sql.ValuesClause value) {
+      if (valuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        values_ = value;
+        onChanged();
+      } else {
+        valuesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+     */
+    public Builder setValues(
+        org.mojo-lang.mojo.db.sql.ValuesClause.Builder builderForValue) {
+      if (valuesBuilder_ == null) {
+        values_ = builderForValue.build();
+        onChanged();
+      } else {
+        valuesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+     */
+    public Builder mergeValues(org.mojo-lang.mojo.db.sql.ValuesClause value) {
+      if (valuesBuilder_ == null) {
+        if (values_ != null) {
+          values_ =
+            org.mojo-lang.mojo.db.sql.ValuesClause.newBuilder(values_).mergeFrom(value).buildPartial();
+        } else {
+          values_ = value;
+        }
+        onChanged();
+      } else {
+        valuesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+     */
+    public Builder clearValues() {
+      if (valuesBuilder_ == null) {
+        values_ = null;
+        onChanged();
+      } else {
+        values_ = null;
+        valuesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.ValuesClause.Builder getValuesBuilder() {
+      
+      onChanged();
+      return getValuesFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder getValuesOrBuilder() {
+      if (valuesBuilder_ != null) {
+        return valuesBuilder_.getMessageOrBuilder();
+      } else {
+        return values_ == null ?
+            org.mojo-lang.mojo.db.sql.ValuesClause.getDefaultInstance() : values_;
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.ValuesClause, org.mojo-lang.mojo.db.sql.ValuesClause.Builder, org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder> 
+        getValuesFieldBuilder() {
+      if (valuesBuilder_ == null) {
+        valuesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojo-lang.mojo.db.sql.ValuesClause, org.mojo-lang.mojo.db.sql.ValuesClause.Builder, org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder>(
+                getValues(),
+                getParentForChildren(),
+                isClean());
+        values_ = null;
+      }
+      return valuesBuilder_;
+    }
+
     private org.mojo-lang.mojo.db.sql.FromClause from_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.FromClause, org.mojo-lang.mojo.db.sql.FromClause.Builder, org.mojo-lang.mojo.db.sql.FromClauseOrBuilder> fromBuilder_;
     /**
-     * <code>.mojo.db.sql.FromClause from = 13;</code>
+     * <code>.mojo.db.sql.FromClause from = 14;</code>
      * @return Whether the from field is set.
      */
     public boolean hasFrom() {
       return fromBuilder_ != null || from_ != null;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 13;</code>
+     * <code>.mojo.db.sql.FromClause from = 14;</code>
      * @return The from.
      */
     public org.mojo-lang.mojo.db.sql.FromClause getFrom() {
@@ -1992,7 +2180,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 13;</code>
+     * <code>.mojo.db.sql.FromClause from = 14;</code>
      */
     public Builder setFrom(org.mojo-lang.mojo.db.sql.FromClause value) {
       if (fromBuilder_ == null) {
@@ -2008,7 +2196,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 13;</code>
+     * <code>.mojo.db.sql.FromClause from = 14;</code>
      */
     public Builder setFrom(
         org.mojo-lang.mojo.db.sql.FromClause.Builder builderForValue) {
@@ -2022,7 +2210,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 13;</code>
+     * <code>.mojo.db.sql.FromClause from = 14;</code>
      */
     public Builder mergeFrom(org.mojo-lang.mojo.db.sql.FromClause value) {
       if (fromBuilder_ == null) {
@@ -2040,7 +2228,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 13;</code>
+     * <code>.mojo.db.sql.FromClause from = 14;</code>
      */
     public Builder clearFrom() {
       if (fromBuilder_ == null) {
@@ -2054,7 +2242,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 13;</code>
+     * <code>.mojo.db.sql.FromClause from = 14;</code>
      */
     public org.mojo-lang.mojo.db.sql.FromClause.Builder getFromBuilder() {
       
@@ -2062,7 +2250,7 @@ private static final long serialVersionUID = 0L;
       return getFromFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 13;</code>
+     * <code>.mojo.db.sql.FromClause from = 14;</code>
      */
     public org.mojo-lang.mojo.db.sql.FromClauseOrBuilder getFromOrBuilder() {
       if (fromBuilder_ != null) {
@@ -2073,7 +2261,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 13;</code>
+     * <code>.mojo.db.sql.FromClause from = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.FromClause, org.mojo-lang.mojo.db.sql.FromClause.Builder, org.mojo-lang.mojo.db.sql.FromClauseOrBuilder> 
@@ -2093,14 +2281,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.WhereClause, org.mojo-lang.mojo.db.sql.WhereClause.Builder, org.mojo-lang.mojo.db.sql.WhereClauseOrBuilder> whereBuilder_;
     /**
-     * <code>.mojo.db.sql.WhereClause where = 14;</code>
+     * <code>.mojo.db.sql.WhereClause where = 15;</code>
      * @return Whether the where field is set.
      */
     public boolean hasWhere() {
       return whereBuilder_ != null || where_ != null;
     }
     /**
-     * <code>.mojo.db.sql.WhereClause where = 14;</code>
+     * <code>.mojo.db.sql.WhereClause where = 15;</code>
      * @return The where.
      */
     public org.mojo-lang.mojo.db.sql.WhereClause getWhere() {
@@ -2111,7 +2299,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.WhereClause where = 14;</code>
+     * <code>.mojo.db.sql.WhereClause where = 15;</code>
      */
     public Builder setWhere(org.mojo-lang.mojo.db.sql.WhereClause value) {
       if (whereBuilder_ == null) {
@@ -2127,7 +2315,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.WhereClause where = 14;</code>
+     * <code>.mojo.db.sql.WhereClause where = 15;</code>
      */
     public Builder setWhere(
         org.mojo-lang.mojo.db.sql.WhereClause.Builder builderForValue) {
@@ -2141,7 +2329,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.WhereClause where = 14;</code>
+     * <code>.mojo.db.sql.WhereClause where = 15;</code>
      */
     public Builder mergeWhere(org.mojo-lang.mojo.db.sql.WhereClause value) {
       if (whereBuilder_ == null) {
@@ -2159,7 +2347,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.WhereClause where = 14;</code>
+     * <code>.mojo.db.sql.WhereClause where = 15;</code>
      */
     public Builder clearWhere() {
       if (whereBuilder_ == null) {
@@ -2173,7 +2361,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.WhereClause where = 14;</code>
+     * <code>.mojo.db.sql.WhereClause where = 15;</code>
      */
     public org.mojo-lang.mojo.db.sql.WhereClause.Builder getWhereBuilder() {
       
@@ -2181,7 +2369,7 @@ private static final long serialVersionUID = 0L;
       return getWhereFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.WhereClause where = 14;</code>
+     * <code>.mojo.db.sql.WhereClause where = 15;</code>
      */
     public org.mojo-lang.mojo.db.sql.WhereClauseOrBuilder getWhereOrBuilder() {
       if (whereBuilder_ != null) {
@@ -2192,7 +2380,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.WhereClause where = 14;</code>
+     * <code>.mojo.db.sql.WhereClause where = 15;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.WhereClause, org.mojo-lang.mojo.db.sql.WhereClause.Builder, org.mojo-lang.mojo.db.sql.WhereClauseOrBuilder> 
@@ -2212,14 +2400,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.GroupByClause, org.mojo-lang.mojo.db.sql.GroupByClause.Builder, org.mojo-lang.mojo.db.sql.GroupByClauseOrBuilder> groupByBuilder_;
     /**
-     * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+     * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
      * @return Whether the groupBy field is set.
      */
     public boolean hasGroupBy() {
       return groupByBuilder_ != null || groupBy_ != null;
     }
     /**
-     * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+     * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
      * @return The groupBy.
      */
     public org.mojo-lang.mojo.db.sql.GroupByClause getGroupBy() {
@@ -2230,7 +2418,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+     * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
      */
     public Builder setGroupBy(org.mojo-lang.mojo.db.sql.GroupByClause value) {
       if (groupByBuilder_ == null) {
@@ -2246,7 +2434,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+     * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
      */
     public Builder setGroupBy(
         org.mojo-lang.mojo.db.sql.GroupByClause.Builder builderForValue) {
@@ -2260,7 +2448,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+     * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
      */
     public Builder mergeGroupBy(org.mojo-lang.mojo.db.sql.GroupByClause value) {
       if (groupByBuilder_ == null) {
@@ -2278,7 +2466,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+     * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
      */
     public Builder clearGroupBy() {
       if (groupByBuilder_ == null) {
@@ -2292,7 +2480,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+     * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
      */
     public org.mojo-lang.mojo.db.sql.GroupByClause.Builder getGroupByBuilder() {
       
@@ -2300,7 +2488,7 @@ private static final long serialVersionUID = 0L;
       return getGroupByFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+     * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
      */
     public org.mojo-lang.mojo.db.sql.GroupByClauseOrBuilder getGroupByOrBuilder() {
       if (groupByBuilder_ != null) {
@@ -2311,7 +2499,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+     * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.GroupByClause, org.mojo-lang.mojo.db.sql.GroupByClause.Builder, org.mojo-lang.mojo.db.sql.GroupByClauseOrBuilder> 
@@ -2331,14 +2519,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.HavingClause, org.mojo-lang.mojo.db.sql.HavingClause.Builder, org.mojo-lang.mojo.db.sql.HavingClauseOrBuilder> havingBuilder_;
     /**
-     * <code>.mojo.db.sql.HavingClause having = 16;</code>
+     * <code>.mojo.db.sql.HavingClause having = 17;</code>
      * @return Whether the having field is set.
      */
     public boolean hasHaving() {
       return havingBuilder_ != null || having_ != null;
     }
     /**
-     * <code>.mojo.db.sql.HavingClause having = 16;</code>
+     * <code>.mojo.db.sql.HavingClause having = 17;</code>
      * @return The having.
      */
     public org.mojo-lang.mojo.db.sql.HavingClause getHaving() {
@@ -2349,7 +2537,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.HavingClause having = 16;</code>
+     * <code>.mojo.db.sql.HavingClause having = 17;</code>
      */
     public Builder setHaving(org.mojo-lang.mojo.db.sql.HavingClause value) {
       if (havingBuilder_ == null) {
@@ -2365,7 +2553,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.HavingClause having = 16;</code>
+     * <code>.mojo.db.sql.HavingClause having = 17;</code>
      */
     public Builder setHaving(
         org.mojo-lang.mojo.db.sql.HavingClause.Builder builderForValue) {
@@ -2379,7 +2567,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.HavingClause having = 16;</code>
+     * <code>.mojo.db.sql.HavingClause having = 17;</code>
      */
     public Builder mergeHaving(org.mojo-lang.mojo.db.sql.HavingClause value) {
       if (havingBuilder_ == null) {
@@ -2397,7 +2585,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.HavingClause having = 16;</code>
+     * <code>.mojo.db.sql.HavingClause having = 17;</code>
      */
     public Builder clearHaving() {
       if (havingBuilder_ == null) {
@@ -2411,7 +2599,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.HavingClause having = 16;</code>
+     * <code>.mojo.db.sql.HavingClause having = 17;</code>
      */
     public org.mojo-lang.mojo.db.sql.HavingClause.Builder getHavingBuilder() {
       
@@ -2419,7 +2607,7 @@ private static final long serialVersionUID = 0L;
       return getHavingFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.HavingClause having = 16;</code>
+     * <code>.mojo.db.sql.HavingClause having = 17;</code>
      */
     public org.mojo-lang.mojo.db.sql.HavingClauseOrBuilder getHavingOrBuilder() {
       if (havingBuilder_ != null) {
@@ -2430,7 +2618,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.HavingClause having = 16;</code>
+     * <code>.mojo.db.sql.HavingClause having = 17;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.HavingClause, org.mojo-lang.mojo.db.sql.HavingClause.Builder, org.mojo-lang.mojo.db.sql.HavingClauseOrBuilder> 
@@ -2450,14 +2638,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.OrderByClause, org.mojo-lang.mojo.db.sql.OrderByClause.Builder, org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder> orderByBuilder_;
     /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+     * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
      * @return Whether the orderBy field is set.
      */
     public boolean hasOrderBy() {
       return orderByBuilder_ != null || orderBy_ != null;
     }
     /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+     * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
      * @return The orderBy.
      */
     public org.mojo-lang.mojo.db.sql.OrderByClause getOrderBy() {
@@ -2468,7 +2656,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+     * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
      */
     public Builder setOrderBy(org.mojo-lang.mojo.db.sql.OrderByClause value) {
       if (orderByBuilder_ == null) {
@@ -2484,7 +2672,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+     * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
      */
     public Builder setOrderBy(
         org.mojo-lang.mojo.db.sql.OrderByClause.Builder builderForValue) {
@@ -2498,7 +2686,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+     * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
      */
     public Builder mergeOrderBy(org.mojo-lang.mojo.db.sql.OrderByClause value) {
       if (orderByBuilder_ == null) {
@@ -2516,7 +2704,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+     * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
      */
     public Builder clearOrderBy() {
       if (orderByBuilder_ == null) {
@@ -2530,7 +2718,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+     * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
      */
     public org.mojo-lang.mojo.db.sql.OrderByClause.Builder getOrderByBuilder() {
       
@@ -2538,7 +2726,7 @@ private static final long serialVersionUID = 0L;
       return getOrderByFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+     * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
      */
     public org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder getOrderByOrBuilder() {
       if (orderByBuilder_ != null) {
@@ -2549,7 +2737,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+     * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.OrderByClause, org.mojo-lang.mojo.db.sql.OrderByClause.Builder, org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder> 
@@ -2569,14 +2757,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.LimitClause, org.mojo-lang.mojo.db.sql.LimitClause.Builder, org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder> limitBuilder_;
     /**
-     * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+     * <code>.mojo.db.sql.LimitClause limit = 21;</code>
      * @return Whether the limit field is set.
      */
     public boolean hasLimit() {
       return limitBuilder_ != null || limit_ != null;
     }
     /**
-     * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+     * <code>.mojo.db.sql.LimitClause limit = 21;</code>
      * @return The limit.
      */
     public org.mojo-lang.mojo.db.sql.LimitClause getLimit() {
@@ -2587,7 +2775,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+     * <code>.mojo.db.sql.LimitClause limit = 21;</code>
      */
     public Builder setLimit(org.mojo-lang.mojo.db.sql.LimitClause value) {
       if (limitBuilder_ == null) {
@@ -2603,7 +2791,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+     * <code>.mojo.db.sql.LimitClause limit = 21;</code>
      */
     public Builder setLimit(
         org.mojo-lang.mojo.db.sql.LimitClause.Builder builderForValue) {
@@ -2617,7 +2805,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+     * <code>.mojo.db.sql.LimitClause limit = 21;</code>
      */
     public Builder mergeLimit(org.mojo-lang.mojo.db.sql.LimitClause value) {
       if (limitBuilder_ == null) {
@@ -2635,7 +2823,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+     * <code>.mojo.db.sql.LimitClause limit = 21;</code>
      */
     public Builder clearLimit() {
       if (limitBuilder_ == null) {
@@ -2649,7 +2837,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+     * <code>.mojo.db.sql.LimitClause limit = 21;</code>
      */
     public org.mojo-lang.mojo.db.sql.LimitClause.Builder getLimitBuilder() {
       
@@ -2657,7 +2845,7 @@ private static final long serialVersionUID = 0L;
       return getLimitFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+     * <code>.mojo.db.sql.LimitClause limit = 21;</code>
      */
     public org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder getLimitOrBuilder() {
       if (limitBuilder_ != null) {
@@ -2668,7 +2856,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+     * <code>.mojo.db.sql.LimitClause limit = 21;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojo-lang.mojo.db.sql.LimitClause, org.mojo-lang.mojo.db.sql.LimitClause.Builder, org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder> 

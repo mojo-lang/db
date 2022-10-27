@@ -30,31 +30,37 @@ public final class UpdateStmtProto {
     java.lang.String[] descriptorData = {
       "\n\035mojo/db/sql/update_stmt.proto\022\013mojo.db" +
       ".sql\032(mojo/db/sql/data_manipulation_stmt" +
+      ".proto\032&mojo/db/sql/qualified_table_name" +
       ".proto\032\"mojo/db/sql/returning_clause.pro" +
       "to\032\034mojo/db/sql/set_clause.proto\032\025mojo/d" +
-      "b/sql/sql.proto\032\037mojo/db/sql/update_clau" +
-      "se.proto\032\024mojo/lang/lang.proto\"\374\002\n\nUpdat" +
-      "eStmt\022+\n\016start_position\030\001 \001(\0132\023.mojo.lan" +
-      "g.Position\022)\n\014end_position\030\002 \001(\0132\023.mojo." +
-      "lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030" +
-      "\005 \001(\010\022%\n\004with\030\n \001(\0132\027.mojo.db.sql.WithCl" +
-      "ause\022)\n\006update\030\013 \001(\0132\031.mojo.db.sql.Updat" +
-      "eClause\022#\n\003set\030\014 \001(\0132\026.mojo.db.sql.SetCl" +
-      "ause\022%\n\004from\030\r \001(\0132\027.mojo.db.sql.FromCla" +
-      "use\022\'\n\005where\030\016 \001(\0132\030.mojo.db.sql.WhereCl" +
-      "ause\022/\n\treturning\030\017 \001(\0132\034.mojo.db.sql.Re" +
-      "turningClauseB^\n\031org.mojo-lang.mojo.db.s" +
-      "qlB\017UpdateStmtProtoP\001Z.github.com/mojo-l" +
-      "ang/db/go/pkg/mojo/db/sql;sqlb\006proto3"
+      "b/sql/sql.proto\032\024mojo/lang/lang.proto\"\323\004" +
+      "\n\nUpdateStmt\022+\n\016start_position\030\001 \001(\0132\023.m" +
+      "ojo.lang.Position\022)\n\014end_position\030\002 \001(\0132" +
+      "\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010im" +
+      "plicit\030\005 \001(\010\022%\n\004with\030\n \001(\0132\027.mojo.db.sql" +
+      ".WithClause\022*\n\004type\030\013 \001(\0162\034.mojo.db.sql." +
+      "UpdateStmt.Type\0223\n\ntable_name\030\014 \001(\0132\037.mo" +
+      "jo.db.sql.QualifiedTableName\022#\n\003set\030\r \001(" +
+      "\0132\026.mojo.db.sql.SetClause\022%\n\004from\030\016 \001(\0132" +
+      "\027.mojo.db.sql.FromClause\022\'\n\005where\030\017 \001(\0132" +
+      "\030.mojo.db.sql.WhereClause\022/\n\treturning\030\020" +
+      " \001(\0132\034.mojo.db.sql.ReturningClause\"\236\001\n\004T" +
+      "ype\022\017\n\013TYPE_UPDATE\020\000\022\032\n\026TYPE_UPDATE_OR_R" +
+      "EPLACE\020\005\022\033\n\027TYPE_UPDATE_OR_ROLLBACK\020\006\022\030\n" +
+      "\024TYPE_UPDATE_OR_ABORT\020\007\022\027\n\023TYPE_UPDATE_O" +
+      "R_FAIL\020\010\022\031\n\025TYPE_UPDATE_OR_IGNORE\020\tB^\n\031o" +
+      "rg.mojo-lang.mojo.db.sqlB\017UpdateStmtProt" +
+      "oP\001Z.github.com/mojo-lang/db/go/pkg/mojo" +
+      "/db/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.mojo-lang.mojo.db.sql.DataManipulationStmtProto.getDescriptor(),
+          org.mojo-lang.mojo.db.sql.QualifiedTableNameProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.ReturningClauseProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.SetClauseProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor(),
-          org.mojo-lang.mojo.db.sql.UpdateClauseProto.getDescriptor(),
           org.mojolang.mojo.lang.LangProto.getDescriptor(),
         });
     internal_static_mojo_db_sql_UpdateStmt_descriptor =
@@ -62,12 +68,12 @@ public final class UpdateStmtProto {
     internal_static_mojo_db_sql_UpdateStmt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_UpdateStmt_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "Update", "Set", "From", "Where", "Returning", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "Type", "TableName", "Set", "From", "Where", "Returning", });
     org.mojo-lang.mojo.db.sql.DataManipulationStmtProto.getDescriptor();
+    org.mojo-lang.mojo.db.sql.QualifiedTableNameProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.ReturningClauseProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.SetClauseProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor();
-    org.mojo-lang.mojo.db.sql.UpdateClauseProto.getDescriptor();
     org.mojolang.mojo.lang.LangProto.getDescriptor();
   }
 

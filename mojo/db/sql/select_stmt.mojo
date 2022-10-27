@@ -14,13 +14,15 @@
 
 type SelectStmt: DataManipulationStmt {
     with: WithClause @10
+
     select: SelectClause @11 | CompoundSelect @12
+    values: ValuesClause @13
 
-    from: FromClause @13 @required
-    where: WhereClause @14
-    group_by: GroupByClause @15
-    having: HavingClause @16
+    from: FromClause @14 @required
+    where: WhereClause @15
+    group_by: GroupByClause @16
+    having: HavingClause @17
 
-    order_by: OrderByClause @17
-    limit: LimitClause @18
+    order_by: OrderByClause @20
+    limit: LimitClause @21
 }

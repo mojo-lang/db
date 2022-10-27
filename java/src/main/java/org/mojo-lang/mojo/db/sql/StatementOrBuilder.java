@@ -203,6 +203,21 @@ public interface StatementOrBuilder extends
   org.mojo-lang.mojo.db.sql.DropStmtOrBuilder getDropStmtValOrBuilder();
 
   /**
+   * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+   * @return Whether the endStmtVal field is set.
+   */
+  boolean hasEndStmtVal();
+  /**
+   * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+   * @return The endStmtVal.
+   */
+  org.mojo-lang.mojo.db.sql.EndStmt getEndStmtVal();
+  /**
+   * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+   */
+  org.mojo-lang.mojo.db.sql.EndStmtOrBuilder getEndStmtValOrBuilder();
+
+  /**
    * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
    * @return Whether the insertStmtVal field is set.
    */

@@ -5,6 +5,7 @@ syntax = "proto3";
 package mojo.db.sql;
 
 import "mojo/db/sql/data_manipulation_stmt.proto";
+import "mojo/db/sql/qualified_table_name.proto";
 import "mojo/db/sql/returning_clause.proto";
 import "mojo/db/sql/sql.proto";
 import "mojo/lang/lang.proto";
@@ -20,9 +21,7 @@ message DeleteStmt {
     int64 kind = 4;
     bool implicit = 5;
     WithClause with = 10;
-    FromClause from = 11;
+    QualifiedTableName table_name = 11;
     WhereClause where = 12;
     ReturningClause returning = 15;
-    OrderByClause order_by = 18;
-    LimitClause limit = 19;
 }

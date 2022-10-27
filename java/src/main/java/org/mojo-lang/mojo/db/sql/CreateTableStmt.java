@@ -102,6 +102,34 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 114: {
+            org.mojo-lang.mojo.db.sql.TableDefinition.Builder subBuilder = null;
+            if (definitionCase_ == 14) {
+              subBuilder = ((org.mojo-lang.mojo.db.sql.TableDefinition) definition_).toBuilder();
+            }
+            definition_ =
+                input.readMessage(org.mojo-lang.mojo.db.sql.TableDefinition.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((org.mojo-lang.mojo.db.sql.TableDefinition) definition_);
+              definition_ = subBuilder.buildPartial();
+            }
+            definitionCase_ = 14;
+            break;
+          }
+          case 122: {
+            org.mojo-lang.mojo.db.sql.AsSubqueryClause.Builder subBuilder = null;
+            if (definitionCase_ == 15) {
+              subBuilder = ((org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_).toBuilder();
+            }
+            definition_ =
+                input.readMessage(org.mojo-lang.mojo.db.sql.AsSubqueryClause.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_);
+              definition_ = subBuilder.buildPartial();
+            }
+            definitionCase_ = 15;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -132,6 +160,47 @@ private static final long serialVersionUID = 0L;
     return org.mojo-lang.mojo.db.sql.CreateTableStmtProto.internal_static_mojo_db_sql_CreateTableStmt_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             org.mojo-lang.mojo.db.sql.CreateTableStmt.class, org.mojo-lang.mojo.db.sql.CreateTableStmt.Builder.class);
+  }
+
+  private int definitionCase_ = 0;
+  private java.lang.Object definition_;
+  public enum DefinitionCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    TABLE_DEFINITION(14),
+    AS_SUBQUERY_CLAUSE(15),
+    DEFINITION_NOT_SET(0);
+    private final int value;
+    private DefinitionCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DefinitionCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static DefinitionCase forNumber(int value) {
+      switch (value) {
+        case 14: return TABLE_DEFINITION;
+        case 15: return AS_SUBQUERY_CLAUSE;
+        case 0: return DEFINITION_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public DefinitionCase
+  getDefinitionCase() {
+    return DefinitionCase.forNumber(
+        definitionCase_);
   }
 
   public static final int START_POSITION_FIELD_NUMBER = 1;
@@ -245,6 +314,68 @@ private static final long serialVersionUID = 0L;
     return getTableName();
   }
 
+  public static final int TABLE_DEFINITION_FIELD_NUMBER = 14;
+  /**
+   * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+   * @return Whether the tableDefinition field is set.
+   */
+  @java.lang.Override
+  public boolean hasTableDefinition() {
+    return definitionCase_ == 14;
+  }
+  /**
+   * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+   * @return The tableDefinition.
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.TableDefinition getTableDefinition() {
+    if (definitionCase_ == 14) {
+       return (org.mojo-lang.mojo.db.sql.TableDefinition) definition_;
+    }
+    return org.mojo-lang.mojo.db.sql.TableDefinition.getDefaultInstance();
+  }
+  /**
+   * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.TableDefinitionOrBuilder getTableDefinitionOrBuilder() {
+    if (definitionCase_ == 14) {
+       return (org.mojo-lang.mojo.db.sql.TableDefinition) definition_;
+    }
+    return org.mojo-lang.mojo.db.sql.TableDefinition.getDefaultInstance();
+  }
+
+  public static final int AS_SUBQUERY_CLAUSE_FIELD_NUMBER = 15;
+  /**
+   * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+   * @return Whether the asSubqueryClause field is set.
+   */
+  @java.lang.Override
+  public boolean hasAsSubqueryClause() {
+    return definitionCase_ == 15;
+  }
+  /**
+   * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+   * @return The asSubqueryClause.
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.AsSubqueryClause getAsSubqueryClause() {
+    if (definitionCase_ == 15) {
+       return (org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_;
+    }
+    return org.mojo-lang.mojo.db.sql.AsSubqueryClause.getDefaultInstance();
+  }
+  /**
+   * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.AsSubqueryClauseOrBuilder getAsSubqueryClauseOrBuilder() {
+    if (definitionCase_ == 15) {
+       return (org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_;
+    }
+    return org.mojo-lang.mojo.db.sql.AsSubqueryClause.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -276,6 +407,12 @@ private static final long serialVersionUID = 0L;
     }
     if (tableName_ != null) {
       output.writeMessage(11, getTableName());
+    }
+    if (definitionCase_ == 14) {
+      output.writeMessage(14, (org.mojo-lang.mojo.db.sql.TableDefinition) definition_);
+    }
+    if (definitionCase_ == 15) {
+      output.writeMessage(15, (org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_);
     }
     unknownFields.writeTo(output);
   }
@@ -309,6 +446,14 @@ private static final long serialVersionUID = 0L;
     if (tableName_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getTableName());
+    }
+    if (definitionCase_ == 14) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, (org.mojo-lang.mojo.db.sql.TableDefinition) definition_);
+    }
+    if (definitionCase_ == 15) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, (org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -346,6 +491,19 @@ private static final long serialVersionUID = 0L;
       if (!getTableName()
           .equals(other.getTableName())) return false;
     }
+    if (!getDefinitionCase().equals(other.getDefinitionCase())) return false;
+    switch (definitionCase_) {
+      case 14:
+        if (!getTableDefinition()
+            .equals(other.getTableDefinition())) return false;
+        break;
+      case 15:
+        if (!getAsSubqueryClause()
+            .equals(other.getAsSubqueryClause())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -377,6 +535,18 @@ private static final long serialVersionUID = 0L;
     if (hasTableName()) {
       hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getTableName().hashCode();
+    }
+    switch (definitionCase_) {
+      case 14:
+        hash = (37 * hash) + TABLE_DEFINITION_FIELD_NUMBER;
+        hash = (53 * hash) + getTableDefinition().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + AS_SUBQUERY_CLAUSE_FIELD_NUMBER;
+        hash = (53 * hash) + getAsSubqueryClause().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -535,6 +705,8 @@ private static final long serialVersionUID = 0L;
         tableName_ = null;
         tableNameBuilder_ = null;
       }
+      definitionCase_ = 0;
+      definition_ = null;
       return this;
     }
 
@@ -579,6 +751,21 @@ private static final long serialVersionUID = 0L;
       } else {
         result.tableName_ = tableNameBuilder_.build();
       }
+      if (definitionCase_ == 14) {
+        if (tableDefinitionBuilder_ == null) {
+          result.definition_ = definition_;
+        } else {
+          result.definition_ = tableDefinitionBuilder_.build();
+        }
+      }
+      if (definitionCase_ == 15) {
+        if (asSubqueryClauseBuilder_ == null) {
+          result.definition_ = definition_;
+        } else {
+          result.definition_ = asSubqueryClauseBuilder_.build();
+        }
+      }
+      result.definitionCase_ = definitionCase_;
       onBuilt();
       return result;
     }
@@ -645,6 +832,19 @@ private static final long serialVersionUID = 0L;
       if (other.hasTableName()) {
         mergeTableName(other.getTableName());
       }
+      switch (other.getDefinitionCase()) {
+        case TABLE_DEFINITION: {
+          mergeTableDefinition(other.getTableDefinition());
+          break;
+        }
+        case AS_SUBQUERY_CLAUSE: {
+          mergeAsSubqueryClause(other.getAsSubqueryClause());
+          break;
+        }
+        case DEFINITION_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -673,6 +873,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int definitionCase_ = 0;
+    private java.lang.Object definition_;
+    public DefinitionCase
+        getDefinitionCase() {
+      return DefinitionCase.forNumber(
+          definitionCase_);
+    }
+
+    public Builder clearDefinition() {
+      definitionCase_ = 0;
+      definition_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private org.mojolang.mojo.lang.Position startPosition_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1122,6 +1337,288 @@ private static final long serialVersionUID = 0L;
         tableName_ = null;
       }
       return tableNameBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.TableDefinition, org.mojo-lang.mojo.db.sql.TableDefinition.Builder, org.mojo-lang.mojo.db.sql.TableDefinitionOrBuilder> tableDefinitionBuilder_;
+    /**
+     * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+     * @return Whether the tableDefinition field is set.
+     */
+    @java.lang.Override
+    public boolean hasTableDefinition() {
+      return definitionCase_ == 14;
+    }
+    /**
+     * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+     * @return The tableDefinition.
+     */
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.TableDefinition getTableDefinition() {
+      if (tableDefinitionBuilder_ == null) {
+        if (definitionCase_ == 14) {
+          return (org.mojo-lang.mojo.db.sql.TableDefinition) definition_;
+        }
+        return org.mojo-lang.mojo.db.sql.TableDefinition.getDefaultInstance();
+      } else {
+        if (definitionCase_ == 14) {
+          return tableDefinitionBuilder_.getMessage();
+        }
+        return org.mojo-lang.mojo.db.sql.TableDefinition.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+     */
+    public Builder setTableDefinition(org.mojo-lang.mojo.db.sql.TableDefinition value) {
+      if (tableDefinitionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        definition_ = value;
+        onChanged();
+      } else {
+        tableDefinitionBuilder_.setMessage(value);
+      }
+      definitionCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+     */
+    public Builder setTableDefinition(
+        org.mojo-lang.mojo.db.sql.TableDefinition.Builder builderForValue) {
+      if (tableDefinitionBuilder_ == null) {
+        definition_ = builderForValue.build();
+        onChanged();
+      } else {
+        tableDefinitionBuilder_.setMessage(builderForValue.build());
+      }
+      definitionCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+     */
+    public Builder mergeTableDefinition(org.mojo-lang.mojo.db.sql.TableDefinition value) {
+      if (tableDefinitionBuilder_ == null) {
+        if (definitionCase_ == 14 &&
+            definition_ != org.mojo-lang.mojo.db.sql.TableDefinition.getDefaultInstance()) {
+          definition_ = org.mojo-lang.mojo.db.sql.TableDefinition.newBuilder((org.mojo-lang.mojo.db.sql.TableDefinition) definition_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          definition_ = value;
+        }
+        onChanged();
+      } else {
+        if (definitionCase_ == 14) {
+          tableDefinitionBuilder_.mergeFrom(value);
+        }
+        tableDefinitionBuilder_.setMessage(value);
+      }
+      definitionCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+     */
+    public Builder clearTableDefinition() {
+      if (tableDefinitionBuilder_ == null) {
+        if (definitionCase_ == 14) {
+          definitionCase_ = 0;
+          definition_ = null;
+          onChanged();
+        }
+      } else {
+        if (definitionCase_ == 14) {
+          definitionCase_ = 0;
+          definition_ = null;
+        }
+        tableDefinitionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.TableDefinition.Builder getTableDefinitionBuilder() {
+      return getTableDefinitionFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+     */
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.TableDefinitionOrBuilder getTableDefinitionOrBuilder() {
+      if ((definitionCase_ == 14) && (tableDefinitionBuilder_ != null)) {
+        return tableDefinitionBuilder_.getMessageOrBuilder();
+      } else {
+        if (definitionCase_ == 14) {
+          return (org.mojo-lang.mojo.db.sql.TableDefinition) definition_;
+        }
+        return org.mojo-lang.mojo.db.sql.TableDefinition.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.TableDefinition table_definition = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.TableDefinition, org.mojo-lang.mojo.db.sql.TableDefinition.Builder, org.mojo-lang.mojo.db.sql.TableDefinitionOrBuilder> 
+        getTableDefinitionFieldBuilder() {
+      if (tableDefinitionBuilder_ == null) {
+        if (!(definitionCase_ == 14)) {
+          definition_ = org.mojo-lang.mojo.db.sql.TableDefinition.getDefaultInstance();
+        }
+        tableDefinitionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojo-lang.mojo.db.sql.TableDefinition, org.mojo-lang.mojo.db.sql.TableDefinition.Builder, org.mojo-lang.mojo.db.sql.TableDefinitionOrBuilder>(
+                (org.mojo-lang.mojo.db.sql.TableDefinition) definition_,
+                getParentForChildren(),
+                isClean());
+        definition_ = null;
+      }
+      definitionCase_ = 14;
+      onChanged();;
+      return tableDefinitionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.AsSubqueryClause, org.mojo-lang.mojo.db.sql.AsSubqueryClause.Builder, org.mojo-lang.mojo.db.sql.AsSubqueryClauseOrBuilder> asSubqueryClauseBuilder_;
+    /**
+     * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+     * @return Whether the asSubqueryClause field is set.
+     */
+    @java.lang.Override
+    public boolean hasAsSubqueryClause() {
+      return definitionCase_ == 15;
+    }
+    /**
+     * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+     * @return The asSubqueryClause.
+     */
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.AsSubqueryClause getAsSubqueryClause() {
+      if (asSubqueryClauseBuilder_ == null) {
+        if (definitionCase_ == 15) {
+          return (org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_;
+        }
+        return org.mojo-lang.mojo.db.sql.AsSubqueryClause.getDefaultInstance();
+      } else {
+        if (definitionCase_ == 15) {
+          return asSubqueryClauseBuilder_.getMessage();
+        }
+        return org.mojo-lang.mojo.db.sql.AsSubqueryClause.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+     */
+    public Builder setAsSubqueryClause(org.mojo-lang.mojo.db.sql.AsSubqueryClause value) {
+      if (asSubqueryClauseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        definition_ = value;
+        onChanged();
+      } else {
+        asSubqueryClauseBuilder_.setMessage(value);
+      }
+      definitionCase_ = 15;
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+     */
+    public Builder setAsSubqueryClause(
+        org.mojo-lang.mojo.db.sql.AsSubqueryClause.Builder builderForValue) {
+      if (asSubqueryClauseBuilder_ == null) {
+        definition_ = builderForValue.build();
+        onChanged();
+      } else {
+        asSubqueryClauseBuilder_.setMessage(builderForValue.build());
+      }
+      definitionCase_ = 15;
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+     */
+    public Builder mergeAsSubqueryClause(org.mojo-lang.mojo.db.sql.AsSubqueryClause value) {
+      if (asSubqueryClauseBuilder_ == null) {
+        if (definitionCase_ == 15 &&
+            definition_ != org.mojo-lang.mojo.db.sql.AsSubqueryClause.getDefaultInstance()) {
+          definition_ = org.mojo-lang.mojo.db.sql.AsSubqueryClause.newBuilder((org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          definition_ = value;
+        }
+        onChanged();
+      } else {
+        if (definitionCase_ == 15) {
+          asSubqueryClauseBuilder_.mergeFrom(value);
+        }
+        asSubqueryClauseBuilder_.setMessage(value);
+      }
+      definitionCase_ = 15;
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+     */
+    public Builder clearAsSubqueryClause() {
+      if (asSubqueryClauseBuilder_ == null) {
+        if (definitionCase_ == 15) {
+          definitionCase_ = 0;
+          definition_ = null;
+          onChanged();
+        }
+      } else {
+        if (definitionCase_ == 15) {
+          definitionCase_ = 0;
+          definition_ = null;
+        }
+        asSubqueryClauseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.AsSubqueryClause.Builder getAsSubqueryClauseBuilder() {
+      return getAsSubqueryClauseFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+     */
+    @java.lang.Override
+    public org.mojo-lang.mojo.db.sql.AsSubqueryClauseOrBuilder getAsSubqueryClauseOrBuilder() {
+      if ((definitionCase_ == 15) && (asSubqueryClauseBuilder_ != null)) {
+        return asSubqueryClauseBuilder_.getMessageOrBuilder();
+      } else {
+        if (definitionCase_ == 15) {
+          return (org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_;
+        }
+        return org.mojo-lang.mojo.db.sql.AsSubqueryClause.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.AsSubqueryClause as_subquery_clause = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.AsSubqueryClause, org.mojo-lang.mojo.db.sql.AsSubqueryClause.Builder, org.mojo-lang.mojo.db.sql.AsSubqueryClauseOrBuilder> 
+        getAsSubqueryClauseFieldBuilder() {
+      if (asSubqueryClauseBuilder_ == null) {
+        if (!(definitionCase_ == 15)) {
+          definition_ = org.mojo-lang.mojo.db.sql.AsSubqueryClause.getDefaultInstance();
+        }
+        asSubqueryClauseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojo-lang.mojo.db.sql.AsSubqueryClause, org.mojo-lang.mojo.db.sql.AsSubqueryClause.Builder, org.mojo-lang.mojo.db.sql.AsSubqueryClauseOrBuilder>(
+                (org.mojo-lang.mojo.db.sql.AsSubqueryClause) definition_,
+                getParentForChildren(),
+                isClean());
+        definition_ = null;
+      }
+      definitionCase_ = 15;
+      onChanged();;
+      return asSubqueryClauseBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

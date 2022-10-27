@@ -48,4 +48,16 @@ public interface VacuumStmtOrBuilder extends
    * @return The implicit.
    */
   boolean getImplicit();
+
+  /**
+   * <code>string schema = 10;</code>
+   * @return The schema.
+   */
+  java.lang.String getSchema();
+  /**
+   * <code>string schema = 10;</code>
+   * @return The bytes for schema.
+   */
+  com.google.protobuf.ByteString
+      getSchemaBytes();
 }

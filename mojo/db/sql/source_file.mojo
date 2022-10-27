@@ -13,5 +13,9 @@
 // limitations under the License.
 
 type SourceFile {
-    statements: [Statement] @10
+    name:       String @1
+
+    full_name:  String @2
+
+    statements: [Statement] @12
 }

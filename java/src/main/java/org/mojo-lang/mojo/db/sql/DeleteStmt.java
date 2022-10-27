@@ -98,14 +98,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            org.mojo-lang.mojo.db.sql.FromClause.Builder subBuilder = null;
-            if (from_ != null) {
-              subBuilder = from_.toBuilder();
+            org.mojo-lang.mojo.db.sql.QualifiedTableName.Builder subBuilder = null;
+            if (tableName_ != null) {
+              subBuilder = tableName_.toBuilder();
             }
-            from_ = input.readMessage(org.mojo-lang.mojo.db.sql.FromClause.parser(), extensionRegistry);
+            tableName_ = input.readMessage(org.mojo-lang.mojo.db.sql.QualifiedTableName.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(from_);
-              from_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(tableName_);
+              tableName_ = subBuilder.buildPartial();
             }
 
             break;
@@ -132,32 +132,6 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(returning_);
               returning_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 146: {
-            org.mojo-lang.mojo.db.sql.OrderByClause.Builder subBuilder = null;
-            if (orderBy_ != null) {
-              subBuilder = orderBy_.toBuilder();
-            }
-            orderBy_ = input.readMessage(org.mojo-lang.mojo.db.sql.OrderByClause.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(orderBy_);
-              orderBy_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 154: {
-            org.mojo-lang.mojo.db.sql.LimitClause.Builder subBuilder = null;
-            if (limit_ != null) {
-              subBuilder = limit_.toBuilder();
-            }
-            limit_ = input.readMessage(org.mojo-lang.mojo.db.sql.LimitClause.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(limit_);
-              limit_ = subBuilder.buildPartial();
             }
 
             break;
@@ -294,30 +268,30 @@ private static final long serialVersionUID = 0L;
     return getWith();
   }
 
-  public static final int FROM_FIELD_NUMBER = 11;
-  private org.mojo-lang.mojo.db.sql.FromClause from_;
+  public static final int TABLE_NAME_FIELD_NUMBER = 11;
+  private org.mojo-lang.mojo.db.sql.QualifiedTableName tableName_;
   /**
-   * <code>.mojo.db.sql.FromClause from = 11;</code>
-   * @return Whether the from field is set.
+   * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
+   * @return Whether the tableName field is set.
    */
   @java.lang.Override
-  public boolean hasFrom() {
-    return from_ != null;
+  public boolean hasTableName() {
+    return tableName_ != null;
   }
   /**
-   * <code>.mojo.db.sql.FromClause from = 11;</code>
-   * @return The from.
+   * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
+   * @return The tableName.
    */
   @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.FromClause getFrom() {
-    return from_ == null ? org.mojo-lang.mojo.db.sql.FromClause.getDefaultInstance() : from_;
+  public org.mojo-lang.mojo.db.sql.QualifiedTableName getTableName() {
+    return tableName_ == null ? org.mojo-lang.mojo.db.sql.QualifiedTableName.getDefaultInstance() : tableName_;
   }
   /**
-   * <code>.mojo.db.sql.FromClause from = 11;</code>
+   * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
    */
   @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.FromClauseOrBuilder getFromOrBuilder() {
-    return getFrom();
+  public org.mojo-lang.mojo.db.sql.QualifiedTableNameOrBuilder getTableNameOrBuilder() {
+    return getTableName();
   }
 
   public static final int WHERE_FIELD_NUMBER = 12;
@@ -372,58 +346,6 @@ private static final long serialVersionUID = 0L;
     return getReturning();
   }
 
-  public static final int ORDER_BY_FIELD_NUMBER = 18;
-  private org.mojo-lang.mojo.db.sql.OrderByClause orderBy_;
-  /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-   * @return Whether the orderBy field is set.
-   */
-  @java.lang.Override
-  public boolean hasOrderBy() {
-    return orderBy_ != null;
-  }
-  /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-   * @return The orderBy.
-   */
-  @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.OrderByClause getOrderBy() {
-    return orderBy_ == null ? org.mojo-lang.mojo.db.sql.OrderByClause.getDefaultInstance() : orderBy_;
-  }
-  /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-   */
-  @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder getOrderByOrBuilder() {
-    return getOrderBy();
-  }
-
-  public static final int LIMIT_FIELD_NUMBER = 19;
-  private org.mojo-lang.mojo.db.sql.LimitClause limit_;
-  /**
-   * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-   * @return Whether the limit field is set.
-   */
-  @java.lang.Override
-  public boolean hasLimit() {
-    return limit_ != null;
-  }
-  /**
-   * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-   * @return The limit.
-   */
-  @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.LimitClause getLimit() {
-    return limit_ == null ? org.mojo-lang.mojo.db.sql.LimitClause.getDefaultInstance() : limit_;
-  }
-  /**
-   * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-   */
-  @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder getLimitOrBuilder() {
-    return getLimit();
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -453,20 +375,14 @@ private static final long serialVersionUID = 0L;
     if (with_ != null) {
       output.writeMessage(10, getWith());
     }
-    if (from_ != null) {
-      output.writeMessage(11, getFrom());
+    if (tableName_ != null) {
+      output.writeMessage(11, getTableName());
     }
     if (where_ != null) {
       output.writeMessage(12, getWhere());
     }
     if (returning_ != null) {
       output.writeMessage(15, getReturning());
-    }
-    if (orderBy_ != null) {
-      output.writeMessage(18, getOrderBy());
-    }
-    if (limit_ != null) {
-      output.writeMessage(19, getLimit());
     }
     unknownFields.writeTo(output);
   }
@@ -497,9 +413,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getWith());
     }
-    if (from_ != null) {
+    if (tableName_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getFrom());
+        .computeMessageSize(11, getTableName());
     }
     if (where_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -508,14 +424,6 @@ private static final long serialVersionUID = 0L;
     if (returning_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getReturning());
-    }
-    if (orderBy_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, getOrderBy());
-    }
-    if (limit_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(19, getLimit());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -551,10 +459,10 @@ private static final long serialVersionUID = 0L;
       if (!getWith()
           .equals(other.getWith())) return false;
     }
-    if (hasFrom() != other.hasFrom()) return false;
-    if (hasFrom()) {
-      if (!getFrom()
-          .equals(other.getFrom())) return false;
+    if (hasTableName() != other.hasTableName()) return false;
+    if (hasTableName()) {
+      if (!getTableName()
+          .equals(other.getTableName())) return false;
     }
     if (hasWhere() != other.hasWhere()) return false;
     if (hasWhere()) {
@@ -565,16 +473,6 @@ private static final long serialVersionUID = 0L;
     if (hasReturning()) {
       if (!getReturning()
           .equals(other.getReturning())) return false;
-    }
-    if (hasOrderBy() != other.hasOrderBy()) return false;
-    if (hasOrderBy()) {
-      if (!getOrderBy()
-          .equals(other.getOrderBy())) return false;
-    }
-    if (hasLimit() != other.hasLimit()) return false;
-    if (hasLimit()) {
-      if (!getLimit()
-          .equals(other.getLimit())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -605,9 +503,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WITH_FIELD_NUMBER;
       hash = (53 * hash) + getWith().hashCode();
     }
-    if (hasFrom()) {
-      hash = (37 * hash) + FROM_FIELD_NUMBER;
-      hash = (53 * hash) + getFrom().hashCode();
+    if (hasTableName()) {
+      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTableName().hashCode();
     }
     if (hasWhere()) {
       hash = (37 * hash) + WHERE_FIELD_NUMBER;
@@ -616,14 +514,6 @@ private static final long serialVersionUID = 0L;
     if (hasReturning()) {
       hash = (37 * hash) + RETURNING_FIELD_NUMBER;
       hash = (53 * hash) + getReturning().hashCode();
-    }
-    if (hasOrderBy()) {
-      hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getOrderBy().hashCode();
-    }
-    if (hasLimit()) {
-      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
-      hash = (53 * hash) + getLimit().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -780,11 +670,11 @@ private static final long serialVersionUID = 0L;
         with_ = null;
         withBuilder_ = null;
       }
-      if (fromBuilder_ == null) {
-        from_ = null;
+      if (tableNameBuilder_ == null) {
+        tableName_ = null;
       } else {
-        from_ = null;
-        fromBuilder_ = null;
+        tableName_ = null;
+        tableNameBuilder_ = null;
       }
       if (whereBuilder_ == null) {
         where_ = null;
@@ -797,18 +687,6 @@ private static final long serialVersionUID = 0L;
       } else {
         returning_ = null;
         returningBuilder_ = null;
-      }
-      if (orderByBuilder_ == null) {
-        orderBy_ = null;
-      } else {
-        orderBy_ = null;
-        orderByBuilder_ = null;
-      }
-      if (limitBuilder_ == null) {
-        limit_ = null;
-      } else {
-        limit_ = null;
-        limitBuilder_ = null;
       }
       return this;
     }
@@ -853,10 +731,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.with_ = withBuilder_.build();
       }
-      if (fromBuilder_ == null) {
-        result.from_ = from_;
+      if (tableNameBuilder_ == null) {
+        result.tableName_ = tableName_;
       } else {
-        result.from_ = fromBuilder_.build();
+        result.tableName_ = tableNameBuilder_.build();
       }
       if (whereBuilder_ == null) {
         result.where_ = where_;
@@ -867,16 +745,6 @@ private static final long serialVersionUID = 0L;
         result.returning_ = returning_;
       } else {
         result.returning_ = returningBuilder_.build();
-      }
-      if (orderByBuilder_ == null) {
-        result.orderBy_ = orderBy_;
-      } else {
-        result.orderBy_ = orderByBuilder_.build();
-      }
-      if (limitBuilder_ == null) {
-        result.limit_ = limit_;
-      } else {
-        result.limit_ = limitBuilder_.build();
       }
       onBuilt();
       return result;
@@ -941,20 +809,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasWith()) {
         mergeWith(other.getWith());
       }
-      if (other.hasFrom()) {
-        mergeFrom(other.getFrom());
+      if (other.hasTableName()) {
+        mergeTableName(other.getTableName());
       }
       if (other.hasWhere()) {
         mergeWhere(other.getWhere());
       }
       if (other.hasReturning()) {
         mergeReturning(other.getReturning());
-      }
-      if (other.hasOrderBy()) {
-        mergeOrderBy(other.getOrderBy());
-      }
-      if (other.hasLimit()) {
-        mergeLimit(other.getLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1404,123 +1266,123 @@ private static final long serialVersionUID = 0L;
       return withBuilder_;
     }
 
-    private org.mojo-lang.mojo.db.sql.FromClause from_;
+    private org.mojo-lang.mojo.db.sql.QualifiedTableName tableName_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.FromClause, org.mojo-lang.mojo.db.sql.FromClause.Builder, org.mojo-lang.mojo.db.sql.FromClauseOrBuilder> fromBuilder_;
+        org.mojo-lang.mojo.db.sql.QualifiedTableName, org.mojo-lang.mojo.db.sql.QualifiedTableName.Builder, org.mojo-lang.mojo.db.sql.QualifiedTableNameOrBuilder> tableNameBuilder_;
     /**
-     * <code>.mojo.db.sql.FromClause from = 11;</code>
-     * @return Whether the from field is set.
+     * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
+     * @return Whether the tableName field is set.
      */
-    public boolean hasFrom() {
-      return fromBuilder_ != null || from_ != null;
+    public boolean hasTableName() {
+      return tableNameBuilder_ != null || tableName_ != null;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 11;</code>
-     * @return The from.
+     * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
+     * @return The tableName.
      */
-    public org.mojo-lang.mojo.db.sql.FromClause getFrom() {
-      if (fromBuilder_ == null) {
-        return from_ == null ? org.mojo-lang.mojo.db.sql.FromClause.getDefaultInstance() : from_;
+    public org.mojo-lang.mojo.db.sql.QualifiedTableName getTableName() {
+      if (tableNameBuilder_ == null) {
+        return tableName_ == null ? org.mojo-lang.mojo.db.sql.QualifiedTableName.getDefaultInstance() : tableName_;
       } else {
-        return fromBuilder_.getMessage();
+        return tableNameBuilder_.getMessage();
       }
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 11;</code>
+     * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
      */
-    public Builder setFrom(org.mojo-lang.mojo.db.sql.FromClause value) {
-      if (fromBuilder_ == null) {
+    public Builder setTableName(org.mojo-lang.mojo.db.sql.QualifiedTableName value) {
+      if (tableNameBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        from_ = value;
+        tableName_ = value;
         onChanged();
       } else {
-        fromBuilder_.setMessage(value);
+        tableNameBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 11;</code>
+     * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
      */
-    public Builder setFrom(
-        org.mojo-lang.mojo.db.sql.FromClause.Builder builderForValue) {
-      if (fromBuilder_ == null) {
-        from_ = builderForValue.build();
+    public Builder setTableName(
+        org.mojo-lang.mojo.db.sql.QualifiedTableName.Builder builderForValue) {
+      if (tableNameBuilder_ == null) {
+        tableName_ = builderForValue.build();
         onChanged();
       } else {
-        fromBuilder_.setMessage(builderForValue.build());
+        tableNameBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 11;</code>
+     * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
      */
-    public Builder mergeFrom(org.mojo-lang.mojo.db.sql.FromClause value) {
-      if (fromBuilder_ == null) {
-        if (from_ != null) {
-          from_ =
-            org.mojo-lang.mojo.db.sql.FromClause.newBuilder(from_).mergeFrom(value).buildPartial();
+    public Builder mergeTableName(org.mojo-lang.mojo.db.sql.QualifiedTableName value) {
+      if (tableNameBuilder_ == null) {
+        if (tableName_ != null) {
+          tableName_ =
+            org.mojo-lang.mojo.db.sql.QualifiedTableName.newBuilder(tableName_).mergeFrom(value).buildPartial();
         } else {
-          from_ = value;
+          tableName_ = value;
         }
         onChanged();
       } else {
-        fromBuilder_.mergeFrom(value);
+        tableNameBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 11;</code>
+     * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
      */
-    public Builder clearFrom() {
-      if (fromBuilder_ == null) {
-        from_ = null;
+    public Builder clearTableName() {
+      if (tableNameBuilder_ == null) {
+        tableName_ = null;
         onChanged();
       } else {
-        from_ = null;
-        fromBuilder_ = null;
+        tableName_ = null;
+        tableNameBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 11;</code>
+     * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
      */
-    public org.mojo-lang.mojo.db.sql.FromClause.Builder getFromBuilder() {
+    public org.mojo-lang.mojo.db.sql.QualifiedTableName.Builder getTableNameBuilder() {
       
       onChanged();
-      return getFromFieldBuilder().getBuilder();
+      return getTableNameFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 11;</code>
+     * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
      */
-    public org.mojo-lang.mojo.db.sql.FromClauseOrBuilder getFromOrBuilder() {
-      if (fromBuilder_ != null) {
-        return fromBuilder_.getMessageOrBuilder();
+    public org.mojo-lang.mojo.db.sql.QualifiedTableNameOrBuilder getTableNameOrBuilder() {
+      if (tableNameBuilder_ != null) {
+        return tableNameBuilder_.getMessageOrBuilder();
       } else {
-        return from_ == null ?
-            org.mojo-lang.mojo.db.sql.FromClause.getDefaultInstance() : from_;
+        return tableName_ == null ?
+            org.mojo-lang.mojo.db.sql.QualifiedTableName.getDefaultInstance() : tableName_;
       }
     }
     /**
-     * <code>.mojo.db.sql.FromClause from = 11;</code>
+     * <code>.mojo.db.sql.QualifiedTableName table_name = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.FromClause, org.mojo-lang.mojo.db.sql.FromClause.Builder, org.mojo-lang.mojo.db.sql.FromClauseOrBuilder> 
-        getFromFieldBuilder() {
-      if (fromBuilder_ == null) {
-        fromBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.mojo-lang.mojo.db.sql.FromClause, org.mojo-lang.mojo.db.sql.FromClause.Builder, org.mojo-lang.mojo.db.sql.FromClauseOrBuilder>(
-                getFrom(),
+        org.mojo-lang.mojo.db.sql.QualifiedTableName, org.mojo-lang.mojo.db.sql.QualifiedTableName.Builder, org.mojo-lang.mojo.db.sql.QualifiedTableNameOrBuilder> 
+        getTableNameFieldBuilder() {
+      if (tableNameBuilder_ == null) {
+        tableNameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojo-lang.mojo.db.sql.QualifiedTableName, org.mojo-lang.mojo.db.sql.QualifiedTableName.Builder, org.mojo-lang.mojo.db.sql.QualifiedTableNameOrBuilder>(
+                getTableName(),
                 getParentForChildren(),
                 isClean());
-        from_ = null;
+        tableName_ = null;
       }
-      return fromBuilder_;
+      return tableNameBuilder_;
     }
 
     private org.mojo-lang.mojo.db.sql.WhereClause where_;
@@ -1759,244 +1621,6 @@ private static final long serialVersionUID = 0L;
         returning_ = null;
       }
       return returningBuilder_;
-    }
-
-    private org.mojo-lang.mojo.db.sql.OrderByClause orderBy_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.OrderByClause, org.mojo-lang.mojo.db.sql.OrderByClause.Builder, org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder> orderByBuilder_;
-    /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-     * @return Whether the orderBy field is set.
-     */
-    public boolean hasOrderBy() {
-      return orderByBuilder_ != null || orderBy_ != null;
-    }
-    /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-     * @return The orderBy.
-     */
-    public org.mojo-lang.mojo.db.sql.OrderByClause getOrderBy() {
-      if (orderByBuilder_ == null) {
-        return orderBy_ == null ? org.mojo-lang.mojo.db.sql.OrderByClause.getDefaultInstance() : orderBy_;
-      } else {
-        return orderByBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-     */
-    public Builder setOrderBy(org.mojo-lang.mojo.db.sql.OrderByClause value) {
-      if (orderByBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        orderBy_ = value;
-        onChanged();
-      } else {
-        orderByBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-     */
-    public Builder setOrderBy(
-        org.mojo-lang.mojo.db.sql.OrderByClause.Builder builderForValue) {
-      if (orderByBuilder_ == null) {
-        orderBy_ = builderForValue.build();
-        onChanged();
-      } else {
-        orderByBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-     */
-    public Builder mergeOrderBy(org.mojo-lang.mojo.db.sql.OrderByClause value) {
-      if (orderByBuilder_ == null) {
-        if (orderBy_ != null) {
-          orderBy_ =
-            org.mojo-lang.mojo.db.sql.OrderByClause.newBuilder(orderBy_).mergeFrom(value).buildPartial();
-        } else {
-          orderBy_ = value;
-        }
-        onChanged();
-      } else {
-        orderByBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-     */
-    public Builder clearOrderBy() {
-      if (orderByBuilder_ == null) {
-        orderBy_ = null;
-        onChanged();
-      } else {
-        orderBy_ = null;
-        orderByBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-     */
-    public org.mojo-lang.mojo.db.sql.OrderByClause.Builder getOrderByBuilder() {
-      
-      onChanged();
-      return getOrderByFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-     */
-    public org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder getOrderByOrBuilder() {
-      if (orderByBuilder_ != null) {
-        return orderByBuilder_.getMessageOrBuilder();
-      } else {
-        return orderBy_ == null ?
-            org.mojo-lang.mojo.db.sql.OrderByClause.getDefaultInstance() : orderBy_;
-      }
-    }
-    /**
-     * <code>.mojo.db.sql.OrderByClause order_by = 18;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.OrderByClause, org.mojo-lang.mojo.db.sql.OrderByClause.Builder, org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder> 
-        getOrderByFieldBuilder() {
-      if (orderByBuilder_ == null) {
-        orderByBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.mojo-lang.mojo.db.sql.OrderByClause, org.mojo-lang.mojo.db.sql.OrderByClause.Builder, org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder>(
-                getOrderBy(),
-                getParentForChildren(),
-                isClean());
-        orderBy_ = null;
-      }
-      return orderByBuilder_;
-    }
-
-    private org.mojo-lang.mojo.db.sql.LimitClause limit_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.LimitClause, org.mojo-lang.mojo.db.sql.LimitClause.Builder, org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder> limitBuilder_;
-    /**
-     * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-     * @return Whether the limit field is set.
-     */
-    public boolean hasLimit() {
-      return limitBuilder_ != null || limit_ != null;
-    }
-    /**
-     * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-     * @return The limit.
-     */
-    public org.mojo-lang.mojo.db.sql.LimitClause getLimit() {
-      if (limitBuilder_ == null) {
-        return limit_ == null ? org.mojo-lang.mojo.db.sql.LimitClause.getDefaultInstance() : limit_;
-      } else {
-        return limitBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-     */
-    public Builder setLimit(org.mojo-lang.mojo.db.sql.LimitClause value) {
-      if (limitBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        limit_ = value;
-        onChanged();
-      } else {
-        limitBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-     */
-    public Builder setLimit(
-        org.mojo-lang.mojo.db.sql.LimitClause.Builder builderForValue) {
-      if (limitBuilder_ == null) {
-        limit_ = builderForValue.build();
-        onChanged();
-      } else {
-        limitBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-     */
-    public Builder mergeLimit(org.mojo-lang.mojo.db.sql.LimitClause value) {
-      if (limitBuilder_ == null) {
-        if (limit_ != null) {
-          limit_ =
-            org.mojo-lang.mojo.db.sql.LimitClause.newBuilder(limit_).mergeFrom(value).buildPartial();
-        } else {
-          limit_ = value;
-        }
-        onChanged();
-      } else {
-        limitBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-     */
-    public Builder clearLimit() {
-      if (limitBuilder_ == null) {
-        limit_ = null;
-        onChanged();
-      } else {
-        limit_ = null;
-        limitBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-     */
-    public org.mojo-lang.mojo.db.sql.LimitClause.Builder getLimitBuilder() {
-      
-      onChanged();
-      return getLimitFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-     */
-    public org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder getLimitOrBuilder() {
-      if (limitBuilder_ != null) {
-        return limitBuilder_.getMessageOrBuilder();
-      } else {
-        return limit_ == null ?
-            org.mojo-lang.mojo.db.sql.LimitClause.getDefaultInstance() : limit_;
-      }
-    }
-    /**
-     * <code>.mojo.db.sql.LimitClause limit = 19;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.LimitClause, org.mojo-lang.mojo.db.sql.LimitClause.Builder, org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder> 
-        getLimitFieldBuilder() {
-      if (limitBuilder_ == null) {
-        limitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.mojo-lang.mojo.db.sql.LimitClause, org.mojo-lang.mojo.db.sql.LimitClause.Builder, org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder>(
-                getLimit(),
-                getParentForChildren(),
-                isClean());
-        limit_ = null;
-      }
-      return limitBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -13,5 +13,5 @@
 // limitations under the License.
 
 type UpdateClause: Clause {
-    table_name: TableName @10
+
 }

@@ -16,4 +16,5 @@ message VacuumStmt {
     mojo.lang.Position end_position = 2;
     int64 kind = 4;
     bool implicit = 5;
+    string schema = 10;
 }

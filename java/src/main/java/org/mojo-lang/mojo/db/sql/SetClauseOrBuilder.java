@@ -50,26 +50,26 @@ public interface SetClauseOrBuilder extends
   boolean getImplicit();
 
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
-  java.util.List<org.mojo-lang.mojo.db.sql.UpdateItem> 
-      getUpdateItemsList();
+  java.util.List<org.mojo-lang.mojo.db.sql.ColumnAssignment> 
+      getAssignmentsList();
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
-  org.mojo-lang.mojo.db.sql.UpdateItem getUpdateItems(int index);
+  org.mojo-lang.mojo.db.sql.ColumnAssignment getAssignments(int index);
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
-  int getUpdateItemsCount();
+  int getAssignmentsCount();
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
-  java.util.List<? extends org.mojo-lang.mojo.db.sql.UpdateItemOrBuilder> 
-      getUpdateItemsOrBuilderList();
+  java.util.List<? extends org.mojo-lang.mojo.db.sql.ColumnAssignmentOrBuilder> 
+      getAssignmentsOrBuilderList();
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
-  org.mojo-lang.mojo.db.sql.UpdateItemOrBuilder getUpdateItemsOrBuilder(
+  org.mojo-lang.mojo.db.sql.ColumnAssignmentOrBuilder getAssignmentsOrBuilder(
       int index);
 }

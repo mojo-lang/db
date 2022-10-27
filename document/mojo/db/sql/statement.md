@@ -13,6 +13,7 @@
 | `mojo.db.sql.DeleteStmt` |  |  |
 | `mojo.db.sql.DetachStmt` |  |  |
 | `mojo.db.sql.DropStmt` |  |  |
+| `mojo.db.sql.EndStmt` |  |  |
 | `mojo.db.sql.InsertStmt` |  |  |
 | `mojo.db.sql.PragmaStmt` |  |  |
 | `mojo.db.sql.ReindexStmt` |  |  |

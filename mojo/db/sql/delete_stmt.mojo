@@ -14,10 +14,7 @@
 
 type DeleteStmt: DataManipulationStmt {
     with: WithClause @10
-    from: FromClause @11
+    table_name: QualifiedTableName @11
     where: WhereClause @12
     returning: ReturningClause @15
-
-    order_by: OrderByClause @18
-    limit: LimitClause @19
 }

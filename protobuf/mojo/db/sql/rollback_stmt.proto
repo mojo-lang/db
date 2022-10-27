@@ -16,4 +16,6 @@ message RollbackStmt {
     mojo.lang.Position end_position = 2;
     int64 kind = 4;
     bool implicit = 5;
+    bool transaction = 10;
+    string save_point = 11;
 }

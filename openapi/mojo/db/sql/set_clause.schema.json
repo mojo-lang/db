@@ -9,11 +9,11 @@
             "title": "mojo.db.sql.SetClause",
             "type": "object",
             "properties": {
-                "updateItems": {
+                "assignments": {
                     "title": "mojo.core.Array",
                     "type": "array",
                     "items": {
-                        "$ref": "#/components/schemas/mojo.db.sql.UpdateItem"
+                        "$ref": "#/components/schemas/mojo.db.sql.ColumnAssignment"
                     }
                 }
             }

@@ -15,21 +15,6 @@ public final class InsertStmtProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mojo_db_sql_ValuesClause_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mojo_db_sql_ValuesClause_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mojo_db_sql_IntoClause_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mojo_db_sql_IntoClause_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mojo_db_sql_UpsertClause_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mojo_db_sql_UpsertClause_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mojo_db_sql_InsertStmt_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -44,71 +29,52 @@ public final class InsertStmtProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\035mojo/db/sql/insert_stmt.proto\022\013mojo.db" +
-      ".sql\032\030mojo/db/sql/clause.proto\032(mojo/db/" +
-      "sql/data_manipulation_stmt.proto\032\"mojo/d" +
-      "b/sql/returning_clause.proto\032\025mojo/db/sq" +
-      "l/sql.proto\032\024mojo/lang/lang.proto\"\206\001\n\014Va" +
-      "luesClause\022+\n\016start_position\030\001 \001(\0132\023.moj" +
-      "o.lang.Position\022)\n\014end_position\030\002 \001(\0132\023." +
-      "mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010impl" +
-      "icit\030\005 \001(\010\"\204\001\n\nIntoClause\022+\n\016start_posit" +
-      "ion\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014end_po" +
-      "sition\030\002 \001(\0132\023.mojo.lang.Position\022\014\n\004kin" +
-      "d\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\"\206\001\n\014UpsertClau" +
-      "se\022+\n\016start_position\030\001 \001(\0132\023.mojo.lang.P" +
-      "osition\022)\n\014end_position\030\002 \001(\0132\023.mojo.lan" +
-      "g.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001" +
-      "(\010\"\204\003\n\nInsertStmt\022+\n\016start_position\030\001 \001(" +
-      "\0132\023.mojo.lang.Position\022)\n\014end_position\030\002" +
-      " \001(\0132\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022" +
-      "\020\n\010implicit\030\005 \001(\010\022%\n\004with\030\n \001(\0132\027.mojo.d" +
-      "b.sql.WithClause\022%\n\004into\030\013 \001(\0132\027.mojo.db" +
-      ".sql.IntoClause\022)\n\006values\030\014 \001(\0132\031.mojo.d" +
-      "b.sql.ValuesClause\022)\n\010subquery\030\r \001(\0132\027.m" +
-      "ojo.db.sql.SelectStmt\022)\n\006upsert\030\017 \001(\0132\031." +
-      "mojo.db.sql.UpsertClause\022/\n\treturning\030\020 " +
-      "\001(\0132\034.mojo.db.sql.ReturningClauseB^\n\031org" +
-      ".mojo-lang.mojo.db.sqlB\017InsertStmtProtoP" +
-      "\001Z.github.com/mojo-lang/db/go/pkg/mojo/d" +
-      "b/sql;sqlb\006proto3"
+      ".sql\032(mojo/db/sql/data_manipulation_stmt" +
+      ".proto\032\035mojo/db/sql/into_clause.proto\032\"m" +
+      "ojo/db/sql/returning_clause.proto\032\025mojo/" +
+      "db/sql/sql.proto\032\037mojo/db/sql/upsert_cla" +
+      "use.proto\032\024mojo/lang/lang.proto\"\373\004\n\nInse" +
+      "rtStmt\022+\n\016start_position\030\001 \001(\0132\023.mojo.la" +
+      "ng.Position\022)\n\014end_position\030\002 \001(\0132\023.mojo" +
+      ".lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit" +
+      "\030\005 \001(\010\022%\n\004with\030\n \001(\0132\027.mojo.db.sql.WithC" +
+      "lause\022*\n\004type\030\013 \001(\0162\034.mojo.db.sql.Insert" +
+      "Stmt.Type\022%\n\004into\030\014 \001(\0132\027.mojo.db.sql.In" +
+      "toClause\0222\n\rvalues_clause\030\r \001(\0132\031.mojo.d" +
+      "b.sql.ValuesClauseH\000\022.\n\013select_stmt\030\016 \001(" +
+      "\0132\027.mojo.db.sql.SelectStmtH\000\022)\n\006upsert\030\017" +
+      " \001(\0132\031.mojo.db.sql.UpsertClause\022/\n\tretur" +
+      "ning\030\020 \001(\0132\034.mojo.db.sql.ReturningClause" +
+      "\"\260\001\n\004Type\022\017\n\013TYPE_INSERT\020\000\022\020\n\014TYPE_REPLA" +
+      "CE\020\001\022\032\n\026TYPE_INSERT_OR_REPLACE\020\005\022\033\n\027TYPE" +
+      "_INSERT_OR_ROLLBACK\020\006\022\030\n\024TYPE_INSERT_OR_" +
+      "ABORT\020\007\022\027\n\023TYPE_INSERT_OR_FAIL\020\010\022\031\n\025TYPE" +
+      "_INSERT_OR_IGNORE\020\tB\010\n\006valuesB^\n\031org.moj" +
+      "o-lang.mojo.db.sqlB\017InsertStmtProtoP\001Z.g" +
+      "ithub.com/mojo-lang/db/go/pkg/mojo/db/sq" +
+      "l;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.mojo-lang.mojo.db.sql.ClauseProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.DataManipulationStmtProto.getDescriptor(),
+          org.mojo-lang.mojo.db.sql.IntoClauseProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.ReturningClauseProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor(),
+          org.mojo-lang.mojo.db.sql.UpsertClauseProto.getDescriptor(),
           org.mojolang.mojo.lang.LangProto.getDescriptor(),
         });
-    internal_static_mojo_db_sql_ValuesClause_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_mojo_db_sql_ValuesClause_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mojo_db_sql_ValuesClause_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", });
-    internal_static_mojo_db_sql_IntoClause_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_mojo_db_sql_IntoClause_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mojo_db_sql_IntoClause_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", });
-    internal_static_mojo_db_sql_UpsertClause_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_mojo_db_sql_UpsertClause_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mojo_db_sql_UpsertClause_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", });
     internal_static_mojo_db_sql_InsertStmt_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_mojo_db_sql_InsertStmt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_InsertStmt_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "Into", "Values", "Subquery", "Upsert", "Returning", });
-    org.mojo-lang.mojo.db.sql.ClauseProto.getDescriptor();
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "Type", "Into", "ValuesClause", "SelectStmt", "Upsert", "Returning", "Values", });
     org.mojo-lang.mojo.db.sql.DataManipulationStmtProto.getDescriptor();
+    org.mojo-lang.mojo.db.sql.IntoClauseProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.ReturningClauseProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor();
+    org.mojo-lang.mojo.db.sql.UpsertClauseProto.getDescriptor();
     org.mojolang.mojo.lang.LangProto.getDescriptor();
   }
 

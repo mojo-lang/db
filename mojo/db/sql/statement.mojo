@@ -25,6 +25,7 @@ type Statement = AlterTableStmt @1
                | DeleteStmt @17
                | DetachStmt @18
                | DropStmt @19
+               | EndStmt  @30
                | InsertStmt @20
                | PragmaStmt @21
                | ReindexStmt @22

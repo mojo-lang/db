@@ -12,24 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-type ValuesClause: Clause {
-
-}
-
-type IntoClause: Clause {
-
-}
-
-type UpsertClause: Clause {
-
-}
-
 type InsertStmt: DataManipulationStmt {
+    enum Type {
+        insert             @0
+        replace            @1
+        insert_or_replace  @5
+        insert_or_rollback @6
+        insert_or_abort    @7
+        insert_or_fail     @8
+        insert_or_ignore   @9
+    }
+
     with: WithClause @10
 
-    into: IntoClause      @11
-    values: ValuesClause  @12
-    subquery: SelectStmt  @13
+    type: Type @11
+    into: IntoClause      @12
+    values: ValuesClause  @13 | SelectStmt  @14
 
     upsert: UpsertClause  @15
     returning: ReturningClause @16

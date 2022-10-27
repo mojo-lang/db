@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RollbackStmt() {
+    savePoint_ = "";
   }
 
   @java.lang.Override
@@ -82,6 +83,17 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             implicit_ = input.readBool();
+            break;
+          }
+          case 80: {
+
+            transaction_ = input.readBool();
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            savePoint_ = s;
             break;
           }
           default: {
@@ -190,6 +202,55 @@ private static final long serialVersionUID = 0L;
     return implicit_;
   }
 
+  public static final int TRANSACTION_FIELD_NUMBER = 10;
+  private boolean transaction_;
+  /**
+   * <code>bool transaction = 10;</code>
+   * @return The transaction.
+   */
+  @java.lang.Override
+  public boolean getTransaction() {
+    return transaction_;
+  }
+
+  public static final int SAVE_POINT_FIELD_NUMBER = 11;
+  private volatile java.lang.Object savePoint_;
+  /**
+   * <code>string save_point = 11;</code>
+   * @return The savePoint.
+   */
+  @java.lang.Override
+  public java.lang.String getSavePoint() {
+    java.lang.Object ref = savePoint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      savePoint_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string save_point = 11;</code>
+   * @return The bytes for savePoint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSavePointBytes() {
+    java.lang.Object ref = savePoint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      savePoint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -216,6 +277,12 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       output.writeBool(5, implicit_);
     }
+    if (transaction_ != false) {
+      output.writeBool(10, transaction_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(savePoint_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, savePoint_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -240,6 +307,13 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, implicit_);
+    }
+    if (transaction_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, transaction_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(savePoint_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, savePoint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,6 +344,10 @@ private static final long serialVersionUID = 0L;
         != other.getKind()) return false;
     if (getImplicit()
         != other.getImplicit()) return false;
+    if (getTransaction()
+        != other.getTransaction()) return false;
+    if (!getSavePoint()
+        .equals(other.getSavePoint())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -295,6 +373,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IMPLICIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getImplicit());
+    hash = (37 * hash) + TRANSACTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTransaction());
+    hash = (37 * hash) + SAVE_POINT_FIELD_NUMBER;
+    hash = (53 * hash) + getSavePoint().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,6 +527,10 @@ private static final long serialVersionUID = 0L;
 
       implicit_ = false;
 
+      transaction_ = false;
+
+      savePoint_ = "";
+
       return this;
     }
 
@@ -482,6 +569,8 @@ private static final long serialVersionUID = 0L;
       }
       result.kind_ = kind_;
       result.implicit_ = implicit_;
+      result.transaction_ = transaction_;
+      result.savePoint_ = savePoint_;
       onBuilt();
       return result;
     }
@@ -541,6 +630,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getImplicit() != false) {
         setImplicit(other.getImplicit());
+      }
+      if (other.getTransaction() != false) {
+        setTransaction(other.getTransaction());
+      }
+      if (!other.getSavePoint().isEmpty()) {
+        savePoint_ = other.savePoint_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -867,6 +963,113 @@ private static final long serialVersionUID = 0L;
     public Builder clearImplicit() {
       
       implicit_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean transaction_ ;
+    /**
+     * <code>bool transaction = 10;</code>
+     * @return The transaction.
+     */
+    @java.lang.Override
+    public boolean getTransaction() {
+      return transaction_;
+    }
+    /**
+     * <code>bool transaction = 10;</code>
+     * @param value The transaction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransaction(boolean value) {
+      
+      transaction_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool transaction = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTransaction() {
+      
+      transaction_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object savePoint_ = "";
+    /**
+     * <code>string save_point = 11;</code>
+     * @return The savePoint.
+     */
+    public java.lang.String getSavePoint() {
+      java.lang.Object ref = savePoint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        savePoint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string save_point = 11;</code>
+     * @return The bytes for savePoint.
+     */
+    public com.google.protobuf.ByteString
+        getSavePointBytes() {
+      java.lang.Object ref = savePoint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        savePoint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string save_point = 11;</code>
+     * @param value The savePoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSavePoint(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      savePoint_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string save_point = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSavePoint() {
+      
+      savePoint_ = getDefaultInstance().getSavePoint();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string save_point = 11;</code>
+     * @param value The bytes for savePoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSavePointBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      savePoint_ = value;
       onChanged();
       return this;
     }

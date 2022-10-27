@@ -13,4 +13,7 @@
 // limitations under the License.
 
 type AnalyzeSmt: lang.Stmt {
+    schema_name: String @10
+    name: String @11 // table or index name
 }
+

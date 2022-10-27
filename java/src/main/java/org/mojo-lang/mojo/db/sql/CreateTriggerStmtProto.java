@@ -31,19 +31,23 @@ public final class CreateTriggerStmtProto {
       "\n%mojo/db/sql/create_trigger_stmt.proto\022" +
       "\013mojo.db.sql\032\035mojo/db/sql/create_stmt.pr" +
       "oto\032&mojo/db/sql/data_definition_stmt.pr" +
-      "oto\032\024mojo/lang/lang.proto\"\213\001\n\021CreateTrig" +
-      "gerStmt\022+\n\016start_position\030\001 \001(\0132\023.mojo.l" +
-      "ang.Position\022)\n\014end_position\030\002 \001(\0132\023.moj" +
-      "o.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010implici" +
-      "t\030\005 \001(\010Be\n\031org.mojo-lang.mojo.db.sqlB\026Cr" +
-      "eateTriggerStmtProtoP\001Z.github.com/mojo-" +
-      "lang/db/go/pkg/mojo/db/sql;sqlb\006proto3"
+      "oto\032\036mojo/db/sql/trigger_name.proto\032\024moj" +
+      "o/lang/lang.proto\"\322\001\n\021CreateTriggerStmt\022" +
+      "+\n\016start_position\030\001 \001(\0132\023.mojo.lang.Posi" +
+      "tion\022)\n\014end_position\030\002 \001(\0132\023.mojo.lang.P" +
+      "osition\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022" +
+      "\025\n\rif_not_exists\030\n \001(\010\022.\n\014trigger_name\030\013" +
+      " \001(\0132\030.mojo.db.sql.TriggerNameBe\n\031org.mo" +
+      "jo-lang.mojo.db.sqlB\026CreateTriggerStmtPr" +
+      "otoP\001Z.github.com/mojo-lang/db/go/pkg/mo" +
+      "jo/db/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.mojo-lang.mojo.db.sql.CreateStmtProto.getDescriptor(),
           org.mojo-lang.mojo.db.sql.DataDefinitionStmtProto.getDescriptor(),
+          org.mojo-lang.mojo.db.sql.TriggerNameProto.getDescriptor(),
           org.mojolang.mojo.lang.LangProto.getDescriptor(),
         });
     internal_static_mojo_db_sql_CreateTriggerStmt_descriptor =
@@ -51,9 +55,10 @@ public final class CreateTriggerStmtProto {
     internal_static_mojo_db_sql_CreateTriggerStmt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_CreateTriggerStmt_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "IfNotExists", "TriggerName", });
     org.mojo-lang.mojo.db.sql.CreateStmtProto.getDescriptor();
     org.mojo-lang.mojo.db.sql.DataDefinitionStmtProto.getDescriptor();
+    org.mojo-lang.mojo.db.sql.TriggerNameProto.getDescriptor();
     org.mojolang.mojo.lang.LangProto.getDescriptor();
   }
 

@@ -29,22 +29,19 @@ public final class UpdateClauseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\037mojo/db/sql/update_clause.proto\022\013mojo." +
-      "db.sql\032\030mojo/db/sql/clause.proto\032\025mojo/d" +
-      "b/sql/sql.proto\032\024mojo/lang/lang.proto\"\262\001" +
-      "\n\014UpdateClause\022+\n\016start_position\030\001 \001(\0132\023" +
-      ".mojo.lang.Position\022)\n\014end_position\030\002 \001(" +
-      "\0132\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010" +
-      "implicit\030\005 \001(\010\022*\n\ntable_name\030\n \001(\0132\026.moj" +
-      "o.db.sql.TableNameB`\n\031org.mojo-lang.mojo" +
-      ".db.sqlB\021UpdateClauseProtoP\001Z.github.com" +
-      "/mojo-lang/db/go/pkg/mojo/db/sql;sqlb\006pr" +
-      "oto3"
+      "db.sql\032\030mojo/db/sql/clause.proto\032\024mojo/l" +
+      "ang/lang.proto\"\206\001\n\014UpdateClause\022+\n\016start" +
+      "_position\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014" +
+      "end_position\030\002 \001(\0132\023.mojo.lang.Position\022" +
+      "\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010B`\n\031org.m" +
+      "ojo-lang.mojo.db.sqlB\021UpdateClauseProtoP" +
+      "\001Z.github.com/mojo-lang/db/go/pkg/mojo/d" +
+      "b/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.mojo-lang.mojo.db.sql.ClauseProto.getDescriptor(),
-          org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor(),
           org.mojolang.mojo.lang.LangProto.getDescriptor(),
         });
     internal_static_mojo_db_sql_UpdateClause_descriptor =
@@ -52,9 +49,8 @@ public final class UpdateClauseProto {
     internal_static_mojo_db_sql_UpdateClause_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_UpdateClause_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "TableName", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", });
     org.mojo-lang.mojo.db.sql.ClauseProto.getDescriptor();
-    org.mojo-lang.mojo.db.sql.SqlProto.getDescriptor();
     org.mojolang.mojo.lang.LangProto.getDescriptor();
   }
 

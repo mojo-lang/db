@@ -12,5 +12,7 @@ option java_outer_classname = "SourceFileProto";
 option java_package = "org.mojo-lang.mojo.db.sql";
 
 message SourceFile {
-    repeated Statement statements = 10;
+    string name = 1;
+    string full_name = 2;
+    repeated Statement statements = 12;
 }

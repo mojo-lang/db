@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateViewStmt() {
+    columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -84,6 +86,46 @@ private static final long serialVersionUID = 0L;
             implicit_ = input.readBool();
             break;
           }
+          case 80: {
+
+            ifNotExists_ = input.readBool();
+            break;
+          }
+          case 90: {
+            org.mojo-lang.mojo.db.sql.ViewName.Builder subBuilder = null;
+            if (viewName_ != null) {
+              subBuilder = viewName_.toBuilder();
+            }
+            viewName_ = input.readMessage(org.mojo-lang.mojo.db.sql.ViewName.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(viewName_);
+              viewName_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              columns_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            columns_.add(s);
+            break;
+          }
+          case 114: {
+            org.mojo-lang.mojo.db.sql.SelectStmt.Builder subBuilder = null;
+            if (query_ != null) {
+              subBuilder = query_.toBuilder();
+            }
+            query_ = input.readMessage(org.mojo-lang.mojo.db.sql.SelectStmt.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(query_);
+              query_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -99,6 +141,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        columns_ = columns_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -190,6 +235,104 @@ private static final long serialVersionUID = 0L;
     return implicit_;
   }
 
+  public static final int IF_NOT_EXISTS_FIELD_NUMBER = 10;
+  private boolean ifNotExists_;
+  /**
+   * <code>bool if_not_exists = 10;</code>
+   * @return The ifNotExists.
+   */
+  @java.lang.Override
+  public boolean getIfNotExists() {
+    return ifNotExists_;
+  }
+
+  public static final int VIEW_NAME_FIELD_NUMBER = 11;
+  private org.mojo-lang.mojo.db.sql.ViewName viewName_;
+  /**
+   * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+   * @return Whether the viewName field is set.
+   */
+  @java.lang.Override
+  public boolean hasViewName() {
+    return viewName_ != null;
+  }
+  /**
+   * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+   * @return The viewName.
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.ViewName getViewName() {
+    return viewName_ == null ? org.mojo-lang.mojo.db.sql.ViewName.getDefaultInstance() : viewName_;
+  }
+  /**
+   * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.ViewNameOrBuilder getViewNameOrBuilder() {
+    return getViewName();
+  }
+
+  public static final int COLUMNS_FIELD_NUMBER = 13;
+  private com.google.protobuf.LazyStringList columns_;
+  /**
+   * <code>repeated string columns = 13;</code>
+   * @return A list containing the columns.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getColumnsList() {
+    return columns_;
+  }
+  /**
+   * <code>repeated string columns = 13;</code>
+   * @return The count of columns.
+   */
+  public int getColumnsCount() {
+    return columns_.size();
+  }
+  /**
+   * <code>repeated string columns = 13;</code>
+   * @param index The index of the element to return.
+   * @return The columns at the given index.
+   */
+  public java.lang.String getColumns(int index) {
+    return columns_.get(index);
+  }
+  /**
+   * <code>repeated string columns = 13;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the columns at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getColumnsBytes(int index) {
+    return columns_.getByteString(index);
+  }
+
+  public static final int QUERY_FIELD_NUMBER = 14;
+  private org.mojo-lang.mojo.db.sql.SelectStmt query_;
+  /**
+   * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+   * @return Whether the query field is set.
+   */
+  @java.lang.Override
+  public boolean hasQuery() {
+    return query_ != null;
+  }
+  /**
+   * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+   * @return The query.
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.SelectStmt getQuery() {
+    return query_ == null ? org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance() : query_;
+  }
+  /**
+   * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder getQueryOrBuilder() {
+    return getQuery();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -216,6 +359,18 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       output.writeBool(5, implicit_);
     }
+    if (ifNotExists_ != false) {
+      output.writeBool(10, ifNotExists_);
+    }
+    if (viewName_ != null) {
+      output.writeMessage(11, getViewName());
+    }
+    for (int i = 0; i < columns_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, columns_.getRaw(i));
+    }
+    if (query_ != null) {
+      output.writeMessage(14, getQuery());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -240,6 +395,26 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, implicit_);
+    }
+    if (ifNotExists_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, ifNotExists_);
+    }
+    if (viewName_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getViewName());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < columns_.size(); i++) {
+        dataSize += computeStringSizeNoTag(columns_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getColumnsList().size();
+    }
+    if (query_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getQuery());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,6 +445,20 @@ private static final long serialVersionUID = 0L;
         != other.getKind()) return false;
     if (getImplicit()
         != other.getImplicit()) return false;
+    if (getIfNotExists()
+        != other.getIfNotExists()) return false;
+    if (hasViewName() != other.hasViewName()) return false;
+    if (hasViewName()) {
+      if (!getViewName()
+          .equals(other.getViewName())) return false;
+    }
+    if (!getColumnsList()
+        .equals(other.getColumnsList())) return false;
+    if (hasQuery() != other.hasQuery()) return false;
+    if (hasQuery()) {
+      if (!getQuery()
+          .equals(other.getQuery())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -295,6 +484,21 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IMPLICIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getImplicit());
+    hash = (37 * hash) + IF_NOT_EXISTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIfNotExists());
+    if (hasViewName()) {
+      hash = (37 * hash) + VIEW_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getViewName().hashCode();
+    }
+    if (getColumnsCount() > 0) {
+      hash = (37 * hash) + COLUMNS_FIELD_NUMBER;
+      hash = (53 * hash) + getColumnsList().hashCode();
+    }
+    if (hasQuery()) {
+      hash = (37 * hash) + QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getQuery().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,6 +648,22 @@ private static final long serialVersionUID = 0L;
 
       implicit_ = false;
 
+      ifNotExists_ = false;
+
+      if (viewNameBuilder_ == null) {
+        viewName_ = null;
+      } else {
+        viewName_ = null;
+        viewNameBuilder_ = null;
+      }
+      columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      if (queryBuilder_ == null) {
+        query_ = null;
+      } else {
+        query_ = null;
+        queryBuilder_ = null;
+      }
       return this;
     }
 
@@ -470,6 +690,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojo-lang.mojo.db.sql.CreateViewStmt buildPartial() {
       org.mojo-lang.mojo.db.sql.CreateViewStmt result = new org.mojo-lang.mojo.db.sql.CreateViewStmt(this);
+      int from_bitField0_ = bitField0_;
       if (startPositionBuilder_ == null) {
         result.startPosition_ = startPosition_;
       } else {
@@ -482,6 +703,22 @@ private static final long serialVersionUID = 0L;
       }
       result.kind_ = kind_;
       result.implicit_ = implicit_;
+      result.ifNotExists_ = ifNotExists_;
+      if (viewNameBuilder_ == null) {
+        result.viewName_ = viewName_;
+      } else {
+        result.viewName_ = viewNameBuilder_.build();
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        columns_ = columns_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.columns_ = columns_;
+      if (queryBuilder_ == null) {
+        result.query_ = query_;
+      } else {
+        result.query_ = queryBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -542,6 +779,25 @@ private static final long serialVersionUID = 0L;
       if (other.getImplicit() != false) {
         setImplicit(other.getImplicit());
       }
+      if (other.getIfNotExists() != false) {
+        setIfNotExists(other.getIfNotExists());
+      }
+      if (other.hasViewName()) {
+        mergeViewName(other.getViewName());
+      }
+      if (!other.columns_.isEmpty()) {
+        if (columns_.isEmpty()) {
+          columns_ = other.columns_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureColumnsIsMutable();
+          columns_.addAll(other.columns_);
+        }
+        onChanged();
+      }
+      if (other.hasQuery()) {
+        mergeQuery(other.getQuery());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -570,6 +826,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private org.mojolang.mojo.lang.Position startPosition_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -869,6 +1126,385 @@ private static final long serialVersionUID = 0L;
       implicit_ = false;
       onChanged();
       return this;
+    }
+
+    private boolean ifNotExists_ ;
+    /**
+     * <code>bool if_not_exists = 10;</code>
+     * @return The ifNotExists.
+     */
+    @java.lang.Override
+    public boolean getIfNotExists() {
+      return ifNotExists_;
+    }
+    /**
+     * <code>bool if_not_exists = 10;</code>
+     * @param value The ifNotExists to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIfNotExists(boolean value) {
+      
+      ifNotExists_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool if_not_exists = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIfNotExists() {
+      
+      ifNotExists_ = false;
+      onChanged();
+      return this;
+    }
+
+    private org.mojo-lang.mojo.db.sql.ViewName viewName_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.ViewName, org.mojo-lang.mojo.db.sql.ViewName.Builder, org.mojo-lang.mojo.db.sql.ViewNameOrBuilder> viewNameBuilder_;
+    /**
+     * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+     * @return Whether the viewName field is set.
+     */
+    public boolean hasViewName() {
+      return viewNameBuilder_ != null || viewName_ != null;
+    }
+    /**
+     * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+     * @return The viewName.
+     */
+    public org.mojo-lang.mojo.db.sql.ViewName getViewName() {
+      if (viewNameBuilder_ == null) {
+        return viewName_ == null ? org.mojo-lang.mojo.db.sql.ViewName.getDefaultInstance() : viewName_;
+      } else {
+        return viewNameBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+     */
+    public Builder setViewName(org.mojo-lang.mojo.db.sql.ViewName value) {
+      if (viewNameBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        viewName_ = value;
+        onChanged();
+      } else {
+        viewNameBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+     */
+    public Builder setViewName(
+        org.mojo-lang.mojo.db.sql.ViewName.Builder builderForValue) {
+      if (viewNameBuilder_ == null) {
+        viewName_ = builderForValue.build();
+        onChanged();
+      } else {
+        viewNameBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+     */
+    public Builder mergeViewName(org.mojo-lang.mojo.db.sql.ViewName value) {
+      if (viewNameBuilder_ == null) {
+        if (viewName_ != null) {
+          viewName_ =
+            org.mojo-lang.mojo.db.sql.ViewName.newBuilder(viewName_).mergeFrom(value).buildPartial();
+        } else {
+          viewName_ = value;
+        }
+        onChanged();
+      } else {
+        viewNameBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+     */
+    public Builder clearViewName() {
+      if (viewNameBuilder_ == null) {
+        viewName_ = null;
+        onChanged();
+      } else {
+        viewName_ = null;
+        viewNameBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.ViewName.Builder getViewNameBuilder() {
+      
+      onChanged();
+      return getViewNameFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.ViewNameOrBuilder getViewNameOrBuilder() {
+      if (viewNameBuilder_ != null) {
+        return viewNameBuilder_.getMessageOrBuilder();
+      } else {
+        return viewName_ == null ?
+            org.mojo-lang.mojo.db.sql.ViewName.getDefaultInstance() : viewName_;
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.ViewName view_name = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.ViewName, org.mojo-lang.mojo.db.sql.ViewName.Builder, org.mojo-lang.mojo.db.sql.ViewNameOrBuilder> 
+        getViewNameFieldBuilder() {
+      if (viewNameBuilder_ == null) {
+        viewNameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojo-lang.mojo.db.sql.ViewName, org.mojo-lang.mojo.db.sql.ViewName.Builder, org.mojo-lang.mojo.db.sql.ViewNameOrBuilder>(
+                getViewName(),
+                getParentForChildren(),
+                isClean());
+        viewName_ = null;
+      }
+      return viewNameBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureColumnsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        columns_ = new com.google.protobuf.LazyStringArrayList(columns_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated string columns = 13;</code>
+     * @return A list containing the columns.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getColumnsList() {
+      return columns_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string columns = 13;</code>
+     * @return The count of columns.
+     */
+    public int getColumnsCount() {
+      return columns_.size();
+    }
+    /**
+     * <code>repeated string columns = 13;</code>
+     * @param index The index of the element to return.
+     * @return The columns at the given index.
+     */
+    public java.lang.String getColumns(int index) {
+      return columns_.get(index);
+    }
+    /**
+     * <code>repeated string columns = 13;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the columns at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getColumnsBytes(int index) {
+      return columns_.getByteString(index);
+    }
+    /**
+     * <code>repeated string columns = 13;</code>
+     * @param index The index to set the value at.
+     * @param value The columns to set.
+     * @return This builder for chaining.
+     */
+    public Builder setColumns(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureColumnsIsMutable();
+      columns_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string columns = 13;</code>
+     * @param value The columns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addColumns(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureColumnsIsMutable();
+      columns_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string columns = 13;</code>
+     * @param values The columns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllColumns(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureColumnsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, columns_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string columns = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearColumns() {
+      columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string columns = 13;</code>
+     * @param value The bytes of the columns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addColumnsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureColumnsIsMutable();
+      columns_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private org.mojo-lang.mojo.db.sql.SelectStmt query_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.SelectStmt, org.mojo-lang.mojo.db.sql.SelectStmt.Builder, org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder> queryBuilder_;
+    /**
+     * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+     * @return Whether the query field is set.
+     */
+    public boolean hasQuery() {
+      return queryBuilder_ != null || query_ != null;
+    }
+    /**
+     * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+     * @return The query.
+     */
+    public org.mojo-lang.mojo.db.sql.SelectStmt getQuery() {
+      if (queryBuilder_ == null) {
+        return query_ == null ? org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance() : query_;
+      } else {
+        return queryBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+     */
+    public Builder setQuery(org.mojo-lang.mojo.db.sql.SelectStmt value) {
+      if (queryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        query_ = value;
+        onChanged();
+      } else {
+        queryBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+     */
+    public Builder setQuery(
+        org.mojo-lang.mojo.db.sql.SelectStmt.Builder builderForValue) {
+      if (queryBuilder_ == null) {
+        query_ = builderForValue.build();
+        onChanged();
+      } else {
+        queryBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+     */
+    public Builder mergeQuery(org.mojo-lang.mojo.db.sql.SelectStmt value) {
+      if (queryBuilder_ == null) {
+        if (query_ != null) {
+          query_ =
+            org.mojo-lang.mojo.db.sql.SelectStmt.newBuilder(query_).mergeFrom(value).buildPartial();
+        } else {
+          query_ = value;
+        }
+        onChanged();
+      } else {
+        queryBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+     */
+    public Builder clearQuery() {
+      if (queryBuilder_ == null) {
+        query_ = null;
+        onChanged();
+      } else {
+        query_ = null;
+        queryBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.SelectStmt.Builder getQueryBuilder() {
+      
+      onChanged();
+      return getQueryFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder getQueryOrBuilder() {
+      if (queryBuilder_ != null) {
+        return queryBuilder_.getMessageOrBuilder();
+      } else {
+        return query_ == null ?
+            org.mojo-lang.mojo.db.sql.SelectStmt.getDefaultInstance() : query_;
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.SelectStmt query = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.SelectStmt, org.mojo-lang.mojo.db.sql.SelectStmt.Builder, org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder> 
+        getQueryFieldBuilder() {
+      if (queryBuilder_ == null) {
+        queryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojo-lang.mojo.db.sql.SelectStmt, org.mojo-lang.mojo.db.sql.SelectStmt.Builder, org.mojo-lang.mojo.db.sql.SelectStmtOrBuilder>(
+                getQuery(),
+                getParentForChildren(),
+                isClean());
+        query_ = null;
+      }
+      return queryBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

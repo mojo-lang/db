@@ -15,4 +15,6 @@
 type CreateTableStmt: CreateStmt {
     if_not_exists: Bool @10
     table_name: TableName @11
+
+    definition: TableDefinition @14 | AsSubqueryClause @15
 }

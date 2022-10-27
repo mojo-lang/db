@@ -65,77 +65,88 @@ public interface UpdateStmtOrBuilder extends
   org.mojo-lang.mojo.db.sql.WithClauseOrBuilder getWithOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.UpdateClause update = 11;</code>
-   * @return Whether the update field is set.
+   * <code>.mojo.db.sql.UpdateStmt.Type type = 11;</code>
+   * @return The enum numeric value on the wire for type.
    */
-  boolean hasUpdate();
+  int getTypeValue();
   /**
-   * <code>.mojo.db.sql.UpdateClause update = 11;</code>
-   * @return The update.
+   * <code>.mojo.db.sql.UpdateStmt.Type type = 11;</code>
+   * @return The type.
    */
-  org.mojo-lang.mojo.db.sql.UpdateClause getUpdate();
-  /**
-   * <code>.mojo.db.sql.UpdateClause update = 11;</code>
-   */
-  org.mojo-lang.mojo.db.sql.UpdateClauseOrBuilder getUpdateOrBuilder();
+  org.mojo-lang.mojo.db.sql.UpdateStmt.Type getType();
 
   /**
-   * <code>.mojo.db.sql.SetClause set = 12;</code>
+   * <code>.mojo.db.sql.QualifiedTableName table_name = 12;</code>
+   * @return Whether the tableName field is set.
+   */
+  boolean hasTableName();
+  /**
+   * <code>.mojo.db.sql.QualifiedTableName table_name = 12;</code>
+   * @return The tableName.
+   */
+  org.mojo-lang.mojo.db.sql.QualifiedTableName getTableName();
+  /**
+   * <code>.mojo.db.sql.QualifiedTableName table_name = 12;</code>
+   */
+  org.mojo-lang.mojo.db.sql.QualifiedTableNameOrBuilder getTableNameOrBuilder();
+
+  /**
+   * <code>.mojo.db.sql.SetClause set = 13;</code>
    * @return Whether the set field is set.
    */
   boolean hasSet();
   /**
-   * <code>.mojo.db.sql.SetClause set = 12;</code>
+   * <code>.mojo.db.sql.SetClause set = 13;</code>
    * @return The set.
    */
   org.mojo-lang.mojo.db.sql.SetClause getSet();
   /**
-   * <code>.mojo.db.sql.SetClause set = 12;</code>
+   * <code>.mojo.db.sql.SetClause set = 13;</code>
    */
   org.mojo-lang.mojo.db.sql.SetClauseOrBuilder getSetOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.FromClause from = 13;</code>
+   * <code>.mojo.db.sql.FromClause from = 14;</code>
    * @return Whether the from field is set.
    */
   boolean hasFrom();
   /**
-   * <code>.mojo.db.sql.FromClause from = 13;</code>
+   * <code>.mojo.db.sql.FromClause from = 14;</code>
    * @return The from.
    */
   org.mojo-lang.mojo.db.sql.FromClause getFrom();
   /**
-   * <code>.mojo.db.sql.FromClause from = 13;</code>
+   * <code>.mojo.db.sql.FromClause from = 14;</code>
    */
   org.mojo-lang.mojo.db.sql.FromClauseOrBuilder getFromOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.WhereClause where = 14;</code>
+   * <code>.mojo.db.sql.WhereClause where = 15;</code>
    * @return Whether the where field is set.
    */
   boolean hasWhere();
   /**
-   * <code>.mojo.db.sql.WhereClause where = 14;</code>
+   * <code>.mojo.db.sql.WhereClause where = 15;</code>
    * @return The where.
    */
   org.mojo-lang.mojo.db.sql.WhereClause getWhere();
   /**
-   * <code>.mojo.db.sql.WhereClause where = 14;</code>
+   * <code>.mojo.db.sql.WhereClause where = 15;</code>
    */
   org.mojo-lang.mojo.db.sql.WhereClauseOrBuilder getWhereOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.ReturningClause returning = 15;</code>
+   * <code>.mojo.db.sql.ReturningClause returning = 16;</code>
    * @return Whether the returning field is set.
    */
   boolean hasReturning();
   /**
-   * <code>.mojo.db.sql.ReturningClause returning = 15;</code>
+   * <code>.mojo.db.sql.ReturningClause returning = 16;</code>
    * @return The returning.
    */
   org.mojo-lang.mojo.db.sql.ReturningClause getReturning();
   /**
-   * <code>.mojo.db.sql.ReturningClause returning = 15;</code>
+   * <code>.mojo.db.sql.ReturningClause returning = 16;</code>
    */
   org.mojo-lang.mojo.db.sql.ReturningClauseOrBuilder getReturningOrBuilder();
 }

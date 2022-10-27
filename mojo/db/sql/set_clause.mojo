@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-type UpdateItem {
-    column_name: String @1
-    value: Expression   @2
+type ColumnAssignment {
+    columns: [String] @1 @min_length(1)
+    value: Expression @2
 }
 
 type SetClause: Clause {
-    update_items: [UpdateItem] @10
+    assignments: [ColumnAssignment] @10
 }

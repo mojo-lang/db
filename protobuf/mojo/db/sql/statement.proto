@@ -17,6 +17,7 @@ import "mojo/db/sql/create_virtual_table_stmt.proto";
 import "mojo/db/sql/delete_stmt.proto";
 import "mojo/db/sql/detach_stmt.proto";
 import "mojo/db/sql/drop_stmt.proto";
+import "mojo/db/sql/end_stmt.proto";
 import "mojo/db/sql/insert_stmt.proto";
 import "mojo/db/sql/pragma_stmt.proto";
 import "mojo/db/sql/reindex_stmt.proto";
@@ -46,6 +47,7 @@ message Statement {
         DeleteStmt delete_stmt_val = 17;
         DetachStmt detach_stmt_val = 18;
         DropStmt drop_stmt_val = 19;
+        EndStmt end_stmt_val = 30;
         InsertStmt insert_stmt_val = 20;
         PragmaStmt pragma_stmt_val = 21;
         ReindexStmt reindex_stmt_val = 22;

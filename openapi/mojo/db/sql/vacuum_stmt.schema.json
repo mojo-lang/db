@@ -4,6 +4,16 @@
     "allOf": [
         {
             "$ref": "#/components/schemas/mojo.lang.Stmt"
+        },
+        {
+            "title": "mojo.db.sql.VacuumStmt",
+            "type": "object",
+            "properties": {
+                "schema": {
+                    "title": "mojo.core.String",
+                    "type": "string"
+                }
+            }
         }
     ]
 }

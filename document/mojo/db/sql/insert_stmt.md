@@ -2,7 +2,7 @@
 |---|---|---|---|---|---|
 | `into` | `mojo.db.sql.IntoClause` |  | N |  |  |
 | `returning` | `mojo.db.sql.ReturningClause` |  | N |  |  |
-| `subquery` | `mojo.db.sql.SelectStmt` |  | N |  |  |
+| `type` | `string` |  | N |  |
 | `upsert` | `mojo.db.sql.UpsertClause` |  | N |  |  |
-| `values` | `mojo.db.sql.ValuesClause` |  | N |  |  |
+| `values` | `mojo.core.Union` |  | N |  |
 | `with` | `mojo.db.sql.WithClause` |  | N |  |  |

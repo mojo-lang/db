@@ -95,92 +95,107 @@ public interface SelectStmtOrBuilder extends
   org.mojo-lang.mojo.db.sql.CompoundSelectOrBuilder getCompoundSelectOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.FromClause from = 13;</code>
+   * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+   * @return Whether the values field is set.
+   */
+  boolean hasValues();
+  /**
+   * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+   * @return The values.
+   */
+  org.mojo-lang.mojo.db.sql.ValuesClause getValues();
+  /**
+   * <code>.mojo.db.sql.ValuesClause values = 13;</code>
+   */
+  org.mojo-lang.mojo.db.sql.ValuesClauseOrBuilder getValuesOrBuilder();
+
+  /**
+   * <code>.mojo.db.sql.FromClause from = 14;</code>
    * @return Whether the from field is set.
    */
   boolean hasFrom();
   /**
-   * <code>.mojo.db.sql.FromClause from = 13;</code>
+   * <code>.mojo.db.sql.FromClause from = 14;</code>
    * @return The from.
    */
   org.mojo-lang.mojo.db.sql.FromClause getFrom();
   /**
-   * <code>.mojo.db.sql.FromClause from = 13;</code>
+   * <code>.mojo.db.sql.FromClause from = 14;</code>
    */
   org.mojo-lang.mojo.db.sql.FromClauseOrBuilder getFromOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.WhereClause where = 14;</code>
+   * <code>.mojo.db.sql.WhereClause where = 15;</code>
    * @return Whether the where field is set.
    */
   boolean hasWhere();
   /**
-   * <code>.mojo.db.sql.WhereClause where = 14;</code>
+   * <code>.mojo.db.sql.WhereClause where = 15;</code>
    * @return The where.
    */
   org.mojo-lang.mojo.db.sql.WhereClause getWhere();
   /**
-   * <code>.mojo.db.sql.WhereClause where = 14;</code>
+   * <code>.mojo.db.sql.WhereClause where = 15;</code>
    */
   org.mojo-lang.mojo.db.sql.WhereClauseOrBuilder getWhereOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+   * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
    * @return Whether the groupBy field is set.
    */
   boolean hasGroupBy();
   /**
-   * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+   * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
    * @return The groupBy.
    */
   org.mojo-lang.mojo.db.sql.GroupByClause getGroupBy();
   /**
-   * <code>.mojo.db.sql.GroupByClause group_by = 15;</code>
+   * <code>.mojo.db.sql.GroupByClause group_by = 16;</code>
    */
   org.mojo-lang.mojo.db.sql.GroupByClauseOrBuilder getGroupByOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.HavingClause having = 16;</code>
+   * <code>.mojo.db.sql.HavingClause having = 17;</code>
    * @return Whether the having field is set.
    */
   boolean hasHaving();
   /**
-   * <code>.mojo.db.sql.HavingClause having = 16;</code>
+   * <code>.mojo.db.sql.HavingClause having = 17;</code>
    * @return The having.
    */
   org.mojo-lang.mojo.db.sql.HavingClause getHaving();
   /**
-   * <code>.mojo.db.sql.HavingClause having = 16;</code>
+   * <code>.mojo.db.sql.HavingClause having = 17;</code>
    */
   org.mojo-lang.mojo.db.sql.HavingClauseOrBuilder getHavingOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+   * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
   /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+   * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
    * @return The orderBy.
    */
   org.mojo-lang.mojo.db.sql.OrderByClause getOrderBy();
   /**
-   * <code>.mojo.db.sql.OrderByClause order_by = 17;</code>
+   * <code>.mojo.db.sql.OrderByClause order_by = 20;</code>
    */
   org.mojo-lang.mojo.db.sql.OrderByClauseOrBuilder getOrderByOrBuilder();
 
   /**
-   * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+   * <code>.mojo.db.sql.LimitClause limit = 21;</code>
    * @return Whether the limit field is set.
    */
   boolean hasLimit();
   /**
-   * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+   * <code>.mojo.db.sql.LimitClause limit = 21;</code>
    * @return The limit.
    */
   org.mojo-lang.mojo.db.sql.LimitClause getLimit();
   /**
-   * <code>.mojo.db.sql.LimitClause limit = 18;</code>
+   * <code>.mojo.db.sql.LimitClause limit = 21;</code>
    */
   org.mojo-lang.mojo.db.sql.LimitClauseOrBuilder getLimitOrBuilder();
 

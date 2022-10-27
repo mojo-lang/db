@@ -84,6 +84,24 @@ private static final long serialVersionUID = 0L;
             implicit_ = input.readBool();
             break;
           }
+          case 80: {
+
+            ifNotExists_ = input.readBool();
+            break;
+          }
+          case 90: {
+            org.mojo-lang.mojo.db.sql.TriggerName.Builder subBuilder = null;
+            if (triggerName_ != null) {
+              subBuilder = triggerName_.toBuilder();
+            }
+            triggerName_ = input.readMessage(org.mojo-lang.mojo.db.sql.TriggerName.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(triggerName_);
+              triggerName_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -190,6 +208,43 @@ private static final long serialVersionUID = 0L;
     return implicit_;
   }
 
+  public static final int IF_NOT_EXISTS_FIELD_NUMBER = 10;
+  private boolean ifNotExists_;
+  /**
+   * <code>bool if_not_exists = 10;</code>
+   * @return The ifNotExists.
+   */
+  @java.lang.Override
+  public boolean getIfNotExists() {
+    return ifNotExists_;
+  }
+
+  public static final int TRIGGER_NAME_FIELD_NUMBER = 11;
+  private org.mojo-lang.mojo.db.sql.TriggerName triggerName_;
+  /**
+   * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+   * @return Whether the triggerName field is set.
+   */
+  @java.lang.Override
+  public boolean hasTriggerName() {
+    return triggerName_ != null;
+  }
+  /**
+   * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+   * @return The triggerName.
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.TriggerName getTriggerName() {
+    return triggerName_ == null ? org.mojo-lang.mojo.db.sql.TriggerName.getDefaultInstance() : triggerName_;
+  }
+  /**
+   * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+   */
+  @java.lang.Override
+  public org.mojo-lang.mojo.db.sql.TriggerNameOrBuilder getTriggerNameOrBuilder() {
+    return getTriggerName();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -216,6 +271,12 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       output.writeBool(5, implicit_);
     }
+    if (ifNotExists_ != false) {
+      output.writeBool(10, ifNotExists_);
+    }
+    if (triggerName_ != null) {
+      output.writeMessage(11, getTriggerName());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -240,6 +301,14 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, implicit_);
+    }
+    if (ifNotExists_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, ifNotExists_);
+    }
+    if (triggerName_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getTriggerName());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,6 +339,13 @@ private static final long serialVersionUID = 0L;
         != other.getKind()) return false;
     if (getImplicit()
         != other.getImplicit()) return false;
+    if (getIfNotExists()
+        != other.getIfNotExists()) return false;
+    if (hasTriggerName() != other.hasTriggerName()) return false;
+    if (hasTriggerName()) {
+      if (!getTriggerName()
+          .equals(other.getTriggerName())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -295,6 +371,13 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IMPLICIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getImplicit());
+    hash = (37 * hash) + IF_NOT_EXISTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIfNotExists());
+    if (hasTriggerName()) {
+      hash = (37 * hash) + TRIGGER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTriggerName().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,6 +527,14 @@ private static final long serialVersionUID = 0L;
 
       implicit_ = false;
 
+      ifNotExists_ = false;
+
+      if (triggerNameBuilder_ == null) {
+        triggerName_ = null;
+      } else {
+        triggerName_ = null;
+        triggerNameBuilder_ = null;
+      }
       return this;
     }
 
@@ -482,6 +573,12 @@ private static final long serialVersionUID = 0L;
       }
       result.kind_ = kind_;
       result.implicit_ = implicit_;
+      result.ifNotExists_ = ifNotExists_;
+      if (triggerNameBuilder_ == null) {
+        result.triggerName_ = triggerName_;
+      } else {
+        result.triggerName_ = triggerNameBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -541,6 +638,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getImplicit() != false) {
         setImplicit(other.getImplicit());
+      }
+      if (other.getIfNotExists() != false) {
+        setIfNotExists(other.getIfNotExists());
+      }
+      if (other.hasTriggerName()) {
+        mergeTriggerName(other.getTriggerName());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -869,6 +972,156 @@ private static final long serialVersionUID = 0L;
       implicit_ = false;
       onChanged();
       return this;
+    }
+
+    private boolean ifNotExists_ ;
+    /**
+     * <code>bool if_not_exists = 10;</code>
+     * @return The ifNotExists.
+     */
+    @java.lang.Override
+    public boolean getIfNotExists() {
+      return ifNotExists_;
+    }
+    /**
+     * <code>bool if_not_exists = 10;</code>
+     * @param value The ifNotExists to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIfNotExists(boolean value) {
+      
+      ifNotExists_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool if_not_exists = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIfNotExists() {
+      
+      ifNotExists_ = false;
+      onChanged();
+      return this;
+    }
+
+    private org.mojo-lang.mojo.db.sql.TriggerName triggerName_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.TriggerName, org.mojo-lang.mojo.db.sql.TriggerName.Builder, org.mojo-lang.mojo.db.sql.TriggerNameOrBuilder> triggerNameBuilder_;
+    /**
+     * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+     * @return Whether the triggerName field is set.
+     */
+    public boolean hasTriggerName() {
+      return triggerNameBuilder_ != null || triggerName_ != null;
+    }
+    /**
+     * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+     * @return The triggerName.
+     */
+    public org.mojo-lang.mojo.db.sql.TriggerName getTriggerName() {
+      if (triggerNameBuilder_ == null) {
+        return triggerName_ == null ? org.mojo-lang.mojo.db.sql.TriggerName.getDefaultInstance() : triggerName_;
+      } else {
+        return triggerNameBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+     */
+    public Builder setTriggerName(org.mojo-lang.mojo.db.sql.TriggerName value) {
+      if (triggerNameBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        triggerName_ = value;
+        onChanged();
+      } else {
+        triggerNameBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+     */
+    public Builder setTriggerName(
+        org.mojo-lang.mojo.db.sql.TriggerName.Builder builderForValue) {
+      if (triggerNameBuilder_ == null) {
+        triggerName_ = builderForValue.build();
+        onChanged();
+      } else {
+        triggerNameBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+     */
+    public Builder mergeTriggerName(org.mojo-lang.mojo.db.sql.TriggerName value) {
+      if (triggerNameBuilder_ == null) {
+        if (triggerName_ != null) {
+          triggerName_ =
+            org.mojo-lang.mojo.db.sql.TriggerName.newBuilder(triggerName_).mergeFrom(value).buildPartial();
+        } else {
+          triggerName_ = value;
+        }
+        onChanged();
+      } else {
+        triggerNameBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+     */
+    public Builder clearTriggerName() {
+      if (triggerNameBuilder_ == null) {
+        triggerName_ = null;
+        onChanged();
+      } else {
+        triggerName_ = null;
+        triggerNameBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.TriggerName.Builder getTriggerNameBuilder() {
+      
+      onChanged();
+      return getTriggerNameFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+     */
+    public org.mojo-lang.mojo.db.sql.TriggerNameOrBuilder getTriggerNameOrBuilder() {
+      if (triggerNameBuilder_ != null) {
+        return triggerNameBuilder_.getMessageOrBuilder();
+      } else {
+        return triggerName_ == null ?
+            org.mojo-lang.mojo.db.sql.TriggerName.getDefaultInstance() : triggerName_;
+      }
+    }
+    /**
+     * <code>.mojo.db.sql.TriggerName trigger_name = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojo-lang.mojo.db.sql.TriggerName, org.mojo-lang.mojo.db.sql.TriggerName.Builder, org.mojo-lang.mojo.db.sql.TriggerNameOrBuilder> 
+        getTriggerNameFieldBuilder() {
+      if (triggerNameBuilder_ == null) {
+        triggerNameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojo-lang.mojo.db.sql.TriggerName, org.mojo-lang.mojo.db.sql.TriggerName.Builder, org.mojo-lang.mojo.db.sql.TriggerNameOrBuilder>(
+                getTriggerName(),
+                getParentForChildren(),
+                isClean());
+        triggerName_ = null;
+      }
+      return triggerNameBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

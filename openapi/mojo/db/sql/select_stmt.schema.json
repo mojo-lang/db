@@ -35,6 +35,9 @@
                         }
                     ]
                 },
+                "values": {
+                    "$ref": "#/components/schemas/mojo.db.sql.ValuesClause"
+                },
                 "where": {
                     "$ref": "#/components/schemas/mojo.db.sql.WhereClause"
                 },

@@ -140,6 +140,11 @@ public final class SqlProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_mojo_db_sql_UnaryExpr_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mojo_db_sql_ValuesClause_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_mojo_db_sql_ValuesClause_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mojo_db_sql_WhereClause_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -201,170 +206,177 @@ public final class SqlProto {
       "sql.DerivedColumnH\000B\010\n\006column\"\037\n\tAllColu" +
       "mn\022\022\n\ntable_name\030\001 \001(\t\"B\n\rDerivedColumn\022" +
       "%\n\004expr\030\001 \001(\0132\027.mojo.db.sql.Expression\022\n" +
-      "\n\002as\030\002 \001(\t\"\233\006\n\016CompoundSelect\022+\n\016start_p" +
+      "\n\002as\030\002 \001(\t\"\306\006\n\016CompoundSelect\022+\n\016start_p" +
       "osition\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014en" +
       "d_position\030\002 \001(\0132\023.mojo.lang.Position\022\014\n" +
       "\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022%\n\004with\030\n " +
       "\001(\0132\027.mojo.db.sql.WithClause\0222\n\rselect_c" +
       "lause\030\013 \001(\0132\031.mojo.db.sql.SelectClauseH\000" +
       "\0226\n\017compound_select\030\014 \001(\0132\033.mojo.db.sql." +
-      "CompoundSelectH\000\022%\n\004from\030\r \001(\0132\027.mojo.db" +
-      ".sql.FromClause\022\'\n\005where\030\016 \001(\0132\030.mojo.db" +
-      ".sql.WhereClause\022,\n\010group_by\030\017 \001(\0132\032.moj" +
-      "o.db.sql.GroupByClause\022)\n\006having\030\020 \001(\0132\031" +
-      ".mojo.db.sql.HavingClause\022,\n\010order_by\030\021 " +
-      "\001(\0132\032.mojo.db.sql.OrderByClause\022\'\n\005limit" +
-      "\030\022 \001(\0132\030.mojo.db.sql.LimitClause\0226\n\010oper" +
-      "ator\030\024 \001(\0162$.mojo.db.sql.CompoundSelect." +
-      "Operator\022)\n\004left\030\025 \001(\0132\033.mojo.db.sql.Com" +
-      "poundSelect\022*\n\005right\030\026 \001(\0132\033.mojo.db.sql" +
-      ".CompoundSelect\"e\n\010Operator\022\030\n\024OPERATOR_" +
-      "UNSPECIFIED\020\000\022\022\n\016OPERATOR_UNION\020\001\022\026\n\022OPE" +
-      "RATOR_INTERSECT\020\002\022\023\n\017OPERATOR_EXCEPT\020\003B\010" +
-      "\n\006select\"\313\007\n\nExpression\0227\n\021null_literal_" +
-      "expr\030\001 \001(\0132\032.mojo.lang.NullLiteralExprH\000" +
-      "\0227\n\021bool_literal_expr\030\002 \001(\0132\032.mojo.lang." +
-      "BoolLiteralExprH\000\022=\n\024integer_literal_exp" +
-      "r\030\003 \001(\0132\035.mojo.lang.IntegerLiteralExprH\000" +
-      "\0229\n\022float_literal_expr\030\004 \001(\0132\033.mojo.lang" +
-      ".FloatLiteralExprH\000\022;\n\023string_literal_ex" +
-      "pr\030\005 \001(\0132\034.mojo.lang.StringLiteralExprH\000" +
-      "\0229\n\021blob_literal_expr\030\006 \001(\0132\034.mojo.db.sq" +
-      "l.BlobLiteralExprH\000\0226\n\017identifier_expr\030\007" +
-      " \001(\0132\033.mojo.db.sql.IdentifierExprH\000\022=\n\023b" +
-      "ind_parameter_expr\030\n \001(\0132\036.mojo.db.sql.B" +
-      "indParameterExprH\000\0225\n\017column_ref_expr\030\013 " +
-      "\001(\0132\032.mojo.db.sql.ColumnRefExprH\000\0229\n\021pre" +
-      "fix_unary_expr\030\017 \001(\0132\034.mojo.db.sql.Prefi" +
-      "xUnaryExprH\000\022;\n\022postfix_unary_expr\030\020 \001(\013" +
-      "2\035.mojo.db.sql.PostfixUnaryExprH\000\022.\n\013bin" +
-      "ary_expr\030\021 \001(\0132\027.mojo.db.sql.BinaryExprH" +
-      "\000\0220\n\014between_expr\030\022 \001(\0132\030.mojo.db.sql.Be" +
-      "tweenExprH\000\022&\n\007in_expr\030\023 \001(\0132\023.mojo.db.s" +
-      "ql.InExprH\000\022*\n\tcase_expr\030\024 \001(\0132\025.mojo.db" +
-      ".sql.CaseExprH\000\022;\n\022function_call_expr\030\025 " +
-      "\001(\0132\035.mojo.db.sql.FunctionCallExprH\000\0222\n\r" +
-      "subquery_expr\030\036 \001(\0132\031.mojo.db.sql.Subque" +
-      "ryExprH\000B\014\n\nexpression\"\317\001\n\nFromClause\022+\n" +
-      "\016start_position\030\001 \001(\0132\023.mojo.lang.Positi" +
-      "on\022)\n\014end_position\030\002 \001(\0132\023.mojo.lang.Pos" +
-      "ition\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022\"\n" +
-      "\006tables\030\n \003(\0132\022.mojo.db.sql.Table\022%\n\004joi" +
-      "n\030\013 \001(\0132\027.mojo.db.sql.JoinClause\"\265\001\n\rGro" +
-      "upByClause\022+\n\016start_position\030\001 \001(\0132\023.moj" +
-      "o.lang.Position\022)\n\014end_position\030\002 \001(\0132\023." +
-      "mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010impl" +
-      "icit\030\005 \001(\010\022,\n\013expressions\030\n \003(\0132\027.mojo.d" +
-      "b.sql.Expression\"\263\001\n\014HavingClause\022+\n\016sta" +
-      "rt_position\030\001 \001(\0132\023.mojo.lang.Position\022)" +
-      "\n\014end_position\030\002 \001(\0132\023.mojo.lang.Positio" +
-      "n\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022+\n\nexp" +
-      "ression\030\n \001(\0132\027.mojo.db.sql.Expression\"\241" +
-      "\003\n\nJoinClause\022+\n\016start_position\030\001 \001(\0132\023." +
+      "CompoundSelectH\000\022)\n\006values\030\r \001(\0132\031.mojo." +
+      "db.sql.ValuesClause\022%\n\004from\030\016 \001(\0132\027.mojo" +
+      ".db.sql.FromClause\022\'\n\005where\030\017 \001(\0132\030.mojo" +
+      ".db.sql.WhereClause\022,\n\010group_by\030\020 \001(\0132\032." +
+      "mojo.db.sql.GroupByClause\022)\n\006having\030\021 \001(" +
+      "\0132\031.mojo.db.sql.HavingClause\022,\n\010order_by" +
+      "\030\024 \001(\0132\032.mojo.db.sql.OrderByClause\022\'\n\005li" +
+      "mit\030\025 \001(\0132\030.mojo.db.sql.LimitClause\0226\n\010o" +
+      "perator\030\036 \001(\0162$.mojo.db.sql.CompoundSele" +
+      "ct.Operator\022)\n\004left\030\037 \001(\0132\033.mojo.db.sql." +
+      "CompoundSelect\022*\n\005right\030  \001(\0132\033.mojo.db." +
+      "sql.CompoundSelect\"e\n\010Operator\022\030\n\024OPERAT" +
+      "OR_UNSPECIFIED\020\000\022\022\n\016OPERATOR_UNION\020\001\022\026\n\022" +
+      "OPERATOR_INTERSECT\020\002\022\023\n\017OPERATOR_EXCEPT\020" +
+      "\003B\010\n\006select\"\313\007\n\nExpression\0227\n\021null_liter" +
+      "al_expr\030\001 \001(\0132\032.mojo.lang.NullLiteralExp" +
+      "rH\000\0227\n\021bool_literal_expr\030\002 \001(\0132\032.mojo.la" +
+      "ng.BoolLiteralExprH\000\022=\n\024integer_literal_" +
+      "expr\030\003 \001(\0132\035.mojo.lang.IntegerLiteralExp" +
+      "rH\000\0229\n\022float_literal_expr\030\004 \001(\0132\033.mojo.l" +
+      "ang.FloatLiteralExprH\000\022;\n\023string_literal" +
+      "_expr\030\005 \001(\0132\034.mojo.lang.StringLiteralExp" +
+      "rH\000\0229\n\021blob_literal_expr\030\006 \001(\0132\034.mojo.db" +
+      ".sql.BlobLiteralExprH\000\0226\n\017identifier_exp" +
+      "r\030\007 \001(\0132\033.mojo.db.sql.IdentifierExprH\000\022=" +
+      "\n\023bind_parameter_expr\030\n \001(\0132\036.mojo.db.sq" +
+      "l.BindParameterExprH\000\0225\n\017column_ref_expr" +
+      "\030\013 \001(\0132\032.mojo.db.sql.ColumnRefExprH\000\0229\n\021" +
+      "prefix_unary_expr\030\017 \001(\0132\034.mojo.db.sql.Pr" +
+      "efixUnaryExprH\000\022;\n\022postfix_unary_expr\030\020 " +
+      "\001(\0132\035.mojo.db.sql.PostfixUnaryExprH\000\022.\n\013" +
+      "binary_expr\030\021 \001(\0132\027.mojo.db.sql.BinaryEx" +
+      "prH\000\0220\n\014between_expr\030\022 \001(\0132\030.mojo.db.sql" +
+      ".BetweenExprH\000\022&\n\007in_expr\030\023 \001(\0132\023.mojo.d" +
+      "b.sql.InExprH\000\022*\n\tcase_expr\030\024 \001(\0132\025.mojo" +
+      ".db.sql.CaseExprH\000\022;\n\022function_call_expr" +
+      "\030\025 \001(\0132\035.mojo.db.sql.FunctionCallExprH\000\022" +
+      "2\n\rsubquery_expr\030\036 \001(\0132\031.mojo.db.sql.Sub" +
+      "queryExprH\000B\014\n\nexpression\"\317\001\n\nFromClause" +
+      "\022+\n\016start_position\030\001 \001(\0132\023.mojo.lang.Pos" +
+      "ition\022)\n\014end_position\030\002 \001(\0132\023.mojo.lang." +
+      "Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010" +
+      "\022\"\n\006tables\030\n \003(\0132\022.mojo.db.sql.Table\022%\n\004" +
+      "join\030\013 \001(\0132\027.mojo.db.sql.JoinClause\"\265\001\n\r" +
+      "GroupByClause\022+\n\016start_position\030\001 \001(\0132\023." +
       "mojo.lang.Position\022)\n\014end_position\030\002 \001(\013" +
       "2\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010i" +
-      "mplicit\030\005 \001(\010\022!\n\005table\030\n \001(\0132\022.mojo.db.s" +
-      "ql.Table\0222\n\010operator\030\017 \001(\0162 .mojo.db.sql" +
-      ".JoinClause.Operator\022%\n\004left\030\020 \001(\0132\027.moj" +
-      "o.db.sql.JoinClause\022&\n\005right\030\021 \001(\0132\027.moj" +
-      "o.db.sql.JoinClause\0226\n\nconstraint\030\022 \001(\0132" +
-      "\".mojo.db.sql.JoinClause.Constraint\032\027\n\nC" +
-      "onstraint\022\t\n\001v\030\001 \001(\003\"$\n\010Operator\022\030\n\024OPER" +
-      "ATOR_UNSPECIFIED\020\000\"\231\002\n\013LimitClause\022+\n\016st" +
+      "mplicit\030\005 \001(\010\022,\n\013expressions\030\n \003(\0132\027.moj" +
+      "o.db.sql.Expression\"\263\001\n\014HavingClause\022+\n\016" +
+      "start_position\030\001 \001(\0132\023.mojo.lang.Positio" +
+      "n\022)\n\014end_position\030\002 \001(\0132\023.mojo.lang.Posi" +
+      "tion\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022+\n\n" +
+      "expression\030\n \001(\0132\027.mojo.db.sql.Expressio" +
+      "n\"\241\003\n\nJoinClause\022+\n\016start_position\030\001 \001(\013" +
+      "2\023.mojo.lang.Position\022)\n\014end_position\030\002 " +
+      "\001(\0132\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020" +
+      "\n\010implicit\030\005 \001(\010\022!\n\005table\030\n \001(\0132\022.mojo.d" +
+      "b.sql.Table\0222\n\010operator\030\017 \001(\0162 .mojo.db." +
+      "sql.JoinClause.Operator\022%\n\004left\030\020 \001(\0132\027." +
+      "mojo.db.sql.JoinClause\022&\n\005right\030\021 \001(\0132\027." +
+      "mojo.db.sql.JoinClause\0226\n\nconstraint\030\022 \001" +
+      "(\0132\".mojo.db.sql.JoinClause.Constraint\032\027" +
+      "\n\nConstraint\022\t\n\001v\030\001 \001(\003\"$\n\010Operator\022\030\n\024O" +
+      "PERATOR_UNSPECIFIED\020\000\"\231\002\n\013LimitClause\022+\n" +
+      "\016start_position\030\001 \001(\0132\023.mojo.lang.Positi" +
+      "on\022)\n\014end_position\030\002 \001(\0132\023.mojo.lang.Pos" +
+      "ition\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022%\n" +
+      "\004rows\030\n \001(\0132\027.mojo.db.sql.Expression\022-\n\n" +
+      "expression\030\013 \001(\0132\027.mojo.db.sql.Expressio" +
+      "nH\000\0222\n\roffset_clause\030\014 \001(\0132\031.mojo.db.sql" +
+      ".OffsetClauseH\000B\010\n\006offset\"\256\001\n\014OffsetClau" +
+      "se\022+\n\016start_position\030\001 \001(\0132\023.mojo.lang.P" +
+      "osition\022)\n\014end_position\030\002 \001(\0132\023.mojo.lan" +
+      "g.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001" +
+      "(\010\022&\n\005value\030\n \001(\0132\027.mojo.db.sql.Expressi" +
+      "on\"\261\001\n\rOrderByClause\022+\n\016start_position\030\001" +
+      " \001(\0132\023.mojo.lang.Position\022)\n\014end_positio" +
+      "n\030\002 \001(\0132\023.mojo.lang.Position\022\014\n\004kind\030\004 \001" +
+      "(\003\022\020\n\010implicit\030\005 \001(\010\022(\n\torderings\030\n \003(\0132" +
+      "\025.mojo.db.sql.Ordering\"\226\001\n\010Ordering\022+\n\ne" +
+      "xpression\030\001 \001(\0132\027.mojo.db.sql.Expression" +
+      "\022\021\n\tcollation\030\002 \001(\t\022!\n\005order\030\003 \001(\0162\022.moj" +
+      "o.db.sql.Order\022\023\n\013nulls_first\030\005 \001(\010\022\022\n\nn" +
+      "ulls_last\030\006 \001(\010\"\362\002\n\020PostfixUnaryExpr\022+\n\016" +
+      "start_position\030\001 \001(\0132\023.mojo.lang.Positio" +
+      "n\022)\n\014end_position\030\002 \001(\0132\023.mojo.lang.Posi" +
+      "tion\022\014\n\004kind\030\004 \001(\005\022\020\n\010implicit\030\005 \001(\010\022\027\n\017" +
+      "operator_symbol\030\n \001(\t\022)\n\010argument\030\013 \001(\0132" +
+      "\027.mojo.db.sql.Expression\0228\n\010operator\030\017 \001" +
+      "(\0162&.mojo.db.sql.PostfixUnaryExpr.Operat" +
+      "or\"h\n\010Operator\022\030\n\024OPERATOR_UNSPECIFIED\020\000" +
+      "\022\024\n\020OPERATOR_IS_NULL\020\001\022\025\n\021OPERATOR_NOT_N" +
+      "ULL\020\002\022\025\n\021OPERATOR_EXTENDED\020c\"\247\003\n\017PrefixU" +
+      "naryExpr\022+\n\016start_position\030\001 \001(\0132\023.mojo." +
+      "lang.Position\022)\n\014end_position\030\002 \001(\0132\023.mo" +
+      "jo.lang.Position\022\014\n\004kind\030\004 \001(\005\022\020\n\010implic" +
+      "it\030\005 \001(\010\022\027\n\017operator_symbol\030\n \001(\t\022)\n\010arg" +
+      "ument\030\013 \001(\0132\027.mojo.db.sql.Expression\0227\n\010" +
+      "operator\030\017 \001(\0162%.mojo.db.sql.PrefixUnary" +
+      "Expr.Operator\"\236\001\n\010Operator\022\030\n\024OPERATOR_U" +
+      "NSPECIFIED\020\000\022\022\n\016OPERATOR_MINUS\020\001\022\021\n\rOPER" +
+      "ATOR_PLUS\020\002\022\022\n\016OPERATOR_TILDE\020\003\022\020\n\014OPERA" +
+      "TOR_NOT\020\004\022\024\n\020OPERATOR_BIT_NOT\020\005\022\025\n\021OPERA" +
+      "TOR_EXTENDED\020c\"\340\001\n\014SelectClause\022+\n\016start" +
+      "_position\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014" +
+      "end_position\030\002 \001(\0132\023.mojo.lang.Position\022" +
+      "\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\0222\n\nquant" +
+      "ifier\030\n \001(\0162\036.mojo.db.sql.DataSetQuantif" +
+      "ier\022$\n\007columns\030\014 \003(\0132\023.mojo.db.sql.Colum" +
+      "n\"\314\004\n\nSelectStmt\022+\n\016start_position\030\001 \001(\013" +
+      "2\023.mojo.lang.Position\022)\n\014end_position\030\002 " +
+      "\001(\0132\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020" +
+      "\n\010implicit\030\005 \001(\010\022%\n\004with\030\n \001(\0132\027.mojo.db" +
+      ".sql.WithClause\0222\n\rselect_clause\030\013 \001(\0132\031" +
+      ".mojo.db.sql.SelectClauseH\000\0226\n\017compound_" +
+      "select\030\014 \001(\0132\033.mojo.db.sql.CompoundSelec" +
+      "tH\000\022)\n\006values\030\r \001(\0132\031.mojo.db.sql.Values" +
+      "Clause\022%\n\004from\030\016 \001(\0132\027.mojo.db.sql.FromC" +
+      "lause\022\'\n\005where\030\017 \001(\0132\030.mojo.db.sql.Where" +
+      "Clause\022,\n\010group_by\030\020 \001(\0132\032.mojo.db.sql.G" +
+      "roupByClause\022)\n\006having\030\021 \001(\0132\031.mojo.db.s" +
+      "ql.HavingClause\022,\n\010order_by\030\024 \001(\0132\032.mojo" +
+      ".db.sql.OrderByClause\022\'\n\005limit\030\025 \001(\0132\030.m" +
+      "ojo.db.sql.LimitClauseB\010\n\006select\"\276\001\n\014Sub" +
+      "queryExpr\022+\n\016start_position\030\001 \001(\0132\023.mojo" +
+      ".lang.Position\022)\n\014end_position\030\002 \001(\0132\023.m" +
+      "ojo.lang.Position\022\014\n\004kind\030\004 \001(\005\022\020\n\010impli" +
+      "cit\030\005 \001(\010\022\016\n\006exists\030\n \001(\010\022&\n\005query\030\013 \001(\013" +
+      "2\027.mojo.db.sql.SelectStmt\"\271\001\n\005Table\0220\n\016t" +
+      "able_name_val\030\001 \001(\0132\026.mojo.db.sql.TableN" +
+      "ameH\000\022A\n\027table_function_name_val\030\002 \001(\0132\036" +
+      ".mojo.db.sql.TableFunctionNameH\000\0222\n\017tabl" +
+      "e_query_val\030\003 \001(\0132\027.mojo.db.sql.TableQue" +
+      "ryH\000B\007\n\005table\"=\n\tTableName\022\023\n\013schema_nam" +
+      "e\030\n \001(\t\022\014\n\004name\030\r \001(\t\022\r\n\005alias\030\017 \001(\t\"q\n\021" +
+      "TableFunctionName\022\023\n\013schema_name\030\n \001(\t\022\014" +
+      "\n\004name\030\r \001(\t\022*\n\targuments\030\016 \003(\0132\027.mojo.d" +
+      "b.sql.Expression\022\r\n\005alias\030\017 \001(\t\"C\n\nTable" +
+      "Query\022&\n\005query\030\n \001(\0132\027.mojo.db.sql.Selec" +
+      "tStmt\022\r\n\005alias\030\017 \001(\t\"\307\001\n\tUnaryExpr\022+\n\016st" +
       "art_position\030\001 \001(\0132\023.mojo.lang.Position\022" +
       ")\n\014end_position\030\002 \001(\0132\023.mojo.lang.Positi" +
-      "on\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022%\n\004ro" +
-      "ws\030\n \001(\0132\027.mojo.db.sql.Expression\022-\n\nexp" +
-      "ression\030\013 \001(\0132\027.mojo.db.sql.ExpressionH\000" +
-      "\0222\n\roffset_clause\030\014 \001(\0132\031.mojo.db.sql.Of" +
-      "fsetClauseH\000B\010\n\006offset\"\256\001\n\014OffsetClause\022" +
+      "on\022\014\n\004kind\030\004 \001(\005\022\020\n\010implicit\030\005 \001(\010\022\027\n\017op" +
+      "erator_symbol\030\n \001(\t\022)\n\010argument\030\013 \001(\0132\027." +
+      "mojo.db.sql.Expression\"\257\001\n\014ValuesClause\022" +
       "+\n\016start_position\030\001 \001(\0132\023.mojo.lang.Posi" +
       "tion\022)\n\014end_position\030\002 \001(\0132\023.mojo.lang.P" +
       "osition\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022" +
-      "&\n\005value\030\n \001(\0132\027.mojo.db.sql.Expression\"" +
-      "\261\001\n\rOrderByClause\022+\n\016start_position\030\001 \001(" +
-      "\0132\023.mojo.lang.Position\022)\n\014end_position\030\002" +
-      " \001(\0132\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022" +
-      "\020\n\010implicit\030\005 \001(\010\022(\n\torderings\030\n \003(\0132\025.m" +
-      "ojo.db.sql.Ordering\"\226\001\n\010Ordering\022+\n\nexpr" +
-      "ession\030\001 \001(\0132\027.mojo.db.sql.Expression\022\021\n" +
-      "\tcollation\030\002 \001(\t\022!\n\005order\030\003 \001(\0162\022.mojo.d" +
-      "b.sql.Order\022\023\n\013nulls_first\030\005 \001(\010\022\022\n\nnull" +
-      "s_last\030\006 \001(\010\"\362\002\n\020PostfixUnaryExpr\022+\n\016sta" +
-      "rt_position\030\001 \001(\0132\023.mojo.lang.Position\022)" +
-      "\n\014end_position\030\002 \001(\0132\023.mojo.lang.Positio" +
-      "n\022\014\n\004kind\030\004 \001(\005\022\020\n\010implicit\030\005 \001(\010\022\027\n\017ope" +
-      "rator_symbol\030\n \001(\t\022)\n\010argument\030\013 \001(\0132\027.m" +
-      "ojo.db.sql.Expression\0228\n\010operator\030\017 \001(\0162" +
-      "&.mojo.db.sql.PostfixUnaryExpr.Operator\"" +
-      "h\n\010Operator\022\030\n\024OPERATOR_UNSPECIFIED\020\000\022\024\n" +
-      "\020OPERATOR_IS_NULL\020\001\022\025\n\021OPERATOR_NOT_NULL" +
-      "\020\002\022\025\n\021OPERATOR_EXTENDED\020c\"\247\003\n\017PrefixUnar" +
-      "yExpr\022+\n\016start_position\030\001 \001(\0132\023.mojo.lan" +
-      "g.Position\022)\n\014end_position\030\002 \001(\0132\023.mojo." +
-      "lang.Position\022\014\n\004kind\030\004 \001(\005\022\020\n\010implicit\030" +
-      "\005 \001(\010\022\027\n\017operator_symbol\030\n \001(\t\022)\n\010argume" +
-      "nt\030\013 \001(\0132\027.mojo.db.sql.Expression\0227\n\010ope" +
-      "rator\030\017 \001(\0162%.mojo.db.sql.PrefixUnaryExp" +
-      "r.Operator\"\236\001\n\010Operator\022\030\n\024OPERATOR_UNSP" +
-      "ECIFIED\020\000\022\022\n\016OPERATOR_MINUS\020\001\022\021\n\rOPERATO" +
-      "R_PLUS\020\002\022\022\n\016OPERATOR_TILDE\020\003\022\020\n\014OPERATOR" +
-      "_NOT\020\004\022\024\n\020OPERATOR_BIT_NOT\020\005\022\025\n\021OPERATOR" +
-      "_EXTENDED\020c\"\340\001\n\014SelectClause\022+\n\016start_po" +
-      "sition\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014end" +
-      "_position\030\002 \001(\0132\023.mojo.lang.Position\022\014\n\004" +
-      "kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\0222\n\nquantifi" +
-      "er\030\n \001(\0162\036.mojo.db.sql.DataSetQuantifier" +
-      "\022$\n\007columns\030\014 \003(\0132\023.mojo.db.sql.Column\"\241" +
-      "\004\n\nSelectStmt\022+\n\016start_position\030\001 \001(\0132\023." +
-      "mojo.lang.Position\022)\n\014end_position\030\002 \001(\013" +
-      "2\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010i" +
-      "mplicit\030\005 \001(\010\022%\n\004with\030\n \001(\0132\027.mojo.db.sq" +
-      "l.WithClause\0222\n\rselect_clause\030\013 \001(\0132\031.mo" +
-      "jo.db.sql.SelectClauseH\000\0226\n\017compound_sel" +
-      "ect\030\014 \001(\0132\033.mojo.db.sql.CompoundSelectH\000" +
-      "\022%\n\004from\030\r \001(\0132\027.mojo.db.sql.FromClause\022" +
-      "\'\n\005where\030\016 \001(\0132\030.mojo.db.sql.WhereClause" +
-      "\022,\n\010group_by\030\017 \001(\0132\032.mojo.db.sql.GroupBy" +
-      "Clause\022)\n\006having\030\020 \001(\0132\031.mojo.db.sql.Hav" +
-      "ingClause\022,\n\010order_by\030\021 \001(\0132\032.mojo.db.sq" +
-      "l.OrderByClause\022\'\n\005limit\030\022 \001(\0132\030.mojo.db" +
-      ".sql.LimitClauseB\010\n\006select\"\276\001\n\014SubqueryE" +
-      "xpr\022+\n\016start_position\030\001 \001(\0132\023.mojo.lang." +
-      "Position\022)\n\014end_position\030\002 \001(\0132\023.mojo.la" +
-      "ng.Position\022\014\n\004kind\030\004 \001(\005\022\020\n\010implicit\030\005 " +
-      "\001(\010\022\016\n\006exists\030\n \001(\010\022&\n\005query\030\013 \001(\0132\027.moj" +
-      "o.db.sql.SelectStmt\"\271\001\n\005Table\0220\n\016table_n" +
-      "ame_val\030\001 \001(\0132\026.mojo.db.sql.TableNameH\000\022" +
-      "A\n\027table_function_name_val\030\002 \001(\0132\036.mojo." +
-      "db.sql.TableFunctionNameH\000\0222\n\017table_quer" +
-      "y_val\030\003 \001(\0132\027.mojo.db.sql.TableQueryH\000B\007" +
-      "\n\005table\"=\n\tTableName\022\023\n\013schema_name\030\n \001(" +
-      "\t\022\014\n\004name\030\r \001(\t\022\r\n\005alias\030\017 \001(\t\"q\n\021TableF" +
-      "unctionName\022\023\n\013schema_name\030\n \001(\t\022\014\n\004name" +
-      "\030\r \001(\t\022*\n\targuments\030\016 \003(\0132\027.mojo.db.sql." +
-      "Expression\022\r\n\005alias\030\017 \001(\t\"C\n\nTableQuery\022" +
-      "&\n\005query\030\n \001(\0132\027.mojo.db.sql.SelectStmt\022" +
-      "\r\n\005alias\030\017 \001(\t\"\307\001\n\tUnaryExpr\022+\n\016start_po" +
-      "sition\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014end" +
-      "_position\030\002 \001(\0132\023.mojo.lang.Position\022\014\n\004" +
-      "kind\030\004 \001(\005\022\020\n\010implicit\030\005 \001(\010\022\027\n\017operator" +
-      "_symbol\030\n \001(\t\022)\n\010argument\030\013 \001(\0132\027.mojo.d" +
-      "b.sql.Expression\"\262\001\n\013WhereClause\022+\n\016star" +
-      "t_position\030\001 \001(\0132\023.mojo.lang.Position\022)\n" +
-      "\014end_position\030\002 \001(\0132\023.mojo.lang.Position" +
-      "\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022+\n\nexpr" +
-      "ession\030\n \001(\0132\027.mojo.db.sql.Expression\"Z\n" +
-      "\016TemporaryTable\022\014\n\004name\030\001 \001(\t\022\017\n\007columns" +
-      "\030\002 \003(\t\022)\n\010subquery\030\003 \001(\0132\027.mojo.db.sql.S" +
-      "electStmt\"\304\001\n\nWithClause\022+\n\016start_positi" +
-      "on\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014end_pos" +
-      "ition\030\002 \001(\0132\023.mojo.lang.Position\022\014\n\004kind" +
-      "\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022+\n\006tables\030\n \003(\013" +
-      "2\033.mojo.db.sql.TemporaryTable\022\021\n\trecursi" +
-      "ve\030\017 \001(\010BW\n\031org.mojo-lang.mojo.db.sqlB\010S" +
-      "qlProtoP\001Z.github.com/mojo-lang/db/go/pk" +
-      "g/mojo/db/sql;sqlb\006proto3"
+      "\'\n\006values\030\n \003(\0132\027.mojo.db.sql.Expression" +
+      "\"\262\001\n\013WhereClause\022+\n\016start_position\030\001 \001(\013" +
+      "2\023.mojo.lang.Position\022)\n\014end_position\030\002 " +
+      "\001(\0132\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020" +
+      "\n\010implicit\030\005 \001(\010\022+\n\nexpression\030\n \001(\0132\027.m" +
+      "ojo.db.sql.Expression\"Z\n\016TemporaryTable\022" +
+      "\014\n\004name\030\001 \001(\t\022\017\n\007columns\030\002 \003(\t\022)\n\010subque" +
+      "ry\030\003 \001(\0132\027.mojo.db.sql.SelectStmt\"\304\001\n\nWi" +
+      "thClause\022+\n\016start_position\030\001 \001(\0132\023.mojo." +
+      "lang.Position\022)\n\014end_position\030\002 \001(\0132\023.mo" +
+      "jo.lang.Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010implic" +
+      "it\030\005 \001(\010\022+\n\006tables\030\n \003(\0132\033.mojo.db.sql.T" +
+      "emporaryTable\022\021\n\trecursive\030\017 \001(\010BW\n\031org." +
+      "mojo-lang.mojo.db.sqlB\010SqlProtoP\001Z.githu" +
+      "b.com/mojo-lang/db/go/pkg/mojo/db/sql;sq" +
+      "lb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -412,7 +424,7 @@ public final class SqlProto {
     internal_static_mojo_db_sql_CompoundSelect_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_CompoundSelect_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "SelectClause", "CompoundSelect", "From", "Where", "GroupBy", "Having", "OrderBy", "Limit", "Operator", "Left", "Right", "Select", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "SelectClause", "CompoundSelect", "Values", "From", "Where", "GroupBy", "Having", "OrderBy", "Limit", "Operator", "Left", "Right", "Select", });
     internal_static_mojo_db_sql_Expression_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_mojo_db_sql_Expression_fieldAccessorTable = new
@@ -496,7 +508,7 @@ public final class SqlProto {
     internal_static_mojo_db_sql_SelectStmt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_SelectStmt_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "SelectClause", "CompoundSelect", "From", "Where", "GroupBy", "Having", "OrderBy", "Limit", "Select", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "With", "SelectClause", "CompoundSelect", "Values", "From", "Where", "GroupBy", "Having", "OrderBy", "Limit", "Select", });
     internal_static_mojo_db_sql_SubqueryExpr_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_mojo_db_sql_SubqueryExpr_fieldAccessorTable = new
@@ -533,20 +545,26 @@ public final class SqlProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_UnaryExpr_descriptor,
         new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "OperatorSymbol", "Argument", });
-    internal_static_mojo_db_sql_WhereClause_descriptor =
+    internal_static_mojo_db_sql_ValuesClause_descriptor =
       getDescriptor().getMessageTypes().get(24);
+    internal_static_mojo_db_sql_ValuesClause_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_mojo_db_sql_ValuesClause_descriptor,
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "Values", });
+    internal_static_mojo_db_sql_WhereClause_descriptor =
+      getDescriptor().getMessageTypes().get(25);
     internal_static_mojo_db_sql_WhereClause_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_WhereClause_descriptor,
         new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "Expression", });
     internal_static_mojo_db_sql_TemporaryTable_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_mojo_db_sql_TemporaryTable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_TemporaryTable_descriptor,
         new java.lang.String[] { "Name", "Columns", "Subquery", });
     internal_static_mojo_db_sql_WithClause_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_mojo_db_sql_WithClause_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_WithClause_descriptor,

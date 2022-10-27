@@ -13,4 +13,6 @@
 // limitations under the License.
 
 type RollbackStmt: lang.Stmt {
+    transaction: Bool @10
+    save_point: String @11
 }

@@ -29,17 +29,19 @@ public final class CommitStmtProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\035mojo/db/sql/commit_stmt.proto\022\013mojo.db" +
-      ".sql\032\024mojo/lang/lang.proto\"\204\001\n\nCommitStm" +
-      "t\022+\n\016start_position\030\001 \001(\0132\023.mojo.lang.Po" +
-      "sition\022)\n\014end_position\030\002 \001(\0132\023.mojo.lang" +
-      ".Position\022\014\n\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(" +
-      "\010B^\n\031org.mojo-lang.mojo.db.sqlB\017CommitSt" +
-      "mtProtoP\001Z.github.com/mojo-lang/db/go/pk" +
-      "g/mojo/db/sql;sqlb\006proto3"
+      ".sql\032\032mojo/db/sql/end_stmt.proto\032\024mojo/l" +
+      "ang/lang.proto\"\231\001\n\nCommitStmt\022+\n\016start_p" +
+      "osition\030\001 \001(\0132\023.mojo.lang.Position\022)\n\014en" +
+      "d_position\030\002 \001(\0132\023.mojo.lang.Position\022\014\n" +
+      "\004kind\030\004 \001(\003\022\020\n\010implicit\030\005 \001(\010\022\023\n\013transac" +
+      "tion\030\n \001(\010B^\n\031org.mojo-lang.mojo.db.sqlB" +
+      "\017CommitStmtProtoP\001Z.github.com/mojo-lang" +
+      "/db/go/pkg/mojo/db/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          org.mojo-lang.mojo.db.sql.EndStmtProto.getDescriptor(),
           org.mojolang.mojo.lang.LangProto.getDescriptor(),
         });
     internal_static_mojo_db_sql_CommitStmt_descriptor =
@@ -47,7 +49,8 @@ public final class CommitStmtProto {
     internal_static_mojo_db_sql_CommitStmt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_CommitStmt_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "Transaction", });
+    org.mojo-lang.mojo.db.sql.EndStmtProto.getDescriptor();
     org.mojolang.mojo.lang.LangProto.getDescriptor();
   }
 

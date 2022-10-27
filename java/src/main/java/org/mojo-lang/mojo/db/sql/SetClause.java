@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SetClause() {
-    updateItems_ = java.util.Collections.emptyList();
+    assignments_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -88,11 +88,11 @@ private static final long serialVersionUID = 0L;
           }
           case 82: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              updateItems_ = new java.util.ArrayList<org.mojo-lang.mojo.db.sql.UpdateItem>();
+              assignments_ = new java.util.ArrayList<org.mojo-lang.mojo.db.sql.ColumnAssignment>();
               mutable_bitField0_ |= 0x00000001;
             }
-            updateItems_.add(
-                input.readMessage(org.mojo-lang.mojo.db.sql.UpdateItem.parser(), extensionRegistry));
+            assignments_.add(
+                input.readMessage(org.mojo-lang.mojo.db.sql.ColumnAssignment.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        updateItems_ = java.util.Collections.unmodifiableList(updateItems_);
+        assignments_ = java.util.Collections.unmodifiableList(assignments_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -204,44 +204,44 @@ private static final long serialVersionUID = 0L;
     return implicit_;
   }
 
-  public static final int UPDATE_ITEMS_FIELD_NUMBER = 10;
-  private java.util.List<org.mojo-lang.mojo.db.sql.UpdateItem> updateItems_;
+  public static final int ASSIGNMENTS_FIELD_NUMBER = 10;
+  private java.util.List<org.mojo-lang.mojo.db.sql.ColumnAssignment> assignments_;
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
   @java.lang.Override
-  public java.util.List<org.mojo-lang.mojo.db.sql.UpdateItem> getUpdateItemsList() {
-    return updateItems_;
+  public java.util.List<org.mojo-lang.mojo.db.sql.ColumnAssignment> getAssignmentsList() {
+    return assignments_;
   }
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends org.mojo-lang.mojo.db.sql.UpdateItemOrBuilder> 
-      getUpdateItemsOrBuilderList() {
-    return updateItems_;
+  public java.util.List<? extends org.mojo-lang.mojo.db.sql.ColumnAssignmentOrBuilder> 
+      getAssignmentsOrBuilderList() {
+    return assignments_;
   }
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
   @java.lang.Override
-  public int getUpdateItemsCount() {
-    return updateItems_.size();
+  public int getAssignmentsCount() {
+    return assignments_.size();
   }
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
   @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.UpdateItem getUpdateItems(int index) {
-    return updateItems_.get(index);
+  public org.mojo-lang.mojo.db.sql.ColumnAssignment getAssignments(int index) {
+    return assignments_.get(index);
   }
   /**
-   * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+   * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
    */
   @java.lang.Override
-  public org.mojo-lang.mojo.db.sql.UpdateItemOrBuilder getUpdateItemsOrBuilder(
+  public org.mojo-lang.mojo.db.sql.ColumnAssignmentOrBuilder getAssignmentsOrBuilder(
       int index) {
-    return updateItems_.get(index);
+    return assignments_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -270,8 +270,8 @@ private static final long serialVersionUID = 0L;
     if (implicit_ != false) {
       output.writeBool(5, implicit_);
     }
-    for (int i = 0; i < updateItems_.size(); i++) {
-      output.writeMessage(10, updateItems_.get(i));
+    for (int i = 0; i < assignments_.size(); i++) {
+      output.writeMessage(10, assignments_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -298,9 +298,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, implicit_);
     }
-    for (int i = 0; i < updateItems_.size(); i++) {
+    for (int i = 0; i < assignments_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, updateItems_.get(i));
+        .computeMessageSize(10, assignments_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -331,8 +331,8 @@ private static final long serialVersionUID = 0L;
         != other.getKind()) return false;
     if (getImplicit()
         != other.getImplicit()) return false;
-    if (!getUpdateItemsList()
-        .equals(other.getUpdateItemsList())) return false;
+    if (!getAssignmentsList()
+        .equals(other.getAssignmentsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -358,9 +358,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IMPLICIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getImplicit());
-    if (getUpdateItemsCount() > 0) {
-      hash = (37 * hash) + UPDATE_ITEMS_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdateItemsList().hashCode();
+    if (getAssignmentsCount() > 0) {
+      hash = (37 * hash) + ASSIGNMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAssignmentsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -490,7 +490,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getUpdateItemsFieldBuilder();
+        getAssignmentsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -512,11 +512,11 @@ private static final long serialVersionUID = 0L;
 
       implicit_ = false;
 
-      if (updateItemsBuilder_ == null) {
-        updateItems_ = java.util.Collections.emptyList();
+      if (assignmentsBuilder_ == null) {
+        assignments_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        updateItemsBuilder_.clear();
+        assignmentsBuilder_.clear();
       }
       return this;
     }
@@ -557,14 +557,14 @@ private static final long serialVersionUID = 0L;
       }
       result.kind_ = kind_;
       result.implicit_ = implicit_;
-      if (updateItemsBuilder_ == null) {
+      if (assignmentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          updateItems_ = java.util.Collections.unmodifiableList(updateItems_);
+          assignments_ = java.util.Collections.unmodifiableList(assignments_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.updateItems_ = updateItems_;
+        result.assignments_ = assignments_;
       } else {
-        result.updateItems_ = updateItemsBuilder_.build();
+        result.assignments_ = assignmentsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -626,29 +626,29 @@ private static final long serialVersionUID = 0L;
       if (other.getImplicit() != false) {
         setImplicit(other.getImplicit());
       }
-      if (updateItemsBuilder_ == null) {
-        if (!other.updateItems_.isEmpty()) {
-          if (updateItems_.isEmpty()) {
-            updateItems_ = other.updateItems_;
+      if (assignmentsBuilder_ == null) {
+        if (!other.assignments_.isEmpty()) {
+          if (assignments_.isEmpty()) {
+            assignments_ = other.assignments_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureUpdateItemsIsMutable();
-            updateItems_.addAll(other.updateItems_);
+            ensureAssignmentsIsMutable();
+            assignments_.addAll(other.assignments_);
           }
           onChanged();
         }
       } else {
-        if (!other.updateItems_.isEmpty()) {
-          if (updateItemsBuilder_.isEmpty()) {
-            updateItemsBuilder_.dispose();
-            updateItemsBuilder_ = null;
-            updateItems_ = other.updateItems_;
+        if (!other.assignments_.isEmpty()) {
+          if (assignmentsBuilder_.isEmpty()) {
+            assignmentsBuilder_.dispose();
+            assignmentsBuilder_ = null;
+            assignments_ = other.assignments_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            updateItemsBuilder_ = 
+            assignmentsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getUpdateItemsFieldBuilder() : null;
+                 getAssignmentsFieldBuilder() : null;
           } else {
-            updateItemsBuilder_.addAllMessages(other.updateItems_);
+            assignmentsBuilder_.addAllMessages(other.assignments_);
           }
         }
       }
@@ -982,244 +982,244 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<org.mojo-lang.mojo.db.sql.UpdateItem> updateItems_ =
+    private java.util.List<org.mojo-lang.mojo.db.sql.ColumnAssignment> assignments_ =
       java.util.Collections.emptyList();
-    private void ensureUpdateItemsIsMutable() {
+    private void ensureAssignmentsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        updateItems_ = new java.util.ArrayList<org.mojo-lang.mojo.db.sql.UpdateItem>(updateItems_);
+        assignments_ = new java.util.ArrayList<org.mojo-lang.mojo.db.sql.ColumnAssignment>(assignments_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.UpdateItem, org.mojo-lang.mojo.db.sql.UpdateItem.Builder, org.mojo-lang.mojo.db.sql.UpdateItemOrBuilder> updateItemsBuilder_;
+        org.mojo-lang.mojo.db.sql.ColumnAssignment, org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder, org.mojo-lang.mojo.db.sql.ColumnAssignmentOrBuilder> assignmentsBuilder_;
 
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public java.util.List<org.mojo-lang.mojo.db.sql.UpdateItem> getUpdateItemsList() {
-      if (updateItemsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(updateItems_);
+    public java.util.List<org.mojo-lang.mojo.db.sql.ColumnAssignment> getAssignmentsList() {
+      if (assignmentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(assignments_);
       } else {
-        return updateItemsBuilder_.getMessageList();
+        return assignmentsBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public int getUpdateItemsCount() {
-      if (updateItemsBuilder_ == null) {
-        return updateItems_.size();
+    public int getAssignmentsCount() {
+      if (assignmentsBuilder_ == null) {
+        return assignments_.size();
       } else {
-        return updateItemsBuilder_.getCount();
+        return assignmentsBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public org.mojo-lang.mojo.db.sql.UpdateItem getUpdateItems(int index) {
-      if (updateItemsBuilder_ == null) {
-        return updateItems_.get(index);
+    public org.mojo-lang.mojo.db.sql.ColumnAssignment getAssignments(int index) {
+      if (assignmentsBuilder_ == null) {
+        return assignments_.get(index);
       } else {
-        return updateItemsBuilder_.getMessage(index);
+        return assignmentsBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public Builder setUpdateItems(
-        int index, org.mojo-lang.mojo.db.sql.UpdateItem value) {
-      if (updateItemsBuilder_ == null) {
+    public Builder setAssignments(
+        int index, org.mojo-lang.mojo.db.sql.ColumnAssignment value) {
+      if (assignmentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureUpdateItemsIsMutable();
-        updateItems_.set(index, value);
+        ensureAssignmentsIsMutable();
+        assignments_.set(index, value);
         onChanged();
       } else {
-        updateItemsBuilder_.setMessage(index, value);
+        assignmentsBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public Builder setUpdateItems(
-        int index, org.mojo-lang.mojo.db.sql.UpdateItem.Builder builderForValue) {
-      if (updateItemsBuilder_ == null) {
-        ensureUpdateItemsIsMutable();
-        updateItems_.set(index, builderForValue.build());
+    public Builder setAssignments(
+        int index, org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder builderForValue) {
+      if (assignmentsBuilder_ == null) {
+        ensureAssignmentsIsMutable();
+        assignments_.set(index, builderForValue.build());
         onChanged();
       } else {
-        updateItemsBuilder_.setMessage(index, builderForValue.build());
+        assignmentsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public Builder addUpdateItems(org.mojo-lang.mojo.db.sql.UpdateItem value) {
-      if (updateItemsBuilder_ == null) {
+    public Builder addAssignments(org.mojo-lang.mojo.db.sql.ColumnAssignment value) {
+      if (assignmentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureUpdateItemsIsMutable();
-        updateItems_.add(value);
+        ensureAssignmentsIsMutable();
+        assignments_.add(value);
         onChanged();
       } else {
-        updateItemsBuilder_.addMessage(value);
+        assignmentsBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public Builder addUpdateItems(
-        int index, org.mojo-lang.mojo.db.sql.UpdateItem value) {
-      if (updateItemsBuilder_ == null) {
+    public Builder addAssignments(
+        int index, org.mojo-lang.mojo.db.sql.ColumnAssignment value) {
+      if (assignmentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureUpdateItemsIsMutable();
-        updateItems_.add(index, value);
+        ensureAssignmentsIsMutable();
+        assignments_.add(index, value);
         onChanged();
       } else {
-        updateItemsBuilder_.addMessage(index, value);
+        assignmentsBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public Builder addUpdateItems(
-        org.mojo-lang.mojo.db.sql.UpdateItem.Builder builderForValue) {
-      if (updateItemsBuilder_ == null) {
-        ensureUpdateItemsIsMutable();
-        updateItems_.add(builderForValue.build());
+    public Builder addAssignments(
+        org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder builderForValue) {
+      if (assignmentsBuilder_ == null) {
+        ensureAssignmentsIsMutable();
+        assignments_.add(builderForValue.build());
         onChanged();
       } else {
-        updateItemsBuilder_.addMessage(builderForValue.build());
+        assignmentsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public Builder addUpdateItems(
-        int index, org.mojo-lang.mojo.db.sql.UpdateItem.Builder builderForValue) {
-      if (updateItemsBuilder_ == null) {
-        ensureUpdateItemsIsMutable();
-        updateItems_.add(index, builderForValue.build());
+    public Builder addAssignments(
+        int index, org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder builderForValue) {
+      if (assignmentsBuilder_ == null) {
+        ensureAssignmentsIsMutable();
+        assignments_.add(index, builderForValue.build());
         onChanged();
       } else {
-        updateItemsBuilder_.addMessage(index, builderForValue.build());
+        assignmentsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public Builder addAllUpdateItems(
-        java.lang.Iterable<? extends org.mojo-lang.mojo.db.sql.UpdateItem> values) {
-      if (updateItemsBuilder_ == null) {
-        ensureUpdateItemsIsMutable();
+    public Builder addAllAssignments(
+        java.lang.Iterable<? extends org.mojo-lang.mojo.db.sql.ColumnAssignment> values) {
+      if (assignmentsBuilder_ == null) {
+        ensureAssignmentsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, updateItems_);
+            values, assignments_);
         onChanged();
       } else {
-        updateItemsBuilder_.addAllMessages(values);
+        assignmentsBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public Builder clearUpdateItems() {
-      if (updateItemsBuilder_ == null) {
-        updateItems_ = java.util.Collections.emptyList();
+    public Builder clearAssignments() {
+      if (assignmentsBuilder_ == null) {
+        assignments_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        updateItemsBuilder_.clear();
+        assignmentsBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public Builder removeUpdateItems(int index) {
-      if (updateItemsBuilder_ == null) {
-        ensureUpdateItemsIsMutable();
-        updateItems_.remove(index);
+    public Builder removeAssignments(int index) {
+      if (assignmentsBuilder_ == null) {
+        ensureAssignmentsIsMutable();
+        assignments_.remove(index);
         onChanged();
       } else {
-        updateItemsBuilder_.remove(index);
+        assignmentsBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public org.mojo-lang.mojo.db.sql.UpdateItem.Builder getUpdateItemsBuilder(
+    public org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder getAssignmentsBuilder(
         int index) {
-      return getUpdateItemsFieldBuilder().getBuilder(index);
+      return getAssignmentsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public org.mojo-lang.mojo.db.sql.UpdateItemOrBuilder getUpdateItemsOrBuilder(
+    public org.mojo-lang.mojo.db.sql.ColumnAssignmentOrBuilder getAssignmentsOrBuilder(
         int index) {
-      if (updateItemsBuilder_ == null) {
-        return updateItems_.get(index);  } else {
-        return updateItemsBuilder_.getMessageOrBuilder(index);
+      if (assignmentsBuilder_ == null) {
+        return assignments_.get(index);  } else {
+        return assignmentsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public java.util.List<? extends org.mojo-lang.mojo.db.sql.UpdateItemOrBuilder> 
-         getUpdateItemsOrBuilderList() {
-      if (updateItemsBuilder_ != null) {
-        return updateItemsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends org.mojo-lang.mojo.db.sql.ColumnAssignmentOrBuilder> 
+         getAssignmentsOrBuilderList() {
+      if (assignmentsBuilder_ != null) {
+        return assignmentsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(updateItems_);
+        return java.util.Collections.unmodifiableList(assignments_);
       }
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public org.mojo-lang.mojo.db.sql.UpdateItem.Builder addUpdateItemsBuilder() {
-      return getUpdateItemsFieldBuilder().addBuilder(
-          org.mojo-lang.mojo.db.sql.UpdateItem.getDefaultInstance());
+    public org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder addAssignmentsBuilder() {
+      return getAssignmentsFieldBuilder().addBuilder(
+          org.mojo-lang.mojo.db.sql.ColumnAssignment.getDefaultInstance());
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public org.mojo-lang.mojo.db.sql.UpdateItem.Builder addUpdateItemsBuilder(
+    public org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder addAssignmentsBuilder(
         int index) {
-      return getUpdateItemsFieldBuilder().addBuilder(
-          index, org.mojo-lang.mojo.db.sql.UpdateItem.getDefaultInstance());
+      return getAssignmentsFieldBuilder().addBuilder(
+          index, org.mojo-lang.mojo.db.sql.ColumnAssignment.getDefaultInstance());
     }
     /**
-     * <code>repeated .mojo.db.sql.UpdateItem update_items = 10;</code>
+     * <code>repeated .mojo.db.sql.ColumnAssignment assignments = 10;</code>
      */
-    public java.util.List<org.mojo-lang.mojo.db.sql.UpdateItem.Builder> 
-         getUpdateItemsBuilderList() {
-      return getUpdateItemsFieldBuilder().getBuilderList();
+    public java.util.List<org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder> 
+         getAssignmentsBuilderList() {
+      return getAssignmentsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.mojo-lang.mojo.db.sql.UpdateItem, org.mojo-lang.mojo.db.sql.UpdateItem.Builder, org.mojo-lang.mojo.db.sql.UpdateItemOrBuilder> 
-        getUpdateItemsFieldBuilder() {
-      if (updateItemsBuilder_ == null) {
-        updateItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            org.mojo-lang.mojo.db.sql.UpdateItem, org.mojo-lang.mojo.db.sql.UpdateItem.Builder, org.mojo-lang.mojo.db.sql.UpdateItemOrBuilder>(
-                updateItems_,
+        org.mojo-lang.mojo.db.sql.ColumnAssignment, org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder, org.mojo-lang.mojo.db.sql.ColumnAssignmentOrBuilder> 
+        getAssignmentsFieldBuilder() {
+      if (assignmentsBuilder_ == null) {
+        assignmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            org.mojo-lang.mojo.db.sql.ColumnAssignment, org.mojo-lang.mojo.db.sql.ColumnAssignment.Builder, org.mojo-lang.mojo.db.sql.ColumnAssignmentOrBuilder>(
+                assignments_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        updateItems_ = null;
+        assignments_ = null;
       }
-      return updateItemsBuilder_;
+      return assignmentsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

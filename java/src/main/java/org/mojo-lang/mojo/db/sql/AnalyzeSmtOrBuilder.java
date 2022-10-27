@@ -48,4 +48,28 @@ public interface AnalyzeSmtOrBuilder extends
    * @return The implicit.
    */
   boolean getImplicit();
+
+  /**
+   * <code>string schema_name = 10;</code>
+   * @return The schemaName.
+   */
+  java.lang.String getSchemaName();
+  /**
+   * <code>string schema_name = 10;</code>
+   * @return The bytes for schemaName.
+   */
+  com.google.protobuf.ByteString
+      getSchemaNameBytes();
+
+  /**
+   * <code>string name = 11;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 11;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }
