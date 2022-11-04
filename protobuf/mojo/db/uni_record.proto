@@ -13,7 +13,7 @@ import "mojo/mojo.proto";
 option go_package = "github.com/mojo-lang/db/go/pkg/mojo/db;db";
 option java_multiple_files = true;
 option java_outer_classname = "UniRecordProto";
-option java_package = "org.mojo-lang.mojo.db";
+option java_package = "org.mojolang.mojo.db";
 
 message UniRecord {
     mojo.core.Id id = 1;

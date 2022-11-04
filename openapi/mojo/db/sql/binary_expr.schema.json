@@ -27,19 +27,13 @@
                         "gte",
                         "equal",
                         "not_equal",
-                        "assign",
                         "and",
                         "or",
                         "bit_and",
                         "bit_or",
                         "bit_xor",
-                        "is",
-                        "is_not",
-                        "in",
-                        "like",
-                        "match",
-                        "regexp",
-                        "glob"
+                        "concat",
+                        "extended"
                     ]
                 },
                 "operatorPrecedence": {

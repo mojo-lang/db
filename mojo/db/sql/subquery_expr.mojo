@@ -13,6 +13,5 @@
 // limitations under the License.
 
 type SubqueryExpr: lang.Expr {
-    exists: Bool @10
     query: SelectStmt @11
 }

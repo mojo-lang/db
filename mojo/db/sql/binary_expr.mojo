@@ -29,23 +29,15 @@ type BinaryExpr: lang.Expr {
         equal     @14
         not_equal @15
 
-        assign  @18
-
         and     @20
         or      @21
         bit_and @25
         bit_or  @26
         bit_xor @27
 
-        is      @30
-        is_not  @31
+        concat  @30
 
-        in      @40
-        like    @41
-        match   @42
-        regexp  @43
-
-        glob    @50
+        extended @99
     }
 
     operator: Operator @10

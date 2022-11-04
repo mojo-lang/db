@@ -12,5 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-type FunctionCallExpr: lang.Expr {
+type FunctionCallExpr: ValueExpr {
+    /// the function name
+    callee: String @11
+
+    /// the SQL argument
+    arguments: [Argument] @21
 }
+
+type Argument = Expression

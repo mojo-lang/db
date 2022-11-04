@@ -38,19 +38,13 @@ var BinaryExprOperatorNames = map[int32]string{
 	13: "gte",
 	14: "equal",
 	15: "not_equal",
-	18: "assign",
 	20: "and",
 	21: "or",
 	25: "bit_and",
 	26: "bit_or",
 	27: "bit_xor",
-	30: "is",
-	31: "is_not",
-	40: "in",
-	41: "like",
-	42: "match",
-	43: "regexp",
-	50: "glob",
+	30: "concat",
+	99: "extended",
 }
 
 var BinaryExprOperatorValues = map[string]BinaryExpr_Operator{
@@ -66,19 +60,13 @@ var BinaryExprOperatorValues = map[string]BinaryExpr_Operator{
 	"gte":         BinaryExpr_OPERATOR_GTE,
 	"equal":       BinaryExpr_OPERATOR_EQUAL,
 	"not_equal":   BinaryExpr_OPERATOR_NOT_EQUAL,
-	"assign":      BinaryExpr_OPERATOR_ASSIGN,
 	"and":         BinaryExpr_OPERATOR_AND,
 	"or":          BinaryExpr_OPERATOR_OR,
 	"bit_and":     BinaryExpr_OPERATOR_BIT_AND,
 	"bit_or":      BinaryExpr_OPERATOR_BIT_OR,
 	"bit_xor":     BinaryExpr_OPERATOR_BIT_XOR,
-	"is":          BinaryExpr_OPERATOR_IS,
-	"is_not":      BinaryExpr_OPERATOR_IS_NOT,
-	"in":          BinaryExpr_OPERATOR_IN,
-	"like":        BinaryExpr_OPERATOR_LIKE,
-	"match":       BinaryExpr_OPERATOR_MATCH,
-	"regexp":      BinaryExpr_OPERATOR_REGEXP,
-	"glob":        BinaryExpr_OPERATOR_GLOB,
+	"concat":      BinaryExpr_OPERATOR_CONCAT,
+	"extended":    BinaryExpr_OPERATOR_EXTENDED,
 }
 
 func (x BinaryExpr_Operator) Format() string {

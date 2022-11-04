@@ -13,4 +13,10 @@
 // limitations under the License.
 
 type InExpr: lang.Expr {
+    not: Bool @10
+    target: Expression @11
+
+    in: Subquery @15 | Expressions @16 | TableName @17 | TableFunctionName @18
 }
+
+type Subquery = SelectStmt

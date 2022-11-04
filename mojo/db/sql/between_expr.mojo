@@ -12,5 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-type BetweenExpr: lang.Expr {
+type BetweenExpr: Predicate {
+    not: Bool @10
+    target: Expression @11
+
+    from: Expression @13
+    to: Expression @14
 }

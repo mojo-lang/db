@@ -13,6 +13,18 @@
 // limitations under the License.
 
 type UnaryExpr: lang.Expr {
-    operator_symbol: String @10
-    argument: Expression @11
+    enum Operator {
+        unspecified @0
+        minus    @1
+        plus     @2
+        tilde    @3
+        not      @4
+        bit_not  @5
+
+        extended @99
+    }
+
+    operator: Operator @10
+    operator_symbol: String @11
+    argument: Expression @12
 }

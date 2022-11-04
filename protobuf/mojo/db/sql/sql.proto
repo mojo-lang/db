@@ -4,24 +4,40 @@ syntax = "proto3";
 
 package mojo.db.sql;
 
-import "mojo/db/sql/between_expr.proto";
+import "mojo/db/sql/binary_string_literal_expr.proto";
 import "mojo/db/sql/bind_parameter_expr.proto";
-import "mojo/db/sql/blob_literal_expr.proto";
-import "mojo/db/sql/case_expr.proto";
+import "mojo/db/sql/boolean_literal_expr.proto";
 import "mojo/db/sql/clause.proto";
-import "mojo/db/sql/column_ref_expr.proto";
+import "mojo/db/sql/column_reference_expr.proto";
 import "mojo/db/sql/data_manipulation_stmt.proto";
 import "mojo/db/sql/data_set_quantifier.proto";
-import "mojo/db/sql/function_call_expr.proto";
+import "mojo/db/sql/data_type.proto";
+import "mojo/db/sql/float_literal_expr.proto";
 import "mojo/db/sql/identifier_expr.proto";
-import "mojo/db/sql/in_expr.proto";
+import "mojo/db/sql/integer_literal_expr.proto";
+import "mojo/db/sql/null_literal_expr.proto";
 import "mojo/db/sql/order.proto";
+import "mojo/db/sql/predicate.proto";
+import "mojo/db/sql/raise_function_expr.proto";
+import "mojo/db/sql/string_literal_expr.proto";
+import "mojo/db/sql/value_expr.proto";
 import "mojo/lang/lang.proto";
 
 option go_package = "github.com/mojo-lang/db/go/pkg/mojo/db/sql;sql";
 option java_multiple_files = true;
 option java_outer_classname = "SqlProto";
-option java_package = "org.mojo-lang.mojo.db.sql";
+option java_package = "org.mojolang.mojo.db.sql";
+
+message BetweenExpr {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    bool not = 10;
+    Expression target = 11;
+    Expression from = 13;
+    Expression to = 14;
+}
 
 message BinaryExpr {
     
@@ -38,19 +54,13 @@ message BinaryExpr {
         OPERATOR_GTE=13;
         OPERATOR_EQUAL=14;
         OPERATOR_NOT_EQUAL=15;
-        OPERATOR_ASSIGN=18;
         OPERATOR_AND=20;
         OPERATOR_OR=21;
         OPERATOR_BIT_AND=25;
         OPERATOR_BIT_OR=26;
         OPERATOR_BIT_XOR=27;
-        OPERATOR_IS=30;
-        OPERATOR_IS_NOT=31;
-        OPERATOR_IN=40;
-        OPERATOR_LIKE=41;
-        OPERATOR_MATCH=42;
-        OPERATOR_REGEXP=43;
-        OPERATOR_GLOB=50;
+        OPERATOR_CONCAT=30;
+        OPERATOR_EXTENDED=99;
     }
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
@@ -61,6 +71,30 @@ message BinaryExpr {
     int32 operator_precedence = 12;
     Expression left_argument = 15;
     Expression right_argument = 16;
+}
+
+message CaseExpr {
+    
+    message Branch {
+        Expression when = 1;
+        Expression then = 2;
+    }
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    Expression condition = 10;
+    repeated Branch branches = 11;
+    Expression else = 12;
+}
+
+message CastExpr {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    Expression value = 10;
+    DataType target = 11;
 }
 
 message Column {
@@ -108,26 +142,50 @@ message CompoundSelect {
     CompoundSelect right = 32;
 }
 
+message ExistsExpr {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    bool not = 10;
+    bool exists = 11;
+    SelectStmt subquery = 15;
+}
+
 message Expression {
     oneof expression {
-        mojo.lang.NullLiteralExpr null_literal_expr = 1;
-        mojo.lang.BoolLiteralExpr bool_literal_expr = 2;
-        mojo.lang.IntegerLiteralExpr integer_literal_expr = 3;
-        mojo.lang.FloatLiteralExpr float_literal_expr = 4;
-        mojo.lang.StringLiteralExpr string_literal_expr = 5;
-        BlobLiteralExpr blob_literal_expr = 6;
+        NullLiteralExpr null_literal_expr = 1;
+        BooleanLiteralExpr boolean_literal_expr = 2;
+        IntegerLiteralExpr integer_literal_expr = 3;
+        FloatLiteralExpr float_literal_expr = 4;
+        StringLiteralExpr string_literal_expr = 5;
+        BinaryStringLiteralExpr binary_string_literal_expr = 6;
         IdentifierExpr identifier_expr = 7;
         BindParameterExpr bind_parameter_expr = 10;
-        ColumnRefExpr column_ref_expr = 11;
-        PrefixUnaryExpr prefix_unary_expr = 15;
-        PostfixUnaryExpr postfix_unary_expr = 16;
+        ColumnReferenceExpr column_reference_expr = 11;
+        UnaryExpr unary_expr = 15;
         BinaryExpr binary_expr = 17;
         BetweenExpr between_expr = 18;
         InExpr in_expr = 19;
         CaseExpr case_expr = 20;
-        FunctionCallExpr function_call_expr = 21;
-        SubqueryExpr subquery_expr = 30;
+        CastExpr cast_expr = 21;
+        FunctionCallExpr function_call_expr = 22;
+        ExistsExpr exists_expr = 23;
+        IsExpr is_expr = 24;
+        GlobExpr glob_expr = 25;
+        LikeExpr like_expr = 26;
+        MatchExpr match_expr = 27;
+        RegexpExpr regexp_expr = 28;
+        NullExpr null_expr = 30;
+        RaiseFunctionExpr raise_function_expr = 31;
+        SubqueryExpr subquery_expr = 35;
+        Expressions expressions = 40;
+        ParenthesizedExpr parenthesized_expr = 41;
     }
+}
+
+message Expressions {
+    repeated Expression vals = 1;
 }
 
 message FromClause {
@@ -137,6 +195,26 @@ message FromClause {
     bool implicit = 5;
     repeated Table tables = 10;
     JoinClause join = 11;
+}
+
+message FunctionCallExpr {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    string callee = 11;
+    repeated Expression arguments = 21;
+}
+
+message GlobExpr {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    bool not = 10;
+    Expression value = 11;
+    Expression pattern = 12;
+    Expression escape = 14;
 }
 
 message GroupByClause {
@@ -153,6 +231,31 @@ message HavingClause {
     int64 kind = 4;
     bool implicit = 5;
     Expression expression = 10;
+}
+
+message InExpr {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    bool not = 10;
+    Expression target = 11;
+    oneof in {
+        SelectStmt select_stmt = 15;
+        Expressions expressions = 16;
+        TableName table_name = 17;
+        TableFunctionName table_function_name = 18;
+    }
+}
+
+message IsExpr {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    bool not = 10;
+    Expression target = 11;
+    Expression argument = 15;
 }
 
 message JoinClause {
@@ -175,6 +278,17 @@ message JoinClause {
     Constraint constraint = 18;
 }
 
+message LikeExpr {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    bool not = 10;
+    Expression value = 11;
+    Expression pattern = 12;
+    Expression escape = 14;
+}
+
 message LimitClause {
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
@@ -185,6 +299,32 @@ message LimitClause {
         Expression expression = 11;
         OffsetClause offset_clause = 12;
     }
+}
+
+message MatchExpr {
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    bool not = 10;
+    Expression value = 11;
+    Expression pattern = 12;
+    Expression escape = 14;
+}
+
+message NullExpr {
+    
+    enum Operator {
+        OPERATOR_IS_NULL=0;
+        OPERATOR_NOT_NULL=1;
+    }
+    mojo.lang.Position start_position = 1;
+    mojo.lang.Position end_position = 2;
+    int32 kind = 4;
+    bool implicit = 5;
+    Operator operator = 10;
+    string operator_symbol = 11;
+    Expression argument = 12;
 }
 
 message OffsetClause {
@@ -211,41 +351,23 @@ message Ordering {
     bool nulls_last = 6;
 }
 
-message PostfixUnaryExpr {
-    
-    enum Operator {
-        OPERATOR_UNSPECIFIED=0;
-        OPERATOR_IS_NULL=1;
-        OPERATOR_NOT_NULL=2;
-        OPERATOR_EXTENDED=99;
-    }
+message ParenthesizedExpr {
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int32 kind = 4;
     bool implicit = 5;
-    string operator_symbol = 10;
-    Expression argument = 11;
-    Operator operator = 15;
+    Expression expression = 10;
 }
 
-message PrefixUnaryExpr {
-    
-    enum Operator {
-        OPERATOR_UNSPECIFIED=0;
-        OPERATOR_MINUS=1;
-        OPERATOR_PLUS=2;
-        OPERATOR_TILDE=3;
-        OPERATOR_NOT=4;
-        OPERATOR_BIT_NOT=5;
-        OPERATOR_EXTENDED=99;
-    }
+message RegexpExpr {
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int32 kind = 4;
     bool implicit = 5;
-    string operator_symbol = 10;
-    Expression argument = 11;
-    Operator operator = 15;
+    bool not = 10;
+    Expression value = 11;
+    Expression pattern = 12;
+    Expression escape = 14;
 }
 
 message SelectClause {
@@ -281,7 +403,6 @@ message SubqueryExpr {
     mojo.lang.Position end_position = 2;
     int32 kind = 4;
     bool implicit = 5;
-    bool exists = 10;
     SelectStmt query = 11;
 }
 
@@ -312,12 +433,23 @@ message TableQuery {
 }
 
 message UnaryExpr {
+    
+    enum Operator {
+        OPERATOR_UNSPECIFIED=0;
+        OPERATOR_MINUS=1;
+        OPERATOR_PLUS=2;
+        OPERATOR_TILDE=3;
+        OPERATOR_NOT=4;
+        OPERATOR_BIT_NOT=5;
+        OPERATOR_EXTENDED=99;
+    }
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int32 kind = 4;
     bool implicit = 5;
-    string operator_symbol = 10;
-    Expression argument = 11;
+    Operator operator = 10;
+    string operator_symbol = 11;
+    Expression argument = 12;
 }
 
 message ValuesClause {

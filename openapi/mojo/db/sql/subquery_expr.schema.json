@@ -9,10 +9,6 @@
             "title": "mojo.db.sql.SubqueryExpr",
             "type": "object",
             "properties": {
-                "exists": {
-                    "title": "mojo.core.Bool",
-                    "type": "boolean"
-                },
                 "query": {
                     "$ref": "#/components/schemas/mojo.db.sql.SelectStmt"
                 }

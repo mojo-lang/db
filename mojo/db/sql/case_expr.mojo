@@ -12,5 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-type CaseExpr: lang.Expr {
+type CaseExpr: ValueExpr {
+    type Branch {
+        when: Expression @1
+        then: Expression @2
+    }
+
+    condition: Expression @10
+    branches: [Branch] @11 @min_length(1)
+    else: Expression @12
 }

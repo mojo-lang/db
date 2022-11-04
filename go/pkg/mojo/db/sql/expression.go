@@ -1,55 +1,53 @@
 package sql
 
-import "github.com/mojo-lang/lang/go/pkg/mojo/lang"
-
-func NewNullLiteralExpression(expr *lang.NullLiteralExpr) *Expression {
+func NewNullLiteralExpression(expr *NullLiteralExpr) *Expression {
 	return &Expression{
 		Expression: &Expression_NullLiteralExpr{NullLiteralExpr: expr},
 	}
 }
 
 func NewNullLiteralExpressionFrom() *Expression {
-	return NewNullLiteralExpression(lang.NewNullLiteralExpr())
+	return NewNullLiteralExpression(NewNullLiteralExpr())
 }
 
-func NewBoolLiteralExpression(expr *lang.BoolLiteralExpr) *Expression {
+func NewBoolLiteralExpression(expr *BooleanLiteralExpr) *Expression {
 	return &Expression{
-		Expression: &Expression_BoolLiteralExpr{BoolLiteralExpr: expr},
+		Expression: &Expression_BooleanLiteralExpr{BooleanLiteralExpr: expr},
 	}
 }
 
-func NewBoolLiteralExpressionFrom(value bool) *Expression {
-	return NewBoolLiteralExpression(lang.NewBoolLiteralExpr(value))
+func NewBoolLiteralExpressionFrom(value Boolean) *Expression {
+	return NewBoolLiteralExpression(NewBooleanLiteralExpr(value))
 }
 
-func NewIntegerLiteralExpression(expr *lang.IntegerLiteralExpr) *Expression {
+func NewIntegerLiteralExpression(expr *IntegerLiteralExpr) *Expression {
 	return &Expression{
 		Expression: &Expression_IntegerLiteralExpr{IntegerLiteralExpr: expr},
 	}
 }
 
 func NewIntegerLiteralExpressionFrom(value int64) *Expression {
-	return NewIntegerLiteralExpression(lang.NewIntegerLiteralExpr(value))
+	return NewIntegerLiteralExpression(NewIntegerLiteralExpr(value))
 }
 
-func NewFloatLiteralExpression(expr *lang.FloatLiteralExpr) *Expression {
+func NewFloatLiteralExpression(expr *FloatLiteralExpr) *Expression {
 	return &Expression{
 		Expression: &Expression_FloatLiteralExpr{FloatLiteralExpr: expr},
 	}
 }
 
 func NewFloatLiteralExpressionFrom(value float64) *Expression {
-	return NewFloatLiteralExpression(lang.NewFloatLiteralExpr(value))
+	return NewFloatLiteralExpression(NewFloatLiteralExpr(value))
 }
 
-func NewStringLiteralExpression(expr *lang.StringLiteralExpr) *Expression {
+func NewStringLiteralExpression(expr *StringLiteralExpr) *Expression {
 	return &Expression{
 		Expression: &Expression_StringLiteralExpr{StringLiteralExpr: expr},
 	}
 }
 
 func NewStringLiteralExpressionFrom(value string) *Expression {
-	return NewStringLiteralExpression(lang.NewStringLiteralExpr(value))
+	return NewStringLiteralExpression(NewStringLiteralExpr(value))
 }
 
 func NewIdentifierExpression(expr *IdentifierExpr) *Expression {

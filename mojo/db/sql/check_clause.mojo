@@ -13,5 +13,5 @@
 // limitations under the License.
 
 type CheckClause: Clause {
-    condition: Expression @10 @type_in<PrefixUnaryExpr, PostfixUnaryExpr, BinaryExpr, BetweenExpr, InExpr, CaseExpr>
+    condition: Expression @10 @type_in<UnaryExpr, BinaryExpr, BetweenExpr, InExpr, CaseExpr>
 }

@@ -14,20 +14,32 @@
 
 @discriminator('@type')
 @label_format('{}')
-type Expression = lang.NullLiteralExpr @1
-                | lang.BoolLiteralExpr @2
-                | lang.IntegerLiteralExpr @3
-                | lang.FloatLiteralExpr @4
-                | lang.StringLiteralExpr @5
-                | BlobLiteralExpr @6
+type Expression = NullLiteralExpr @1
+                | BooleanLiteralExpr @2
+                | IntegerLiteralExpr @3
+                | FloatLiteralExpr @4
+                | StringLiteralExpr @5
+                | BinaryStringLiteralExpr @6
                 | IdentifierExpr @7
                 | BindParameterExpr @10
-                | ColumnRefExpr @11
-                | PrefixUnaryExpr @15
-                | PostfixUnaryExpr @16
+                | ColumnReferenceExpr @11
+                | UnaryExpr @15
                 | BinaryExpr @17
                 | BetweenExpr @18
                 | InExpr @19
                 | CaseExpr @20
-                | FunctionCallExpr @21
-                | SubqueryExpr @30
+                | CastExpr @21
+                | FunctionCallExpr @22
+                | ExistsExpr @23
+                | IsExpr @24
+                | GlobExpr @25
+                | LikeExpr @26
+                | MatchExpr @27
+                | RegexpExpr @28
+                | NullExpr @30
+                | RaiseFunctionExpr @31
+                | SubqueryExpr @35
+                | Expressions @40
+                | ParenthesizedExpr @41
+
+type Expressions = [Expression]

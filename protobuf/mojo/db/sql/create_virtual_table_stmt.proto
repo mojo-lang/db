@@ -11,7 +11,7 @@ import "mojo/lang/lang.proto";
 option go_package = "github.com/mojo-lang/db/go/pkg/mojo/db/sql;sql";
 option java_multiple_files = true;
 option java_outer_classname = "CreateVirtualTableStmtProto";
-option java_package = "org.mojo-lang.mojo.db.sql";
+option java_package = "org.mojolang.mojo.db.sql";
 
 message CreateVirtualTableStmt {
     mojo.lang.Position start_position = 1;
