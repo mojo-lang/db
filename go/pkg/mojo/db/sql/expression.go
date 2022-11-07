@@ -10,14 +10,14 @@ func NewNullLiteralExpressionFrom() *Expression {
 	return NewNullLiteralExpression(NewNullLiteralExpr())
 }
 
-func NewBoolLiteralExpression(expr *BooleanLiteralExpr) *Expression {
+func NewBooleanLiteralExpression(expr *BooleanLiteralExpr) *Expression {
 	return &Expression{
 		Expression: &Expression_BooleanLiteralExpr{BooleanLiteralExpr: expr},
 	}
 }
 
-func NewBoolLiteralExpressionFrom(value Boolean) *Expression {
-	return NewBoolLiteralExpression(NewBooleanLiteralExpr(value))
+func NewBooleanLiteralExpressionFrom(value Boolean) *Expression {
+	return NewBooleanLiteralExpression(NewBooleanLiteralExpr(value))
 }
 
 func NewIntegerLiteralExpression(expr *IntegerLiteralExpr) *Expression {
