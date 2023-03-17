@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+@discriminator('@type')
+@label_format('{}')
 type Statement = AlterTableStmt @1
                | AnalyzeSmt @2
                | AttachStmt @3

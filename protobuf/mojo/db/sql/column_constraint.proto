@@ -19,13 +19,12 @@ option java_outer_classname = "ColumnConstraintProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message ColumnConstraint {
-    
     message PrimaryKey {
         Order order = 1;
         ConflictClause conflict = 2;
         bool auto_increment = 3;
     }
-    
+
     message NotNull {
         mojo.lang.Position start_position = 1;
         mojo.lang.Position end_position = 2;
@@ -33,7 +32,7 @@ message ColumnConstraint {
         bool implicit = 5;
         ConflictClause.Action action = 10;
     }
-    
+
     message Unique {
         mojo.lang.Position start_position = 1;
         mojo.lang.Position end_position = 2;
@@ -41,10 +40,11 @@ message ColumnConstraint {
         bool implicit = 5;
         ConflictClause.Action action = 10;
     }
-    
+
     message Default {
         Expression expression = 2;
     }
+
     string name = 1;
     oneof constraint {
         PrimaryKey primary_key = 2;

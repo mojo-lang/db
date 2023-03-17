@@ -31,69 +31,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private TableDefinition(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              columns_ = new java.util.ArrayList<org.mojolang.mojo.db.sql.ColumnDefinition>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            columns_.add(
-                input.readMessage(org.mojolang.mojo.db.sql.ColumnDefinition.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            org.mojolang.mojo.db.sql.TableConstraint.Builder subBuilder = null;
-            if (tableConstraint_ != null) {
-              subBuilder = tableConstraint_.toBuilder();
-            }
-            tableConstraint_ = input.readMessage(org.mojolang.mojo.db.sql.TableConstraint.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(tableConstraint_);
-              tableConstraint_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        columns_ = java.util.Collections.unmodifiableList(columns_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.db.sql.TableDefinitionProto.internal_static_mojo_db_sql_TableDefinition_descriptor;
@@ -108,6 +45,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COLUMNS_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
   private java.util.List<org.mojolang.mojo.db.sql.ColumnDefinition> columns_;
   /**
    * <code>repeated .mojo.db.sql.ColumnDefinition columns = 1;</code>
@@ -170,7 +108,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.db.sql.TableConstraintOrBuilder getTableConstraintOrBuilder() {
-    return getTableConstraint();
+    return tableConstraint_ == null ? org.mojolang.mojo.db.sql.TableConstraint.getDefaultInstance() : tableConstraint_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -193,7 +131,7 @@ private static final long serialVersionUID = 0L;
     if (tableConstraint_ != null) {
       output.writeMessage(2, getTableConstraint());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -210,7 +148,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getTableConstraint());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -232,7 +170,7 @@ private static final long serialVersionUID = 0L;
       if (!getTableConstraint()
           .equals(other.getTableConstraint())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -251,7 +189,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TABLE_CONSTRAINT_FIELD_NUMBER;
       hash = (53 * hash) + getTableConstraint().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -368,33 +306,28 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.db.sql.TableDefinition.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getColumnsFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (columnsBuilder_ == null) {
         columns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        columns_ = null;
         columnsBuilder_.clear();
       }
-      if (tableConstraintBuilder_ == null) {
-        tableConstraint_ = null;
-      } else {
-        tableConstraint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      tableConstraint_ = null;
+      if (tableConstraintBuilder_ != null) {
+        tableConstraintBuilder_.dispose();
         tableConstraintBuilder_ = null;
       }
       return this;
@@ -423,7 +356,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.db.sql.TableDefinition buildPartial() {
       org.mojolang.mojo.db.sql.TableDefinition result = new org.mojolang.mojo.db.sql.TableDefinition(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(org.mojolang.mojo.db.sql.TableDefinition result) {
       if (columnsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           columns_ = java.util.Collections.unmodifiableList(columns_);
@@ -433,13 +372,15 @@ private static final long serialVersionUID = 0L;
       } else {
         result.columns_ = columnsBuilder_.build();
       }
-      if (tableConstraintBuilder_ == null) {
-        result.tableConstraint_ = tableConstraint_;
-      } else {
-        result.tableConstraint_ = tableConstraintBuilder_.build();
+    }
+
+    private void buildPartial0(org.mojolang.mojo.db.sql.TableDefinition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tableConstraint_ = tableConstraintBuilder_ == null
+            ? tableConstraint_
+            : tableConstraintBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -515,7 +456,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasTableConstraint()) {
         mergeTableConstraint(other.getTableConstraint());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -530,17 +471,50 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.db.sql.TableDefinition parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              org.mojolang.mojo.db.sql.ColumnDefinition m =
+                  input.readMessage(
+                      org.mojolang.mojo.db.sql.ColumnDefinition.parser(),
+                      extensionRegistry);
+              if (columnsBuilder_ == null) {
+                ensureColumnsIsMutable();
+                columns_.add(m);
+              } else {
+                columnsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getTableConstraintFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.db.sql.TableDefinition) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int bitField0_;
@@ -793,7 +767,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the tableConstraint field is set.
      */
     public boolean hasTableConstraint() {
-      return tableConstraintBuilder_ != null || tableConstraint_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.mojo.db.sql.TableConstraint table_constraint = 2;</code>
@@ -815,11 +789,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         tableConstraint_ = value;
-        onChanged();
       } else {
         tableConstraintBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,11 +803,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.db.sql.TableConstraint.Builder builderForValue) {
       if (tableConstraintBuilder_ == null) {
         tableConstraint_ = builderForValue.build();
-        onChanged();
       } else {
         tableConstraintBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,38 +815,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeTableConstraint(org.mojolang.mojo.db.sql.TableConstraint value) {
       if (tableConstraintBuilder_ == null) {
-        if (tableConstraint_ != null) {
-          tableConstraint_ =
-            org.mojolang.mojo.db.sql.TableConstraint.newBuilder(tableConstraint_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          tableConstraint_ != null &&
+          tableConstraint_ != org.mojolang.mojo.db.sql.TableConstraint.getDefaultInstance()) {
+          getTableConstraintBuilder().mergeFrom(value);
         } else {
           tableConstraint_ = value;
         }
-        onChanged();
       } else {
         tableConstraintBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.db.sql.TableConstraint table_constraint = 2;</code>
      */
     public Builder clearTableConstraint() {
-      if (tableConstraintBuilder_ == null) {
-        tableConstraint_ = null;
-        onChanged();
-      } else {
-        tableConstraint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      tableConstraint_ = null;
+      if (tableConstraintBuilder_ != null) {
+        tableConstraintBuilder_.dispose();
         tableConstraintBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.db.sql.TableConstraint table_constraint = 2;</code>
      */
     public org.mojolang.mojo.db.sql.TableConstraint.Builder getTableConstraintBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTableConstraintFieldBuilder().getBuilder();
     }
@@ -936,7 +910,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TableDefinition(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

@@ -34,27 +34,27 @@ option java_package = "org.mojolang.mojo.db.sql";
 
 message Statement {
     oneof statement {
-        AlterTableStmt alter_table_stmt_val = 1;
-        AnalyzeSmt analyze_smt_val = 2;
-        AttachStmt attach_stmt_val = 3;
-        BeginStmt begin_stmt_val = 5;
-        CommitStmt commit_stmt_val = 6;
-        CreateIndexStmt create_index_stmt_val = 10;
-        CreateTableStmt create_table_stmt_val = 11;
-        CreateTriggerStmt create_trigger_stmt_val = 12;
-        CreateViewStmt create_view_stmt_val = 13;
-        CreateVirtualTableStmt create_virtual_table_stmt_val = 14;
-        DeleteStmt delete_stmt_val = 17;
-        DetachStmt detach_stmt_val = 18;
-        DropStmt drop_stmt_val = 19;
-        EndStmt end_stmt_val = 30;
-        InsertStmt insert_stmt_val = 20;
-        PragmaStmt pragma_stmt_val = 21;
-        ReindexStmt reindex_stmt_val = 22;
-        ReleaseStmt release_stmt_val = 23;
-        RollbackStmt rollback_stmt_val = 24;
-        SelectStmt select_stmt_val = 25;
-        UpdateStmt update_stmt_val = 26;
-        VacuumStmt vacuum_stmt_val = 27;
+        AlterTableStmt alter_table_stmt = 1;
+        AnalyzeSmt analyze_smt = 2;
+        AttachStmt attach_stmt = 3;
+        BeginStmt begin_stmt = 5;
+        CommitStmt commit_stmt = 6;
+        CreateIndexStmt create_index_stmt = 10;
+        CreateTableStmt create_table_stmt = 11;
+        CreateTriggerStmt create_trigger_stmt = 12;
+        CreateViewStmt create_view_stmt = 13;
+        CreateVirtualTableStmt create_virtual_table_stmt = 14;
+        DeleteStmt delete_stmt = 17;
+        DetachStmt detach_stmt = 18;
+        DropStmt drop_stmt = 19;
+        EndStmt end_stmt = 30;
+        InsertStmt insert_stmt = 20;
+        PragmaStmt pragma_stmt = 21;
+        ReindexStmt reindex_stmt = 22;
+        ReleaseStmt release_stmt = 23;
+        RollbackStmt rollback_stmt = 24;
+        SelectStmt select_stmt = 25;
+        UpdateStmt update_stmt = 26;
+        VacuumStmt vacuum_stmt = 27;
     }
 }

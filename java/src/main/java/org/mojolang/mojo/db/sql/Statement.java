@@ -30,351 +30,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Statement(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            org.mojolang.mojo.db.sql.AlterTableStmt.Builder subBuilder = null;
-            if (statementCase_ == 1) {
-              subBuilder = ((org.mojolang.mojo.db.sql.AlterTableStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.AlterTableStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.AlterTableStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 1;
-            break;
-          }
-          case 18: {
-            org.mojolang.mojo.db.sql.AnalyzeSmt.Builder subBuilder = null;
-            if (statementCase_ == 2) {
-              subBuilder = ((org.mojolang.mojo.db.sql.AnalyzeSmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.AnalyzeSmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.AnalyzeSmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 2;
-            break;
-          }
-          case 26: {
-            org.mojolang.mojo.db.sql.AttachStmt.Builder subBuilder = null;
-            if (statementCase_ == 3) {
-              subBuilder = ((org.mojolang.mojo.db.sql.AttachStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.AttachStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.AttachStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 3;
-            break;
-          }
-          case 42: {
-            org.mojolang.mojo.db.sql.BeginStmt.Builder subBuilder = null;
-            if (statementCase_ == 5) {
-              subBuilder = ((org.mojolang.mojo.db.sql.BeginStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.BeginStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.BeginStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 5;
-            break;
-          }
-          case 50: {
-            org.mojolang.mojo.db.sql.CommitStmt.Builder subBuilder = null;
-            if (statementCase_ == 6) {
-              subBuilder = ((org.mojolang.mojo.db.sql.CommitStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.CommitStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.CommitStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 6;
-            break;
-          }
-          case 82: {
-            org.mojolang.mojo.db.sql.CreateIndexStmt.Builder subBuilder = null;
-            if (statementCase_ == 10) {
-              subBuilder = ((org.mojolang.mojo.db.sql.CreateIndexStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.CreateIndexStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.CreateIndexStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 10;
-            break;
-          }
-          case 90: {
-            org.mojolang.mojo.db.sql.CreateTableStmt.Builder subBuilder = null;
-            if (statementCase_ == 11) {
-              subBuilder = ((org.mojolang.mojo.db.sql.CreateTableStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.CreateTableStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.CreateTableStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 11;
-            break;
-          }
-          case 98: {
-            org.mojolang.mojo.db.sql.CreateTriggerStmt.Builder subBuilder = null;
-            if (statementCase_ == 12) {
-              subBuilder = ((org.mojolang.mojo.db.sql.CreateTriggerStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.CreateTriggerStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.CreateTriggerStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 12;
-            break;
-          }
-          case 106: {
-            org.mojolang.mojo.db.sql.CreateViewStmt.Builder subBuilder = null;
-            if (statementCase_ == 13) {
-              subBuilder = ((org.mojolang.mojo.db.sql.CreateViewStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.CreateViewStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.CreateViewStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 13;
-            break;
-          }
-          case 114: {
-            org.mojolang.mojo.db.sql.CreateVirtualTableStmt.Builder subBuilder = null;
-            if (statementCase_ == 14) {
-              subBuilder = ((org.mojolang.mojo.db.sql.CreateVirtualTableStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.CreateVirtualTableStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.CreateVirtualTableStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 14;
-            break;
-          }
-          case 138: {
-            org.mojolang.mojo.db.sql.DeleteStmt.Builder subBuilder = null;
-            if (statementCase_ == 17) {
-              subBuilder = ((org.mojolang.mojo.db.sql.DeleteStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.DeleteStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.DeleteStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 17;
-            break;
-          }
-          case 146: {
-            org.mojolang.mojo.db.sql.DetachStmt.Builder subBuilder = null;
-            if (statementCase_ == 18) {
-              subBuilder = ((org.mojolang.mojo.db.sql.DetachStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.DetachStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.DetachStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 18;
-            break;
-          }
-          case 154: {
-            org.mojolang.mojo.db.sql.DropStmt.Builder subBuilder = null;
-            if (statementCase_ == 19) {
-              subBuilder = ((org.mojolang.mojo.db.sql.DropStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.DropStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.DropStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 19;
-            break;
-          }
-          case 162: {
-            org.mojolang.mojo.db.sql.InsertStmt.Builder subBuilder = null;
-            if (statementCase_ == 20) {
-              subBuilder = ((org.mojolang.mojo.db.sql.InsertStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.InsertStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.InsertStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 20;
-            break;
-          }
-          case 170: {
-            org.mojolang.mojo.db.sql.PragmaStmt.Builder subBuilder = null;
-            if (statementCase_ == 21) {
-              subBuilder = ((org.mojolang.mojo.db.sql.PragmaStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.PragmaStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.PragmaStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 21;
-            break;
-          }
-          case 178: {
-            org.mojolang.mojo.db.sql.ReindexStmt.Builder subBuilder = null;
-            if (statementCase_ == 22) {
-              subBuilder = ((org.mojolang.mojo.db.sql.ReindexStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.ReindexStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.ReindexStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 22;
-            break;
-          }
-          case 186: {
-            org.mojolang.mojo.db.sql.ReleaseStmt.Builder subBuilder = null;
-            if (statementCase_ == 23) {
-              subBuilder = ((org.mojolang.mojo.db.sql.ReleaseStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.ReleaseStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.ReleaseStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 23;
-            break;
-          }
-          case 194: {
-            org.mojolang.mojo.db.sql.RollbackStmt.Builder subBuilder = null;
-            if (statementCase_ == 24) {
-              subBuilder = ((org.mojolang.mojo.db.sql.RollbackStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.RollbackStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.RollbackStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 24;
-            break;
-          }
-          case 202: {
-            org.mojolang.mojo.db.sql.SelectStmt.Builder subBuilder = null;
-            if (statementCase_ == 25) {
-              subBuilder = ((org.mojolang.mojo.db.sql.SelectStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.SelectStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.SelectStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 25;
-            break;
-          }
-          case 210: {
-            org.mojolang.mojo.db.sql.UpdateStmt.Builder subBuilder = null;
-            if (statementCase_ == 26) {
-              subBuilder = ((org.mojolang.mojo.db.sql.UpdateStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.UpdateStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.UpdateStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 26;
-            break;
-          }
-          case 218: {
-            org.mojolang.mojo.db.sql.VacuumStmt.Builder subBuilder = null;
-            if (statementCase_ == 27) {
-              subBuilder = ((org.mojolang.mojo.db.sql.VacuumStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.VacuumStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.VacuumStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 27;
-            break;
-          }
-          case 242: {
-            org.mojolang.mojo.db.sql.EndStmt.Builder subBuilder = null;
-            if (statementCase_ == 30) {
-              subBuilder = ((org.mojolang.mojo.db.sql.EndStmt) statement_).toBuilder();
-            }
-            statement_ =
-                input.readMessage(org.mojolang.mojo.db.sql.EndStmt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.EndStmt) statement_);
-              statement_ = subBuilder.buildPartial();
-            }
-            statementCase_ = 30;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.db.sql.StatementProto.internal_static_mojo_db_sql_Statement_descriptor;
@@ -393,28 +48,28 @@ private static final long serialVersionUID = 0L;
   public enum StatementCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    ALTER_TABLE_STMT_VAL(1),
-    ANALYZE_SMT_VAL(2),
-    ATTACH_STMT_VAL(3),
-    BEGIN_STMT_VAL(5),
-    COMMIT_STMT_VAL(6),
-    CREATE_INDEX_STMT_VAL(10),
-    CREATE_TABLE_STMT_VAL(11),
-    CREATE_TRIGGER_STMT_VAL(12),
-    CREATE_VIEW_STMT_VAL(13),
-    CREATE_VIRTUAL_TABLE_STMT_VAL(14),
-    DELETE_STMT_VAL(17),
-    DETACH_STMT_VAL(18),
-    DROP_STMT_VAL(19),
-    END_STMT_VAL(30),
-    INSERT_STMT_VAL(20),
-    PRAGMA_STMT_VAL(21),
-    REINDEX_STMT_VAL(22),
-    RELEASE_STMT_VAL(23),
-    ROLLBACK_STMT_VAL(24),
-    SELECT_STMT_VAL(25),
-    UPDATE_STMT_VAL(26),
-    VACUUM_STMT_VAL(27),
+    ALTER_TABLE_STMT(1),
+    ANALYZE_SMT(2),
+    ATTACH_STMT(3),
+    BEGIN_STMT(5),
+    COMMIT_STMT(6),
+    CREATE_INDEX_STMT(10),
+    CREATE_TABLE_STMT(11),
+    CREATE_TRIGGER_STMT(12),
+    CREATE_VIEW_STMT(13),
+    CREATE_VIRTUAL_TABLE_STMT(14),
+    DELETE_STMT(17),
+    DETACH_STMT(18),
+    DROP_STMT(19),
+    END_STMT(30),
+    INSERT_STMT(20),
+    PRAGMA_STMT(21),
+    REINDEX_STMT(22),
+    RELEASE_STMT(23),
+    ROLLBACK_STMT(24),
+    SELECT_STMT(25),
+    UPDATE_STMT(26),
+    VACUUM_STMT(27),
     STATEMENT_NOT_SET(0);
     private final int value;
     private StatementCase(int value) {
@@ -432,28 +87,28 @@ private static final long serialVersionUID = 0L;
 
     public static StatementCase forNumber(int value) {
       switch (value) {
-        case 1: return ALTER_TABLE_STMT_VAL;
-        case 2: return ANALYZE_SMT_VAL;
-        case 3: return ATTACH_STMT_VAL;
-        case 5: return BEGIN_STMT_VAL;
-        case 6: return COMMIT_STMT_VAL;
-        case 10: return CREATE_INDEX_STMT_VAL;
-        case 11: return CREATE_TABLE_STMT_VAL;
-        case 12: return CREATE_TRIGGER_STMT_VAL;
-        case 13: return CREATE_VIEW_STMT_VAL;
-        case 14: return CREATE_VIRTUAL_TABLE_STMT_VAL;
-        case 17: return DELETE_STMT_VAL;
-        case 18: return DETACH_STMT_VAL;
-        case 19: return DROP_STMT_VAL;
-        case 30: return END_STMT_VAL;
-        case 20: return INSERT_STMT_VAL;
-        case 21: return PRAGMA_STMT_VAL;
-        case 22: return REINDEX_STMT_VAL;
-        case 23: return RELEASE_STMT_VAL;
-        case 24: return ROLLBACK_STMT_VAL;
-        case 25: return SELECT_STMT_VAL;
-        case 26: return UPDATE_STMT_VAL;
-        case 27: return VACUUM_STMT_VAL;
+        case 1: return ALTER_TABLE_STMT;
+        case 2: return ANALYZE_SMT;
+        case 3: return ATTACH_STMT;
+        case 5: return BEGIN_STMT;
+        case 6: return COMMIT_STMT;
+        case 10: return CREATE_INDEX_STMT;
+        case 11: return CREATE_TABLE_STMT;
+        case 12: return CREATE_TRIGGER_STMT;
+        case 13: return CREATE_VIEW_STMT;
+        case 14: return CREATE_VIRTUAL_TABLE_STMT;
+        case 17: return DELETE_STMT;
+        case 18: return DETACH_STMT;
+        case 19: return DROP_STMT;
+        case 30: return END_STMT;
+        case 20: return INSERT_STMT;
+        case 21: return PRAGMA_STMT;
+        case 22: return REINDEX_STMT;
+        case 23: return RELEASE_STMT;
+        case 24: return ROLLBACK_STMT;
+        case 25: return SELECT_STMT;
+        case 26: return UPDATE_STMT;
+        case 27: return VACUUM_STMT;
         case 0: return STATEMENT_NOT_SET;
         default: return null;
       }
@@ -469,682 +124,682 @@ private static final long serialVersionUID = 0L;
         statementCase_);
   }
 
-  public static final int ALTER_TABLE_STMT_VAL_FIELD_NUMBER = 1;
+  public static final int ALTER_TABLE_STMT_FIELD_NUMBER = 1;
   /**
-   * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
-   * @return Whether the alterTableStmtVal field is set.
+   * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
+   * @return Whether the alterTableStmt field is set.
    */
   @java.lang.Override
-  public boolean hasAlterTableStmtVal() {
+  public boolean hasAlterTableStmt() {
     return statementCase_ == 1;
   }
   /**
-   * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
-   * @return The alterTableStmtVal.
+   * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
+   * @return The alterTableStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.AlterTableStmt getAlterTableStmtVal() {
+  public org.mojolang.mojo.db.sql.AlterTableStmt getAlterTableStmt() {
     if (statementCase_ == 1) {
        return (org.mojolang.mojo.db.sql.AlterTableStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.AlterTableStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
+   * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.AlterTableStmtOrBuilder getAlterTableStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.AlterTableStmtOrBuilder getAlterTableStmtOrBuilder() {
     if (statementCase_ == 1) {
        return (org.mojolang.mojo.db.sql.AlterTableStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.AlterTableStmt.getDefaultInstance();
   }
 
-  public static final int ANALYZE_SMT_VAL_FIELD_NUMBER = 2;
+  public static final int ANALYZE_SMT_FIELD_NUMBER = 2;
   /**
-   * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
-   * @return Whether the analyzeSmtVal field is set.
+   * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
+   * @return Whether the analyzeSmt field is set.
    */
   @java.lang.Override
-  public boolean hasAnalyzeSmtVal() {
+  public boolean hasAnalyzeSmt() {
     return statementCase_ == 2;
   }
   /**
-   * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
-   * @return The analyzeSmtVal.
+   * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
+   * @return The analyzeSmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.AnalyzeSmt getAnalyzeSmtVal() {
+  public org.mojolang.mojo.db.sql.AnalyzeSmt getAnalyzeSmt() {
     if (statementCase_ == 2) {
        return (org.mojolang.mojo.db.sql.AnalyzeSmt) statement_;
     }
     return org.mojolang.mojo.db.sql.AnalyzeSmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
+   * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.AnalyzeSmtOrBuilder getAnalyzeSmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.AnalyzeSmtOrBuilder getAnalyzeSmtOrBuilder() {
     if (statementCase_ == 2) {
        return (org.mojolang.mojo.db.sql.AnalyzeSmt) statement_;
     }
     return org.mojolang.mojo.db.sql.AnalyzeSmt.getDefaultInstance();
   }
 
-  public static final int ATTACH_STMT_VAL_FIELD_NUMBER = 3;
+  public static final int ATTACH_STMT_FIELD_NUMBER = 3;
   /**
-   * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
-   * @return Whether the attachStmtVal field is set.
+   * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
+   * @return Whether the attachStmt field is set.
    */
   @java.lang.Override
-  public boolean hasAttachStmtVal() {
+  public boolean hasAttachStmt() {
     return statementCase_ == 3;
   }
   /**
-   * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
-   * @return The attachStmtVal.
+   * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
+   * @return The attachStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.AttachStmt getAttachStmtVal() {
+  public org.mojolang.mojo.db.sql.AttachStmt getAttachStmt() {
     if (statementCase_ == 3) {
        return (org.mojolang.mojo.db.sql.AttachStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.AttachStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
+   * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.AttachStmtOrBuilder getAttachStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.AttachStmtOrBuilder getAttachStmtOrBuilder() {
     if (statementCase_ == 3) {
        return (org.mojolang.mojo.db.sql.AttachStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.AttachStmt.getDefaultInstance();
   }
 
-  public static final int BEGIN_STMT_VAL_FIELD_NUMBER = 5;
+  public static final int BEGIN_STMT_FIELD_NUMBER = 5;
   /**
-   * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
-   * @return Whether the beginStmtVal field is set.
+   * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
+   * @return Whether the beginStmt field is set.
    */
   @java.lang.Override
-  public boolean hasBeginStmtVal() {
+  public boolean hasBeginStmt() {
     return statementCase_ == 5;
   }
   /**
-   * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
-   * @return The beginStmtVal.
+   * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
+   * @return The beginStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.BeginStmt getBeginStmtVal() {
+  public org.mojolang.mojo.db.sql.BeginStmt getBeginStmt() {
     if (statementCase_ == 5) {
        return (org.mojolang.mojo.db.sql.BeginStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.BeginStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
+   * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.BeginStmtOrBuilder getBeginStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.BeginStmtOrBuilder getBeginStmtOrBuilder() {
     if (statementCase_ == 5) {
        return (org.mojolang.mojo.db.sql.BeginStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.BeginStmt.getDefaultInstance();
   }
 
-  public static final int COMMIT_STMT_VAL_FIELD_NUMBER = 6;
+  public static final int COMMIT_STMT_FIELD_NUMBER = 6;
   /**
-   * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
-   * @return Whether the commitStmtVal field is set.
+   * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
+   * @return Whether the commitStmt field is set.
    */
   @java.lang.Override
-  public boolean hasCommitStmtVal() {
+  public boolean hasCommitStmt() {
     return statementCase_ == 6;
   }
   /**
-   * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
-   * @return The commitStmtVal.
+   * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
+   * @return The commitStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CommitStmt getCommitStmtVal() {
+  public org.mojolang.mojo.db.sql.CommitStmt getCommitStmt() {
     if (statementCase_ == 6) {
        return (org.mojolang.mojo.db.sql.CommitStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CommitStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
+   * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CommitStmtOrBuilder getCommitStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.CommitStmtOrBuilder getCommitStmtOrBuilder() {
     if (statementCase_ == 6) {
        return (org.mojolang.mojo.db.sql.CommitStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CommitStmt.getDefaultInstance();
   }
 
-  public static final int CREATE_INDEX_STMT_VAL_FIELD_NUMBER = 10;
+  public static final int CREATE_INDEX_STMT_FIELD_NUMBER = 10;
   /**
-   * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
-   * @return Whether the createIndexStmtVal field is set.
+   * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
+   * @return Whether the createIndexStmt field is set.
    */
   @java.lang.Override
-  public boolean hasCreateIndexStmtVal() {
+  public boolean hasCreateIndexStmt() {
     return statementCase_ == 10;
   }
   /**
-   * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
-   * @return The createIndexStmtVal.
+   * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
+   * @return The createIndexStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateIndexStmt getCreateIndexStmtVal() {
+  public org.mojolang.mojo.db.sql.CreateIndexStmt getCreateIndexStmt() {
     if (statementCase_ == 10) {
        return (org.mojolang.mojo.db.sql.CreateIndexStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateIndexStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
+   * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateIndexStmtOrBuilder getCreateIndexStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.CreateIndexStmtOrBuilder getCreateIndexStmtOrBuilder() {
     if (statementCase_ == 10) {
        return (org.mojolang.mojo.db.sql.CreateIndexStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateIndexStmt.getDefaultInstance();
   }
 
-  public static final int CREATE_TABLE_STMT_VAL_FIELD_NUMBER = 11;
+  public static final int CREATE_TABLE_STMT_FIELD_NUMBER = 11;
   /**
-   * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
-   * @return Whether the createTableStmtVal field is set.
+   * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
+   * @return Whether the createTableStmt field is set.
    */
   @java.lang.Override
-  public boolean hasCreateTableStmtVal() {
+  public boolean hasCreateTableStmt() {
     return statementCase_ == 11;
   }
   /**
-   * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
-   * @return The createTableStmtVal.
+   * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
+   * @return The createTableStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateTableStmt getCreateTableStmtVal() {
+  public org.mojolang.mojo.db.sql.CreateTableStmt getCreateTableStmt() {
     if (statementCase_ == 11) {
        return (org.mojolang.mojo.db.sql.CreateTableStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateTableStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
+   * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateTableStmtOrBuilder getCreateTableStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.CreateTableStmtOrBuilder getCreateTableStmtOrBuilder() {
     if (statementCase_ == 11) {
        return (org.mojolang.mojo.db.sql.CreateTableStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateTableStmt.getDefaultInstance();
   }
 
-  public static final int CREATE_TRIGGER_STMT_VAL_FIELD_NUMBER = 12;
+  public static final int CREATE_TRIGGER_STMT_FIELD_NUMBER = 12;
   /**
-   * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
-   * @return Whether the createTriggerStmtVal field is set.
+   * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
+   * @return Whether the createTriggerStmt field is set.
    */
   @java.lang.Override
-  public boolean hasCreateTriggerStmtVal() {
+  public boolean hasCreateTriggerStmt() {
     return statementCase_ == 12;
   }
   /**
-   * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
-   * @return The createTriggerStmtVal.
+   * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
+   * @return The createTriggerStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateTriggerStmt getCreateTriggerStmtVal() {
+  public org.mojolang.mojo.db.sql.CreateTriggerStmt getCreateTriggerStmt() {
     if (statementCase_ == 12) {
        return (org.mojolang.mojo.db.sql.CreateTriggerStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateTriggerStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
+   * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateTriggerStmtOrBuilder getCreateTriggerStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.CreateTriggerStmtOrBuilder getCreateTriggerStmtOrBuilder() {
     if (statementCase_ == 12) {
        return (org.mojolang.mojo.db.sql.CreateTriggerStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateTriggerStmt.getDefaultInstance();
   }
 
-  public static final int CREATE_VIEW_STMT_VAL_FIELD_NUMBER = 13;
+  public static final int CREATE_VIEW_STMT_FIELD_NUMBER = 13;
   /**
-   * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
-   * @return Whether the createViewStmtVal field is set.
+   * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
+   * @return Whether the createViewStmt field is set.
    */
   @java.lang.Override
-  public boolean hasCreateViewStmtVal() {
+  public boolean hasCreateViewStmt() {
     return statementCase_ == 13;
   }
   /**
-   * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
-   * @return The createViewStmtVal.
+   * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
+   * @return The createViewStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateViewStmt getCreateViewStmtVal() {
+  public org.mojolang.mojo.db.sql.CreateViewStmt getCreateViewStmt() {
     if (statementCase_ == 13) {
        return (org.mojolang.mojo.db.sql.CreateViewStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateViewStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
+   * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateViewStmtOrBuilder getCreateViewStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.CreateViewStmtOrBuilder getCreateViewStmtOrBuilder() {
     if (statementCase_ == 13) {
        return (org.mojolang.mojo.db.sql.CreateViewStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateViewStmt.getDefaultInstance();
   }
 
-  public static final int CREATE_VIRTUAL_TABLE_STMT_VAL_FIELD_NUMBER = 14;
+  public static final int CREATE_VIRTUAL_TABLE_STMT_FIELD_NUMBER = 14;
   /**
-   * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
-   * @return Whether the createVirtualTableStmtVal field is set.
+   * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
+   * @return Whether the createVirtualTableStmt field is set.
    */
   @java.lang.Override
-  public boolean hasCreateVirtualTableStmtVal() {
+  public boolean hasCreateVirtualTableStmt() {
     return statementCase_ == 14;
   }
   /**
-   * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
-   * @return The createVirtualTableStmtVal.
+   * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
+   * @return The createVirtualTableStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateVirtualTableStmt getCreateVirtualTableStmtVal() {
+  public org.mojolang.mojo.db.sql.CreateVirtualTableStmt getCreateVirtualTableStmt() {
     if (statementCase_ == 14) {
        return (org.mojolang.mojo.db.sql.CreateVirtualTableStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateVirtualTableStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
+   * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.CreateVirtualTableStmtOrBuilder getCreateVirtualTableStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.CreateVirtualTableStmtOrBuilder getCreateVirtualTableStmtOrBuilder() {
     if (statementCase_ == 14) {
        return (org.mojolang.mojo.db.sql.CreateVirtualTableStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.CreateVirtualTableStmt.getDefaultInstance();
   }
 
-  public static final int DELETE_STMT_VAL_FIELD_NUMBER = 17;
+  public static final int DELETE_STMT_FIELD_NUMBER = 17;
   /**
-   * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
-   * @return Whether the deleteStmtVal field is set.
+   * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
+   * @return Whether the deleteStmt field is set.
    */
   @java.lang.Override
-  public boolean hasDeleteStmtVal() {
+  public boolean hasDeleteStmt() {
     return statementCase_ == 17;
   }
   /**
-   * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
-   * @return The deleteStmtVal.
+   * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
+   * @return The deleteStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.DeleteStmt getDeleteStmtVal() {
+  public org.mojolang.mojo.db.sql.DeleteStmt getDeleteStmt() {
     if (statementCase_ == 17) {
        return (org.mojolang.mojo.db.sql.DeleteStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.DeleteStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
+   * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.DeleteStmtOrBuilder getDeleteStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.DeleteStmtOrBuilder getDeleteStmtOrBuilder() {
     if (statementCase_ == 17) {
        return (org.mojolang.mojo.db.sql.DeleteStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.DeleteStmt.getDefaultInstance();
   }
 
-  public static final int DETACH_STMT_VAL_FIELD_NUMBER = 18;
+  public static final int DETACH_STMT_FIELD_NUMBER = 18;
   /**
-   * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
-   * @return Whether the detachStmtVal field is set.
+   * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
+   * @return Whether the detachStmt field is set.
    */
   @java.lang.Override
-  public boolean hasDetachStmtVal() {
+  public boolean hasDetachStmt() {
     return statementCase_ == 18;
   }
   /**
-   * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
-   * @return The detachStmtVal.
+   * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
+   * @return The detachStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.DetachStmt getDetachStmtVal() {
+  public org.mojolang.mojo.db.sql.DetachStmt getDetachStmt() {
     if (statementCase_ == 18) {
        return (org.mojolang.mojo.db.sql.DetachStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.DetachStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
+   * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.DetachStmtOrBuilder getDetachStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.DetachStmtOrBuilder getDetachStmtOrBuilder() {
     if (statementCase_ == 18) {
        return (org.mojolang.mojo.db.sql.DetachStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.DetachStmt.getDefaultInstance();
   }
 
-  public static final int DROP_STMT_VAL_FIELD_NUMBER = 19;
+  public static final int DROP_STMT_FIELD_NUMBER = 19;
   /**
-   * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
-   * @return Whether the dropStmtVal field is set.
+   * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
+   * @return Whether the dropStmt field is set.
    */
   @java.lang.Override
-  public boolean hasDropStmtVal() {
+  public boolean hasDropStmt() {
     return statementCase_ == 19;
   }
   /**
-   * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
-   * @return The dropStmtVal.
+   * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
+   * @return The dropStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.DropStmt getDropStmtVal() {
+  public org.mojolang.mojo.db.sql.DropStmt getDropStmt() {
     if (statementCase_ == 19) {
        return (org.mojolang.mojo.db.sql.DropStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.DropStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
+   * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.DropStmtOrBuilder getDropStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.DropStmtOrBuilder getDropStmtOrBuilder() {
     if (statementCase_ == 19) {
        return (org.mojolang.mojo.db.sql.DropStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.DropStmt.getDefaultInstance();
   }
 
-  public static final int END_STMT_VAL_FIELD_NUMBER = 30;
+  public static final int END_STMT_FIELD_NUMBER = 30;
   /**
-   * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
-   * @return Whether the endStmtVal field is set.
+   * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
+   * @return Whether the endStmt field is set.
    */
   @java.lang.Override
-  public boolean hasEndStmtVal() {
+  public boolean hasEndStmt() {
     return statementCase_ == 30;
   }
   /**
-   * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
-   * @return The endStmtVal.
+   * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
+   * @return The endStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.EndStmt getEndStmtVal() {
+  public org.mojolang.mojo.db.sql.EndStmt getEndStmt() {
     if (statementCase_ == 30) {
        return (org.mojolang.mojo.db.sql.EndStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.EndStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+   * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.EndStmtOrBuilder getEndStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.EndStmtOrBuilder getEndStmtOrBuilder() {
     if (statementCase_ == 30) {
        return (org.mojolang.mojo.db.sql.EndStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.EndStmt.getDefaultInstance();
   }
 
-  public static final int INSERT_STMT_VAL_FIELD_NUMBER = 20;
+  public static final int INSERT_STMT_FIELD_NUMBER = 20;
   /**
-   * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
-   * @return Whether the insertStmtVal field is set.
+   * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
+   * @return Whether the insertStmt field is set.
    */
   @java.lang.Override
-  public boolean hasInsertStmtVal() {
+  public boolean hasInsertStmt() {
     return statementCase_ == 20;
   }
   /**
-   * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
-   * @return The insertStmtVal.
+   * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
+   * @return The insertStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.InsertStmt getInsertStmtVal() {
+  public org.mojolang.mojo.db.sql.InsertStmt getInsertStmt() {
     if (statementCase_ == 20) {
        return (org.mojolang.mojo.db.sql.InsertStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.InsertStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
+   * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.InsertStmtOrBuilder getInsertStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.InsertStmtOrBuilder getInsertStmtOrBuilder() {
     if (statementCase_ == 20) {
        return (org.mojolang.mojo.db.sql.InsertStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.InsertStmt.getDefaultInstance();
   }
 
-  public static final int PRAGMA_STMT_VAL_FIELD_NUMBER = 21;
+  public static final int PRAGMA_STMT_FIELD_NUMBER = 21;
   /**
-   * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
-   * @return Whether the pragmaStmtVal field is set.
+   * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
+   * @return Whether the pragmaStmt field is set.
    */
   @java.lang.Override
-  public boolean hasPragmaStmtVal() {
+  public boolean hasPragmaStmt() {
     return statementCase_ == 21;
   }
   /**
-   * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
-   * @return The pragmaStmtVal.
+   * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
+   * @return The pragmaStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.PragmaStmt getPragmaStmtVal() {
+  public org.mojolang.mojo.db.sql.PragmaStmt getPragmaStmt() {
     if (statementCase_ == 21) {
        return (org.mojolang.mojo.db.sql.PragmaStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.PragmaStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
+   * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.PragmaStmtOrBuilder getPragmaStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.PragmaStmtOrBuilder getPragmaStmtOrBuilder() {
     if (statementCase_ == 21) {
        return (org.mojolang.mojo.db.sql.PragmaStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.PragmaStmt.getDefaultInstance();
   }
 
-  public static final int REINDEX_STMT_VAL_FIELD_NUMBER = 22;
+  public static final int REINDEX_STMT_FIELD_NUMBER = 22;
   /**
-   * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
-   * @return Whether the reindexStmtVal field is set.
+   * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
+   * @return Whether the reindexStmt field is set.
    */
   @java.lang.Override
-  public boolean hasReindexStmtVal() {
+  public boolean hasReindexStmt() {
     return statementCase_ == 22;
   }
   /**
-   * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
-   * @return The reindexStmtVal.
+   * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
+   * @return The reindexStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.ReindexStmt getReindexStmtVal() {
+  public org.mojolang.mojo.db.sql.ReindexStmt getReindexStmt() {
     if (statementCase_ == 22) {
        return (org.mojolang.mojo.db.sql.ReindexStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.ReindexStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
+   * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.ReindexStmtOrBuilder getReindexStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.ReindexStmtOrBuilder getReindexStmtOrBuilder() {
     if (statementCase_ == 22) {
        return (org.mojolang.mojo.db.sql.ReindexStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.ReindexStmt.getDefaultInstance();
   }
 
-  public static final int RELEASE_STMT_VAL_FIELD_NUMBER = 23;
+  public static final int RELEASE_STMT_FIELD_NUMBER = 23;
   /**
-   * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
-   * @return Whether the releaseStmtVal field is set.
+   * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
+   * @return Whether the releaseStmt field is set.
    */
   @java.lang.Override
-  public boolean hasReleaseStmtVal() {
+  public boolean hasReleaseStmt() {
     return statementCase_ == 23;
   }
   /**
-   * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
-   * @return The releaseStmtVal.
+   * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
+   * @return The releaseStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.ReleaseStmt getReleaseStmtVal() {
+  public org.mojolang.mojo.db.sql.ReleaseStmt getReleaseStmt() {
     if (statementCase_ == 23) {
        return (org.mojolang.mojo.db.sql.ReleaseStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.ReleaseStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
+   * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.ReleaseStmtOrBuilder getReleaseStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.ReleaseStmtOrBuilder getReleaseStmtOrBuilder() {
     if (statementCase_ == 23) {
        return (org.mojolang.mojo.db.sql.ReleaseStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.ReleaseStmt.getDefaultInstance();
   }
 
-  public static final int ROLLBACK_STMT_VAL_FIELD_NUMBER = 24;
+  public static final int ROLLBACK_STMT_FIELD_NUMBER = 24;
   /**
-   * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
-   * @return Whether the rollbackStmtVal field is set.
+   * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
+   * @return Whether the rollbackStmt field is set.
    */
   @java.lang.Override
-  public boolean hasRollbackStmtVal() {
+  public boolean hasRollbackStmt() {
     return statementCase_ == 24;
   }
   /**
-   * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
-   * @return The rollbackStmtVal.
+   * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
+   * @return The rollbackStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.RollbackStmt getRollbackStmtVal() {
+  public org.mojolang.mojo.db.sql.RollbackStmt getRollbackStmt() {
     if (statementCase_ == 24) {
        return (org.mojolang.mojo.db.sql.RollbackStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.RollbackStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
+   * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.RollbackStmtOrBuilder getRollbackStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.RollbackStmtOrBuilder getRollbackStmtOrBuilder() {
     if (statementCase_ == 24) {
        return (org.mojolang.mojo.db.sql.RollbackStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.RollbackStmt.getDefaultInstance();
   }
 
-  public static final int SELECT_STMT_VAL_FIELD_NUMBER = 25;
+  public static final int SELECT_STMT_FIELD_NUMBER = 25;
   /**
-   * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
-   * @return Whether the selectStmtVal field is set.
+   * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
+   * @return Whether the selectStmt field is set.
    */
   @java.lang.Override
-  public boolean hasSelectStmtVal() {
+  public boolean hasSelectStmt() {
     return statementCase_ == 25;
   }
   /**
-   * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
-   * @return The selectStmtVal.
+   * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
+   * @return The selectStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.SelectStmt getSelectStmtVal() {
+  public org.mojolang.mojo.db.sql.SelectStmt getSelectStmt() {
     if (statementCase_ == 25) {
        return (org.mojolang.mojo.db.sql.SelectStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.SelectStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
+   * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.SelectStmtOrBuilder getSelectStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.SelectStmtOrBuilder getSelectStmtOrBuilder() {
     if (statementCase_ == 25) {
        return (org.mojolang.mojo.db.sql.SelectStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.SelectStmt.getDefaultInstance();
   }
 
-  public static final int UPDATE_STMT_VAL_FIELD_NUMBER = 26;
+  public static final int UPDATE_STMT_FIELD_NUMBER = 26;
   /**
-   * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
-   * @return Whether the updateStmtVal field is set.
+   * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
+   * @return Whether the updateStmt field is set.
    */
   @java.lang.Override
-  public boolean hasUpdateStmtVal() {
+  public boolean hasUpdateStmt() {
     return statementCase_ == 26;
   }
   /**
-   * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
-   * @return The updateStmtVal.
+   * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
+   * @return The updateStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.UpdateStmt getUpdateStmtVal() {
+  public org.mojolang.mojo.db.sql.UpdateStmt getUpdateStmt() {
     if (statementCase_ == 26) {
        return (org.mojolang.mojo.db.sql.UpdateStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.UpdateStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
+   * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.UpdateStmtOrBuilder getUpdateStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.UpdateStmtOrBuilder getUpdateStmtOrBuilder() {
     if (statementCase_ == 26) {
        return (org.mojolang.mojo.db.sql.UpdateStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.UpdateStmt.getDefaultInstance();
   }
 
-  public static final int VACUUM_STMT_VAL_FIELD_NUMBER = 27;
+  public static final int VACUUM_STMT_FIELD_NUMBER = 27;
   /**
-   * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
-   * @return Whether the vacuumStmtVal field is set.
+   * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
+   * @return Whether the vacuumStmt field is set.
    */
   @java.lang.Override
-  public boolean hasVacuumStmtVal() {
+  public boolean hasVacuumStmt() {
     return statementCase_ == 27;
   }
   /**
-   * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
-   * @return The vacuumStmtVal.
+   * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
+   * @return The vacuumStmt.
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.VacuumStmt getVacuumStmtVal() {
+  public org.mojolang.mojo.db.sql.VacuumStmt getVacuumStmt() {
     if (statementCase_ == 27) {
        return (org.mojolang.mojo.db.sql.VacuumStmt) statement_;
     }
     return org.mojolang.mojo.db.sql.VacuumStmt.getDefaultInstance();
   }
   /**
-   * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
+   * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.db.sql.VacuumStmtOrBuilder getVacuumStmtValOrBuilder() {
+  public org.mojolang.mojo.db.sql.VacuumStmtOrBuilder getVacuumStmtOrBuilder() {
     if (statementCase_ == 27) {
        return (org.mojolang.mojo.db.sql.VacuumStmt) statement_;
     }
@@ -1231,7 +886,7 @@ private static final long serialVersionUID = 0L;
     if (statementCase_ == 30) {
       output.writeMessage(30, (org.mojolang.mojo.db.sql.EndStmt) statement_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1328,7 +983,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(30, (org.mojolang.mojo.db.sql.EndStmt) statement_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1346,97 +1001,97 @@ private static final long serialVersionUID = 0L;
     if (!getStatementCase().equals(other.getStatementCase())) return false;
     switch (statementCase_) {
       case 1:
-        if (!getAlterTableStmtVal()
-            .equals(other.getAlterTableStmtVal())) return false;
+        if (!getAlterTableStmt()
+            .equals(other.getAlterTableStmt())) return false;
         break;
       case 2:
-        if (!getAnalyzeSmtVal()
-            .equals(other.getAnalyzeSmtVal())) return false;
+        if (!getAnalyzeSmt()
+            .equals(other.getAnalyzeSmt())) return false;
         break;
       case 3:
-        if (!getAttachStmtVal()
-            .equals(other.getAttachStmtVal())) return false;
+        if (!getAttachStmt()
+            .equals(other.getAttachStmt())) return false;
         break;
       case 5:
-        if (!getBeginStmtVal()
-            .equals(other.getBeginStmtVal())) return false;
+        if (!getBeginStmt()
+            .equals(other.getBeginStmt())) return false;
         break;
       case 6:
-        if (!getCommitStmtVal()
-            .equals(other.getCommitStmtVal())) return false;
+        if (!getCommitStmt()
+            .equals(other.getCommitStmt())) return false;
         break;
       case 10:
-        if (!getCreateIndexStmtVal()
-            .equals(other.getCreateIndexStmtVal())) return false;
+        if (!getCreateIndexStmt()
+            .equals(other.getCreateIndexStmt())) return false;
         break;
       case 11:
-        if (!getCreateTableStmtVal()
-            .equals(other.getCreateTableStmtVal())) return false;
+        if (!getCreateTableStmt()
+            .equals(other.getCreateTableStmt())) return false;
         break;
       case 12:
-        if (!getCreateTriggerStmtVal()
-            .equals(other.getCreateTriggerStmtVal())) return false;
+        if (!getCreateTriggerStmt()
+            .equals(other.getCreateTriggerStmt())) return false;
         break;
       case 13:
-        if (!getCreateViewStmtVal()
-            .equals(other.getCreateViewStmtVal())) return false;
+        if (!getCreateViewStmt()
+            .equals(other.getCreateViewStmt())) return false;
         break;
       case 14:
-        if (!getCreateVirtualTableStmtVal()
-            .equals(other.getCreateVirtualTableStmtVal())) return false;
+        if (!getCreateVirtualTableStmt()
+            .equals(other.getCreateVirtualTableStmt())) return false;
         break;
       case 17:
-        if (!getDeleteStmtVal()
-            .equals(other.getDeleteStmtVal())) return false;
+        if (!getDeleteStmt()
+            .equals(other.getDeleteStmt())) return false;
         break;
       case 18:
-        if (!getDetachStmtVal()
-            .equals(other.getDetachStmtVal())) return false;
+        if (!getDetachStmt()
+            .equals(other.getDetachStmt())) return false;
         break;
       case 19:
-        if (!getDropStmtVal()
-            .equals(other.getDropStmtVal())) return false;
+        if (!getDropStmt()
+            .equals(other.getDropStmt())) return false;
         break;
       case 30:
-        if (!getEndStmtVal()
-            .equals(other.getEndStmtVal())) return false;
+        if (!getEndStmt()
+            .equals(other.getEndStmt())) return false;
         break;
       case 20:
-        if (!getInsertStmtVal()
-            .equals(other.getInsertStmtVal())) return false;
+        if (!getInsertStmt()
+            .equals(other.getInsertStmt())) return false;
         break;
       case 21:
-        if (!getPragmaStmtVal()
-            .equals(other.getPragmaStmtVal())) return false;
+        if (!getPragmaStmt()
+            .equals(other.getPragmaStmt())) return false;
         break;
       case 22:
-        if (!getReindexStmtVal()
-            .equals(other.getReindexStmtVal())) return false;
+        if (!getReindexStmt()
+            .equals(other.getReindexStmt())) return false;
         break;
       case 23:
-        if (!getReleaseStmtVal()
-            .equals(other.getReleaseStmtVal())) return false;
+        if (!getReleaseStmt()
+            .equals(other.getReleaseStmt())) return false;
         break;
       case 24:
-        if (!getRollbackStmtVal()
-            .equals(other.getRollbackStmtVal())) return false;
+        if (!getRollbackStmt()
+            .equals(other.getRollbackStmt())) return false;
         break;
       case 25:
-        if (!getSelectStmtVal()
-            .equals(other.getSelectStmtVal())) return false;
+        if (!getSelectStmt()
+            .equals(other.getSelectStmt())) return false;
         break;
       case 26:
-        if (!getUpdateStmtVal()
-            .equals(other.getUpdateStmtVal())) return false;
+        if (!getUpdateStmt()
+            .equals(other.getUpdateStmt())) return false;
         break;
       case 27:
-        if (!getVacuumStmtVal()
-            .equals(other.getVacuumStmtVal())) return false;
+        if (!getVacuumStmt()
+            .equals(other.getVacuumStmt())) return false;
         break;
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1449,97 +1104,97 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     switch (statementCase_) {
       case 1:
-        hash = (37 * hash) + ALTER_TABLE_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getAlterTableStmtVal().hashCode();
+        hash = (37 * hash) + ALTER_TABLE_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getAlterTableStmt().hashCode();
         break;
       case 2:
-        hash = (37 * hash) + ANALYZE_SMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getAnalyzeSmtVal().hashCode();
+        hash = (37 * hash) + ANALYZE_SMT_FIELD_NUMBER;
+        hash = (53 * hash) + getAnalyzeSmt().hashCode();
         break;
       case 3:
-        hash = (37 * hash) + ATTACH_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getAttachStmtVal().hashCode();
+        hash = (37 * hash) + ATTACH_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getAttachStmt().hashCode();
         break;
       case 5:
-        hash = (37 * hash) + BEGIN_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getBeginStmtVal().hashCode();
+        hash = (37 * hash) + BEGIN_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getBeginStmt().hashCode();
         break;
       case 6:
-        hash = (37 * hash) + COMMIT_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getCommitStmtVal().hashCode();
+        hash = (37 * hash) + COMMIT_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getCommitStmt().hashCode();
         break;
       case 10:
-        hash = (37 * hash) + CREATE_INDEX_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getCreateIndexStmtVal().hashCode();
+        hash = (37 * hash) + CREATE_INDEX_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateIndexStmt().hashCode();
         break;
       case 11:
-        hash = (37 * hash) + CREATE_TABLE_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getCreateTableStmtVal().hashCode();
+        hash = (37 * hash) + CREATE_TABLE_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateTableStmt().hashCode();
         break;
       case 12:
-        hash = (37 * hash) + CREATE_TRIGGER_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getCreateTriggerStmtVal().hashCode();
+        hash = (37 * hash) + CREATE_TRIGGER_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateTriggerStmt().hashCode();
         break;
       case 13:
-        hash = (37 * hash) + CREATE_VIEW_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getCreateViewStmtVal().hashCode();
+        hash = (37 * hash) + CREATE_VIEW_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateViewStmt().hashCode();
         break;
       case 14:
-        hash = (37 * hash) + CREATE_VIRTUAL_TABLE_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getCreateVirtualTableStmtVal().hashCode();
+        hash = (37 * hash) + CREATE_VIRTUAL_TABLE_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateVirtualTableStmt().hashCode();
         break;
       case 17:
-        hash = (37 * hash) + DELETE_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getDeleteStmtVal().hashCode();
+        hash = (37 * hash) + DELETE_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getDeleteStmt().hashCode();
         break;
       case 18:
-        hash = (37 * hash) + DETACH_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getDetachStmtVal().hashCode();
+        hash = (37 * hash) + DETACH_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getDetachStmt().hashCode();
         break;
       case 19:
-        hash = (37 * hash) + DROP_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getDropStmtVal().hashCode();
+        hash = (37 * hash) + DROP_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getDropStmt().hashCode();
         break;
       case 30:
-        hash = (37 * hash) + END_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getEndStmtVal().hashCode();
+        hash = (37 * hash) + END_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getEndStmt().hashCode();
         break;
       case 20:
-        hash = (37 * hash) + INSERT_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getInsertStmtVal().hashCode();
+        hash = (37 * hash) + INSERT_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getInsertStmt().hashCode();
         break;
       case 21:
-        hash = (37 * hash) + PRAGMA_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getPragmaStmtVal().hashCode();
+        hash = (37 * hash) + PRAGMA_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getPragmaStmt().hashCode();
         break;
       case 22:
-        hash = (37 * hash) + REINDEX_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getReindexStmtVal().hashCode();
+        hash = (37 * hash) + REINDEX_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getReindexStmt().hashCode();
         break;
       case 23:
-        hash = (37 * hash) + RELEASE_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getReleaseStmtVal().hashCode();
+        hash = (37 * hash) + RELEASE_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getReleaseStmt().hashCode();
         break;
       case 24:
-        hash = (37 * hash) + ROLLBACK_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getRollbackStmtVal().hashCode();
+        hash = (37 * hash) + ROLLBACK_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getRollbackStmt().hashCode();
         break;
       case 25:
-        hash = (37 * hash) + SELECT_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getSelectStmtVal().hashCode();
+        hash = (37 * hash) + SELECT_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getSelectStmt().hashCode();
         break;
       case 26:
-        hash = (37 * hash) + UPDATE_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getUpdateStmtVal().hashCode();
+        hash = (37 * hash) + UPDATE_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateStmt().hashCode();
         break;
       case 27:
-        hash = (37 * hash) + VACUUM_STMT_VAL_FIELD_NUMBER;
-        hash = (53 * hash) + getVacuumStmtVal().hashCode();
+        hash = (37 * hash) + VACUUM_STMT_FIELD_NUMBER;
+        hash = (53 * hash) + getVacuumStmt().hashCode();
         break;
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1656,22 +1311,84 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.db.sql.Statement.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      if (alterTableStmtBuilder_ != null) {
+        alterTableStmtBuilder_.clear();
+      }
+      if (analyzeSmtBuilder_ != null) {
+        analyzeSmtBuilder_.clear();
+      }
+      if (attachStmtBuilder_ != null) {
+        attachStmtBuilder_.clear();
+      }
+      if (beginStmtBuilder_ != null) {
+        beginStmtBuilder_.clear();
+      }
+      if (commitStmtBuilder_ != null) {
+        commitStmtBuilder_.clear();
+      }
+      if (createIndexStmtBuilder_ != null) {
+        createIndexStmtBuilder_.clear();
+      }
+      if (createTableStmtBuilder_ != null) {
+        createTableStmtBuilder_.clear();
+      }
+      if (createTriggerStmtBuilder_ != null) {
+        createTriggerStmtBuilder_.clear();
+      }
+      if (createViewStmtBuilder_ != null) {
+        createViewStmtBuilder_.clear();
+      }
+      if (createVirtualTableStmtBuilder_ != null) {
+        createVirtualTableStmtBuilder_.clear();
+      }
+      if (deleteStmtBuilder_ != null) {
+        deleteStmtBuilder_.clear();
+      }
+      if (detachStmtBuilder_ != null) {
+        detachStmtBuilder_.clear();
+      }
+      if (dropStmtBuilder_ != null) {
+        dropStmtBuilder_.clear();
+      }
+      if (endStmtBuilder_ != null) {
+        endStmtBuilder_.clear();
+      }
+      if (insertStmtBuilder_ != null) {
+        insertStmtBuilder_.clear();
+      }
+      if (pragmaStmtBuilder_ != null) {
+        pragmaStmtBuilder_.clear();
+      }
+      if (reindexStmtBuilder_ != null) {
+        reindexStmtBuilder_.clear();
+      }
+      if (releaseStmtBuilder_ != null) {
+        releaseStmtBuilder_.clear();
+      }
+      if (rollbackStmtBuilder_ != null) {
+        rollbackStmtBuilder_.clear();
+      }
+      if (selectStmtBuilder_ != null) {
+        selectStmtBuilder_.clear();
+      }
+      if (updateStmtBuilder_ != null) {
+        updateStmtBuilder_.clear();
+      }
+      if (vacuumStmtBuilder_ != null) {
+        vacuumStmtBuilder_.clear();
+      }
       statementCase_ = 0;
       statement_ = null;
       return this;
@@ -1700,163 +1417,107 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.db.sql.Statement buildPartial() {
       org.mojolang.mojo.db.sql.Statement result = new org.mojolang.mojo.db.sql.Statement(this);
-      if (statementCase_ == 1) {
-        if (alterTableStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = alterTableStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 2) {
-        if (analyzeSmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = analyzeSmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 3) {
-        if (attachStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = attachStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 5) {
-        if (beginStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = beginStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 6) {
-        if (commitStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = commitStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 10) {
-        if (createIndexStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = createIndexStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 11) {
-        if (createTableStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = createTableStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 12) {
-        if (createTriggerStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = createTriggerStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 13) {
-        if (createViewStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = createViewStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 14) {
-        if (createVirtualTableStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = createVirtualTableStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 17) {
-        if (deleteStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = deleteStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 18) {
-        if (detachStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = detachStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 19) {
-        if (dropStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = dropStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 30) {
-        if (endStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = endStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 20) {
-        if (insertStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = insertStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 21) {
-        if (pragmaStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = pragmaStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 22) {
-        if (reindexStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = reindexStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 23) {
-        if (releaseStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = releaseStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 24) {
-        if (rollbackStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = rollbackStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 25) {
-        if (selectStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = selectStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 26) {
-        if (updateStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = updateStmtValBuilder_.build();
-        }
-      }
-      if (statementCase_ == 27) {
-        if (vacuumStmtValBuilder_ == null) {
-          result.statement_ = statement_;
-        } else {
-          result.statement_ = vacuumStmtValBuilder_.build();
-        }
-      }
-      result.statementCase_ = statementCase_;
+      if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.db.sql.Statement result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(org.mojolang.mojo.db.sql.Statement result) {
+      result.statementCase_ = statementCase_;
+      result.statement_ = this.statement_;
+      if (statementCase_ == 1 &&
+          alterTableStmtBuilder_ != null) {
+        result.statement_ = alterTableStmtBuilder_.build();
+      }
+      if (statementCase_ == 2 &&
+          analyzeSmtBuilder_ != null) {
+        result.statement_ = analyzeSmtBuilder_.build();
+      }
+      if (statementCase_ == 3 &&
+          attachStmtBuilder_ != null) {
+        result.statement_ = attachStmtBuilder_.build();
+      }
+      if (statementCase_ == 5 &&
+          beginStmtBuilder_ != null) {
+        result.statement_ = beginStmtBuilder_.build();
+      }
+      if (statementCase_ == 6 &&
+          commitStmtBuilder_ != null) {
+        result.statement_ = commitStmtBuilder_.build();
+      }
+      if (statementCase_ == 10 &&
+          createIndexStmtBuilder_ != null) {
+        result.statement_ = createIndexStmtBuilder_.build();
+      }
+      if (statementCase_ == 11 &&
+          createTableStmtBuilder_ != null) {
+        result.statement_ = createTableStmtBuilder_.build();
+      }
+      if (statementCase_ == 12 &&
+          createTriggerStmtBuilder_ != null) {
+        result.statement_ = createTriggerStmtBuilder_.build();
+      }
+      if (statementCase_ == 13 &&
+          createViewStmtBuilder_ != null) {
+        result.statement_ = createViewStmtBuilder_.build();
+      }
+      if (statementCase_ == 14 &&
+          createVirtualTableStmtBuilder_ != null) {
+        result.statement_ = createVirtualTableStmtBuilder_.build();
+      }
+      if (statementCase_ == 17 &&
+          deleteStmtBuilder_ != null) {
+        result.statement_ = deleteStmtBuilder_.build();
+      }
+      if (statementCase_ == 18 &&
+          detachStmtBuilder_ != null) {
+        result.statement_ = detachStmtBuilder_.build();
+      }
+      if (statementCase_ == 19 &&
+          dropStmtBuilder_ != null) {
+        result.statement_ = dropStmtBuilder_.build();
+      }
+      if (statementCase_ == 30 &&
+          endStmtBuilder_ != null) {
+        result.statement_ = endStmtBuilder_.build();
+      }
+      if (statementCase_ == 20 &&
+          insertStmtBuilder_ != null) {
+        result.statement_ = insertStmtBuilder_.build();
+      }
+      if (statementCase_ == 21 &&
+          pragmaStmtBuilder_ != null) {
+        result.statement_ = pragmaStmtBuilder_.build();
+      }
+      if (statementCase_ == 22 &&
+          reindexStmtBuilder_ != null) {
+        result.statement_ = reindexStmtBuilder_.build();
+      }
+      if (statementCase_ == 23 &&
+          releaseStmtBuilder_ != null) {
+        result.statement_ = releaseStmtBuilder_.build();
+      }
+      if (statementCase_ == 24 &&
+          rollbackStmtBuilder_ != null) {
+        result.statement_ = rollbackStmtBuilder_.build();
+      }
+      if (statementCase_ == 25 &&
+          selectStmtBuilder_ != null) {
+        result.statement_ = selectStmtBuilder_.build();
+      }
+      if (statementCase_ == 26 &&
+          updateStmtBuilder_ != null) {
+        result.statement_ = updateStmtBuilder_.build();
+      }
+      if (statementCase_ == 27 &&
+          vacuumStmtBuilder_ != null) {
+        result.statement_ = vacuumStmtBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1904,99 +1565,99 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(org.mojolang.mojo.db.sql.Statement other) {
       if (other == org.mojolang.mojo.db.sql.Statement.getDefaultInstance()) return this;
       switch (other.getStatementCase()) {
-        case ALTER_TABLE_STMT_VAL: {
-          mergeAlterTableStmtVal(other.getAlterTableStmtVal());
+        case ALTER_TABLE_STMT: {
+          mergeAlterTableStmt(other.getAlterTableStmt());
           break;
         }
-        case ANALYZE_SMT_VAL: {
-          mergeAnalyzeSmtVal(other.getAnalyzeSmtVal());
+        case ANALYZE_SMT: {
+          mergeAnalyzeSmt(other.getAnalyzeSmt());
           break;
         }
-        case ATTACH_STMT_VAL: {
-          mergeAttachStmtVal(other.getAttachStmtVal());
+        case ATTACH_STMT: {
+          mergeAttachStmt(other.getAttachStmt());
           break;
         }
-        case BEGIN_STMT_VAL: {
-          mergeBeginStmtVal(other.getBeginStmtVal());
+        case BEGIN_STMT: {
+          mergeBeginStmt(other.getBeginStmt());
           break;
         }
-        case COMMIT_STMT_VAL: {
-          mergeCommitStmtVal(other.getCommitStmtVal());
+        case COMMIT_STMT: {
+          mergeCommitStmt(other.getCommitStmt());
           break;
         }
-        case CREATE_INDEX_STMT_VAL: {
-          mergeCreateIndexStmtVal(other.getCreateIndexStmtVal());
+        case CREATE_INDEX_STMT: {
+          mergeCreateIndexStmt(other.getCreateIndexStmt());
           break;
         }
-        case CREATE_TABLE_STMT_VAL: {
-          mergeCreateTableStmtVal(other.getCreateTableStmtVal());
+        case CREATE_TABLE_STMT: {
+          mergeCreateTableStmt(other.getCreateTableStmt());
           break;
         }
-        case CREATE_TRIGGER_STMT_VAL: {
-          mergeCreateTriggerStmtVal(other.getCreateTriggerStmtVal());
+        case CREATE_TRIGGER_STMT: {
+          mergeCreateTriggerStmt(other.getCreateTriggerStmt());
           break;
         }
-        case CREATE_VIEW_STMT_VAL: {
-          mergeCreateViewStmtVal(other.getCreateViewStmtVal());
+        case CREATE_VIEW_STMT: {
+          mergeCreateViewStmt(other.getCreateViewStmt());
           break;
         }
-        case CREATE_VIRTUAL_TABLE_STMT_VAL: {
-          mergeCreateVirtualTableStmtVal(other.getCreateVirtualTableStmtVal());
+        case CREATE_VIRTUAL_TABLE_STMT: {
+          mergeCreateVirtualTableStmt(other.getCreateVirtualTableStmt());
           break;
         }
-        case DELETE_STMT_VAL: {
-          mergeDeleteStmtVal(other.getDeleteStmtVal());
+        case DELETE_STMT: {
+          mergeDeleteStmt(other.getDeleteStmt());
           break;
         }
-        case DETACH_STMT_VAL: {
-          mergeDetachStmtVal(other.getDetachStmtVal());
+        case DETACH_STMT: {
+          mergeDetachStmt(other.getDetachStmt());
           break;
         }
-        case DROP_STMT_VAL: {
-          mergeDropStmtVal(other.getDropStmtVal());
+        case DROP_STMT: {
+          mergeDropStmt(other.getDropStmt());
           break;
         }
-        case END_STMT_VAL: {
-          mergeEndStmtVal(other.getEndStmtVal());
+        case END_STMT: {
+          mergeEndStmt(other.getEndStmt());
           break;
         }
-        case INSERT_STMT_VAL: {
-          mergeInsertStmtVal(other.getInsertStmtVal());
+        case INSERT_STMT: {
+          mergeInsertStmt(other.getInsertStmt());
           break;
         }
-        case PRAGMA_STMT_VAL: {
-          mergePragmaStmtVal(other.getPragmaStmtVal());
+        case PRAGMA_STMT: {
+          mergePragmaStmt(other.getPragmaStmt());
           break;
         }
-        case REINDEX_STMT_VAL: {
-          mergeReindexStmtVal(other.getReindexStmtVal());
+        case REINDEX_STMT: {
+          mergeReindexStmt(other.getReindexStmt());
           break;
         }
-        case RELEASE_STMT_VAL: {
-          mergeReleaseStmtVal(other.getReleaseStmtVal());
+        case RELEASE_STMT: {
+          mergeReleaseStmt(other.getReleaseStmt());
           break;
         }
-        case ROLLBACK_STMT_VAL: {
-          mergeRollbackStmtVal(other.getRollbackStmtVal());
+        case ROLLBACK_STMT: {
+          mergeRollbackStmt(other.getRollbackStmt());
           break;
         }
-        case SELECT_STMT_VAL: {
-          mergeSelectStmtVal(other.getSelectStmtVal());
+        case SELECT_STMT: {
+          mergeSelectStmt(other.getSelectStmt());
           break;
         }
-        case UPDATE_STMT_VAL: {
-          mergeUpdateStmtVal(other.getUpdateStmtVal());
+        case UPDATE_STMT: {
+          mergeUpdateStmt(other.getUpdateStmt());
           break;
         }
-        case VACUUM_STMT_VAL: {
-          mergeVacuumStmtVal(other.getVacuumStmtVal());
+        case VACUUM_STMT: {
+          mergeVacuumStmt(other.getVacuumStmt());
           break;
         }
         case STATEMENT_NOT_SET: {
           break;
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2011,17 +1672,184 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.db.sql.Statement parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getAlterTableStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 1;
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getAnalyzeSmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 2;
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  getAttachStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 3;
+              break;
+            } // case 26
+            case 42: {
+              input.readMessage(
+                  getBeginStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 5;
+              break;
+            } // case 42
+            case 50: {
+              input.readMessage(
+                  getCommitStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 6;
+              break;
+            } // case 50
+            case 82: {
+              input.readMessage(
+                  getCreateIndexStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 10;
+              break;
+            } // case 82
+            case 90: {
+              input.readMessage(
+                  getCreateTableStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 11;
+              break;
+            } // case 90
+            case 98: {
+              input.readMessage(
+                  getCreateTriggerStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 12;
+              break;
+            } // case 98
+            case 106: {
+              input.readMessage(
+                  getCreateViewStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 13;
+              break;
+            } // case 106
+            case 114: {
+              input.readMessage(
+                  getCreateVirtualTableStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 14;
+              break;
+            } // case 114
+            case 138: {
+              input.readMessage(
+                  getDeleteStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 17;
+              break;
+            } // case 138
+            case 146: {
+              input.readMessage(
+                  getDetachStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 18;
+              break;
+            } // case 146
+            case 154: {
+              input.readMessage(
+                  getDropStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 19;
+              break;
+            } // case 154
+            case 162: {
+              input.readMessage(
+                  getInsertStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 20;
+              break;
+            } // case 162
+            case 170: {
+              input.readMessage(
+                  getPragmaStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 21;
+              break;
+            } // case 170
+            case 178: {
+              input.readMessage(
+                  getReindexStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 22;
+              break;
+            } // case 178
+            case 186: {
+              input.readMessage(
+                  getReleaseStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 23;
+              break;
+            } // case 186
+            case 194: {
+              input.readMessage(
+                  getRollbackStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 24;
+              break;
+            } // case 194
+            case 202: {
+              input.readMessage(
+                  getSelectStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 25;
+              break;
+            } // case 202
+            case 210: {
+              input.readMessage(
+                  getUpdateStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 26;
+              break;
+            } // case 210
+            case 218: {
+              input.readMessage(
+                  getVacuumStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 27;
+              break;
+            } // case 218
+            case 242: {
+              input.readMessage(
+                  getEndStmtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              statementCase_ = 30;
+              break;
+            } // case 242
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.db.sql.Statement) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int statementCase_ = 0;
@@ -2039,70 +1867,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.AlterTableStmt, org.mojolang.mojo.db.sql.AlterTableStmt.Builder, org.mojolang.mojo.db.sql.AlterTableStmtOrBuilder> alterTableStmtValBuilder_;
+        org.mojolang.mojo.db.sql.AlterTableStmt, org.mojolang.mojo.db.sql.AlterTableStmt.Builder, org.mojolang.mojo.db.sql.AlterTableStmtOrBuilder> alterTableStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
-     * @return Whether the alterTableStmtVal field is set.
+     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
+     * @return Whether the alterTableStmt field is set.
      */
     @java.lang.Override
-    public boolean hasAlterTableStmtVal() {
+    public boolean hasAlterTableStmt() {
       return statementCase_ == 1;
     }
     /**
-     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
-     * @return The alterTableStmtVal.
+     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
+     * @return The alterTableStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.AlterTableStmt getAlterTableStmtVal() {
-      if (alterTableStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.AlterTableStmt getAlterTableStmt() {
+      if (alterTableStmtBuilder_ == null) {
         if (statementCase_ == 1) {
           return (org.mojolang.mojo.db.sql.AlterTableStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.AlterTableStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 1) {
-          return alterTableStmtValBuilder_.getMessage();
+          return alterTableStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.AlterTableStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
+     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
      */
-    public Builder setAlterTableStmtVal(org.mojolang.mojo.db.sql.AlterTableStmt value) {
-      if (alterTableStmtValBuilder_ == null) {
+    public Builder setAlterTableStmt(org.mojolang.mojo.db.sql.AlterTableStmt value) {
+      if (alterTableStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        alterTableStmtValBuilder_.setMessage(value);
+        alterTableStmtBuilder_.setMessage(value);
       }
       statementCase_ = 1;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
+     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
      */
-    public Builder setAlterTableStmtVal(
+    public Builder setAlterTableStmt(
         org.mojolang.mojo.db.sql.AlterTableStmt.Builder builderForValue) {
-      if (alterTableStmtValBuilder_ == null) {
+      if (alterTableStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        alterTableStmtValBuilder_.setMessage(builderForValue.build());
+        alterTableStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 1;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
+     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
      */
-    public Builder mergeAlterTableStmtVal(org.mojolang.mojo.db.sql.AlterTableStmt value) {
-      if (alterTableStmtValBuilder_ == null) {
+    public Builder mergeAlterTableStmt(org.mojolang.mojo.db.sql.AlterTableStmt value) {
+      if (alterTableStmtBuilder_ == null) {
         if (statementCase_ == 1 &&
             statement_ != org.mojolang.mojo.db.sql.AlterTableStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.AlterTableStmt.newBuilder((org.mojolang.mojo.db.sql.AlterTableStmt) statement_)
@@ -2113,18 +1942,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 1) {
-          alterTableStmtValBuilder_.mergeFrom(value);
+          alterTableStmtBuilder_.mergeFrom(value);
+        } else {
+          alterTableStmtBuilder_.setMessage(value);
         }
-        alterTableStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 1;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
+     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
      */
-    public Builder clearAlterTableStmtVal() {
-      if (alterTableStmtValBuilder_ == null) {
+    public Builder clearAlterTableStmt() {
+      if (alterTableStmtBuilder_ == null) {
         if (statementCase_ == 1) {
           statementCase_ = 0;
           statement_ = null;
@@ -2135,23 +1965,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        alterTableStmtValBuilder_.clear();
+        alterTableStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
+     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
      */
-    public org.mojolang.mojo.db.sql.AlterTableStmt.Builder getAlterTableStmtValBuilder() {
-      return getAlterTableStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.AlterTableStmt.Builder getAlterTableStmtBuilder() {
+      return getAlterTableStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
+     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.AlterTableStmtOrBuilder getAlterTableStmtValOrBuilder() {
-      if ((statementCase_ == 1) && (alterTableStmtValBuilder_ != null)) {
-        return alterTableStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.AlterTableStmtOrBuilder getAlterTableStmtOrBuilder() {
+      if ((statementCase_ == 1) && (alterTableStmtBuilder_ != null)) {
+        return alterTableStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 1) {
           return (org.mojolang.mojo.db.sql.AlterTableStmt) statement_;
@@ -2160,16 +1990,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt_val = 1;</code>
+     * <code>.mojo.db.sql.AlterTableStmt alter_table_stmt = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.AlterTableStmt, org.mojolang.mojo.db.sql.AlterTableStmt.Builder, org.mojolang.mojo.db.sql.AlterTableStmtOrBuilder> 
-        getAlterTableStmtValFieldBuilder() {
-      if (alterTableStmtValBuilder_ == null) {
+        getAlterTableStmtFieldBuilder() {
+      if (alterTableStmtBuilder_ == null) {
         if (!(statementCase_ == 1)) {
           statement_ = org.mojolang.mojo.db.sql.AlterTableStmt.getDefaultInstance();
         }
-        alterTableStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        alterTableStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.AlterTableStmt, org.mojolang.mojo.db.sql.AlterTableStmt.Builder, org.mojolang.mojo.db.sql.AlterTableStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.AlterTableStmt) statement_,
                 getParentForChildren(),
@@ -2177,73 +2007,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 1;
-      onChanged();;
-      return alterTableStmtValBuilder_;
+      onChanged();
+      return alterTableStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.AnalyzeSmt, org.mojolang.mojo.db.sql.AnalyzeSmt.Builder, org.mojolang.mojo.db.sql.AnalyzeSmtOrBuilder> analyzeSmtValBuilder_;
+        org.mojolang.mojo.db.sql.AnalyzeSmt, org.mojolang.mojo.db.sql.AnalyzeSmt.Builder, org.mojolang.mojo.db.sql.AnalyzeSmtOrBuilder> analyzeSmtBuilder_;
     /**
-     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
-     * @return Whether the analyzeSmtVal field is set.
+     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
+     * @return Whether the analyzeSmt field is set.
      */
     @java.lang.Override
-    public boolean hasAnalyzeSmtVal() {
+    public boolean hasAnalyzeSmt() {
       return statementCase_ == 2;
     }
     /**
-     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
-     * @return The analyzeSmtVal.
+     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
+     * @return The analyzeSmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.AnalyzeSmt getAnalyzeSmtVal() {
-      if (analyzeSmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.AnalyzeSmt getAnalyzeSmt() {
+      if (analyzeSmtBuilder_ == null) {
         if (statementCase_ == 2) {
           return (org.mojolang.mojo.db.sql.AnalyzeSmt) statement_;
         }
         return org.mojolang.mojo.db.sql.AnalyzeSmt.getDefaultInstance();
       } else {
         if (statementCase_ == 2) {
-          return analyzeSmtValBuilder_.getMessage();
+          return analyzeSmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.AnalyzeSmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
+     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
      */
-    public Builder setAnalyzeSmtVal(org.mojolang.mojo.db.sql.AnalyzeSmt value) {
-      if (analyzeSmtValBuilder_ == null) {
+    public Builder setAnalyzeSmt(org.mojolang.mojo.db.sql.AnalyzeSmt value) {
+      if (analyzeSmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        analyzeSmtValBuilder_.setMessage(value);
+        analyzeSmtBuilder_.setMessage(value);
       }
       statementCase_ = 2;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
+     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
      */
-    public Builder setAnalyzeSmtVal(
+    public Builder setAnalyzeSmt(
         org.mojolang.mojo.db.sql.AnalyzeSmt.Builder builderForValue) {
-      if (analyzeSmtValBuilder_ == null) {
+      if (analyzeSmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        analyzeSmtValBuilder_.setMessage(builderForValue.build());
+        analyzeSmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 2;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
+     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
      */
-    public Builder mergeAnalyzeSmtVal(org.mojolang.mojo.db.sql.AnalyzeSmt value) {
-      if (analyzeSmtValBuilder_ == null) {
+    public Builder mergeAnalyzeSmt(org.mojolang.mojo.db.sql.AnalyzeSmt value) {
+      if (analyzeSmtBuilder_ == null) {
         if (statementCase_ == 2 &&
             statement_ != org.mojolang.mojo.db.sql.AnalyzeSmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.AnalyzeSmt.newBuilder((org.mojolang.mojo.db.sql.AnalyzeSmt) statement_)
@@ -2254,18 +2084,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 2) {
-          analyzeSmtValBuilder_.mergeFrom(value);
+          analyzeSmtBuilder_.mergeFrom(value);
+        } else {
+          analyzeSmtBuilder_.setMessage(value);
         }
-        analyzeSmtValBuilder_.setMessage(value);
       }
       statementCase_ = 2;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
+     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
      */
-    public Builder clearAnalyzeSmtVal() {
-      if (analyzeSmtValBuilder_ == null) {
+    public Builder clearAnalyzeSmt() {
+      if (analyzeSmtBuilder_ == null) {
         if (statementCase_ == 2) {
           statementCase_ = 0;
           statement_ = null;
@@ -2276,23 +2107,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        analyzeSmtValBuilder_.clear();
+        analyzeSmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
+     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
      */
-    public org.mojolang.mojo.db.sql.AnalyzeSmt.Builder getAnalyzeSmtValBuilder() {
-      return getAnalyzeSmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.AnalyzeSmt.Builder getAnalyzeSmtBuilder() {
+      return getAnalyzeSmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
+     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.AnalyzeSmtOrBuilder getAnalyzeSmtValOrBuilder() {
-      if ((statementCase_ == 2) && (analyzeSmtValBuilder_ != null)) {
-        return analyzeSmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.AnalyzeSmtOrBuilder getAnalyzeSmtOrBuilder() {
+      if ((statementCase_ == 2) && (analyzeSmtBuilder_ != null)) {
+        return analyzeSmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 2) {
           return (org.mojolang.mojo.db.sql.AnalyzeSmt) statement_;
@@ -2301,16 +2132,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt_val = 2;</code>
+     * <code>.mojo.db.sql.AnalyzeSmt analyze_smt = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.AnalyzeSmt, org.mojolang.mojo.db.sql.AnalyzeSmt.Builder, org.mojolang.mojo.db.sql.AnalyzeSmtOrBuilder> 
-        getAnalyzeSmtValFieldBuilder() {
-      if (analyzeSmtValBuilder_ == null) {
+        getAnalyzeSmtFieldBuilder() {
+      if (analyzeSmtBuilder_ == null) {
         if (!(statementCase_ == 2)) {
           statement_ = org.mojolang.mojo.db.sql.AnalyzeSmt.getDefaultInstance();
         }
-        analyzeSmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        analyzeSmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.AnalyzeSmt, org.mojolang.mojo.db.sql.AnalyzeSmt.Builder, org.mojolang.mojo.db.sql.AnalyzeSmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.AnalyzeSmt) statement_,
                 getParentForChildren(),
@@ -2318,73 +2149,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 2;
-      onChanged();;
-      return analyzeSmtValBuilder_;
+      onChanged();
+      return analyzeSmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.AttachStmt, org.mojolang.mojo.db.sql.AttachStmt.Builder, org.mojolang.mojo.db.sql.AttachStmtOrBuilder> attachStmtValBuilder_;
+        org.mojolang.mojo.db.sql.AttachStmt, org.mojolang.mojo.db.sql.AttachStmt.Builder, org.mojolang.mojo.db.sql.AttachStmtOrBuilder> attachStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
-     * @return Whether the attachStmtVal field is set.
+     * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
+     * @return Whether the attachStmt field is set.
      */
     @java.lang.Override
-    public boolean hasAttachStmtVal() {
+    public boolean hasAttachStmt() {
       return statementCase_ == 3;
     }
     /**
-     * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
-     * @return The attachStmtVal.
+     * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
+     * @return The attachStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.AttachStmt getAttachStmtVal() {
-      if (attachStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.AttachStmt getAttachStmt() {
+      if (attachStmtBuilder_ == null) {
         if (statementCase_ == 3) {
           return (org.mojolang.mojo.db.sql.AttachStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.AttachStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 3) {
-          return attachStmtValBuilder_.getMessage();
+          return attachStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.AttachStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
+     * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
      */
-    public Builder setAttachStmtVal(org.mojolang.mojo.db.sql.AttachStmt value) {
-      if (attachStmtValBuilder_ == null) {
+    public Builder setAttachStmt(org.mojolang.mojo.db.sql.AttachStmt value) {
+      if (attachStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        attachStmtValBuilder_.setMessage(value);
+        attachStmtBuilder_.setMessage(value);
       }
       statementCase_ = 3;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
+     * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
      */
-    public Builder setAttachStmtVal(
+    public Builder setAttachStmt(
         org.mojolang.mojo.db.sql.AttachStmt.Builder builderForValue) {
-      if (attachStmtValBuilder_ == null) {
+      if (attachStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        attachStmtValBuilder_.setMessage(builderForValue.build());
+        attachStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 3;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
+     * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
      */
-    public Builder mergeAttachStmtVal(org.mojolang.mojo.db.sql.AttachStmt value) {
-      if (attachStmtValBuilder_ == null) {
+    public Builder mergeAttachStmt(org.mojolang.mojo.db.sql.AttachStmt value) {
+      if (attachStmtBuilder_ == null) {
         if (statementCase_ == 3 &&
             statement_ != org.mojolang.mojo.db.sql.AttachStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.AttachStmt.newBuilder((org.mojolang.mojo.db.sql.AttachStmt) statement_)
@@ -2395,18 +2226,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 3) {
-          attachStmtValBuilder_.mergeFrom(value);
+          attachStmtBuilder_.mergeFrom(value);
+        } else {
+          attachStmtBuilder_.setMessage(value);
         }
-        attachStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 3;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
+     * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
      */
-    public Builder clearAttachStmtVal() {
-      if (attachStmtValBuilder_ == null) {
+    public Builder clearAttachStmt() {
+      if (attachStmtBuilder_ == null) {
         if (statementCase_ == 3) {
           statementCase_ = 0;
           statement_ = null;
@@ -2417,23 +2249,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        attachStmtValBuilder_.clear();
+        attachStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
+     * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
      */
-    public org.mojolang.mojo.db.sql.AttachStmt.Builder getAttachStmtValBuilder() {
-      return getAttachStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.AttachStmt.Builder getAttachStmtBuilder() {
+      return getAttachStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
+     * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.AttachStmtOrBuilder getAttachStmtValOrBuilder() {
-      if ((statementCase_ == 3) && (attachStmtValBuilder_ != null)) {
-        return attachStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.AttachStmtOrBuilder getAttachStmtOrBuilder() {
+      if ((statementCase_ == 3) && (attachStmtBuilder_ != null)) {
+        return attachStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 3) {
           return (org.mojolang.mojo.db.sql.AttachStmt) statement_;
@@ -2442,16 +2274,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.AttachStmt attach_stmt_val = 3;</code>
+     * <code>.mojo.db.sql.AttachStmt attach_stmt = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.AttachStmt, org.mojolang.mojo.db.sql.AttachStmt.Builder, org.mojolang.mojo.db.sql.AttachStmtOrBuilder> 
-        getAttachStmtValFieldBuilder() {
-      if (attachStmtValBuilder_ == null) {
+        getAttachStmtFieldBuilder() {
+      if (attachStmtBuilder_ == null) {
         if (!(statementCase_ == 3)) {
           statement_ = org.mojolang.mojo.db.sql.AttachStmt.getDefaultInstance();
         }
-        attachStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        attachStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.AttachStmt, org.mojolang.mojo.db.sql.AttachStmt.Builder, org.mojolang.mojo.db.sql.AttachStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.AttachStmt) statement_,
                 getParentForChildren(),
@@ -2459,73 +2291,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 3;
-      onChanged();;
-      return attachStmtValBuilder_;
+      onChanged();
+      return attachStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.BeginStmt, org.mojolang.mojo.db.sql.BeginStmt.Builder, org.mojolang.mojo.db.sql.BeginStmtOrBuilder> beginStmtValBuilder_;
+        org.mojolang.mojo.db.sql.BeginStmt, org.mojolang.mojo.db.sql.BeginStmt.Builder, org.mojolang.mojo.db.sql.BeginStmtOrBuilder> beginStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
-     * @return Whether the beginStmtVal field is set.
+     * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
+     * @return Whether the beginStmt field is set.
      */
     @java.lang.Override
-    public boolean hasBeginStmtVal() {
+    public boolean hasBeginStmt() {
       return statementCase_ == 5;
     }
     /**
-     * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
-     * @return The beginStmtVal.
+     * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
+     * @return The beginStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.BeginStmt getBeginStmtVal() {
-      if (beginStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.BeginStmt getBeginStmt() {
+      if (beginStmtBuilder_ == null) {
         if (statementCase_ == 5) {
           return (org.mojolang.mojo.db.sql.BeginStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.BeginStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 5) {
-          return beginStmtValBuilder_.getMessage();
+          return beginStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.BeginStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
+     * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
      */
-    public Builder setBeginStmtVal(org.mojolang.mojo.db.sql.BeginStmt value) {
-      if (beginStmtValBuilder_ == null) {
+    public Builder setBeginStmt(org.mojolang.mojo.db.sql.BeginStmt value) {
+      if (beginStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        beginStmtValBuilder_.setMessage(value);
+        beginStmtBuilder_.setMessage(value);
       }
       statementCase_ = 5;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
+     * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
      */
-    public Builder setBeginStmtVal(
+    public Builder setBeginStmt(
         org.mojolang.mojo.db.sql.BeginStmt.Builder builderForValue) {
-      if (beginStmtValBuilder_ == null) {
+      if (beginStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        beginStmtValBuilder_.setMessage(builderForValue.build());
+        beginStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 5;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
+     * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
      */
-    public Builder mergeBeginStmtVal(org.mojolang.mojo.db.sql.BeginStmt value) {
-      if (beginStmtValBuilder_ == null) {
+    public Builder mergeBeginStmt(org.mojolang.mojo.db.sql.BeginStmt value) {
+      if (beginStmtBuilder_ == null) {
         if (statementCase_ == 5 &&
             statement_ != org.mojolang.mojo.db.sql.BeginStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.BeginStmt.newBuilder((org.mojolang.mojo.db.sql.BeginStmt) statement_)
@@ -2536,18 +2368,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 5) {
-          beginStmtValBuilder_.mergeFrom(value);
+          beginStmtBuilder_.mergeFrom(value);
+        } else {
+          beginStmtBuilder_.setMessage(value);
         }
-        beginStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 5;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
+     * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
      */
-    public Builder clearBeginStmtVal() {
-      if (beginStmtValBuilder_ == null) {
+    public Builder clearBeginStmt() {
+      if (beginStmtBuilder_ == null) {
         if (statementCase_ == 5) {
           statementCase_ = 0;
           statement_ = null;
@@ -2558,23 +2391,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        beginStmtValBuilder_.clear();
+        beginStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
+     * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
      */
-    public org.mojolang.mojo.db.sql.BeginStmt.Builder getBeginStmtValBuilder() {
-      return getBeginStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.BeginStmt.Builder getBeginStmtBuilder() {
+      return getBeginStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
+     * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.BeginStmtOrBuilder getBeginStmtValOrBuilder() {
-      if ((statementCase_ == 5) && (beginStmtValBuilder_ != null)) {
-        return beginStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.BeginStmtOrBuilder getBeginStmtOrBuilder() {
+      if ((statementCase_ == 5) && (beginStmtBuilder_ != null)) {
+        return beginStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 5) {
           return (org.mojolang.mojo.db.sql.BeginStmt) statement_;
@@ -2583,16 +2416,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.BeginStmt begin_stmt_val = 5;</code>
+     * <code>.mojo.db.sql.BeginStmt begin_stmt = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.BeginStmt, org.mojolang.mojo.db.sql.BeginStmt.Builder, org.mojolang.mojo.db.sql.BeginStmtOrBuilder> 
-        getBeginStmtValFieldBuilder() {
-      if (beginStmtValBuilder_ == null) {
+        getBeginStmtFieldBuilder() {
+      if (beginStmtBuilder_ == null) {
         if (!(statementCase_ == 5)) {
           statement_ = org.mojolang.mojo.db.sql.BeginStmt.getDefaultInstance();
         }
-        beginStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        beginStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.BeginStmt, org.mojolang.mojo.db.sql.BeginStmt.Builder, org.mojolang.mojo.db.sql.BeginStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.BeginStmt) statement_,
                 getParentForChildren(),
@@ -2600,73 +2433,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 5;
-      onChanged();;
-      return beginStmtValBuilder_;
+      onChanged();
+      return beginStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.CommitStmt, org.mojolang.mojo.db.sql.CommitStmt.Builder, org.mojolang.mojo.db.sql.CommitStmtOrBuilder> commitStmtValBuilder_;
+        org.mojolang.mojo.db.sql.CommitStmt, org.mojolang.mojo.db.sql.CommitStmt.Builder, org.mojolang.mojo.db.sql.CommitStmtOrBuilder> commitStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
-     * @return Whether the commitStmtVal field is set.
+     * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
+     * @return Whether the commitStmt field is set.
      */
     @java.lang.Override
-    public boolean hasCommitStmtVal() {
+    public boolean hasCommitStmt() {
       return statementCase_ == 6;
     }
     /**
-     * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
-     * @return The commitStmtVal.
+     * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
+     * @return The commitStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CommitStmt getCommitStmtVal() {
-      if (commitStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.CommitStmt getCommitStmt() {
+      if (commitStmtBuilder_ == null) {
         if (statementCase_ == 6) {
           return (org.mojolang.mojo.db.sql.CommitStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.CommitStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 6) {
-          return commitStmtValBuilder_.getMessage();
+          return commitStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.CommitStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
+     * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
      */
-    public Builder setCommitStmtVal(org.mojolang.mojo.db.sql.CommitStmt value) {
-      if (commitStmtValBuilder_ == null) {
+    public Builder setCommitStmt(org.mojolang.mojo.db.sql.CommitStmt value) {
+      if (commitStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        commitStmtValBuilder_.setMessage(value);
+        commitStmtBuilder_.setMessage(value);
       }
       statementCase_ = 6;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
+     * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
      */
-    public Builder setCommitStmtVal(
+    public Builder setCommitStmt(
         org.mojolang.mojo.db.sql.CommitStmt.Builder builderForValue) {
-      if (commitStmtValBuilder_ == null) {
+      if (commitStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        commitStmtValBuilder_.setMessage(builderForValue.build());
+        commitStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 6;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
+     * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
      */
-    public Builder mergeCommitStmtVal(org.mojolang.mojo.db.sql.CommitStmt value) {
-      if (commitStmtValBuilder_ == null) {
+    public Builder mergeCommitStmt(org.mojolang.mojo.db.sql.CommitStmt value) {
+      if (commitStmtBuilder_ == null) {
         if (statementCase_ == 6 &&
             statement_ != org.mojolang.mojo.db.sql.CommitStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.CommitStmt.newBuilder((org.mojolang.mojo.db.sql.CommitStmt) statement_)
@@ -2677,18 +2510,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 6) {
-          commitStmtValBuilder_.mergeFrom(value);
+          commitStmtBuilder_.mergeFrom(value);
+        } else {
+          commitStmtBuilder_.setMessage(value);
         }
-        commitStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 6;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
+     * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
      */
-    public Builder clearCommitStmtVal() {
-      if (commitStmtValBuilder_ == null) {
+    public Builder clearCommitStmt() {
+      if (commitStmtBuilder_ == null) {
         if (statementCase_ == 6) {
           statementCase_ = 0;
           statement_ = null;
@@ -2699,23 +2533,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        commitStmtValBuilder_.clear();
+        commitStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
+     * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
      */
-    public org.mojolang.mojo.db.sql.CommitStmt.Builder getCommitStmtValBuilder() {
-      return getCommitStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.CommitStmt.Builder getCommitStmtBuilder() {
+      return getCommitStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
+     * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CommitStmtOrBuilder getCommitStmtValOrBuilder() {
-      if ((statementCase_ == 6) && (commitStmtValBuilder_ != null)) {
-        return commitStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.CommitStmtOrBuilder getCommitStmtOrBuilder() {
+      if ((statementCase_ == 6) && (commitStmtBuilder_ != null)) {
+        return commitStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 6) {
           return (org.mojolang.mojo.db.sql.CommitStmt) statement_;
@@ -2724,16 +2558,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.CommitStmt commit_stmt_val = 6;</code>
+     * <code>.mojo.db.sql.CommitStmt commit_stmt = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.CommitStmt, org.mojolang.mojo.db.sql.CommitStmt.Builder, org.mojolang.mojo.db.sql.CommitStmtOrBuilder> 
-        getCommitStmtValFieldBuilder() {
-      if (commitStmtValBuilder_ == null) {
+        getCommitStmtFieldBuilder() {
+      if (commitStmtBuilder_ == null) {
         if (!(statementCase_ == 6)) {
           statement_ = org.mojolang.mojo.db.sql.CommitStmt.getDefaultInstance();
         }
-        commitStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        commitStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.CommitStmt, org.mojolang.mojo.db.sql.CommitStmt.Builder, org.mojolang.mojo.db.sql.CommitStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.CommitStmt) statement_,
                 getParentForChildren(),
@@ -2741,73 +2575,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 6;
-      onChanged();;
-      return commitStmtValBuilder_;
+      onChanged();
+      return commitStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.CreateIndexStmt, org.mojolang.mojo.db.sql.CreateIndexStmt.Builder, org.mojolang.mojo.db.sql.CreateIndexStmtOrBuilder> createIndexStmtValBuilder_;
+        org.mojolang.mojo.db.sql.CreateIndexStmt, org.mojolang.mojo.db.sql.CreateIndexStmt.Builder, org.mojolang.mojo.db.sql.CreateIndexStmtOrBuilder> createIndexStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
-     * @return Whether the createIndexStmtVal field is set.
+     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
+     * @return Whether the createIndexStmt field is set.
      */
     @java.lang.Override
-    public boolean hasCreateIndexStmtVal() {
+    public boolean hasCreateIndexStmt() {
       return statementCase_ == 10;
     }
     /**
-     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
-     * @return The createIndexStmtVal.
+     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
+     * @return The createIndexStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateIndexStmt getCreateIndexStmtVal() {
-      if (createIndexStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.CreateIndexStmt getCreateIndexStmt() {
+      if (createIndexStmtBuilder_ == null) {
         if (statementCase_ == 10) {
           return (org.mojolang.mojo.db.sql.CreateIndexStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.CreateIndexStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 10) {
-          return createIndexStmtValBuilder_.getMessage();
+          return createIndexStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.CreateIndexStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
+     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
      */
-    public Builder setCreateIndexStmtVal(org.mojolang.mojo.db.sql.CreateIndexStmt value) {
-      if (createIndexStmtValBuilder_ == null) {
+    public Builder setCreateIndexStmt(org.mojolang.mojo.db.sql.CreateIndexStmt value) {
+      if (createIndexStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        createIndexStmtValBuilder_.setMessage(value);
+        createIndexStmtBuilder_.setMessage(value);
       }
       statementCase_ = 10;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
+     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
      */
-    public Builder setCreateIndexStmtVal(
+    public Builder setCreateIndexStmt(
         org.mojolang.mojo.db.sql.CreateIndexStmt.Builder builderForValue) {
-      if (createIndexStmtValBuilder_ == null) {
+      if (createIndexStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        createIndexStmtValBuilder_.setMessage(builderForValue.build());
+        createIndexStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 10;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
+     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
      */
-    public Builder mergeCreateIndexStmtVal(org.mojolang.mojo.db.sql.CreateIndexStmt value) {
-      if (createIndexStmtValBuilder_ == null) {
+    public Builder mergeCreateIndexStmt(org.mojolang.mojo.db.sql.CreateIndexStmt value) {
+      if (createIndexStmtBuilder_ == null) {
         if (statementCase_ == 10 &&
             statement_ != org.mojolang.mojo.db.sql.CreateIndexStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.CreateIndexStmt.newBuilder((org.mojolang.mojo.db.sql.CreateIndexStmt) statement_)
@@ -2818,18 +2652,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 10) {
-          createIndexStmtValBuilder_.mergeFrom(value);
+          createIndexStmtBuilder_.mergeFrom(value);
+        } else {
+          createIndexStmtBuilder_.setMessage(value);
         }
-        createIndexStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 10;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
+     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
      */
-    public Builder clearCreateIndexStmtVal() {
-      if (createIndexStmtValBuilder_ == null) {
+    public Builder clearCreateIndexStmt() {
+      if (createIndexStmtBuilder_ == null) {
         if (statementCase_ == 10) {
           statementCase_ = 0;
           statement_ = null;
@@ -2840,23 +2675,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        createIndexStmtValBuilder_.clear();
+        createIndexStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
+     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
      */
-    public org.mojolang.mojo.db.sql.CreateIndexStmt.Builder getCreateIndexStmtValBuilder() {
-      return getCreateIndexStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.CreateIndexStmt.Builder getCreateIndexStmtBuilder() {
+      return getCreateIndexStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
+     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateIndexStmtOrBuilder getCreateIndexStmtValOrBuilder() {
-      if ((statementCase_ == 10) && (createIndexStmtValBuilder_ != null)) {
-        return createIndexStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.CreateIndexStmtOrBuilder getCreateIndexStmtOrBuilder() {
+      if ((statementCase_ == 10) && (createIndexStmtBuilder_ != null)) {
+        return createIndexStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 10) {
           return (org.mojolang.mojo.db.sql.CreateIndexStmt) statement_;
@@ -2865,16 +2700,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt_val = 10;</code>
+     * <code>.mojo.db.sql.CreateIndexStmt create_index_stmt = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.CreateIndexStmt, org.mojolang.mojo.db.sql.CreateIndexStmt.Builder, org.mojolang.mojo.db.sql.CreateIndexStmtOrBuilder> 
-        getCreateIndexStmtValFieldBuilder() {
-      if (createIndexStmtValBuilder_ == null) {
+        getCreateIndexStmtFieldBuilder() {
+      if (createIndexStmtBuilder_ == null) {
         if (!(statementCase_ == 10)) {
           statement_ = org.mojolang.mojo.db.sql.CreateIndexStmt.getDefaultInstance();
         }
-        createIndexStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        createIndexStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.CreateIndexStmt, org.mojolang.mojo.db.sql.CreateIndexStmt.Builder, org.mojolang.mojo.db.sql.CreateIndexStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.CreateIndexStmt) statement_,
                 getParentForChildren(),
@@ -2882,73 +2717,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 10;
-      onChanged();;
-      return createIndexStmtValBuilder_;
+      onChanged();
+      return createIndexStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.CreateTableStmt, org.mojolang.mojo.db.sql.CreateTableStmt.Builder, org.mojolang.mojo.db.sql.CreateTableStmtOrBuilder> createTableStmtValBuilder_;
+        org.mojolang.mojo.db.sql.CreateTableStmt, org.mojolang.mojo.db.sql.CreateTableStmt.Builder, org.mojolang.mojo.db.sql.CreateTableStmtOrBuilder> createTableStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
-     * @return Whether the createTableStmtVal field is set.
+     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
+     * @return Whether the createTableStmt field is set.
      */
     @java.lang.Override
-    public boolean hasCreateTableStmtVal() {
+    public boolean hasCreateTableStmt() {
       return statementCase_ == 11;
     }
     /**
-     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
-     * @return The createTableStmtVal.
+     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
+     * @return The createTableStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateTableStmt getCreateTableStmtVal() {
-      if (createTableStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.CreateTableStmt getCreateTableStmt() {
+      if (createTableStmtBuilder_ == null) {
         if (statementCase_ == 11) {
           return (org.mojolang.mojo.db.sql.CreateTableStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.CreateTableStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 11) {
-          return createTableStmtValBuilder_.getMessage();
+          return createTableStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.CreateTableStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
+     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
      */
-    public Builder setCreateTableStmtVal(org.mojolang.mojo.db.sql.CreateTableStmt value) {
-      if (createTableStmtValBuilder_ == null) {
+    public Builder setCreateTableStmt(org.mojolang.mojo.db.sql.CreateTableStmt value) {
+      if (createTableStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        createTableStmtValBuilder_.setMessage(value);
+        createTableStmtBuilder_.setMessage(value);
       }
       statementCase_ = 11;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
+     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
      */
-    public Builder setCreateTableStmtVal(
+    public Builder setCreateTableStmt(
         org.mojolang.mojo.db.sql.CreateTableStmt.Builder builderForValue) {
-      if (createTableStmtValBuilder_ == null) {
+      if (createTableStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        createTableStmtValBuilder_.setMessage(builderForValue.build());
+        createTableStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 11;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
+     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
      */
-    public Builder mergeCreateTableStmtVal(org.mojolang.mojo.db.sql.CreateTableStmt value) {
-      if (createTableStmtValBuilder_ == null) {
+    public Builder mergeCreateTableStmt(org.mojolang.mojo.db.sql.CreateTableStmt value) {
+      if (createTableStmtBuilder_ == null) {
         if (statementCase_ == 11 &&
             statement_ != org.mojolang.mojo.db.sql.CreateTableStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.CreateTableStmt.newBuilder((org.mojolang.mojo.db.sql.CreateTableStmt) statement_)
@@ -2959,18 +2794,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 11) {
-          createTableStmtValBuilder_.mergeFrom(value);
+          createTableStmtBuilder_.mergeFrom(value);
+        } else {
+          createTableStmtBuilder_.setMessage(value);
         }
-        createTableStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 11;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
+     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
      */
-    public Builder clearCreateTableStmtVal() {
-      if (createTableStmtValBuilder_ == null) {
+    public Builder clearCreateTableStmt() {
+      if (createTableStmtBuilder_ == null) {
         if (statementCase_ == 11) {
           statementCase_ = 0;
           statement_ = null;
@@ -2981,23 +2817,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        createTableStmtValBuilder_.clear();
+        createTableStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
+     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
      */
-    public org.mojolang.mojo.db.sql.CreateTableStmt.Builder getCreateTableStmtValBuilder() {
-      return getCreateTableStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.CreateTableStmt.Builder getCreateTableStmtBuilder() {
+      return getCreateTableStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
+     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateTableStmtOrBuilder getCreateTableStmtValOrBuilder() {
-      if ((statementCase_ == 11) && (createTableStmtValBuilder_ != null)) {
-        return createTableStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.CreateTableStmtOrBuilder getCreateTableStmtOrBuilder() {
+      if ((statementCase_ == 11) && (createTableStmtBuilder_ != null)) {
+        return createTableStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 11) {
           return (org.mojolang.mojo.db.sql.CreateTableStmt) statement_;
@@ -3006,16 +2842,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt_val = 11;</code>
+     * <code>.mojo.db.sql.CreateTableStmt create_table_stmt = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.CreateTableStmt, org.mojolang.mojo.db.sql.CreateTableStmt.Builder, org.mojolang.mojo.db.sql.CreateTableStmtOrBuilder> 
-        getCreateTableStmtValFieldBuilder() {
-      if (createTableStmtValBuilder_ == null) {
+        getCreateTableStmtFieldBuilder() {
+      if (createTableStmtBuilder_ == null) {
         if (!(statementCase_ == 11)) {
           statement_ = org.mojolang.mojo.db.sql.CreateTableStmt.getDefaultInstance();
         }
-        createTableStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        createTableStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.CreateTableStmt, org.mojolang.mojo.db.sql.CreateTableStmt.Builder, org.mojolang.mojo.db.sql.CreateTableStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.CreateTableStmt) statement_,
                 getParentForChildren(),
@@ -3023,73 +2859,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 11;
-      onChanged();;
-      return createTableStmtValBuilder_;
+      onChanged();
+      return createTableStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.CreateTriggerStmt, org.mojolang.mojo.db.sql.CreateTriggerStmt.Builder, org.mojolang.mojo.db.sql.CreateTriggerStmtOrBuilder> createTriggerStmtValBuilder_;
+        org.mojolang.mojo.db.sql.CreateTriggerStmt, org.mojolang.mojo.db.sql.CreateTriggerStmt.Builder, org.mojolang.mojo.db.sql.CreateTriggerStmtOrBuilder> createTriggerStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
-     * @return Whether the createTriggerStmtVal field is set.
+     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
+     * @return Whether the createTriggerStmt field is set.
      */
     @java.lang.Override
-    public boolean hasCreateTriggerStmtVal() {
+    public boolean hasCreateTriggerStmt() {
       return statementCase_ == 12;
     }
     /**
-     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
-     * @return The createTriggerStmtVal.
+     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
+     * @return The createTriggerStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateTriggerStmt getCreateTriggerStmtVal() {
-      if (createTriggerStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.CreateTriggerStmt getCreateTriggerStmt() {
+      if (createTriggerStmtBuilder_ == null) {
         if (statementCase_ == 12) {
           return (org.mojolang.mojo.db.sql.CreateTriggerStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.CreateTriggerStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 12) {
-          return createTriggerStmtValBuilder_.getMessage();
+          return createTriggerStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.CreateTriggerStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
+     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
      */
-    public Builder setCreateTriggerStmtVal(org.mojolang.mojo.db.sql.CreateTriggerStmt value) {
-      if (createTriggerStmtValBuilder_ == null) {
+    public Builder setCreateTriggerStmt(org.mojolang.mojo.db.sql.CreateTriggerStmt value) {
+      if (createTriggerStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        createTriggerStmtValBuilder_.setMessage(value);
+        createTriggerStmtBuilder_.setMessage(value);
       }
       statementCase_ = 12;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
+     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
      */
-    public Builder setCreateTriggerStmtVal(
+    public Builder setCreateTriggerStmt(
         org.mojolang.mojo.db.sql.CreateTriggerStmt.Builder builderForValue) {
-      if (createTriggerStmtValBuilder_ == null) {
+      if (createTriggerStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        createTriggerStmtValBuilder_.setMessage(builderForValue.build());
+        createTriggerStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 12;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
+     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
      */
-    public Builder mergeCreateTriggerStmtVal(org.mojolang.mojo.db.sql.CreateTriggerStmt value) {
-      if (createTriggerStmtValBuilder_ == null) {
+    public Builder mergeCreateTriggerStmt(org.mojolang.mojo.db.sql.CreateTriggerStmt value) {
+      if (createTriggerStmtBuilder_ == null) {
         if (statementCase_ == 12 &&
             statement_ != org.mojolang.mojo.db.sql.CreateTriggerStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.CreateTriggerStmt.newBuilder((org.mojolang.mojo.db.sql.CreateTriggerStmt) statement_)
@@ -3100,18 +2936,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 12) {
-          createTriggerStmtValBuilder_.mergeFrom(value);
+          createTriggerStmtBuilder_.mergeFrom(value);
+        } else {
+          createTriggerStmtBuilder_.setMessage(value);
         }
-        createTriggerStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 12;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
+     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
      */
-    public Builder clearCreateTriggerStmtVal() {
-      if (createTriggerStmtValBuilder_ == null) {
+    public Builder clearCreateTriggerStmt() {
+      if (createTriggerStmtBuilder_ == null) {
         if (statementCase_ == 12) {
           statementCase_ = 0;
           statement_ = null;
@@ -3122,23 +2959,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        createTriggerStmtValBuilder_.clear();
+        createTriggerStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
+     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
      */
-    public org.mojolang.mojo.db.sql.CreateTriggerStmt.Builder getCreateTriggerStmtValBuilder() {
-      return getCreateTriggerStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.CreateTriggerStmt.Builder getCreateTriggerStmtBuilder() {
+      return getCreateTriggerStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
+     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateTriggerStmtOrBuilder getCreateTriggerStmtValOrBuilder() {
-      if ((statementCase_ == 12) && (createTriggerStmtValBuilder_ != null)) {
-        return createTriggerStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.CreateTriggerStmtOrBuilder getCreateTriggerStmtOrBuilder() {
+      if ((statementCase_ == 12) && (createTriggerStmtBuilder_ != null)) {
+        return createTriggerStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 12) {
           return (org.mojolang.mojo.db.sql.CreateTriggerStmt) statement_;
@@ -3147,16 +2984,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt_val = 12;</code>
+     * <code>.mojo.db.sql.CreateTriggerStmt create_trigger_stmt = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.CreateTriggerStmt, org.mojolang.mojo.db.sql.CreateTriggerStmt.Builder, org.mojolang.mojo.db.sql.CreateTriggerStmtOrBuilder> 
-        getCreateTriggerStmtValFieldBuilder() {
-      if (createTriggerStmtValBuilder_ == null) {
+        getCreateTriggerStmtFieldBuilder() {
+      if (createTriggerStmtBuilder_ == null) {
         if (!(statementCase_ == 12)) {
           statement_ = org.mojolang.mojo.db.sql.CreateTriggerStmt.getDefaultInstance();
         }
-        createTriggerStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        createTriggerStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.CreateTriggerStmt, org.mojolang.mojo.db.sql.CreateTriggerStmt.Builder, org.mojolang.mojo.db.sql.CreateTriggerStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.CreateTriggerStmt) statement_,
                 getParentForChildren(),
@@ -3164,73 +3001,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 12;
-      onChanged();;
-      return createTriggerStmtValBuilder_;
+      onChanged();
+      return createTriggerStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.CreateViewStmt, org.mojolang.mojo.db.sql.CreateViewStmt.Builder, org.mojolang.mojo.db.sql.CreateViewStmtOrBuilder> createViewStmtValBuilder_;
+        org.mojolang.mojo.db.sql.CreateViewStmt, org.mojolang.mojo.db.sql.CreateViewStmt.Builder, org.mojolang.mojo.db.sql.CreateViewStmtOrBuilder> createViewStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
-     * @return Whether the createViewStmtVal field is set.
+     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
+     * @return Whether the createViewStmt field is set.
      */
     @java.lang.Override
-    public boolean hasCreateViewStmtVal() {
+    public boolean hasCreateViewStmt() {
       return statementCase_ == 13;
     }
     /**
-     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
-     * @return The createViewStmtVal.
+     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
+     * @return The createViewStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateViewStmt getCreateViewStmtVal() {
-      if (createViewStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.CreateViewStmt getCreateViewStmt() {
+      if (createViewStmtBuilder_ == null) {
         if (statementCase_ == 13) {
           return (org.mojolang.mojo.db.sql.CreateViewStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.CreateViewStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 13) {
-          return createViewStmtValBuilder_.getMessage();
+          return createViewStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.CreateViewStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
+     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
      */
-    public Builder setCreateViewStmtVal(org.mojolang.mojo.db.sql.CreateViewStmt value) {
-      if (createViewStmtValBuilder_ == null) {
+    public Builder setCreateViewStmt(org.mojolang.mojo.db.sql.CreateViewStmt value) {
+      if (createViewStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        createViewStmtValBuilder_.setMessage(value);
+        createViewStmtBuilder_.setMessage(value);
       }
       statementCase_ = 13;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
+     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
      */
-    public Builder setCreateViewStmtVal(
+    public Builder setCreateViewStmt(
         org.mojolang.mojo.db.sql.CreateViewStmt.Builder builderForValue) {
-      if (createViewStmtValBuilder_ == null) {
+      if (createViewStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        createViewStmtValBuilder_.setMessage(builderForValue.build());
+        createViewStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 13;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
+     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
      */
-    public Builder mergeCreateViewStmtVal(org.mojolang.mojo.db.sql.CreateViewStmt value) {
-      if (createViewStmtValBuilder_ == null) {
+    public Builder mergeCreateViewStmt(org.mojolang.mojo.db.sql.CreateViewStmt value) {
+      if (createViewStmtBuilder_ == null) {
         if (statementCase_ == 13 &&
             statement_ != org.mojolang.mojo.db.sql.CreateViewStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.CreateViewStmt.newBuilder((org.mojolang.mojo.db.sql.CreateViewStmt) statement_)
@@ -3241,18 +3078,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 13) {
-          createViewStmtValBuilder_.mergeFrom(value);
+          createViewStmtBuilder_.mergeFrom(value);
+        } else {
+          createViewStmtBuilder_.setMessage(value);
         }
-        createViewStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 13;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
+     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
      */
-    public Builder clearCreateViewStmtVal() {
-      if (createViewStmtValBuilder_ == null) {
+    public Builder clearCreateViewStmt() {
+      if (createViewStmtBuilder_ == null) {
         if (statementCase_ == 13) {
           statementCase_ = 0;
           statement_ = null;
@@ -3263,23 +3101,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        createViewStmtValBuilder_.clear();
+        createViewStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
+     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
      */
-    public org.mojolang.mojo.db.sql.CreateViewStmt.Builder getCreateViewStmtValBuilder() {
-      return getCreateViewStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.CreateViewStmt.Builder getCreateViewStmtBuilder() {
+      return getCreateViewStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
+     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateViewStmtOrBuilder getCreateViewStmtValOrBuilder() {
-      if ((statementCase_ == 13) && (createViewStmtValBuilder_ != null)) {
-        return createViewStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.CreateViewStmtOrBuilder getCreateViewStmtOrBuilder() {
+      if ((statementCase_ == 13) && (createViewStmtBuilder_ != null)) {
+        return createViewStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 13) {
           return (org.mojolang.mojo.db.sql.CreateViewStmt) statement_;
@@ -3288,16 +3126,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt_val = 13;</code>
+     * <code>.mojo.db.sql.CreateViewStmt create_view_stmt = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.CreateViewStmt, org.mojolang.mojo.db.sql.CreateViewStmt.Builder, org.mojolang.mojo.db.sql.CreateViewStmtOrBuilder> 
-        getCreateViewStmtValFieldBuilder() {
-      if (createViewStmtValBuilder_ == null) {
+        getCreateViewStmtFieldBuilder() {
+      if (createViewStmtBuilder_ == null) {
         if (!(statementCase_ == 13)) {
           statement_ = org.mojolang.mojo.db.sql.CreateViewStmt.getDefaultInstance();
         }
-        createViewStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        createViewStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.CreateViewStmt, org.mojolang.mojo.db.sql.CreateViewStmt.Builder, org.mojolang.mojo.db.sql.CreateViewStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.CreateViewStmt) statement_,
                 getParentForChildren(),
@@ -3305,73 +3143,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 13;
-      onChanged();;
-      return createViewStmtValBuilder_;
+      onChanged();
+      return createViewStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.CreateVirtualTableStmt, org.mojolang.mojo.db.sql.CreateVirtualTableStmt.Builder, org.mojolang.mojo.db.sql.CreateVirtualTableStmtOrBuilder> createVirtualTableStmtValBuilder_;
+        org.mojolang.mojo.db.sql.CreateVirtualTableStmt, org.mojolang.mojo.db.sql.CreateVirtualTableStmt.Builder, org.mojolang.mojo.db.sql.CreateVirtualTableStmtOrBuilder> createVirtualTableStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
-     * @return Whether the createVirtualTableStmtVal field is set.
+     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
+     * @return Whether the createVirtualTableStmt field is set.
      */
     @java.lang.Override
-    public boolean hasCreateVirtualTableStmtVal() {
+    public boolean hasCreateVirtualTableStmt() {
       return statementCase_ == 14;
     }
     /**
-     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
-     * @return The createVirtualTableStmtVal.
+     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
+     * @return The createVirtualTableStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateVirtualTableStmt getCreateVirtualTableStmtVal() {
-      if (createVirtualTableStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.CreateVirtualTableStmt getCreateVirtualTableStmt() {
+      if (createVirtualTableStmtBuilder_ == null) {
         if (statementCase_ == 14) {
           return (org.mojolang.mojo.db.sql.CreateVirtualTableStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.CreateVirtualTableStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 14) {
-          return createVirtualTableStmtValBuilder_.getMessage();
+          return createVirtualTableStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.CreateVirtualTableStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
+     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
      */
-    public Builder setCreateVirtualTableStmtVal(org.mojolang.mojo.db.sql.CreateVirtualTableStmt value) {
-      if (createVirtualTableStmtValBuilder_ == null) {
+    public Builder setCreateVirtualTableStmt(org.mojolang.mojo.db.sql.CreateVirtualTableStmt value) {
+      if (createVirtualTableStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        createVirtualTableStmtValBuilder_.setMessage(value);
+        createVirtualTableStmtBuilder_.setMessage(value);
       }
       statementCase_ = 14;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
+     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
      */
-    public Builder setCreateVirtualTableStmtVal(
+    public Builder setCreateVirtualTableStmt(
         org.mojolang.mojo.db.sql.CreateVirtualTableStmt.Builder builderForValue) {
-      if (createVirtualTableStmtValBuilder_ == null) {
+      if (createVirtualTableStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        createVirtualTableStmtValBuilder_.setMessage(builderForValue.build());
+        createVirtualTableStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 14;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
+     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
      */
-    public Builder mergeCreateVirtualTableStmtVal(org.mojolang.mojo.db.sql.CreateVirtualTableStmt value) {
-      if (createVirtualTableStmtValBuilder_ == null) {
+    public Builder mergeCreateVirtualTableStmt(org.mojolang.mojo.db.sql.CreateVirtualTableStmt value) {
+      if (createVirtualTableStmtBuilder_ == null) {
         if (statementCase_ == 14 &&
             statement_ != org.mojolang.mojo.db.sql.CreateVirtualTableStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.CreateVirtualTableStmt.newBuilder((org.mojolang.mojo.db.sql.CreateVirtualTableStmt) statement_)
@@ -3382,18 +3220,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 14) {
-          createVirtualTableStmtValBuilder_.mergeFrom(value);
+          createVirtualTableStmtBuilder_.mergeFrom(value);
+        } else {
+          createVirtualTableStmtBuilder_.setMessage(value);
         }
-        createVirtualTableStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 14;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
+     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
      */
-    public Builder clearCreateVirtualTableStmtVal() {
-      if (createVirtualTableStmtValBuilder_ == null) {
+    public Builder clearCreateVirtualTableStmt() {
+      if (createVirtualTableStmtBuilder_ == null) {
         if (statementCase_ == 14) {
           statementCase_ = 0;
           statement_ = null;
@@ -3404,23 +3243,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        createVirtualTableStmtValBuilder_.clear();
+        createVirtualTableStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
+     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
      */
-    public org.mojolang.mojo.db.sql.CreateVirtualTableStmt.Builder getCreateVirtualTableStmtValBuilder() {
-      return getCreateVirtualTableStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.CreateVirtualTableStmt.Builder getCreateVirtualTableStmtBuilder() {
+      return getCreateVirtualTableStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
+     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.CreateVirtualTableStmtOrBuilder getCreateVirtualTableStmtValOrBuilder() {
-      if ((statementCase_ == 14) && (createVirtualTableStmtValBuilder_ != null)) {
-        return createVirtualTableStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.CreateVirtualTableStmtOrBuilder getCreateVirtualTableStmtOrBuilder() {
+      if ((statementCase_ == 14) && (createVirtualTableStmtBuilder_ != null)) {
+        return createVirtualTableStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 14) {
           return (org.mojolang.mojo.db.sql.CreateVirtualTableStmt) statement_;
@@ -3429,16 +3268,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt_val = 14;</code>
+     * <code>.mojo.db.sql.CreateVirtualTableStmt create_virtual_table_stmt = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.CreateVirtualTableStmt, org.mojolang.mojo.db.sql.CreateVirtualTableStmt.Builder, org.mojolang.mojo.db.sql.CreateVirtualTableStmtOrBuilder> 
-        getCreateVirtualTableStmtValFieldBuilder() {
-      if (createVirtualTableStmtValBuilder_ == null) {
+        getCreateVirtualTableStmtFieldBuilder() {
+      if (createVirtualTableStmtBuilder_ == null) {
         if (!(statementCase_ == 14)) {
           statement_ = org.mojolang.mojo.db.sql.CreateVirtualTableStmt.getDefaultInstance();
         }
-        createVirtualTableStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        createVirtualTableStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.CreateVirtualTableStmt, org.mojolang.mojo.db.sql.CreateVirtualTableStmt.Builder, org.mojolang.mojo.db.sql.CreateVirtualTableStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.CreateVirtualTableStmt) statement_,
                 getParentForChildren(),
@@ -3446,73 +3285,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 14;
-      onChanged();;
-      return createVirtualTableStmtValBuilder_;
+      onChanged();
+      return createVirtualTableStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.DeleteStmt, org.mojolang.mojo.db.sql.DeleteStmt.Builder, org.mojolang.mojo.db.sql.DeleteStmtOrBuilder> deleteStmtValBuilder_;
+        org.mojolang.mojo.db.sql.DeleteStmt, org.mojolang.mojo.db.sql.DeleteStmt.Builder, org.mojolang.mojo.db.sql.DeleteStmtOrBuilder> deleteStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
-     * @return Whether the deleteStmtVal field is set.
+     * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
+     * @return Whether the deleteStmt field is set.
      */
     @java.lang.Override
-    public boolean hasDeleteStmtVal() {
+    public boolean hasDeleteStmt() {
       return statementCase_ == 17;
     }
     /**
-     * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
-     * @return The deleteStmtVal.
+     * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
+     * @return The deleteStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.DeleteStmt getDeleteStmtVal() {
-      if (deleteStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.DeleteStmt getDeleteStmt() {
+      if (deleteStmtBuilder_ == null) {
         if (statementCase_ == 17) {
           return (org.mojolang.mojo.db.sql.DeleteStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.DeleteStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 17) {
-          return deleteStmtValBuilder_.getMessage();
+          return deleteStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.DeleteStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
+     * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
      */
-    public Builder setDeleteStmtVal(org.mojolang.mojo.db.sql.DeleteStmt value) {
-      if (deleteStmtValBuilder_ == null) {
+    public Builder setDeleteStmt(org.mojolang.mojo.db.sql.DeleteStmt value) {
+      if (deleteStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        deleteStmtValBuilder_.setMessage(value);
+        deleteStmtBuilder_.setMessage(value);
       }
       statementCase_ = 17;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
+     * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
      */
-    public Builder setDeleteStmtVal(
+    public Builder setDeleteStmt(
         org.mojolang.mojo.db.sql.DeleteStmt.Builder builderForValue) {
-      if (deleteStmtValBuilder_ == null) {
+      if (deleteStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        deleteStmtValBuilder_.setMessage(builderForValue.build());
+        deleteStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 17;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
+     * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
      */
-    public Builder mergeDeleteStmtVal(org.mojolang.mojo.db.sql.DeleteStmt value) {
-      if (deleteStmtValBuilder_ == null) {
+    public Builder mergeDeleteStmt(org.mojolang.mojo.db.sql.DeleteStmt value) {
+      if (deleteStmtBuilder_ == null) {
         if (statementCase_ == 17 &&
             statement_ != org.mojolang.mojo.db.sql.DeleteStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.DeleteStmt.newBuilder((org.mojolang.mojo.db.sql.DeleteStmt) statement_)
@@ -3523,18 +3362,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 17) {
-          deleteStmtValBuilder_.mergeFrom(value);
+          deleteStmtBuilder_.mergeFrom(value);
+        } else {
+          deleteStmtBuilder_.setMessage(value);
         }
-        deleteStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 17;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
+     * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
      */
-    public Builder clearDeleteStmtVal() {
-      if (deleteStmtValBuilder_ == null) {
+    public Builder clearDeleteStmt() {
+      if (deleteStmtBuilder_ == null) {
         if (statementCase_ == 17) {
           statementCase_ = 0;
           statement_ = null;
@@ -3545,23 +3385,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        deleteStmtValBuilder_.clear();
+        deleteStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
+     * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
      */
-    public org.mojolang.mojo.db.sql.DeleteStmt.Builder getDeleteStmtValBuilder() {
-      return getDeleteStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.DeleteStmt.Builder getDeleteStmtBuilder() {
+      return getDeleteStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
+     * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.DeleteStmtOrBuilder getDeleteStmtValOrBuilder() {
-      if ((statementCase_ == 17) && (deleteStmtValBuilder_ != null)) {
-        return deleteStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.DeleteStmtOrBuilder getDeleteStmtOrBuilder() {
+      if ((statementCase_ == 17) && (deleteStmtBuilder_ != null)) {
+        return deleteStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 17) {
           return (org.mojolang.mojo.db.sql.DeleteStmt) statement_;
@@ -3570,16 +3410,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.DeleteStmt delete_stmt_val = 17;</code>
+     * <code>.mojo.db.sql.DeleteStmt delete_stmt = 17;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.DeleteStmt, org.mojolang.mojo.db.sql.DeleteStmt.Builder, org.mojolang.mojo.db.sql.DeleteStmtOrBuilder> 
-        getDeleteStmtValFieldBuilder() {
-      if (deleteStmtValBuilder_ == null) {
+        getDeleteStmtFieldBuilder() {
+      if (deleteStmtBuilder_ == null) {
         if (!(statementCase_ == 17)) {
           statement_ = org.mojolang.mojo.db.sql.DeleteStmt.getDefaultInstance();
         }
-        deleteStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        deleteStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.DeleteStmt, org.mojolang.mojo.db.sql.DeleteStmt.Builder, org.mojolang.mojo.db.sql.DeleteStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.DeleteStmt) statement_,
                 getParentForChildren(),
@@ -3587,73 +3427,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 17;
-      onChanged();;
-      return deleteStmtValBuilder_;
+      onChanged();
+      return deleteStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.DetachStmt, org.mojolang.mojo.db.sql.DetachStmt.Builder, org.mojolang.mojo.db.sql.DetachStmtOrBuilder> detachStmtValBuilder_;
+        org.mojolang.mojo.db.sql.DetachStmt, org.mojolang.mojo.db.sql.DetachStmt.Builder, org.mojolang.mojo.db.sql.DetachStmtOrBuilder> detachStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
-     * @return Whether the detachStmtVal field is set.
+     * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
+     * @return Whether the detachStmt field is set.
      */
     @java.lang.Override
-    public boolean hasDetachStmtVal() {
+    public boolean hasDetachStmt() {
       return statementCase_ == 18;
     }
     /**
-     * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
-     * @return The detachStmtVal.
+     * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
+     * @return The detachStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.DetachStmt getDetachStmtVal() {
-      if (detachStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.DetachStmt getDetachStmt() {
+      if (detachStmtBuilder_ == null) {
         if (statementCase_ == 18) {
           return (org.mojolang.mojo.db.sql.DetachStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.DetachStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 18) {
-          return detachStmtValBuilder_.getMessage();
+          return detachStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.DetachStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
+     * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
      */
-    public Builder setDetachStmtVal(org.mojolang.mojo.db.sql.DetachStmt value) {
-      if (detachStmtValBuilder_ == null) {
+    public Builder setDetachStmt(org.mojolang.mojo.db.sql.DetachStmt value) {
+      if (detachStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        detachStmtValBuilder_.setMessage(value);
+        detachStmtBuilder_.setMessage(value);
       }
       statementCase_ = 18;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
+     * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
      */
-    public Builder setDetachStmtVal(
+    public Builder setDetachStmt(
         org.mojolang.mojo.db.sql.DetachStmt.Builder builderForValue) {
-      if (detachStmtValBuilder_ == null) {
+      if (detachStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        detachStmtValBuilder_.setMessage(builderForValue.build());
+        detachStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 18;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
+     * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
      */
-    public Builder mergeDetachStmtVal(org.mojolang.mojo.db.sql.DetachStmt value) {
-      if (detachStmtValBuilder_ == null) {
+    public Builder mergeDetachStmt(org.mojolang.mojo.db.sql.DetachStmt value) {
+      if (detachStmtBuilder_ == null) {
         if (statementCase_ == 18 &&
             statement_ != org.mojolang.mojo.db.sql.DetachStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.DetachStmt.newBuilder((org.mojolang.mojo.db.sql.DetachStmt) statement_)
@@ -3664,18 +3504,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 18) {
-          detachStmtValBuilder_.mergeFrom(value);
+          detachStmtBuilder_.mergeFrom(value);
+        } else {
+          detachStmtBuilder_.setMessage(value);
         }
-        detachStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 18;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
+     * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
      */
-    public Builder clearDetachStmtVal() {
-      if (detachStmtValBuilder_ == null) {
+    public Builder clearDetachStmt() {
+      if (detachStmtBuilder_ == null) {
         if (statementCase_ == 18) {
           statementCase_ = 0;
           statement_ = null;
@@ -3686,23 +3527,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        detachStmtValBuilder_.clear();
+        detachStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
+     * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
      */
-    public org.mojolang.mojo.db.sql.DetachStmt.Builder getDetachStmtValBuilder() {
-      return getDetachStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.DetachStmt.Builder getDetachStmtBuilder() {
+      return getDetachStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
+     * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.DetachStmtOrBuilder getDetachStmtValOrBuilder() {
-      if ((statementCase_ == 18) && (detachStmtValBuilder_ != null)) {
-        return detachStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.DetachStmtOrBuilder getDetachStmtOrBuilder() {
+      if ((statementCase_ == 18) && (detachStmtBuilder_ != null)) {
+        return detachStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 18) {
           return (org.mojolang.mojo.db.sql.DetachStmt) statement_;
@@ -3711,16 +3552,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.DetachStmt detach_stmt_val = 18;</code>
+     * <code>.mojo.db.sql.DetachStmt detach_stmt = 18;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.DetachStmt, org.mojolang.mojo.db.sql.DetachStmt.Builder, org.mojolang.mojo.db.sql.DetachStmtOrBuilder> 
-        getDetachStmtValFieldBuilder() {
-      if (detachStmtValBuilder_ == null) {
+        getDetachStmtFieldBuilder() {
+      if (detachStmtBuilder_ == null) {
         if (!(statementCase_ == 18)) {
           statement_ = org.mojolang.mojo.db.sql.DetachStmt.getDefaultInstance();
         }
-        detachStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        detachStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.DetachStmt, org.mojolang.mojo.db.sql.DetachStmt.Builder, org.mojolang.mojo.db.sql.DetachStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.DetachStmt) statement_,
                 getParentForChildren(),
@@ -3728,73 +3569,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 18;
-      onChanged();;
-      return detachStmtValBuilder_;
+      onChanged();
+      return detachStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.DropStmt, org.mojolang.mojo.db.sql.DropStmt.Builder, org.mojolang.mojo.db.sql.DropStmtOrBuilder> dropStmtValBuilder_;
+        org.mojolang.mojo.db.sql.DropStmt, org.mojolang.mojo.db.sql.DropStmt.Builder, org.mojolang.mojo.db.sql.DropStmtOrBuilder> dropStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
-     * @return Whether the dropStmtVal field is set.
+     * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
+     * @return Whether the dropStmt field is set.
      */
     @java.lang.Override
-    public boolean hasDropStmtVal() {
+    public boolean hasDropStmt() {
       return statementCase_ == 19;
     }
     /**
-     * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
-     * @return The dropStmtVal.
+     * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
+     * @return The dropStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.DropStmt getDropStmtVal() {
-      if (dropStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.DropStmt getDropStmt() {
+      if (dropStmtBuilder_ == null) {
         if (statementCase_ == 19) {
           return (org.mojolang.mojo.db.sql.DropStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.DropStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 19) {
-          return dropStmtValBuilder_.getMessage();
+          return dropStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.DropStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
+     * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
      */
-    public Builder setDropStmtVal(org.mojolang.mojo.db.sql.DropStmt value) {
-      if (dropStmtValBuilder_ == null) {
+    public Builder setDropStmt(org.mojolang.mojo.db.sql.DropStmt value) {
+      if (dropStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        dropStmtValBuilder_.setMessage(value);
+        dropStmtBuilder_.setMessage(value);
       }
       statementCase_ = 19;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
+     * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
      */
-    public Builder setDropStmtVal(
+    public Builder setDropStmt(
         org.mojolang.mojo.db.sql.DropStmt.Builder builderForValue) {
-      if (dropStmtValBuilder_ == null) {
+      if (dropStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        dropStmtValBuilder_.setMessage(builderForValue.build());
+        dropStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 19;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
+     * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
      */
-    public Builder mergeDropStmtVal(org.mojolang.mojo.db.sql.DropStmt value) {
-      if (dropStmtValBuilder_ == null) {
+    public Builder mergeDropStmt(org.mojolang.mojo.db.sql.DropStmt value) {
+      if (dropStmtBuilder_ == null) {
         if (statementCase_ == 19 &&
             statement_ != org.mojolang.mojo.db.sql.DropStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.DropStmt.newBuilder((org.mojolang.mojo.db.sql.DropStmt) statement_)
@@ -3805,18 +3646,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 19) {
-          dropStmtValBuilder_.mergeFrom(value);
+          dropStmtBuilder_.mergeFrom(value);
+        } else {
+          dropStmtBuilder_.setMessage(value);
         }
-        dropStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 19;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
+     * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
      */
-    public Builder clearDropStmtVal() {
-      if (dropStmtValBuilder_ == null) {
+    public Builder clearDropStmt() {
+      if (dropStmtBuilder_ == null) {
         if (statementCase_ == 19) {
           statementCase_ = 0;
           statement_ = null;
@@ -3827,23 +3669,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        dropStmtValBuilder_.clear();
+        dropStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
+     * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
      */
-    public org.mojolang.mojo.db.sql.DropStmt.Builder getDropStmtValBuilder() {
-      return getDropStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.DropStmt.Builder getDropStmtBuilder() {
+      return getDropStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
+     * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.DropStmtOrBuilder getDropStmtValOrBuilder() {
-      if ((statementCase_ == 19) && (dropStmtValBuilder_ != null)) {
-        return dropStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.DropStmtOrBuilder getDropStmtOrBuilder() {
+      if ((statementCase_ == 19) && (dropStmtBuilder_ != null)) {
+        return dropStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 19) {
           return (org.mojolang.mojo.db.sql.DropStmt) statement_;
@@ -3852,16 +3694,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.DropStmt drop_stmt_val = 19;</code>
+     * <code>.mojo.db.sql.DropStmt drop_stmt = 19;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.DropStmt, org.mojolang.mojo.db.sql.DropStmt.Builder, org.mojolang.mojo.db.sql.DropStmtOrBuilder> 
-        getDropStmtValFieldBuilder() {
-      if (dropStmtValBuilder_ == null) {
+        getDropStmtFieldBuilder() {
+      if (dropStmtBuilder_ == null) {
         if (!(statementCase_ == 19)) {
           statement_ = org.mojolang.mojo.db.sql.DropStmt.getDefaultInstance();
         }
-        dropStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        dropStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.DropStmt, org.mojolang.mojo.db.sql.DropStmt.Builder, org.mojolang.mojo.db.sql.DropStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.DropStmt) statement_,
                 getParentForChildren(),
@@ -3869,73 +3711,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 19;
-      onChanged();;
-      return dropStmtValBuilder_;
+      onChanged();
+      return dropStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.EndStmt, org.mojolang.mojo.db.sql.EndStmt.Builder, org.mojolang.mojo.db.sql.EndStmtOrBuilder> endStmtValBuilder_;
+        org.mojolang.mojo.db.sql.EndStmt, org.mojolang.mojo.db.sql.EndStmt.Builder, org.mojolang.mojo.db.sql.EndStmtOrBuilder> endStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
-     * @return Whether the endStmtVal field is set.
+     * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
+     * @return Whether the endStmt field is set.
      */
     @java.lang.Override
-    public boolean hasEndStmtVal() {
+    public boolean hasEndStmt() {
       return statementCase_ == 30;
     }
     /**
-     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
-     * @return The endStmtVal.
+     * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
+     * @return The endStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.EndStmt getEndStmtVal() {
-      if (endStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.EndStmt getEndStmt() {
+      if (endStmtBuilder_ == null) {
         if (statementCase_ == 30) {
           return (org.mojolang.mojo.db.sql.EndStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.EndStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 30) {
-          return endStmtValBuilder_.getMessage();
+          return endStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.EndStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
      */
-    public Builder setEndStmtVal(org.mojolang.mojo.db.sql.EndStmt value) {
-      if (endStmtValBuilder_ == null) {
+    public Builder setEndStmt(org.mojolang.mojo.db.sql.EndStmt value) {
+      if (endStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        endStmtValBuilder_.setMessage(value);
+        endStmtBuilder_.setMessage(value);
       }
       statementCase_ = 30;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
      */
-    public Builder setEndStmtVal(
+    public Builder setEndStmt(
         org.mojolang.mojo.db.sql.EndStmt.Builder builderForValue) {
-      if (endStmtValBuilder_ == null) {
+      if (endStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        endStmtValBuilder_.setMessage(builderForValue.build());
+        endStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 30;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
      */
-    public Builder mergeEndStmtVal(org.mojolang.mojo.db.sql.EndStmt value) {
-      if (endStmtValBuilder_ == null) {
+    public Builder mergeEndStmt(org.mojolang.mojo.db.sql.EndStmt value) {
+      if (endStmtBuilder_ == null) {
         if (statementCase_ == 30 &&
             statement_ != org.mojolang.mojo.db.sql.EndStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.EndStmt.newBuilder((org.mojolang.mojo.db.sql.EndStmt) statement_)
@@ -3946,18 +3788,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 30) {
-          endStmtValBuilder_.mergeFrom(value);
+          endStmtBuilder_.mergeFrom(value);
+        } else {
+          endStmtBuilder_.setMessage(value);
         }
-        endStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 30;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
      */
-    public Builder clearEndStmtVal() {
-      if (endStmtValBuilder_ == null) {
+    public Builder clearEndStmt() {
+      if (endStmtBuilder_ == null) {
         if (statementCase_ == 30) {
           statementCase_ = 0;
           statement_ = null;
@@ -3968,23 +3811,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        endStmtValBuilder_.clear();
+        endStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
      */
-    public org.mojolang.mojo.db.sql.EndStmt.Builder getEndStmtValBuilder() {
-      return getEndStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.EndStmt.Builder getEndStmtBuilder() {
+      return getEndStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.EndStmtOrBuilder getEndStmtValOrBuilder() {
-      if ((statementCase_ == 30) && (endStmtValBuilder_ != null)) {
-        return endStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.EndStmtOrBuilder getEndStmtOrBuilder() {
+      if ((statementCase_ == 30) && (endStmtBuilder_ != null)) {
+        return endStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 30) {
           return (org.mojolang.mojo.db.sql.EndStmt) statement_;
@@ -3993,16 +3836,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.EndStmt end_stmt_val = 30;</code>
+     * <code>.mojo.db.sql.EndStmt end_stmt = 30;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.EndStmt, org.mojolang.mojo.db.sql.EndStmt.Builder, org.mojolang.mojo.db.sql.EndStmtOrBuilder> 
-        getEndStmtValFieldBuilder() {
-      if (endStmtValBuilder_ == null) {
+        getEndStmtFieldBuilder() {
+      if (endStmtBuilder_ == null) {
         if (!(statementCase_ == 30)) {
           statement_ = org.mojolang.mojo.db.sql.EndStmt.getDefaultInstance();
         }
-        endStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        endStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.EndStmt, org.mojolang.mojo.db.sql.EndStmt.Builder, org.mojolang.mojo.db.sql.EndStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.EndStmt) statement_,
                 getParentForChildren(),
@@ -4010,73 +3853,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 30;
-      onChanged();;
-      return endStmtValBuilder_;
+      onChanged();
+      return endStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.InsertStmt, org.mojolang.mojo.db.sql.InsertStmt.Builder, org.mojolang.mojo.db.sql.InsertStmtOrBuilder> insertStmtValBuilder_;
+        org.mojolang.mojo.db.sql.InsertStmt, org.mojolang.mojo.db.sql.InsertStmt.Builder, org.mojolang.mojo.db.sql.InsertStmtOrBuilder> insertStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
-     * @return Whether the insertStmtVal field is set.
+     * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
+     * @return Whether the insertStmt field is set.
      */
     @java.lang.Override
-    public boolean hasInsertStmtVal() {
+    public boolean hasInsertStmt() {
       return statementCase_ == 20;
     }
     /**
-     * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
-     * @return The insertStmtVal.
+     * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
+     * @return The insertStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.InsertStmt getInsertStmtVal() {
-      if (insertStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.InsertStmt getInsertStmt() {
+      if (insertStmtBuilder_ == null) {
         if (statementCase_ == 20) {
           return (org.mojolang.mojo.db.sql.InsertStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.InsertStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 20) {
-          return insertStmtValBuilder_.getMessage();
+          return insertStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.InsertStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
+     * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
      */
-    public Builder setInsertStmtVal(org.mojolang.mojo.db.sql.InsertStmt value) {
-      if (insertStmtValBuilder_ == null) {
+    public Builder setInsertStmt(org.mojolang.mojo.db.sql.InsertStmt value) {
+      if (insertStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        insertStmtValBuilder_.setMessage(value);
+        insertStmtBuilder_.setMessage(value);
       }
       statementCase_ = 20;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
+     * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
      */
-    public Builder setInsertStmtVal(
+    public Builder setInsertStmt(
         org.mojolang.mojo.db.sql.InsertStmt.Builder builderForValue) {
-      if (insertStmtValBuilder_ == null) {
+      if (insertStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        insertStmtValBuilder_.setMessage(builderForValue.build());
+        insertStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 20;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
+     * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
      */
-    public Builder mergeInsertStmtVal(org.mojolang.mojo.db.sql.InsertStmt value) {
-      if (insertStmtValBuilder_ == null) {
+    public Builder mergeInsertStmt(org.mojolang.mojo.db.sql.InsertStmt value) {
+      if (insertStmtBuilder_ == null) {
         if (statementCase_ == 20 &&
             statement_ != org.mojolang.mojo.db.sql.InsertStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.InsertStmt.newBuilder((org.mojolang.mojo.db.sql.InsertStmt) statement_)
@@ -4087,18 +3930,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 20) {
-          insertStmtValBuilder_.mergeFrom(value);
+          insertStmtBuilder_.mergeFrom(value);
+        } else {
+          insertStmtBuilder_.setMessage(value);
         }
-        insertStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 20;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
+     * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
      */
-    public Builder clearInsertStmtVal() {
-      if (insertStmtValBuilder_ == null) {
+    public Builder clearInsertStmt() {
+      if (insertStmtBuilder_ == null) {
         if (statementCase_ == 20) {
           statementCase_ = 0;
           statement_ = null;
@@ -4109,23 +3953,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        insertStmtValBuilder_.clear();
+        insertStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
+     * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
      */
-    public org.mojolang.mojo.db.sql.InsertStmt.Builder getInsertStmtValBuilder() {
-      return getInsertStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.InsertStmt.Builder getInsertStmtBuilder() {
+      return getInsertStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
+     * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.InsertStmtOrBuilder getInsertStmtValOrBuilder() {
-      if ((statementCase_ == 20) && (insertStmtValBuilder_ != null)) {
-        return insertStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.InsertStmtOrBuilder getInsertStmtOrBuilder() {
+      if ((statementCase_ == 20) && (insertStmtBuilder_ != null)) {
+        return insertStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 20) {
           return (org.mojolang.mojo.db.sql.InsertStmt) statement_;
@@ -4134,16 +3978,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.InsertStmt insert_stmt_val = 20;</code>
+     * <code>.mojo.db.sql.InsertStmt insert_stmt = 20;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.InsertStmt, org.mojolang.mojo.db.sql.InsertStmt.Builder, org.mojolang.mojo.db.sql.InsertStmtOrBuilder> 
-        getInsertStmtValFieldBuilder() {
-      if (insertStmtValBuilder_ == null) {
+        getInsertStmtFieldBuilder() {
+      if (insertStmtBuilder_ == null) {
         if (!(statementCase_ == 20)) {
           statement_ = org.mojolang.mojo.db.sql.InsertStmt.getDefaultInstance();
         }
-        insertStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        insertStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.InsertStmt, org.mojolang.mojo.db.sql.InsertStmt.Builder, org.mojolang.mojo.db.sql.InsertStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.InsertStmt) statement_,
                 getParentForChildren(),
@@ -4151,73 +3995,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 20;
-      onChanged();;
-      return insertStmtValBuilder_;
+      onChanged();
+      return insertStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.PragmaStmt, org.mojolang.mojo.db.sql.PragmaStmt.Builder, org.mojolang.mojo.db.sql.PragmaStmtOrBuilder> pragmaStmtValBuilder_;
+        org.mojolang.mojo.db.sql.PragmaStmt, org.mojolang.mojo.db.sql.PragmaStmt.Builder, org.mojolang.mojo.db.sql.PragmaStmtOrBuilder> pragmaStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
-     * @return Whether the pragmaStmtVal field is set.
+     * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
+     * @return Whether the pragmaStmt field is set.
      */
     @java.lang.Override
-    public boolean hasPragmaStmtVal() {
+    public boolean hasPragmaStmt() {
       return statementCase_ == 21;
     }
     /**
-     * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
-     * @return The pragmaStmtVal.
+     * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
+     * @return The pragmaStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.PragmaStmt getPragmaStmtVal() {
-      if (pragmaStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.PragmaStmt getPragmaStmt() {
+      if (pragmaStmtBuilder_ == null) {
         if (statementCase_ == 21) {
           return (org.mojolang.mojo.db.sql.PragmaStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.PragmaStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 21) {
-          return pragmaStmtValBuilder_.getMessage();
+          return pragmaStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.PragmaStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
+     * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
      */
-    public Builder setPragmaStmtVal(org.mojolang.mojo.db.sql.PragmaStmt value) {
-      if (pragmaStmtValBuilder_ == null) {
+    public Builder setPragmaStmt(org.mojolang.mojo.db.sql.PragmaStmt value) {
+      if (pragmaStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        pragmaStmtValBuilder_.setMessage(value);
+        pragmaStmtBuilder_.setMessage(value);
       }
       statementCase_ = 21;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
+     * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
      */
-    public Builder setPragmaStmtVal(
+    public Builder setPragmaStmt(
         org.mojolang.mojo.db.sql.PragmaStmt.Builder builderForValue) {
-      if (pragmaStmtValBuilder_ == null) {
+      if (pragmaStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        pragmaStmtValBuilder_.setMessage(builderForValue.build());
+        pragmaStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 21;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
+     * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
      */
-    public Builder mergePragmaStmtVal(org.mojolang.mojo.db.sql.PragmaStmt value) {
-      if (pragmaStmtValBuilder_ == null) {
+    public Builder mergePragmaStmt(org.mojolang.mojo.db.sql.PragmaStmt value) {
+      if (pragmaStmtBuilder_ == null) {
         if (statementCase_ == 21 &&
             statement_ != org.mojolang.mojo.db.sql.PragmaStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.PragmaStmt.newBuilder((org.mojolang.mojo.db.sql.PragmaStmt) statement_)
@@ -4228,18 +4072,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 21) {
-          pragmaStmtValBuilder_.mergeFrom(value);
+          pragmaStmtBuilder_.mergeFrom(value);
+        } else {
+          pragmaStmtBuilder_.setMessage(value);
         }
-        pragmaStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 21;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
+     * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
      */
-    public Builder clearPragmaStmtVal() {
-      if (pragmaStmtValBuilder_ == null) {
+    public Builder clearPragmaStmt() {
+      if (pragmaStmtBuilder_ == null) {
         if (statementCase_ == 21) {
           statementCase_ = 0;
           statement_ = null;
@@ -4250,23 +4095,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        pragmaStmtValBuilder_.clear();
+        pragmaStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
+     * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
      */
-    public org.mojolang.mojo.db.sql.PragmaStmt.Builder getPragmaStmtValBuilder() {
-      return getPragmaStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.PragmaStmt.Builder getPragmaStmtBuilder() {
+      return getPragmaStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
+     * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.PragmaStmtOrBuilder getPragmaStmtValOrBuilder() {
-      if ((statementCase_ == 21) && (pragmaStmtValBuilder_ != null)) {
-        return pragmaStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.PragmaStmtOrBuilder getPragmaStmtOrBuilder() {
+      if ((statementCase_ == 21) && (pragmaStmtBuilder_ != null)) {
+        return pragmaStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 21) {
           return (org.mojolang.mojo.db.sql.PragmaStmt) statement_;
@@ -4275,16 +4120,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.PragmaStmt pragma_stmt_val = 21;</code>
+     * <code>.mojo.db.sql.PragmaStmt pragma_stmt = 21;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.PragmaStmt, org.mojolang.mojo.db.sql.PragmaStmt.Builder, org.mojolang.mojo.db.sql.PragmaStmtOrBuilder> 
-        getPragmaStmtValFieldBuilder() {
-      if (pragmaStmtValBuilder_ == null) {
+        getPragmaStmtFieldBuilder() {
+      if (pragmaStmtBuilder_ == null) {
         if (!(statementCase_ == 21)) {
           statement_ = org.mojolang.mojo.db.sql.PragmaStmt.getDefaultInstance();
         }
-        pragmaStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        pragmaStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.PragmaStmt, org.mojolang.mojo.db.sql.PragmaStmt.Builder, org.mojolang.mojo.db.sql.PragmaStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.PragmaStmt) statement_,
                 getParentForChildren(),
@@ -4292,73 +4137,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 21;
-      onChanged();;
-      return pragmaStmtValBuilder_;
+      onChanged();
+      return pragmaStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.ReindexStmt, org.mojolang.mojo.db.sql.ReindexStmt.Builder, org.mojolang.mojo.db.sql.ReindexStmtOrBuilder> reindexStmtValBuilder_;
+        org.mojolang.mojo.db.sql.ReindexStmt, org.mojolang.mojo.db.sql.ReindexStmt.Builder, org.mojolang.mojo.db.sql.ReindexStmtOrBuilder> reindexStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
-     * @return Whether the reindexStmtVal field is set.
+     * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
+     * @return Whether the reindexStmt field is set.
      */
     @java.lang.Override
-    public boolean hasReindexStmtVal() {
+    public boolean hasReindexStmt() {
       return statementCase_ == 22;
     }
     /**
-     * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
-     * @return The reindexStmtVal.
+     * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
+     * @return The reindexStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.ReindexStmt getReindexStmtVal() {
-      if (reindexStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.ReindexStmt getReindexStmt() {
+      if (reindexStmtBuilder_ == null) {
         if (statementCase_ == 22) {
           return (org.mojolang.mojo.db.sql.ReindexStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.ReindexStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 22) {
-          return reindexStmtValBuilder_.getMessage();
+          return reindexStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.ReindexStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
+     * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
      */
-    public Builder setReindexStmtVal(org.mojolang.mojo.db.sql.ReindexStmt value) {
-      if (reindexStmtValBuilder_ == null) {
+    public Builder setReindexStmt(org.mojolang.mojo.db.sql.ReindexStmt value) {
+      if (reindexStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        reindexStmtValBuilder_.setMessage(value);
+        reindexStmtBuilder_.setMessage(value);
       }
       statementCase_ = 22;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
+     * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
      */
-    public Builder setReindexStmtVal(
+    public Builder setReindexStmt(
         org.mojolang.mojo.db.sql.ReindexStmt.Builder builderForValue) {
-      if (reindexStmtValBuilder_ == null) {
+      if (reindexStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        reindexStmtValBuilder_.setMessage(builderForValue.build());
+        reindexStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 22;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
+     * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
      */
-    public Builder mergeReindexStmtVal(org.mojolang.mojo.db.sql.ReindexStmt value) {
-      if (reindexStmtValBuilder_ == null) {
+    public Builder mergeReindexStmt(org.mojolang.mojo.db.sql.ReindexStmt value) {
+      if (reindexStmtBuilder_ == null) {
         if (statementCase_ == 22 &&
             statement_ != org.mojolang.mojo.db.sql.ReindexStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.ReindexStmt.newBuilder((org.mojolang.mojo.db.sql.ReindexStmt) statement_)
@@ -4369,18 +4214,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 22) {
-          reindexStmtValBuilder_.mergeFrom(value);
+          reindexStmtBuilder_.mergeFrom(value);
+        } else {
+          reindexStmtBuilder_.setMessage(value);
         }
-        reindexStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 22;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
+     * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
      */
-    public Builder clearReindexStmtVal() {
-      if (reindexStmtValBuilder_ == null) {
+    public Builder clearReindexStmt() {
+      if (reindexStmtBuilder_ == null) {
         if (statementCase_ == 22) {
           statementCase_ = 0;
           statement_ = null;
@@ -4391,23 +4237,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        reindexStmtValBuilder_.clear();
+        reindexStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
+     * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
      */
-    public org.mojolang.mojo.db.sql.ReindexStmt.Builder getReindexStmtValBuilder() {
-      return getReindexStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.ReindexStmt.Builder getReindexStmtBuilder() {
+      return getReindexStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
+     * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.ReindexStmtOrBuilder getReindexStmtValOrBuilder() {
-      if ((statementCase_ == 22) && (reindexStmtValBuilder_ != null)) {
-        return reindexStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.ReindexStmtOrBuilder getReindexStmtOrBuilder() {
+      if ((statementCase_ == 22) && (reindexStmtBuilder_ != null)) {
+        return reindexStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 22) {
           return (org.mojolang.mojo.db.sql.ReindexStmt) statement_;
@@ -4416,16 +4262,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.ReindexStmt reindex_stmt_val = 22;</code>
+     * <code>.mojo.db.sql.ReindexStmt reindex_stmt = 22;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.ReindexStmt, org.mojolang.mojo.db.sql.ReindexStmt.Builder, org.mojolang.mojo.db.sql.ReindexStmtOrBuilder> 
-        getReindexStmtValFieldBuilder() {
-      if (reindexStmtValBuilder_ == null) {
+        getReindexStmtFieldBuilder() {
+      if (reindexStmtBuilder_ == null) {
         if (!(statementCase_ == 22)) {
           statement_ = org.mojolang.mojo.db.sql.ReindexStmt.getDefaultInstance();
         }
-        reindexStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        reindexStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.ReindexStmt, org.mojolang.mojo.db.sql.ReindexStmt.Builder, org.mojolang.mojo.db.sql.ReindexStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.ReindexStmt) statement_,
                 getParentForChildren(),
@@ -4433,73 +4279,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 22;
-      onChanged();;
-      return reindexStmtValBuilder_;
+      onChanged();
+      return reindexStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.ReleaseStmt, org.mojolang.mojo.db.sql.ReleaseStmt.Builder, org.mojolang.mojo.db.sql.ReleaseStmtOrBuilder> releaseStmtValBuilder_;
+        org.mojolang.mojo.db.sql.ReleaseStmt, org.mojolang.mojo.db.sql.ReleaseStmt.Builder, org.mojolang.mojo.db.sql.ReleaseStmtOrBuilder> releaseStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
-     * @return Whether the releaseStmtVal field is set.
+     * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
+     * @return Whether the releaseStmt field is set.
      */
     @java.lang.Override
-    public boolean hasReleaseStmtVal() {
+    public boolean hasReleaseStmt() {
       return statementCase_ == 23;
     }
     /**
-     * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
-     * @return The releaseStmtVal.
+     * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
+     * @return The releaseStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.ReleaseStmt getReleaseStmtVal() {
-      if (releaseStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.ReleaseStmt getReleaseStmt() {
+      if (releaseStmtBuilder_ == null) {
         if (statementCase_ == 23) {
           return (org.mojolang.mojo.db.sql.ReleaseStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.ReleaseStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 23) {
-          return releaseStmtValBuilder_.getMessage();
+          return releaseStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.ReleaseStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
+     * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
      */
-    public Builder setReleaseStmtVal(org.mojolang.mojo.db.sql.ReleaseStmt value) {
-      if (releaseStmtValBuilder_ == null) {
+    public Builder setReleaseStmt(org.mojolang.mojo.db.sql.ReleaseStmt value) {
+      if (releaseStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        releaseStmtValBuilder_.setMessage(value);
+        releaseStmtBuilder_.setMessage(value);
       }
       statementCase_ = 23;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
+     * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
      */
-    public Builder setReleaseStmtVal(
+    public Builder setReleaseStmt(
         org.mojolang.mojo.db.sql.ReleaseStmt.Builder builderForValue) {
-      if (releaseStmtValBuilder_ == null) {
+      if (releaseStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        releaseStmtValBuilder_.setMessage(builderForValue.build());
+        releaseStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 23;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
+     * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
      */
-    public Builder mergeReleaseStmtVal(org.mojolang.mojo.db.sql.ReleaseStmt value) {
-      if (releaseStmtValBuilder_ == null) {
+    public Builder mergeReleaseStmt(org.mojolang.mojo.db.sql.ReleaseStmt value) {
+      if (releaseStmtBuilder_ == null) {
         if (statementCase_ == 23 &&
             statement_ != org.mojolang.mojo.db.sql.ReleaseStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.ReleaseStmt.newBuilder((org.mojolang.mojo.db.sql.ReleaseStmt) statement_)
@@ -4510,18 +4356,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 23) {
-          releaseStmtValBuilder_.mergeFrom(value);
+          releaseStmtBuilder_.mergeFrom(value);
+        } else {
+          releaseStmtBuilder_.setMessage(value);
         }
-        releaseStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 23;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
+     * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
      */
-    public Builder clearReleaseStmtVal() {
-      if (releaseStmtValBuilder_ == null) {
+    public Builder clearReleaseStmt() {
+      if (releaseStmtBuilder_ == null) {
         if (statementCase_ == 23) {
           statementCase_ = 0;
           statement_ = null;
@@ -4532,23 +4379,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        releaseStmtValBuilder_.clear();
+        releaseStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
+     * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
      */
-    public org.mojolang.mojo.db.sql.ReleaseStmt.Builder getReleaseStmtValBuilder() {
-      return getReleaseStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.ReleaseStmt.Builder getReleaseStmtBuilder() {
+      return getReleaseStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
+     * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.ReleaseStmtOrBuilder getReleaseStmtValOrBuilder() {
-      if ((statementCase_ == 23) && (releaseStmtValBuilder_ != null)) {
-        return releaseStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.ReleaseStmtOrBuilder getReleaseStmtOrBuilder() {
+      if ((statementCase_ == 23) && (releaseStmtBuilder_ != null)) {
+        return releaseStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 23) {
           return (org.mojolang.mojo.db.sql.ReleaseStmt) statement_;
@@ -4557,16 +4404,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.ReleaseStmt release_stmt_val = 23;</code>
+     * <code>.mojo.db.sql.ReleaseStmt release_stmt = 23;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.ReleaseStmt, org.mojolang.mojo.db.sql.ReleaseStmt.Builder, org.mojolang.mojo.db.sql.ReleaseStmtOrBuilder> 
-        getReleaseStmtValFieldBuilder() {
-      if (releaseStmtValBuilder_ == null) {
+        getReleaseStmtFieldBuilder() {
+      if (releaseStmtBuilder_ == null) {
         if (!(statementCase_ == 23)) {
           statement_ = org.mojolang.mojo.db.sql.ReleaseStmt.getDefaultInstance();
         }
-        releaseStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        releaseStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.ReleaseStmt, org.mojolang.mojo.db.sql.ReleaseStmt.Builder, org.mojolang.mojo.db.sql.ReleaseStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.ReleaseStmt) statement_,
                 getParentForChildren(),
@@ -4574,73 +4421,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 23;
-      onChanged();;
-      return releaseStmtValBuilder_;
+      onChanged();
+      return releaseStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.RollbackStmt, org.mojolang.mojo.db.sql.RollbackStmt.Builder, org.mojolang.mojo.db.sql.RollbackStmtOrBuilder> rollbackStmtValBuilder_;
+        org.mojolang.mojo.db.sql.RollbackStmt, org.mojolang.mojo.db.sql.RollbackStmt.Builder, org.mojolang.mojo.db.sql.RollbackStmtOrBuilder> rollbackStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
-     * @return Whether the rollbackStmtVal field is set.
+     * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
+     * @return Whether the rollbackStmt field is set.
      */
     @java.lang.Override
-    public boolean hasRollbackStmtVal() {
+    public boolean hasRollbackStmt() {
       return statementCase_ == 24;
     }
     /**
-     * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
-     * @return The rollbackStmtVal.
+     * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
+     * @return The rollbackStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.RollbackStmt getRollbackStmtVal() {
-      if (rollbackStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.RollbackStmt getRollbackStmt() {
+      if (rollbackStmtBuilder_ == null) {
         if (statementCase_ == 24) {
           return (org.mojolang.mojo.db.sql.RollbackStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.RollbackStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 24) {
-          return rollbackStmtValBuilder_.getMessage();
+          return rollbackStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.RollbackStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
+     * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
      */
-    public Builder setRollbackStmtVal(org.mojolang.mojo.db.sql.RollbackStmt value) {
-      if (rollbackStmtValBuilder_ == null) {
+    public Builder setRollbackStmt(org.mojolang.mojo.db.sql.RollbackStmt value) {
+      if (rollbackStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        rollbackStmtValBuilder_.setMessage(value);
+        rollbackStmtBuilder_.setMessage(value);
       }
       statementCase_ = 24;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
+     * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
      */
-    public Builder setRollbackStmtVal(
+    public Builder setRollbackStmt(
         org.mojolang.mojo.db.sql.RollbackStmt.Builder builderForValue) {
-      if (rollbackStmtValBuilder_ == null) {
+      if (rollbackStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        rollbackStmtValBuilder_.setMessage(builderForValue.build());
+        rollbackStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 24;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
+     * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
      */
-    public Builder mergeRollbackStmtVal(org.mojolang.mojo.db.sql.RollbackStmt value) {
-      if (rollbackStmtValBuilder_ == null) {
+    public Builder mergeRollbackStmt(org.mojolang.mojo.db.sql.RollbackStmt value) {
+      if (rollbackStmtBuilder_ == null) {
         if (statementCase_ == 24 &&
             statement_ != org.mojolang.mojo.db.sql.RollbackStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.RollbackStmt.newBuilder((org.mojolang.mojo.db.sql.RollbackStmt) statement_)
@@ -4651,18 +4498,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 24) {
-          rollbackStmtValBuilder_.mergeFrom(value);
+          rollbackStmtBuilder_.mergeFrom(value);
+        } else {
+          rollbackStmtBuilder_.setMessage(value);
         }
-        rollbackStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 24;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
+     * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
      */
-    public Builder clearRollbackStmtVal() {
-      if (rollbackStmtValBuilder_ == null) {
+    public Builder clearRollbackStmt() {
+      if (rollbackStmtBuilder_ == null) {
         if (statementCase_ == 24) {
           statementCase_ = 0;
           statement_ = null;
@@ -4673,23 +4521,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        rollbackStmtValBuilder_.clear();
+        rollbackStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
+     * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
      */
-    public org.mojolang.mojo.db.sql.RollbackStmt.Builder getRollbackStmtValBuilder() {
-      return getRollbackStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.RollbackStmt.Builder getRollbackStmtBuilder() {
+      return getRollbackStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
+     * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.RollbackStmtOrBuilder getRollbackStmtValOrBuilder() {
-      if ((statementCase_ == 24) && (rollbackStmtValBuilder_ != null)) {
-        return rollbackStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.RollbackStmtOrBuilder getRollbackStmtOrBuilder() {
+      if ((statementCase_ == 24) && (rollbackStmtBuilder_ != null)) {
+        return rollbackStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 24) {
           return (org.mojolang.mojo.db.sql.RollbackStmt) statement_;
@@ -4698,16 +4546,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.RollbackStmt rollback_stmt_val = 24;</code>
+     * <code>.mojo.db.sql.RollbackStmt rollback_stmt = 24;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.RollbackStmt, org.mojolang.mojo.db.sql.RollbackStmt.Builder, org.mojolang.mojo.db.sql.RollbackStmtOrBuilder> 
-        getRollbackStmtValFieldBuilder() {
-      if (rollbackStmtValBuilder_ == null) {
+        getRollbackStmtFieldBuilder() {
+      if (rollbackStmtBuilder_ == null) {
         if (!(statementCase_ == 24)) {
           statement_ = org.mojolang.mojo.db.sql.RollbackStmt.getDefaultInstance();
         }
-        rollbackStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        rollbackStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.RollbackStmt, org.mojolang.mojo.db.sql.RollbackStmt.Builder, org.mojolang.mojo.db.sql.RollbackStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.RollbackStmt) statement_,
                 getParentForChildren(),
@@ -4715,73 +4563,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 24;
-      onChanged();;
-      return rollbackStmtValBuilder_;
+      onChanged();
+      return rollbackStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.SelectStmt, org.mojolang.mojo.db.sql.SelectStmt.Builder, org.mojolang.mojo.db.sql.SelectStmtOrBuilder> selectStmtValBuilder_;
+        org.mojolang.mojo.db.sql.SelectStmt, org.mojolang.mojo.db.sql.SelectStmt.Builder, org.mojolang.mojo.db.sql.SelectStmtOrBuilder> selectStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
-     * @return Whether the selectStmtVal field is set.
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
+     * @return Whether the selectStmt field is set.
      */
     @java.lang.Override
-    public boolean hasSelectStmtVal() {
+    public boolean hasSelectStmt() {
       return statementCase_ == 25;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
-     * @return The selectStmtVal.
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
+     * @return The selectStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.SelectStmt getSelectStmtVal() {
-      if (selectStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.SelectStmt getSelectStmt() {
+      if (selectStmtBuilder_ == null) {
         if (statementCase_ == 25) {
           return (org.mojolang.mojo.db.sql.SelectStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.SelectStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 25) {
-          return selectStmtValBuilder_.getMessage();
+          return selectStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.SelectStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
      */
-    public Builder setSelectStmtVal(org.mojolang.mojo.db.sql.SelectStmt value) {
-      if (selectStmtValBuilder_ == null) {
+    public Builder setSelectStmt(org.mojolang.mojo.db.sql.SelectStmt value) {
+      if (selectStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        selectStmtValBuilder_.setMessage(value);
+        selectStmtBuilder_.setMessage(value);
       }
       statementCase_ = 25;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
      */
-    public Builder setSelectStmtVal(
+    public Builder setSelectStmt(
         org.mojolang.mojo.db.sql.SelectStmt.Builder builderForValue) {
-      if (selectStmtValBuilder_ == null) {
+      if (selectStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        selectStmtValBuilder_.setMessage(builderForValue.build());
+        selectStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 25;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
      */
-    public Builder mergeSelectStmtVal(org.mojolang.mojo.db.sql.SelectStmt value) {
-      if (selectStmtValBuilder_ == null) {
+    public Builder mergeSelectStmt(org.mojolang.mojo.db.sql.SelectStmt value) {
+      if (selectStmtBuilder_ == null) {
         if (statementCase_ == 25 &&
             statement_ != org.mojolang.mojo.db.sql.SelectStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.SelectStmt.newBuilder((org.mojolang.mojo.db.sql.SelectStmt) statement_)
@@ -4792,18 +4640,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 25) {
-          selectStmtValBuilder_.mergeFrom(value);
+          selectStmtBuilder_.mergeFrom(value);
+        } else {
+          selectStmtBuilder_.setMessage(value);
         }
-        selectStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 25;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
      */
-    public Builder clearSelectStmtVal() {
-      if (selectStmtValBuilder_ == null) {
+    public Builder clearSelectStmt() {
+      if (selectStmtBuilder_ == null) {
         if (statementCase_ == 25) {
           statementCase_ = 0;
           statement_ = null;
@@ -4814,23 +4663,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        selectStmtValBuilder_.clear();
+        selectStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
      */
-    public org.mojolang.mojo.db.sql.SelectStmt.Builder getSelectStmtValBuilder() {
-      return getSelectStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.SelectStmt.Builder getSelectStmtBuilder() {
+      return getSelectStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.SelectStmtOrBuilder getSelectStmtValOrBuilder() {
-      if ((statementCase_ == 25) && (selectStmtValBuilder_ != null)) {
-        return selectStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.SelectStmtOrBuilder getSelectStmtOrBuilder() {
+      if ((statementCase_ == 25) && (selectStmtBuilder_ != null)) {
+        return selectStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 25) {
           return (org.mojolang.mojo.db.sql.SelectStmt) statement_;
@@ -4839,16 +4688,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.SelectStmt select_stmt_val = 25;</code>
+     * <code>.mojo.db.sql.SelectStmt select_stmt = 25;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.SelectStmt, org.mojolang.mojo.db.sql.SelectStmt.Builder, org.mojolang.mojo.db.sql.SelectStmtOrBuilder> 
-        getSelectStmtValFieldBuilder() {
-      if (selectStmtValBuilder_ == null) {
+        getSelectStmtFieldBuilder() {
+      if (selectStmtBuilder_ == null) {
         if (!(statementCase_ == 25)) {
           statement_ = org.mojolang.mojo.db.sql.SelectStmt.getDefaultInstance();
         }
-        selectStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        selectStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.SelectStmt, org.mojolang.mojo.db.sql.SelectStmt.Builder, org.mojolang.mojo.db.sql.SelectStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.SelectStmt) statement_,
                 getParentForChildren(),
@@ -4856,73 +4705,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 25;
-      onChanged();;
-      return selectStmtValBuilder_;
+      onChanged();
+      return selectStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.UpdateStmt, org.mojolang.mojo.db.sql.UpdateStmt.Builder, org.mojolang.mojo.db.sql.UpdateStmtOrBuilder> updateStmtValBuilder_;
+        org.mojolang.mojo.db.sql.UpdateStmt, org.mojolang.mojo.db.sql.UpdateStmt.Builder, org.mojolang.mojo.db.sql.UpdateStmtOrBuilder> updateStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
-     * @return Whether the updateStmtVal field is set.
+     * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
+     * @return Whether the updateStmt field is set.
      */
     @java.lang.Override
-    public boolean hasUpdateStmtVal() {
+    public boolean hasUpdateStmt() {
       return statementCase_ == 26;
     }
     /**
-     * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
-     * @return The updateStmtVal.
+     * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
+     * @return The updateStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.UpdateStmt getUpdateStmtVal() {
-      if (updateStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.UpdateStmt getUpdateStmt() {
+      if (updateStmtBuilder_ == null) {
         if (statementCase_ == 26) {
           return (org.mojolang.mojo.db.sql.UpdateStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.UpdateStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 26) {
-          return updateStmtValBuilder_.getMessage();
+          return updateStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.UpdateStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
+     * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
      */
-    public Builder setUpdateStmtVal(org.mojolang.mojo.db.sql.UpdateStmt value) {
-      if (updateStmtValBuilder_ == null) {
+    public Builder setUpdateStmt(org.mojolang.mojo.db.sql.UpdateStmt value) {
+      if (updateStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        updateStmtValBuilder_.setMessage(value);
+        updateStmtBuilder_.setMessage(value);
       }
       statementCase_ = 26;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
+     * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
      */
-    public Builder setUpdateStmtVal(
+    public Builder setUpdateStmt(
         org.mojolang.mojo.db.sql.UpdateStmt.Builder builderForValue) {
-      if (updateStmtValBuilder_ == null) {
+      if (updateStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        updateStmtValBuilder_.setMessage(builderForValue.build());
+        updateStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 26;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
+     * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
      */
-    public Builder mergeUpdateStmtVal(org.mojolang.mojo.db.sql.UpdateStmt value) {
-      if (updateStmtValBuilder_ == null) {
+    public Builder mergeUpdateStmt(org.mojolang.mojo.db.sql.UpdateStmt value) {
+      if (updateStmtBuilder_ == null) {
         if (statementCase_ == 26 &&
             statement_ != org.mojolang.mojo.db.sql.UpdateStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.UpdateStmt.newBuilder((org.mojolang.mojo.db.sql.UpdateStmt) statement_)
@@ -4933,18 +4782,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 26) {
-          updateStmtValBuilder_.mergeFrom(value);
+          updateStmtBuilder_.mergeFrom(value);
+        } else {
+          updateStmtBuilder_.setMessage(value);
         }
-        updateStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 26;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
+     * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
      */
-    public Builder clearUpdateStmtVal() {
-      if (updateStmtValBuilder_ == null) {
+    public Builder clearUpdateStmt() {
+      if (updateStmtBuilder_ == null) {
         if (statementCase_ == 26) {
           statementCase_ = 0;
           statement_ = null;
@@ -4955,23 +4805,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        updateStmtValBuilder_.clear();
+        updateStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
+     * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
      */
-    public org.mojolang.mojo.db.sql.UpdateStmt.Builder getUpdateStmtValBuilder() {
-      return getUpdateStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.UpdateStmt.Builder getUpdateStmtBuilder() {
+      return getUpdateStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
+     * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.UpdateStmtOrBuilder getUpdateStmtValOrBuilder() {
-      if ((statementCase_ == 26) && (updateStmtValBuilder_ != null)) {
-        return updateStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.UpdateStmtOrBuilder getUpdateStmtOrBuilder() {
+      if ((statementCase_ == 26) && (updateStmtBuilder_ != null)) {
+        return updateStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 26) {
           return (org.mojolang.mojo.db.sql.UpdateStmt) statement_;
@@ -4980,16 +4830,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.UpdateStmt update_stmt_val = 26;</code>
+     * <code>.mojo.db.sql.UpdateStmt update_stmt = 26;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.UpdateStmt, org.mojolang.mojo.db.sql.UpdateStmt.Builder, org.mojolang.mojo.db.sql.UpdateStmtOrBuilder> 
-        getUpdateStmtValFieldBuilder() {
-      if (updateStmtValBuilder_ == null) {
+        getUpdateStmtFieldBuilder() {
+      if (updateStmtBuilder_ == null) {
         if (!(statementCase_ == 26)) {
           statement_ = org.mojolang.mojo.db.sql.UpdateStmt.getDefaultInstance();
         }
-        updateStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        updateStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.UpdateStmt, org.mojolang.mojo.db.sql.UpdateStmt.Builder, org.mojolang.mojo.db.sql.UpdateStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.UpdateStmt) statement_,
                 getParentForChildren(),
@@ -4997,73 +4847,73 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 26;
-      onChanged();;
-      return updateStmtValBuilder_;
+      onChanged();
+      return updateStmtBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.db.sql.VacuumStmt, org.mojolang.mojo.db.sql.VacuumStmt.Builder, org.mojolang.mojo.db.sql.VacuumStmtOrBuilder> vacuumStmtValBuilder_;
+        org.mojolang.mojo.db.sql.VacuumStmt, org.mojolang.mojo.db.sql.VacuumStmt.Builder, org.mojolang.mojo.db.sql.VacuumStmtOrBuilder> vacuumStmtBuilder_;
     /**
-     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
-     * @return Whether the vacuumStmtVal field is set.
+     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
+     * @return Whether the vacuumStmt field is set.
      */
     @java.lang.Override
-    public boolean hasVacuumStmtVal() {
+    public boolean hasVacuumStmt() {
       return statementCase_ == 27;
     }
     /**
-     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
-     * @return The vacuumStmtVal.
+     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
+     * @return The vacuumStmt.
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.VacuumStmt getVacuumStmtVal() {
-      if (vacuumStmtValBuilder_ == null) {
+    public org.mojolang.mojo.db.sql.VacuumStmt getVacuumStmt() {
+      if (vacuumStmtBuilder_ == null) {
         if (statementCase_ == 27) {
           return (org.mojolang.mojo.db.sql.VacuumStmt) statement_;
         }
         return org.mojolang.mojo.db.sql.VacuumStmt.getDefaultInstance();
       } else {
         if (statementCase_ == 27) {
-          return vacuumStmtValBuilder_.getMessage();
+          return vacuumStmtBuilder_.getMessage();
         }
         return org.mojolang.mojo.db.sql.VacuumStmt.getDefaultInstance();
       }
     }
     /**
-     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
+     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
      */
-    public Builder setVacuumStmtVal(org.mojolang.mojo.db.sql.VacuumStmt value) {
-      if (vacuumStmtValBuilder_ == null) {
+    public Builder setVacuumStmt(org.mojolang.mojo.db.sql.VacuumStmt value) {
+      if (vacuumStmtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         statement_ = value;
         onChanged();
       } else {
-        vacuumStmtValBuilder_.setMessage(value);
+        vacuumStmtBuilder_.setMessage(value);
       }
       statementCase_ = 27;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
+     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
      */
-    public Builder setVacuumStmtVal(
+    public Builder setVacuumStmt(
         org.mojolang.mojo.db.sql.VacuumStmt.Builder builderForValue) {
-      if (vacuumStmtValBuilder_ == null) {
+      if (vacuumStmtBuilder_ == null) {
         statement_ = builderForValue.build();
         onChanged();
       } else {
-        vacuumStmtValBuilder_.setMessage(builderForValue.build());
+        vacuumStmtBuilder_.setMessage(builderForValue.build());
       }
       statementCase_ = 27;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
+     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
      */
-    public Builder mergeVacuumStmtVal(org.mojolang.mojo.db.sql.VacuumStmt value) {
-      if (vacuumStmtValBuilder_ == null) {
+    public Builder mergeVacuumStmt(org.mojolang.mojo.db.sql.VacuumStmt value) {
+      if (vacuumStmtBuilder_ == null) {
         if (statementCase_ == 27 &&
             statement_ != org.mojolang.mojo.db.sql.VacuumStmt.getDefaultInstance()) {
           statement_ = org.mojolang.mojo.db.sql.VacuumStmt.newBuilder((org.mojolang.mojo.db.sql.VacuumStmt) statement_)
@@ -5074,18 +4924,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (statementCase_ == 27) {
-          vacuumStmtValBuilder_.mergeFrom(value);
+          vacuumStmtBuilder_.mergeFrom(value);
+        } else {
+          vacuumStmtBuilder_.setMessage(value);
         }
-        vacuumStmtValBuilder_.setMessage(value);
       }
       statementCase_ = 27;
       return this;
     }
     /**
-     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
+     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
      */
-    public Builder clearVacuumStmtVal() {
-      if (vacuumStmtValBuilder_ == null) {
+    public Builder clearVacuumStmt() {
+      if (vacuumStmtBuilder_ == null) {
         if (statementCase_ == 27) {
           statementCase_ = 0;
           statement_ = null;
@@ -5096,23 +4947,23 @@ private static final long serialVersionUID = 0L;
           statementCase_ = 0;
           statement_ = null;
         }
-        vacuumStmtValBuilder_.clear();
+        vacuumStmtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
+     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
      */
-    public org.mojolang.mojo.db.sql.VacuumStmt.Builder getVacuumStmtValBuilder() {
-      return getVacuumStmtValFieldBuilder().getBuilder();
+    public org.mojolang.mojo.db.sql.VacuumStmt.Builder getVacuumStmtBuilder() {
+      return getVacuumStmtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
+     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
      */
     @java.lang.Override
-    public org.mojolang.mojo.db.sql.VacuumStmtOrBuilder getVacuumStmtValOrBuilder() {
-      if ((statementCase_ == 27) && (vacuumStmtValBuilder_ != null)) {
-        return vacuumStmtValBuilder_.getMessageOrBuilder();
+    public org.mojolang.mojo.db.sql.VacuumStmtOrBuilder getVacuumStmtOrBuilder() {
+      if ((statementCase_ == 27) && (vacuumStmtBuilder_ != null)) {
+        return vacuumStmtBuilder_.getMessageOrBuilder();
       } else {
         if (statementCase_ == 27) {
           return (org.mojolang.mojo.db.sql.VacuumStmt) statement_;
@@ -5121,16 +4972,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt_val = 27;</code>
+     * <code>.mojo.db.sql.VacuumStmt vacuum_stmt = 27;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.VacuumStmt, org.mojolang.mojo.db.sql.VacuumStmt.Builder, org.mojolang.mojo.db.sql.VacuumStmtOrBuilder> 
-        getVacuumStmtValFieldBuilder() {
-      if (vacuumStmtValBuilder_ == null) {
+        getVacuumStmtFieldBuilder() {
+      if (vacuumStmtBuilder_ == null) {
         if (!(statementCase_ == 27)) {
           statement_ = org.mojolang.mojo.db.sql.VacuumStmt.getDefaultInstance();
         }
-        vacuumStmtValBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        vacuumStmtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.mojolang.mojo.db.sql.VacuumStmt, org.mojolang.mojo.db.sql.VacuumStmt.Builder, org.mojolang.mojo.db.sql.VacuumStmtOrBuilder>(
                 (org.mojolang.mojo.db.sql.VacuumStmt) statement_,
                 getParentForChildren(),
@@ -5138,8 +4989,8 @@ private static final long serialVersionUID = 0L;
         statement_ = null;
       }
       statementCase_ = 27;
-      onChanged();;
-      return vacuumStmtValBuilder_;
+      onChanged();
+      return vacuumStmtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -5174,7 +5025,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Statement(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

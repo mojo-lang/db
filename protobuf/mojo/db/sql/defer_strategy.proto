@@ -10,12 +10,12 @@ option java_outer_classname = "DeferStrategyProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message DeferStrategy {
-    
     enum Strategy {
         STRATEGY_UNSPECIFIED=0;
         STRATEGY_INITIALLY_DEFERRED=1;
         STRATEGY_INITIALLY_IMMEDIATE=2;
     }
+
     bool not = 1;
     Strategy strategy = 2;
 }

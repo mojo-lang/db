@@ -40,7 +40,6 @@ message BetweenExpr {
 }
 
 message BinaryExpr {
-    
     enum Operator {
         OPERATOR_UNSPECIFIED=0;
         OPERATOR_PLUS=1;
@@ -62,6 +61,7 @@ message BinaryExpr {
         OPERATOR_CONCAT=30;
         OPERATOR_EXTENDED=99;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int32 kind = 4;
@@ -74,11 +74,11 @@ message BinaryExpr {
 }
 
 message CaseExpr {
-    
     message Branch {
         Expression when = 1;
         Expression then = 2;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int32 kind = 4;
@@ -114,13 +114,13 @@ message DerivedColumn {
 }
 
 message CompoundSelect {
-    
     enum Operator {
         OPERATOR_UNSPECIFIED=0;
         OPERATOR_UNION=1;
         OPERATOR_INTERSECT=2;
         OPERATOR_EXCEPT=3;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int64 kind = 4;
@@ -259,14 +259,14 @@ message IsExpr {
 }
 
 message JoinClause {
-    
     enum Operator {
         OPERATOR_UNSPECIFIED=0;
     }
-    
+
     message Constraint {
         int64 v = 1;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int64 kind = 4;
@@ -313,11 +313,11 @@ message MatchExpr {
 }
 
 message NullExpr {
-    
     enum Operator {
         OPERATOR_IS_NULL=0;
         OPERATOR_NOT_NULL=1;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int32 kind = 4;
@@ -433,7 +433,6 @@ message TableQuery {
 }
 
 message UnaryExpr {
-    
     enum Operator {
         OPERATOR_UNSPECIFIED=0;
         OPERATOR_MINUS=1;
@@ -443,6 +442,7 @@ message UnaryExpr {
         OPERATOR_BIT_NOT=5;
         OPERATOR_EXTENDED=99;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int32 kind = 4;

@@ -33,130 +33,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ForeignKeyClause(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            org.mojolang.mojo.lang.Position.Builder subBuilder = null;
-            if (startPosition_ != null) {
-              subBuilder = startPosition_.toBuilder();
-            }
-            startPosition_ = input.readMessage(org.mojolang.mojo.lang.Position.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startPosition_);
-              startPosition_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
-            org.mojolang.mojo.lang.Position.Builder subBuilder = null;
-            if (endPosition_ != null) {
-              subBuilder = endPosition_.toBuilder();
-            }
-            endPosition_ = input.readMessage(org.mojolang.mojo.lang.Position.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endPosition_);
-              endPosition_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 32: {
-
-            kind_ = input.readInt64();
-            break;
-          }
-          case 40: {
-
-            implicit_ = input.readBool();
-            break;
-          }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            table_ = s;
-            break;
-          }
-          case 90: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              columns_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            columns_.add(s);
-            break;
-          }
-          case 96: {
-            int rawValue = input.readEnum();
-
-            match_ = rawValue;
-            break;
-          }
-          case 106: {
-            org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Builder subBuilder = null;
-            if (action_ != null) {
-              subBuilder = action_.toBuilder();
-            }
-            action_ = input.readMessage(org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(action_);
-              action_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 122: {
-            org.mojolang.mojo.db.sql.DeferStrategy.Builder subBuilder = null;
-            if (deferStrategy_ != null) {
-              subBuilder = deferStrategy_.toBuilder();
-            }
-            deferStrategy_ = input.readMessage(org.mojolang.mojo.db.sql.DeferStrategy.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(deferStrategy_);
-              deferStrategy_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        columns_ = columns_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.db.sql.ForeignKeyClauseProto.internal_static_mojo_db_sql_ForeignKeyClause_descriptor;
@@ -350,55 +226,6 @@ private static final long serialVersionUID = 0L;
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private TriggerAction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              trigger_ = rawValue;
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              action_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -657,7 +484,7 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int TRIGGER_FIELD_NUMBER = 1;
-    private int trigger_;
+    private int trigger_ = 0;
     /**
      * <code>.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger trigger = 1;</code>
      * @return The enum numeric value on the wire for trigger.
@@ -670,13 +497,12 @@ private static final long serialVersionUID = 0L;
      * @return The trigger.
      */
     @java.lang.Override public org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger getTrigger() {
-      @SuppressWarnings("deprecation")
-      org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger result = org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger.valueOf(trigger_);
+      org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger result = org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger.forNumber(trigger_);
       return result == null ? org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger.UNRECOGNIZED : result;
     }
 
     public static final int ACTION_FIELD_NUMBER = 2;
-    private int action_;
+    private int action_ = 0;
     /**
      * <code>.mojo.db.sql.ForeignKeyClause.TriggerAction.Action action = 2;</code>
      * @return The enum numeric value on the wire for action.
@@ -689,8 +515,7 @@ private static final long serialVersionUID = 0L;
      * @return The action.
      */
     @java.lang.Override public org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action getAction() {
-      @SuppressWarnings("deprecation")
-      org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action result = org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action.valueOf(action_);
+      org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action result = org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action.forNumber(action_);
       return result == null ? org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action.UNRECOGNIZED : result;
     }
 
@@ -714,7 +539,7 @@ private static final long serialVersionUID = 0L;
       if (action_ != org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action.ACTION_CASCADE.getNumber()) {
         output.writeEnum(2, action_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -731,7 +556,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, action_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -748,7 +573,7 @@ private static final long serialVersionUID = 0L;
 
       if (trigger_ != other.trigger_) return false;
       if (action_ != other.action_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -763,7 +588,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + trigger_;
       hash = (37 * hash) + ACTION_FIELD_NUMBER;
       hash = (53 * hash) + action_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -880,26 +705,20 @@ private static final long serialVersionUID = 0L;
 
       // Construct using org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         trigger_ = 0;
-
         action_ = 0;
-
         return this;
       }
 
@@ -926,10 +745,19 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction buildPartial() {
         org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction result = new org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction(this);
-        result.trigger_ = trigger_;
-        result.action_ = action_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.trigger_ = trigger_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.action_ = action_;
+        }
       }
 
       @java.lang.Override
@@ -982,7 +810,7 @@ private static final long serialVersionUID = 0L;
         if (other.action_ != 0) {
           setActionValue(other.getActionValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -997,19 +825,43 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                trigger_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                action_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int trigger_ = 0;
       /**
@@ -1025,8 +877,8 @@ private static final long serialVersionUID = 0L;
        * @return This builder for chaining.
        */
       public Builder setTriggerValue(int value) {
-        
         trigger_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1036,8 +888,7 @@ private static final long serialVersionUID = 0L;
        */
       @java.lang.Override
       public org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger getTrigger() {
-        @SuppressWarnings("deprecation")
-        org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger result = org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger.valueOf(trigger_);
+        org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger result = org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger.forNumber(trigger_);
         return result == null ? org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Trigger.UNRECOGNIZED : result;
       }
       /**
@@ -1049,7 +900,7 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         trigger_ = value.getNumber();
         onChanged();
         return this;
@@ -1059,7 +910,7 @@ private static final long serialVersionUID = 0L;
        * @return This builder for chaining.
        */
       public Builder clearTrigger() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         trigger_ = 0;
         onChanged();
         return this;
@@ -1079,8 +930,8 @@ private static final long serialVersionUID = 0L;
        * @return This builder for chaining.
        */
       public Builder setActionValue(int value) {
-        
         action_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1090,8 +941,7 @@ private static final long serialVersionUID = 0L;
        */
       @java.lang.Override
       public org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action getAction() {
-        @SuppressWarnings("deprecation")
-        org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action result = org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action.valueOf(action_);
+        org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action result = org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action.forNumber(action_);
         return result == null ? org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Action.UNRECOGNIZED : result;
       }
       /**
@@ -1103,7 +953,7 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         action_ = value.getNumber();
         onChanged();
         return this;
@@ -1113,7 +963,7 @@ private static final long serialVersionUID = 0L;
        * @return This builder for chaining.
        */
       public Builder clearAction() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         action_ = 0;
         onChanged();
         return this;
@@ -1151,7 +1001,18 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TriggerAction(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1194,7 +1055,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.lang.PositionOrBuilder getStartPositionOrBuilder() {
-    return getStartPosition();
+    return startPosition_ == null ? org.mojolang.mojo.lang.Position.getDefaultInstance() : startPosition_;
   }
 
   public static final int END_POSITION_FIELD_NUMBER = 2;
@@ -1220,11 +1081,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.lang.PositionOrBuilder getEndPositionOrBuilder() {
-    return getEndPosition();
+    return endPosition_ == null ? org.mojolang.mojo.lang.Position.getDefaultInstance() : endPosition_;
   }
 
   public static final int KIND_FIELD_NUMBER = 4;
-  private long kind_;
+  private long kind_ = 0L;
   /**
    * <code>int64 kind = 4;</code>
    * @return The kind.
@@ -1235,7 +1096,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IMPLICIT_FIELD_NUMBER = 5;
-  private boolean implicit_;
+  private boolean implicit_ = false;
   /**
    * <code>bool implicit = 5;</code>
    * @return The implicit.
@@ -1246,7 +1107,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TABLE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object table_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object table_ = "";
   /**
    * <code>string table = 10;</code>
    * @return The table.
@@ -1284,6 +1146,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COLUMNS_FIELD_NUMBER = 11;
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList columns_;
   /**
    * <code>repeated string columns = 11;</code>
@@ -1319,7 +1182,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MATCH_FIELD_NUMBER = 12;
-  private int match_;
+  private int match_ = 0;
   /**
    * <code>.mojo.db.sql.ForeignKeyClause.MatchType match = 12;</code>
    * @return The enum numeric value on the wire for match.
@@ -1332,8 +1195,7 @@ private static final long serialVersionUID = 0L;
    * @return The match.
    */
   @java.lang.Override public org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType getMatch() {
-    @SuppressWarnings("deprecation")
-    org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType result = org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType.valueOf(match_);
+    org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType result = org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType.forNumber(match_);
     return result == null ? org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType.UNRECOGNIZED : result;
   }
 
@@ -1360,7 +1222,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerActionOrBuilder getActionOrBuilder() {
-    return getAction();
+    return action_ == null ? org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.getDefaultInstance() : action_;
   }
 
   public static final int DEFER_STRATEGY_FIELD_NUMBER = 15;
@@ -1386,7 +1248,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.db.sql.DeferStrategyOrBuilder getDeferStrategyOrBuilder() {
-    return getDeferStrategy();
+    return deferStrategy_ == null ? org.mojolang.mojo.db.sql.DeferStrategy.getDefaultInstance() : deferStrategy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1430,7 +1292,7 @@ private static final long serialVersionUID = 0L;
     if (deferStrategy_ != null) {
       output.writeMessage(15, getDeferStrategy());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1478,7 +1340,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getDeferStrategy());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1522,7 +1384,7 @@ private static final long serialVersionUID = 0L;
       if (!getDeferStrategy()
           .equals(other.getDeferStrategy())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1563,7 +1425,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DEFER_STRATEGY_FIELD_NUMBER;
       hash = (53 * hash) + getDeferStrategy().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1680,54 +1542,42 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.db.sql.ForeignKeyClause.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startPositionBuilder_ == null) {
-        startPosition_ = null;
-      } else {
-        startPosition_ = null;
+      bitField0_ = 0;
+      startPosition_ = null;
+      if (startPositionBuilder_ != null) {
+        startPositionBuilder_.dispose();
         startPositionBuilder_ = null;
       }
-      if (endPositionBuilder_ == null) {
-        endPosition_ = null;
-      } else {
-        endPosition_ = null;
+      endPosition_ = null;
+      if (endPositionBuilder_ != null) {
+        endPositionBuilder_.dispose();
         endPositionBuilder_ = null;
       }
       kind_ = 0L;
-
       implicit_ = false;
-
       table_ = "";
-
       columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       match_ = 0;
-
-      if (actionBuilder_ == null) {
-        action_ = null;
-      } else {
-        action_ = null;
+      action_ = null;
+      if (actionBuilder_ != null) {
+        actionBuilder_.dispose();
         actionBuilder_ = null;
       }
-      if (deferStrategyBuilder_ == null) {
-        deferStrategy_ = null;
-      } else {
-        deferStrategy_ = null;
+      deferStrategy_ = null;
+      if (deferStrategyBuilder_ != null) {
+        deferStrategyBuilder_.dispose();
         deferStrategyBuilder_ = null;
       }
       return this;
@@ -1756,38 +1606,54 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.db.sql.ForeignKeyClause buildPartial() {
       org.mojolang.mojo.db.sql.ForeignKeyClause result = new org.mojolang.mojo.db.sql.ForeignKeyClause(this);
-      int from_bitField0_ = bitField0_;
-      if (startPositionBuilder_ == null) {
-        result.startPosition_ = startPosition_;
-      } else {
-        result.startPosition_ = startPositionBuilder_.build();
-      }
-      if (endPositionBuilder_ == null) {
-        result.endPosition_ = endPosition_;
-      } else {
-        result.endPosition_ = endPositionBuilder_.build();
-      }
-      result.kind_ = kind_;
-      result.implicit_ = implicit_;
-      result.table_ = table_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        columns_ = columns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.columns_ = columns_;
-      result.match_ = match_;
-      if (actionBuilder_ == null) {
-        result.action_ = action_;
-      } else {
-        result.action_ = actionBuilder_.build();
-      }
-      if (deferStrategyBuilder_ == null) {
-        result.deferStrategy_ = deferStrategy_;
-      } else {
-        result.deferStrategy_ = deferStrategyBuilder_.build();
-      }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(org.mojolang.mojo.db.sql.ForeignKeyClause result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        columns_ = columns_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.columns_ = columns_;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.db.sql.ForeignKeyClause result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startPosition_ = startPositionBuilder_ == null
+            ? startPosition_
+            : startPositionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endPosition_ = endPositionBuilder_ == null
+            ? endPosition_
+            : endPositionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.implicit_ = implicit_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.table_ = table_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.match_ = match_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.action_ = actionBuilder_ == null
+            ? action_
+            : actionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.deferStrategy_ = deferStrategyBuilder_ == null
+            ? deferStrategy_
+            : deferStrategyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1848,12 +1714,13 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getTable().isEmpty()) {
         table_ = other.table_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.columns_.isEmpty()) {
         if (columns_.isEmpty()) {
           columns_ = other.columns_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureColumnsIsMutable();
           columns_.addAll(other.columns_);
@@ -1869,7 +1736,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasDeferStrategy()) {
         mergeDeferStrategy(other.getDeferStrategy());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1884,17 +1751,84 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.db.sql.ForeignKeyClause parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getStartPositionFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getEndPositionFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            case 32: {
+              kind_ = input.readInt64();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 32
+            case 40: {
+              implicit_ = input.readBool();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 40
+            case 82: {
+              table_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 82
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureColumnsIsMutable();
+              columns_.add(s);
+              break;
+            } // case 90
+            case 96: {
+              match_ = input.readEnum();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 96
+            case 106: {
+              input.readMessage(
+                  getActionFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 106
+            case 122: {
+              input.readMessage(
+                  getDeferStrategyFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 122
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.db.sql.ForeignKeyClause) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int bitField0_;
@@ -1907,7 +1841,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the startPosition field is set.
      */
     public boolean hasStartPosition() {
-      return startPositionBuilder_ != null || startPosition_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.mojo.lang.Position start_position = 1;</code>
@@ -1929,11 +1863,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         startPosition_ = value;
-        onChanged();
       } else {
         startPositionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1943,11 +1877,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.lang.Position.Builder builderForValue) {
       if (startPositionBuilder_ == null) {
         startPosition_ = builderForValue.build();
-        onChanged();
       } else {
         startPositionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1955,38 +1889,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeStartPosition(org.mojolang.mojo.lang.Position value) {
       if (startPositionBuilder_ == null) {
-        if (startPosition_ != null) {
-          startPosition_ =
-            org.mojolang.mojo.lang.Position.newBuilder(startPosition_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0) &&
+          startPosition_ != null &&
+          startPosition_ != org.mojolang.mojo.lang.Position.getDefaultInstance()) {
+          getStartPositionBuilder().mergeFrom(value);
         } else {
           startPosition_ = value;
         }
-        onChanged();
       } else {
         startPositionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.lang.Position start_position = 1;</code>
      */
     public Builder clearStartPosition() {
-      if (startPositionBuilder_ == null) {
-        startPosition_ = null;
-        onChanged();
-      } else {
-        startPosition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startPosition_ = null;
+      if (startPositionBuilder_ != null) {
+        startPositionBuilder_.dispose();
         startPositionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.lang.Position start_position = 1;</code>
      */
     public org.mojolang.mojo.lang.Position.Builder getStartPositionBuilder() {
-      
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartPositionFieldBuilder().getBuilder();
     }
@@ -2026,7 +1960,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the endPosition field is set.
      */
     public boolean hasEndPosition() {
-      return endPositionBuilder_ != null || endPosition_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.mojo.lang.Position end_position = 2;</code>
@@ -2048,11 +1982,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         endPosition_ = value;
-        onChanged();
       } else {
         endPositionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2062,11 +1996,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.lang.Position.Builder builderForValue) {
       if (endPositionBuilder_ == null) {
         endPosition_ = builderForValue.build();
-        onChanged();
       } else {
         endPositionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2074,38 +2008,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeEndPosition(org.mojolang.mojo.lang.Position value) {
       if (endPositionBuilder_ == null) {
-        if (endPosition_ != null) {
-          endPosition_ =
-            org.mojolang.mojo.lang.Position.newBuilder(endPosition_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          endPosition_ != null &&
+          endPosition_ != org.mojolang.mojo.lang.Position.getDefaultInstance()) {
+          getEndPositionBuilder().mergeFrom(value);
         } else {
           endPosition_ = value;
         }
-        onChanged();
       } else {
         endPositionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.lang.Position end_position = 2;</code>
      */
     public Builder clearEndPosition() {
-      if (endPositionBuilder_ == null) {
-        endPosition_ = null;
-        onChanged();
-      } else {
-        endPosition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endPosition_ = null;
+      if (endPositionBuilder_ != null) {
+        endPositionBuilder_.dispose();
         endPositionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.lang.Position end_position = 2;</code>
      */
     public org.mojolang.mojo.lang.Position.Builder getEndPositionBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndPositionFieldBuilder().getBuilder();
     }
@@ -2154,6 +2088,7 @@ private static final long serialVersionUID = 0L;
     public Builder setKind(long value) {
       
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2162,7 +2097,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      
+      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = 0L;
       onChanged();
       return this;
@@ -2185,6 +2120,7 @@ private static final long serialVersionUID = 0L;
     public Builder setImplicit(boolean value) {
       
       implicit_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2193,7 +2129,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearImplicit() {
-      
+      bitField0_ = (bitField0_ & ~0x00000008);
       implicit_ = false;
       onChanged();
       return this;
@@ -2240,11 +2176,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTable(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       table_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2253,8 +2187,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearTable() {
-      
       table_ = getDefaultInstance().getTable();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2265,21 +2199,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTableBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       table_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.LazyStringList columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         columns_ = new com.google.protobuf.LazyStringArrayList(columns_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
        }
     }
     /**
@@ -2322,10 +2254,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setColumns(
         int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnsIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureColumnsIsMutable();
       columns_.set(index, value);
       onChanged();
       return this;
@@ -2337,10 +2267,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addColumns(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnsIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureColumnsIsMutable();
       columns_.add(value);
       onChanged();
       return this;
@@ -2364,7 +2292,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearColumns() {
       columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2375,10 +2303,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addColumnsBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       ensureColumnsIsMutable();
       columns_.add(value);
       onChanged();
@@ -2399,8 +2325,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setMatchValue(int value) {
-      
       match_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2410,8 +2336,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType getMatch() {
-      @SuppressWarnings("deprecation")
-      org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType result = org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType.valueOf(match_);
+      org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType result = org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType.forNumber(match_);
       return result == null ? org.mojolang.mojo.db.sql.ForeignKeyClause.MatchType.UNRECOGNIZED : result;
     }
     /**
@@ -2423,7 +2348,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+      bitField0_ |= 0x00000040;
       match_ = value.getNumber();
       onChanged();
       return this;
@@ -2433,7 +2358,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMatch() {
-      
+      bitField0_ = (bitField0_ & ~0x00000040);
       match_ = 0;
       onChanged();
       return this;
@@ -2447,7 +2372,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the action field is set.
      */
     public boolean hasAction() {
-      return actionBuilder_ != null || action_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>.mojo.db.sql.ForeignKeyClause.TriggerAction action = 13;</code>
@@ -2469,11 +2394,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         action_ = value;
-        onChanged();
       } else {
         actionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2483,11 +2408,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Builder builderForValue) {
       if (actionBuilder_ == null) {
         action_ = builderForValue.build();
-        onChanged();
       } else {
         actionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2495,38 +2420,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAction(org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction value) {
       if (actionBuilder_ == null) {
-        if (action_ != null) {
-          action_ =
-            org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.newBuilder(action_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0) &&
+          action_ != null &&
+          action_ != org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.getDefaultInstance()) {
+          getActionBuilder().mergeFrom(value);
         } else {
           action_ = value;
         }
-        onChanged();
       } else {
         actionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.db.sql.ForeignKeyClause.TriggerAction action = 13;</code>
      */
     public Builder clearAction() {
-      if (actionBuilder_ == null) {
-        action_ = null;
-        onChanged();
-      } else {
-        action_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      action_ = null;
+      if (actionBuilder_ != null) {
+        actionBuilder_.dispose();
         actionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.db.sql.ForeignKeyClause.TriggerAction action = 13;</code>
      */
     public org.mojolang.mojo.db.sql.ForeignKeyClause.TriggerAction.Builder getActionBuilder() {
-      
+      bitField0_ |= 0x00000080;
       onChanged();
       return getActionFieldBuilder().getBuilder();
     }
@@ -2566,7 +2491,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the deferStrategy field is set.
      */
     public boolean hasDeferStrategy() {
-      return deferStrategyBuilder_ != null || deferStrategy_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>.mojo.db.sql.DeferStrategy defer_strategy = 15;</code>
@@ -2588,11 +2513,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         deferStrategy_ = value;
-        onChanged();
       } else {
         deferStrategyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2602,11 +2527,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.db.sql.DeferStrategy.Builder builderForValue) {
       if (deferStrategyBuilder_ == null) {
         deferStrategy_ = builderForValue.build();
-        onChanged();
       } else {
         deferStrategyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2614,38 +2539,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDeferStrategy(org.mojolang.mojo.db.sql.DeferStrategy value) {
       if (deferStrategyBuilder_ == null) {
-        if (deferStrategy_ != null) {
-          deferStrategy_ =
-            org.mojolang.mojo.db.sql.DeferStrategy.newBuilder(deferStrategy_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0) &&
+          deferStrategy_ != null &&
+          deferStrategy_ != org.mojolang.mojo.db.sql.DeferStrategy.getDefaultInstance()) {
+          getDeferStrategyBuilder().mergeFrom(value);
         } else {
           deferStrategy_ = value;
         }
-        onChanged();
       } else {
         deferStrategyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.db.sql.DeferStrategy defer_strategy = 15;</code>
      */
     public Builder clearDeferStrategy() {
-      if (deferStrategyBuilder_ == null) {
-        deferStrategy_ = null;
-        onChanged();
-      } else {
-        deferStrategy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      deferStrategy_ = null;
+      if (deferStrategyBuilder_ != null) {
+        deferStrategyBuilder_.dispose();
         deferStrategyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.db.sql.DeferStrategy defer_strategy = 15;</code>
      */
     public org.mojolang.mojo.db.sql.DeferStrategy.Builder getDeferStrategyBuilder() {
-      
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDeferStrategyFieldBuilder().getBuilder();
     }
@@ -2709,7 +2634,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ForeignKeyClause(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

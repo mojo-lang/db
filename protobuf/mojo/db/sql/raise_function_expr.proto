@@ -13,13 +13,13 @@ option java_outer_classname = "RaiseFunctionExprProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message RaiseFunctionExpr {
-    
     enum Action {
         ACTION_IGNORE=0;
         ACTION_ROLLBACK=1;
         ACTION_ABORT=2;
         ACTION_FAIL=3;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int32 kind = 4;

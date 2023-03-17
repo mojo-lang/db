@@ -16,16 +16,16 @@ option java_outer_classname = "UpsertClauseProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message UpsertClause {
-    
     message Conflict {
         repeated IndexedColumn columns = 1;
         WhereClause where = 2;
     }
-    
+
     message UpdateSet {
         repeated ColumnAssignment assignments = 1;
         WhereClause where = 2;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int64 kind = 4;

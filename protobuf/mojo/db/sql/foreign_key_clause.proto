@@ -14,21 +14,19 @@ option java_outer_classname = "ForeignKeyClauseProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message ForeignKeyClause {
-    
     enum MatchType {
         MATCH_TYPE_UNSPECIFIED=0;
         MATCH_TYPE_SIMPLE=1;
         MATCH_TYPE_PARTIAL=2;
         MATCH_TYPE_FULL=3;
     }
-    
+
     message TriggerAction {
-        
         enum Trigger {
             TRIGGER_UPDATED=0;
             TRIGGER_DELETED=1;
         }
-        
+
         enum Action {
             ACTION_CASCADE=0;
             ACTION_SET_NULL=1;
@@ -36,9 +34,11 @@ message ForeignKeyClause {
             ACTION_RESTRICT=3;
             ACTION_NO_ACTION=4;
         }
+
         Trigger trigger = 1;
         Action action = 2;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int64 kind = 4;

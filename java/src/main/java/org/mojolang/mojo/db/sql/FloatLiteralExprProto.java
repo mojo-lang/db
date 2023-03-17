@@ -29,14 +29,16 @@ public final class FloatLiteralExprProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$mojo/db/sql/float_literal_expr.proto\022\013" +
-      "mojo.db.sql\032\024mojo/lang/lang.proto\"\256\001\n\020Fl" +
+      "mojo.db.sql\032\024mojo/lang/lang.proto\"\365\001\n\020Fl" +
       "oatLiteralExpr\022+\n\016start_position\030\001 \001(\0132\023" +
       ".mojo.lang.Position\022)\n\014end_position\030\002 \001(" +
       "\0132\023.mojo.lang.Position\022\014\n\004kind\030\004 \001(\005\022\020\n\010" +
       "implicit\030\005 \001(\010\022\023\n\013is_negative\030\024 \001(\010\022\r\n\005v" +
-      "alue\030\036 \001(\001Bc\n\030org.mojolang.mojo.db.sqlB\025" +
-      "FloatLiteralExprProtoP\001Z.github.com/mojo" +
-      "-lang/db/go/pkg/mojo/db/sql;sqlb\006proto3"
+      "alue\030\036 \001(\001\022\025\n\rintegral_part\030# \001(\003\022\027\n\017fra" +
+      "ctional_part\030$ \001(\003\022\025\n\rexponent_part\030% \001(" +
+      "\003Bc\n\030org.mojolang.mojo.db.sqlB\025FloatLite" +
+      "ralExprProtoP\001Z.github.com/mojo-lang/db/" +
+      "go/pkg/mojo/db/sql;sqlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -48,7 +50,7 @@ public final class FloatLiteralExprProto {
     internal_static_mojo_db_sql_FloatLiteralExpr_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_db_sql_FloatLiteralExpr_descriptor,
-        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "IsNegative", "Value", });
+        new java.lang.String[] { "StartPosition", "EndPosition", "Kind", "Implicit", "IsNegative", "Value", "IntegralPart", "FractionalPart", "ExponentPart", });
     org.mojolang.mojo.lang.LangProto.getDescriptor();
   }
 

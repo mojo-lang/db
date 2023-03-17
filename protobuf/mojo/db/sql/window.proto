@@ -13,14 +13,13 @@ option java_outer_classname = "WindowProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message Window {
-    
     message Frame {
-        
         message Bound {
             Expression expression = 1;
             bool preceding = 5;
             bool following = 6;
         }
+
         string type = 1;
         Bound lower_bound = 2;
         Bound upper_bound = 3;
@@ -30,6 +29,7 @@ message Window {
         bool group = 8;
         bool ties = 9;
     }
+
     string name = 10;
     PartitionClause partition = 13;
     OrderByClause order_by = 14;

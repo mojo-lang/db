@@ -33,68 +33,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SourceFile(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            fullName_ = s;
-            break;
-          }
-          case 98: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              statements_ = new java.util.ArrayList<org.mojolang.mojo.db.sql.Statement>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            statements_.add(
-                input.readMessage(org.mojolang.mojo.db.sql.Statement.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        statements_ = java.util.Collections.unmodifiableList(statements_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.db.sql.SourceFileProto.internal_static_mojo_db_sql_SourceFile_descriptor;
@@ -109,7 +47,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    * <code>string name = 1;</code>
    * @return The name.
@@ -147,7 +86,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FULL_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object fullName_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fullName_ = "";
   /**
    * <code>string full_name = 2;</code>
    * @return The fullName.
@@ -185,6 +125,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATEMENTS_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
   private java.util.List<org.mojolang.mojo.db.sql.Statement> statements_;
   /**
    * <code>repeated .mojo.db.sql.Statement statements = 12;</code>
@@ -247,7 +188,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < statements_.size(); i++) {
       output.writeMessage(12, statements_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -266,7 +207,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, statements_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -287,7 +228,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFullName())) return false;
     if (!getStatementsList()
         .equals(other.getStatementsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -306,7 +247,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATEMENTS_FIELD_NUMBER;
       hash = (53 * hash) + getStatementsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -423,33 +364,27 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.db.sql.SourceFile.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getStatementsFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       fullName_ = "";
-
       if (statementsBuilder_ == null) {
         statements_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        statements_ = null;
         statementsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -476,20 +411,32 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.db.sql.SourceFile buildPartial() {
       org.mojolang.mojo.db.sql.SourceFile result = new org.mojolang.mojo.db.sql.SourceFile(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.fullName_ = fullName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(org.mojolang.mojo.db.sql.SourceFile result) {
       if (statementsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           statements_ = java.util.Collections.unmodifiableList(statements_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.statements_ = statements_;
       } else {
         result.statements_ = statementsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.db.sql.SourceFile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fullName_ = fullName_;
+      }
     }
 
     @java.lang.Override
@@ -538,17 +485,19 @@ private static final long serialVersionUID = 0L;
       if (other == org.mojolang.mojo.db.sql.SourceFile.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFullName().isEmpty()) {
         fullName_ = other.fullName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (statementsBuilder_ == null) {
         if (!other.statements_.isEmpty()) {
           if (statements_.isEmpty()) {
             statements_ = other.statements_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureStatementsIsMutable();
             statements_.addAll(other.statements_);
@@ -561,7 +510,7 @@ private static final long serialVersionUID = 0L;
             statementsBuilder_.dispose();
             statementsBuilder_ = null;
             statements_ = other.statements_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             statementsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getStatementsFieldBuilder() : null;
@@ -570,7 +519,7 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -585,17 +534,53 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.db.sql.SourceFile parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              name_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 10
+            case 18: {
+              fullName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            case 98: {
+              org.mojolang.mojo.db.sql.Statement m =
+                  input.readMessage(
+                      org.mojolang.mojo.db.sql.Statement.parser(),
+                      extensionRegistry);
+              if (statementsBuilder_ == null) {
+                ensureStatementsIsMutable();
+                statements_.add(m);
+              } else {
+                statementsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 98
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.db.sql.SourceFile) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int bitField0_;
@@ -641,11 +626,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setName(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -654,8 +637,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -666,12 +649,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,11 +698,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setFullName(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       fullName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -730,8 +709,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearFullName() {
-      
       fullName_ = getDefaultInstance().getFullName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -742,12 +721,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setFullNameBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       fullName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -755,9 +732,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.mojolang.mojo.db.sql.Statement> statements_ =
       java.util.Collections.emptyList();
     private void ensureStatementsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         statements_ = new java.util.ArrayList<org.mojolang.mojo.db.sql.Statement>(statements_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -907,7 +884,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearStatements() {
       if (statementsBuilder_ == null) {
         statements_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         statementsBuilder_.clear();
@@ -984,7 +961,7 @@ private static final long serialVersionUID = 0L;
         statementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.mojolang.mojo.db.sql.Statement, org.mojolang.mojo.db.sql.Statement.Builder, org.mojolang.mojo.db.sql.StatementOrBuilder>(
                 statements_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         statements_ = null;
@@ -1024,7 +1001,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SourceFile(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

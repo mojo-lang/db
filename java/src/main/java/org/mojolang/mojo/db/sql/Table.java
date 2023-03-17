@@ -30,85 +30,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Table(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            org.mojolang.mojo.db.sql.TableName.Builder subBuilder = null;
-            if (tableCase_ == 1) {
-              subBuilder = ((org.mojolang.mojo.db.sql.TableName) table_).toBuilder();
-            }
-            table_ =
-                input.readMessage(org.mojolang.mojo.db.sql.TableName.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.TableName) table_);
-              table_ = subBuilder.buildPartial();
-            }
-            tableCase_ = 1;
-            break;
-          }
-          case 18: {
-            org.mojolang.mojo.db.sql.TableFunctionName.Builder subBuilder = null;
-            if (tableCase_ == 2) {
-              subBuilder = ((org.mojolang.mojo.db.sql.TableFunctionName) table_).toBuilder();
-            }
-            table_ =
-                input.readMessage(org.mojolang.mojo.db.sql.TableFunctionName.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.TableFunctionName) table_);
-              table_ = subBuilder.buildPartial();
-            }
-            tableCase_ = 2;
-            break;
-          }
-          case 26: {
-            org.mojolang.mojo.db.sql.TableQuery.Builder subBuilder = null;
-            if (tableCase_ == 3) {
-              subBuilder = ((org.mojolang.mojo.db.sql.TableQuery) table_).toBuilder();
-            }
-            table_ =
-                input.readMessage(org.mojolang.mojo.db.sql.TableQuery.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.db.sql.TableQuery) table_);
-              table_ = subBuilder.buildPartial();
-            }
-            tableCase_ = 3;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.db.sql.SqlProto.internal_static_mojo_db_sql_Table_descriptor;
@@ -281,7 +202,7 @@ private static final long serialVersionUID = 0L;
     if (tableCase_ == 3) {
       output.writeMessage(3, (org.mojolang.mojo.db.sql.TableQuery) table_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -302,7 +223,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, (org.mojolang.mojo.db.sql.TableQuery) table_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -334,7 +255,7 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -361,7 +282,7 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -478,22 +399,27 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.db.sql.Table.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      if (tableNameValBuilder_ != null) {
+        tableNameValBuilder_.clear();
+      }
+      if (tableFunctionNameValBuilder_ != null) {
+        tableFunctionNameValBuilder_.clear();
+      }
+      if (tableQueryValBuilder_ != null) {
+        tableQueryValBuilder_.clear();
+      }
       tableCase_ = 0;
       table_ = null;
       return this;
@@ -522,30 +448,31 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.db.sql.Table buildPartial() {
       org.mojolang.mojo.db.sql.Table result = new org.mojolang.mojo.db.sql.Table(this);
-      if (tableCase_ == 1) {
-        if (tableNameValBuilder_ == null) {
-          result.table_ = table_;
-        } else {
-          result.table_ = tableNameValBuilder_.build();
-        }
-      }
-      if (tableCase_ == 2) {
-        if (tableFunctionNameValBuilder_ == null) {
-          result.table_ = table_;
-        } else {
-          result.table_ = tableFunctionNameValBuilder_.build();
-        }
-      }
-      if (tableCase_ == 3) {
-        if (tableQueryValBuilder_ == null) {
-          result.table_ = table_;
-        } else {
-          result.table_ = tableQueryValBuilder_.build();
-        }
-      }
-      result.tableCase_ = tableCase_;
+      if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.db.sql.Table result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(org.mojolang.mojo.db.sql.Table result) {
+      result.tableCase_ = tableCase_;
+      result.table_ = this.table_;
+      if (tableCase_ == 1 &&
+          tableNameValBuilder_ != null) {
+        result.table_ = tableNameValBuilder_.build();
+      }
+      if (tableCase_ == 2 &&
+          tableFunctionNameValBuilder_ != null) {
+        result.table_ = tableFunctionNameValBuilder_.build();
+      }
+      if (tableCase_ == 3 &&
+          tableQueryValBuilder_ != null) {
+        result.table_ = tableQueryValBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -609,7 +536,7 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -624,17 +551,51 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.db.sql.Table parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getTableNameValFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              tableCase_ = 1;
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getTableFunctionNameValFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              tableCase_ = 2;
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  getTableQueryValFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              tableCase_ = 3;
+              break;
+            } // case 26
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.db.sql.Table) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int tableCase_ = 0;
@@ -652,6 +613,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.db.sql.TableName, org.mojolang.mojo.db.sql.TableName.Builder, org.mojolang.mojo.db.sql.TableNameOrBuilder> tableNameValBuilder_;
@@ -727,8 +689,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (tableCase_ == 1) {
           tableNameValBuilder_.mergeFrom(value);
+        } else {
+          tableNameValBuilder_.setMessage(value);
         }
-        tableNameValBuilder_.setMessage(value);
       }
       tableCase_ = 1;
       return this;
@@ -790,7 +753,7 @@ private static final long serialVersionUID = 0L;
         table_ = null;
       }
       tableCase_ = 1;
-      onChanged();;
+      onChanged();
       return tableNameValBuilder_;
     }
 
@@ -868,8 +831,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (tableCase_ == 2) {
           tableFunctionNameValBuilder_.mergeFrom(value);
+        } else {
+          tableFunctionNameValBuilder_.setMessage(value);
         }
-        tableFunctionNameValBuilder_.setMessage(value);
       }
       tableCase_ = 2;
       return this;
@@ -931,7 +895,7 @@ private static final long serialVersionUID = 0L;
         table_ = null;
       }
       tableCase_ = 2;
-      onChanged();;
+      onChanged();
       return tableFunctionNameValBuilder_;
     }
 
@@ -1009,8 +973,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (tableCase_ == 3) {
           tableQueryValBuilder_.mergeFrom(value);
+        } else {
+          tableQueryValBuilder_.setMessage(value);
         }
-        tableQueryValBuilder_.setMessage(value);
       }
       tableCase_ = 3;
       return this;
@@ -1072,7 +1037,7 @@ private static final long serialVersionUID = 0L;
         table_ = null;
       }
       tableCase_ = 3;
-      onChanged();;
+      onChanged();
       return tableQueryValBuilder_;
     }
     @java.lang.Override
@@ -1108,7 +1073,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Table(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

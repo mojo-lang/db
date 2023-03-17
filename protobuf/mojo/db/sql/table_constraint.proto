@@ -15,21 +15,21 @@ option java_outer_classname = "TableConstraintProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message TableConstraint {
-    
     message PrimaryKey {
         repeated IndexedColumn columns = 2;
         ConflictClause conflict = 3;
     }
-    
+
     message Unique {
         repeated IndexedColumn columns = 2;
         ConflictClause conflict = 3;
     }
-    
+
     message ForeignKey {
         repeated string columns = 1;
         ForeignKeyClause clause = 2;
     }
+
     string name = 1;
     oneof constraint {
         PrimaryKey primary_key = 2;

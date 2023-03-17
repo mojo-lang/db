@@ -13,7 +13,6 @@ option java_outer_classname = "ConflictClauseProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message ConflictClause {
-    
     enum Action {
         ACTION_ROLLBACK=0;
         ACTION_ABORT=1;
@@ -21,6 +20,7 @@ message ConflictClause {
         ACTION_IGNORE=3;
         ACTION_REPLACE=4;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int64 kind = 4;

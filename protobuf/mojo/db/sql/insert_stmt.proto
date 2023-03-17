@@ -17,7 +17,6 @@ option java_outer_classname = "InsertStmtProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message InsertStmt {
-    
     enum Type {
         TYPE_INSERT=0;
         TYPE_REPLACE=1;
@@ -27,6 +26,7 @@ message InsertStmt {
         TYPE_INSERT_OR_FAIL=8;
         TYPE_INSERT_OR_IGNORE=9;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int64 kind = 4;

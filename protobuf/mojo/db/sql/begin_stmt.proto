@@ -12,13 +12,13 @@ option java_outer_classname = "BeginStmtProto";
 option java_package = "org.mojolang.mojo.db.sql";
 
 message BeginStmt {
-    
     enum Type {
         TYPE_UNSPECIFIED=0;
         TYPE_DEFERRED=1;
         TYPE_IMMEDIATE=2;
         TYPE_EXCLUSIVE=3;
     }
+
     mojo.lang.Position start_position = 1;
     mojo.lang.Position end_position = 2;
     int64 kind = 4;

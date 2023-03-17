@@ -32,131 +32,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Config(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            driver_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            dsn_ = s;
-            break;
-          }
-          case 24: {
-
-            debug_ = input.readBool();
-            break;
-          }
-          case 32: {
-
-            maxIdleConnections_ = input.readInt32();
-            break;
-          }
-          case 40: {
-
-            maxOpenConnections_ = input.readInt32();
-            break;
-          }
-          case 50: {
-            org.mojolang.mojo.core.Duration.Builder subBuilder = null;
-            if (connectionKeepAlive_ != null) {
-              subBuilder = connectionKeepAlive_.toBuilder();
-            }
-            connectionKeepAlive_ = input.readMessage(org.mojolang.mojo.core.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(connectionKeepAlive_);
-              connectionKeepAlive_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 58: {
-            org.mojolang.mojo.core.Duration.Builder subBuilder = null;
-            if (slowLogThreshold_ != null) {
-              subBuilder = slowLogThreshold_.toBuilder();
-            }
-            slowLogThreshold_ = input.readMessage(org.mojolang.mojo.core.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(slowLogThreshold_);
-              slowLogThreshold_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 64: {
-
-            enableMetric_ = input.readBool();
-            break;
-          }
-          case 72: {
-
-            enableTrace_ = input.readBool();
-            break;
-          }
-          case 80: {
-
-            enableDetailSql_ = input.readBool();
-            break;
-          }
-          case 88: {
-
-            enableLogAccess_ = input.readBool();
-            break;
-          }
-          case 96: {
-
-            enableLogAccessRequest_ = input.readBool();
-            break;
-          }
-          case 104: {
-
-            enableLogAccessResponse_ = input.readBool();
-            break;
-          }
-          case 160: {
-
-            disableAutoMigrate_ = input.readBool();
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.db.ConfigProto.internal_static_mojo_db_Config_descriptor;
@@ -171,7 +46,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DRIVER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object driver_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object driver_ = "";
   /**
    * <code>string driver = 1;</code>
    * @return The driver.
@@ -209,7 +85,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DSN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dsn_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dsn_ = "";
   /**
    * <code>string dsn = 2;</code>
    * @return The dsn.
@@ -247,7 +124,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DEBUG_FIELD_NUMBER = 3;
-  private boolean debug_;
+  private boolean debug_ = false;
   /**
    * <code>bool debug = 3;</code>
    * @return The debug.
@@ -258,7 +135,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAX_IDLE_CONNECTIONS_FIELD_NUMBER = 4;
-  private int maxIdleConnections_;
+  private int maxIdleConnections_ = 0;
   /**
    * <code>int32 max_idle_connections = 4;</code>
    * @return The maxIdleConnections.
@@ -269,7 +146,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAX_OPEN_CONNECTIONS_FIELD_NUMBER = 5;
-  private int maxOpenConnections_;
+  private int maxOpenConnections_ = 0;
   /**
    * <code>int32 max_open_connections = 5;</code>
    * @return The maxOpenConnections.
@@ -302,7 +179,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.core.DurationOrBuilder getConnectionKeepAliveOrBuilder() {
-    return getConnectionKeepAlive();
+    return connectionKeepAlive_ == null ? org.mojolang.mojo.core.Duration.getDefaultInstance() : connectionKeepAlive_;
   }
 
   public static final int SLOW_LOG_THRESHOLD_FIELD_NUMBER = 7;
@@ -328,11 +205,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.core.DurationOrBuilder getSlowLogThresholdOrBuilder() {
-    return getSlowLogThreshold();
+    return slowLogThreshold_ == null ? org.mojolang.mojo.core.Duration.getDefaultInstance() : slowLogThreshold_;
   }
 
   public static final int ENABLE_METRIC_FIELD_NUMBER = 8;
-  private boolean enableMetric_;
+  private boolean enableMetric_ = false;
   /**
    * <code>bool enable_metric = 8;</code>
    * @return The enableMetric.
@@ -343,7 +220,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ENABLE_TRACE_FIELD_NUMBER = 9;
-  private boolean enableTrace_;
+  private boolean enableTrace_ = false;
   /**
    * <code>bool enable_trace = 9;</code>
    * @return The enableTrace.
@@ -354,7 +231,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ENABLE_DETAIL_SQL_FIELD_NUMBER = 10;
-  private boolean enableDetailSql_;
+  private boolean enableDetailSql_ = false;
   /**
    * <code>bool enable_detail_sql = 10;</code>
    * @return The enableDetailSql.
@@ -365,7 +242,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ENABLE_LOG_ACCESS_FIELD_NUMBER = 11;
-  private boolean enableLogAccess_;
+  private boolean enableLogAccess_ = false;
   /**
    * <code>bool enable_log_access = 11;</code>
    * @return The enableLogAccess.
@@ -376,7 +253,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ENABLE_LOG_ACCESS_REQUEST_FIELD_NUMBER = 12;
-  private boolean enableLogAccessRequest_;
+  private boolean enableLogAccessRequest_ = false;
   /**
    * <code>bool enable_log_access_request = 12;</code>
    * @return The enableLogAccessRequest.
@@ -387,7 +264,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ENABLE_LOG_ACCESS_RESPONSE_FIELD_NUMBER = 13;
-  private boolean enableLogAccessResponse_;
+  private boolean enableLogAccessResponse_ = false;
   /**
    * <code>bool enable_log_access_response = 13;</code>
    * @return The enableLogAccessResponse.
@@ -398,7 +275,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DISABLE_AUTO_MIGRATE_FIELD_NUMBER = 20;
-  private boolean disableAutoMigrate_;
+  private boolean disableAutoMigrate_ = false;
   /**
    * <code>bool disable_auto_migrate = 20;</code>
    * @return The disableAutoMigrate.
@@ -464,7 +341,7 @@ private static final long serialVersionUID = 0L;
     if (disableAutoMigrate_ != false) {
       output.writeBool(20, disableAutoMigrate_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -527,7 +404,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(20, disableAutoMigrate_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -576,7 +453,7 @@ private static final long serialVersionUID = 0L;
         != other.getEnableLogAccessResponse()) return false;
     if (getDisableAutoMigrate()
         != other.getDisableAutoMigrate()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -627,7 +504,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DISABLE_AUTO_MIGRATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDisableAutoMigrate());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -744,58 +621,40 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.db.Config.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       driver_ = "";
-
       dsn_ = "";
-
       debug_ = false;
-
       maxIdleConnections_ = 0;
-
       maxOpenConnections_ = 0;
-
-      if (connectionKeepAliveBuilder_ == null) {
-        connectionKeepAlive_ = null;
-      } else {
-        connectionKeepAlive_ = null;
+      connectionKeepAlive_ = null;
+      if (connectionKeepAliveBuilder_ != null) {
+        connectionKeepAliveBuilder_.dispose();
         connectionKeepAliveBuilder_ = null;
       }
-      if (slowLogThresholdBuilder_ == null) {
-        slowLogThreshold_ = null;
-      } else {
-        slowLogThreshold_ = null;
+      slowLogThreshold_ = null;
+      if (slowLogThresholdBuilder_ != null) {
+        slowLogThresholdBuilder_.dispose();
         slowLogThresholdBuilder_ = null;
       }
       enableMetric_ = false;
-
       enableTrace_ = false;
-
       enableDetailSql_ = false;
-
       enableLogAccess_ = false;
-
       enableLogAccessRequest_ = false;
-
       enableLogAccessResponse_ = false;
-
       disableAutoMigrate_ = false;
-
       return this;
     }
 
@@ -822,30 +681,59 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.db.Config buildPartial() {
       org.mojolang.mojo.db.Config result = new org.mojolang.mojo.db.Config(this);
-      result.driver_ = driver_;
-      result.dsn_ = dsn_;
-      result.debug_ = debug_;
-      result.maxIdleConnections_ = maxIdleConnections_;
-      result.maxOpenConnections_ = maxOpenConnections_;
-      if (connectionKeepAliveBuilder_ == null) {
-        result.connectionKeepAlive_ = connectionKeepAlive_;
-      } else {
-        result.connectionKeepAlive_ = connectionKeepAliveBuilder_.build();
-      }
-      if (slowLogThresholdBuilder_ == null) {
-        result.slowLogThreshold_ = slowLogThreshold_;
-      } else {
-        result.slowLogThreshold_ = slowLogThresholdBuilder_.build();
-      }
-      result.enableMetric_ = enableMetric_;
-      result.enableTrace_ = enableTrace_;
-      result.enableDetailSql_ = enableDetailSql_;
-      result.enableLogAccess_ = enableLogAccess_;
-      result.enableLogAccessRequest_ = enableLogAccessRequest_;
-      result.enableLogAccessResponse_ = enableLogAccessResponse_;
-      result.disableAutoMigrate_ = disableAutoMigrate_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.db.Config result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.driver_ = driver_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dsn_ = dsn_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.debug_ = debug_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxIdleConnections_ = maxIdleConnections_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.maxOpenConnections_ = maxOpenConnections_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.connectionKeepAlive_ = connectionKeepAliveBuilder_ == null
+            ? connectionKeepAlive_
+            : connectionKeepAliveBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.slowLogThreshold_ = slowLogThresholdBuilder_ == null
+            ? slowLogThreshold_
+            : slowLogThresholdBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enableMetric_ = enableMetric_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.enableTrace_ = enableTrace_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.enableDetailSql_ = enableDetailSql_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableLogAccess_ = enableLogAccess_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.enableLogAccessRequest_ = enableLogAccessRequest_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.enableLogAccessResponse_ = enableLogAccessResponse_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.disableAutoMigrate_ = disableAutoMigrate_;
+      }
     }
 
     @java.lang.Override
@@ -894,10 +782,12 @@ private static final long serialVersionUID = 0L;
       if (other == org.mojolang.mojo.db.Config.getDefaultInstance()) return this;
       if (!other.getDriver().isEmpty()) {
         driver_ = other.driver_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDsn().isEmpty()) {
         dsn_ = other.dsn_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getDebug() != false) {
@@ -936,7 +826,7 @@ private static final long serialVersionUID = 0L;
       if (other.getDisableAutoMigrate() != false) {
         setDisableAutoMigrate(other.getDisableAutoMigrate());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -951,19 +841,107 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.db.Config parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              driver_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 10
+            case 18: {
+              dsn_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            case 24: {
+              debug_ = input.readBool();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
+            case 32: {
+              maxIdleConnections_ = input.readInt32();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 32
+            case 40: {
+              maxOpenConnections_ = input.readInt32();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 40
+            case 50: {
+              input.readMessage(
+                  getConnectionKeepAliveFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
+            case 58: {
+              input.readMessage(
+                  getSlowLogThresholdFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
+            case 64: {
+              enableMetric_ = input.readBool();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 64
+            case 72: {
+              enableTrace_ = input.readBool();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 72
+            case 80: {
+              enableDetailSql_ = input.readBool();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 80
+            case 88: {
+              enableLogAccess_ = input.readBool();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 88
+            case 96: {
+              enableLogAccessRequest_ = input.readBool();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 96
+            case 104: {
+              enableLogAccessResponse_ = input.readBool();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 104
+            case 160: {
+              disableAutoMigrate_ = input.readBool();
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 160
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.db.Config) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object driver_ = "";
     /**
@@ -1006,11 +984,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDriver(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       driver_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1019,8 +995,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDriver() {
-      
       driver_ = getDefaultInstance().getDriver();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1031,12 +1007,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDriverBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       driver_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1082,11 +1056,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDsn(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       dsn_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1095,8 +1067,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDsn() {
-      
       dsn_ = getDefaultInstance().getDsn();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1107,12 +1079,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDsnBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       dsn_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1134,6 +1104,7 @@ private static final long serialVersionUID = 0L;
     public Builder setDebug(boolean value) {
       
       debug_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1142,7 +1113,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDebug() {
-      
+      bitField0_ = (bitField0_ & ~0x00000004);
       debug_ = false;
       onChanged();
       return this;
@@ -1165,6 +1136,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMaxIdleConnections(int value) {
       
       maxIdleConnections_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1173,7 +1145,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMaxIdleConnections() {
-      
+      bitField0_ = (bitField0_ & ~0x00000008);
       maxIdleConnections_ = 0;
       onChanged();
       return this;
@@ -1196,6 +1168,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMaxOpenConnections(int value) {
       
       maxOpenConnections_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1204,7 +1177,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMaxOpenConnections() {
-      
+      bitField0_ = (bitField0_ & ~0x00000010);
       maxOpenConnections_ = 0;
       onChanged();
       return this;
@@ -1218,7 +1191,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the connectionKeepAlive field is set.
      */
     public boolean hasConnectionKeepAlive() {
-      return connectionKeepAliveBuilder_ != null || connectionKeepAlive_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>.mojo.core.Duration connection_keep_alive = 6;</code>
@@ -1240,11 +1213,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         connectionKeepAlive_ = value;
-        onChanged();
       } else {
         connectionKeepAliveBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1254,11 +1227,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.core.Duration.Builder builderForValue) {
       if (connectionKeepAliveBuilder_ == null) {
         connectionKeepAlive_ = builderForValue.build();
-        onChanged();
       } else {
         connectionKeepAliveBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1266,38 +1239,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeConnectionKeepAlive(org.mojolang.mojo.core.Duration value) {
       if (connectionKeepAliveBuilder_ == null) {
-        if (connectionKeepAlive_ != null) {
-          connectionKeepAlive_ =
-            org.mojolang.mojo.core.Duration.newBuilder(connectionKeepAlive_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0) &&
+          connectionKeepAlive_ != null &&
+          connectionKeepAlive_ != org.mojolang.mojo.core.Duration.getDefaultInstance()) {
+          getConnectionKeepAliveBuilder().mergeFrom(value);
         } else {
           connectionKeepAlive_ = value;
         }
-        onChanged();
       } else {
         connectionKeepAliveBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.core.Duration connection_keep_alive = 6;</code>
      */
     public Builder clearConnectionKeepAlive() {
-      if (connectionKeepAliveBuilder_ == null) {
-        connectionKeepAlive_ = null;
-        onChanged();
-      } else {
-        connectionKeepAlive_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      connectionKeepAlive_ = null;
+      if (connectionKeepAliveBuilder_ != null) {
+        connectionKeepAliveBuilder_.dispose();
         connectionKeepAliveBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.core.Duration connection_keep_alive = 6;</code>
      */
     public org.mojolang.mojo.core.Duration.Builder getConnectionKeepAliveBuilder() {
-      
+      bitField0_ |= 0x00000020;
       onChanged();
       return getConnectionKeepAliveFieldBuilder().getBuilder();
     }
@@ -1337,7 +1310,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the slowLogThreshold field is set.
      */
     public boolean hasSlowLogThreshold() {
-      return slowLogThresholdBuilder_ != null || slowLogThreshold_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>.mojo.core.Duration slow_log_threshold = 7;</code>
@@ -1359,11 +1332,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         slowLogThreshold_ = value;
-        onChanged();
       } else {
         slowLogThresholdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1373,11 +1346,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.core.Duration.Builder builderForValue) {
       if (slowLogThresholdBuilder_ == null) {
         slowLogThreshold_ = builderForValue.build();
-        onChanged();
       } else {
         slowLogThresholdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1385,38 +1358,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeSlowLogThreshold(org.mojolang.mojo.core.Duration value) {
       if (slowLogThresholdBuilder_ == null) {
-        if (slowLogThreshold_ != null) {
-          slowLogThreshold_ =
-            org.mojolang.mojo.core.Duration.newBuilder(slowLogThreshold_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0) &&
+          slowLogThreshold_ != null &&
+          slowLogThreshold_ != org.mojolang.mojo.core.Duration.getDefaultInstance()) {
+          getSlowLogThresholdBuilder().mergeFrom(value);
         } else {
           slowLogThreshold_ = value;
         }
-        onChanged();
       } else {
         slowLogThresholdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.core.Duration slow_log_threshold = 7;</code>
      */
     public Builder clearSlowLogThreshold() {
-      if (slowLogThresholdBuilder_ == null) {
-        slowLogThreshold_ = null;
-        onChanged();
-      } else {
-        slowLogThreshold_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      slowLogThreshold_ = null;
+      if (slowLogThresholdBuilder_ != null) {
+        slowLogThresholdBuilder_.dispose();
         slowLogThresholdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.core.Duration slow_log_threshold = 7;</code>
      */
     public org.mojolang.mojo.core.Duration.Builder getSlowLogThresholdBuilder() {
-      
+      bitField0_ |= 0x00000040;
       onChanged();
       return getSlowLogThresholdFieldBuilder().getBuilder();
     }
@@ -1465,6 +1438,7 @@ private static final long serialVersionUID = 0L;
     public Builder setEnableMetric(boolean value) {
       
       enableMetric_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1473,7 +1447,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearEnableMetric() {
-      
+      bitField0_ = (bitField0_ & ~0x00000080);
       enableMetric_ = false;
       onChanged();
       return this;
@@ -1496,6 +1470,7 @@ private static final long serialVersionUID = 0L;
     public Builder setEnableTrace(boolean value) {
       
       enableTrace_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1504,7 +1479,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearEnableTrace() {
-      
+      bitField0_ = (bitField0_ & ~0x00000100);
       enableTrace_ = false;
       onChanged();
       return this;
@@ -1527,6 +1502,7 @@ private static final long serialVersionUID = 0L;
     public Builder setEnableDetailSql(boolean value) {
       
       enableDetailSql_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1535,7 +1511,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearEnableDetailSql() {
-      
+      bitField0_ = (bitField0_ & ~0x00000200);
       enableDetailSql_ = false;
       onChanged();
       return this;
@@ -1558,6 +1534,7 @@ private static final long serialVersionUID = 0L;
     public Builder setEnableLogAccess(boolean value) {
       
       enableLogAccess_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -1566,7 +1543,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearEnableLogAccess() {
-      
+      bitField0_ = (bitField0_ & ~0x00000400);
       enableLogAccess_ = false;
       onChanged();
       return this;
@@ -1589,6 +1566,7 @@ private static final long serialVersionUID = 0L;
     public Builder setEnableLogAccessRequest(boolean value) {
       
       enableLogAccessRequest_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -1597,7 +1575,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearEnableLogAccessRequest() {
-      
+      bitField0_ = (bitField0_ & ~0x00000800);
       enableLogAccessRequest_ = false;
       onChanged();
       return this;
@@ -1620,6 +1598,7 @@ private static final long serialVersionUID = 0L;
     public Builder setEnableLogAccessResponse(boolean value) {
       
       enableLogAccessResponse_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -1628,7 +1607,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearEnableLogAccessResponse() {
-      
+      bitField0_ = (bitField0_ & ~0x00001000);
       enableLogAccessResponse_ = false;
       onChanged();
       return this;
@@ -1651,6 +1630,7 @@ private static final long serialVersionUID = 0L;
     public Builder setDisableAutoMigrate(boolean value) {
       
       disableAutoMigrate_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -1659,7 +1639,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDisableAutoMigrate() {
-      
+      bitField0_ = (bitField0_ & ~0x00002000);
       disableAutoMigrate_ = false;
       onChanged();
       return this;
@@ -1697,7 +1677,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Config(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 
