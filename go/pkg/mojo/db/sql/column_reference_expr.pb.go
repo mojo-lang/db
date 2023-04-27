@@ -46,7 +46,7 @@ func (x *ColumnReferenceExpr) Reset() {
 	}
 }
 
-func (x *ColumnReferenceExpr) String() string {
+func (x *ColumnReferenceExpr) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

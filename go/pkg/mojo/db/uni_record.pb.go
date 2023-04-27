@@ -47,7 +47,7 @@ func (x *UniRecord) Reset() {
 	}
 }
 
-func (x *UniRecord) String() string {
+func (x *UniRecord) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

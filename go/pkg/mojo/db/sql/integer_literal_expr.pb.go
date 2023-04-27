@@ -45,7 +45,7 @@ func (x *IntegerLiteralExpr) Reset() {
 	}
 }
 
-func (x *IntegerLiteralExpr) String() string {
+func (x *IntegerLiteralExpr) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

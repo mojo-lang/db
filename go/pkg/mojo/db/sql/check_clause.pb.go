@@ -44,7 +44,7 @@ func (x *CheckClause) Reset() {
 	}
 }
 
-func (x *CheckClause) String() string {
+func (x *CheckClause) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

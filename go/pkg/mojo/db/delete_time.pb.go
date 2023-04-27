@@ -40,7 +40,7 @@ func (x *DeleteTime) Reset() {
 	}
 }
 
-func (x *DeleteTime) String() string {
+func (x *DeleteTime) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

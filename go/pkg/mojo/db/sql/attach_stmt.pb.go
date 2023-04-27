@@ -43,7 +43,7 @@ func (x *AttachStmt) Reset() {
 	}
 }
 
-func (x *AttachStmt) String() string {
+func (x *AttachStmt) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

@@ -44,7 +44,7 @@ func (x *VacuumStmt) Reset() {
 	}
 }
 
-func (x *VacuumStmt) String() string {
+func (x *VacuumStmt) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

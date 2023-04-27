@@ -43,7 +43,7 @@ func (x *NullLiteralExpr) Reset() {
 	}
 }
 
-func (x *NullLiteralExpr) String() string {
+func (x *NullLiteralExpr) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

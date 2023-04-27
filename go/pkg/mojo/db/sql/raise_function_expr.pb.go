@@ -55,7 +55,7 @@ func (x RaiseFunctionExpr_Action) Enum() *RaiseFunctionExpr_Action {
 	return p
 }
 
-func (x RaiseFunctionExpr_Action) String() string {
+func (x RaiseFunctionExpr_Action) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -98,7 +98,7 @@ func (x *RaiseFunctionExpr) Reset() {
 	}
 }
 
-func (x *RaiseFunctionExpr) String() string {
+func (x *RaiseFunctionExpr) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

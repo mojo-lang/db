@@ -44,7 +44,7 @@ func (x *BinaryStringLiteralExpr) Reset() {
 	}
 }
 
-func (x *BinaryStringLiteralExpr) String() string {
+func (x *BinaryStringLiteralExpr) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

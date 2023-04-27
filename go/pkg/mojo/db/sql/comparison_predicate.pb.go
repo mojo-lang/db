@@ -37,7 +37,7 @@ func (x *ComparisonPredicate) Reset() {
 	}
 }
 
-func (x *ComparisonPredicate) String() string {
+func (x *ComparisonPredicate) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

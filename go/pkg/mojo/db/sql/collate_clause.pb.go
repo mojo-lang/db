@@ -44,7 +44,7 @@ func (x *CollateClause) Reset() {
 	}
 }
 
-func (x *CollateClause) String() string {
+func (x *CollateClause) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

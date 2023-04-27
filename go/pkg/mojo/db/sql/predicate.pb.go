@@ -43,7 +43,7 @@ func (x *Predicate) Reset() {
 	}
 }
 
-func (x *Predicate) String() string {
+func (x *Predicate) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

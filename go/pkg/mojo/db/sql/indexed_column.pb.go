@@ -44,7 +44,7 @@ func (x *IndexedColumn) Reset() {
 	}
 }
 
-func (x *IndexedColumn) String() string {
+func (x *IndexedColumn) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

@@ -43,7 +43,7 @@ func (x *DataManipulationStmt) Reset() {
 	}
 }
 
-func (x *DataManipulationStmt) String() string {
+func (x *DataManipulationStmt) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

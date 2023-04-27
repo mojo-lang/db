@@ -44,7 +44,7 @@ func (x *PartitionClause) Reset() {
 	}
 }
 
-func (x *PartitionClause) String() string {
+func (x *PartitionClause) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

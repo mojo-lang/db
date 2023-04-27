@@ -45,7 +45,7 @@ func (x *UpsertClause) Reset() {
 	}
 }
 
-func (x *UpsertClause) String() string {
+func (x *UpsertClause) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -128,7 +128,7 @@ func (x *UpsertClause_Conflict) Reset() {
 	}
 }
 
-func (x *UpsertClause_Conflict) String() string {
+func (x *UpsertClause_Conflict) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -183,7 +183,7 @@ func (x *UpsertClause_UpdateSet) Reset() {
 	}
 }
 
-func (x *UpsertClause_UpdateSet) String() string {
+func (x *UpsertClause_UpdateSet) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

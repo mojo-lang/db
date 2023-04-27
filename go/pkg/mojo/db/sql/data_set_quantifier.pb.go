@@ -50,7 +50,7 @@ func (x DataSetQuantifier) Enum() *DataSetQuantifier {
 	return p
 }
 
-func (x DataSetQuantifier) String() string {
+func (x DataSetQuantifier) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 

@@ -54,7 +54,7 @@ func (x BeginStmt_Type) Enum() *BeginStmt_Type {
 	return p
 }
 
-func (x BeginStmt_Type) String() string {
+func (x BeginStmt_Type) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -98,7 +98,7 @@ func (x *BeginStmt) Reset() {
 	}
 }
 
-func (x *BeginStmt) String() string {
+func (x *BeginStmt) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

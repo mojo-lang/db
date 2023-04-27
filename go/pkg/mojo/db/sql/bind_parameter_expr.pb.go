@@ -45,7 +45,7 @@ func (x *BindParameterExpr) Reset() {
 	}
 }
 
-func (x *BindParameterExpr) String() string {
+func (x *BindParameterExpr) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

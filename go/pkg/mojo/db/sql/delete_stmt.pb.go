@@ -47,7 +47,7 @@ func (x *DeleteStmt) Reset() {
 	}
 }
 
-func (x *DeleteStmt) String() string {
+func (x *DeleteStmt) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

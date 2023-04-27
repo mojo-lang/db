@@ -43,7 +43,7 @@ func (x *QualifiedTableName) Reset() {
 	}
 }
 
-func (x *QualifiedTableName) String() string {
+func (x *QualifiedTableName) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

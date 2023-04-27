@@ -51,7 +51,7 @@ func (x Boolean) Enum() *Boolean {
 	return p
 }
 
-func (x Boolean) String() string {
+func (x Boolean) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -93,7 +93,7 @@ func (x *BooleanLiteralExpr) Reset() {
 	}
 }
 
-func (x *BooleanLiteralExpr) String() string {
+func (x *BooleanLiteralExpr) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

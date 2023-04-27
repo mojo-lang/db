@@ -47,7 +47,7 @@ func (x *CreateViewStmt) Reset() {
 	}
 }
 
-func (x *CreateViewStmt) String() string {
+func (x *CreateViewStmt) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

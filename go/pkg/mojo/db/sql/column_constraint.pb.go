@@ -49,7 +49,7 @@ func (x *ColumnConstraint) Reset() {
 	}
 }
 
-func (x *ColumnConstraint) String() string {
+func (x *ColumnConstraint) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -200,7 +200,7 @@ func (x *ColumnConstraint_PrimaryKey) Reset() {
 	}
 }
 
-func (x *ColumnConstraint_PrimaryKey) String() string {
+func (x *ColumnConstraint_PrimaryKey) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -265,7 +265,7 @@ func (x *ColumnConstraint_NotNull) Reset() {
 	}
 }
 
-func (x *ColumnConstraint_NotNull) String() string {
+func (x *ColumnConstraint_NotNull) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -344,7 +344,7 @@ func (x *ColumnConstraint_Unique) Reset() {
 	}
 }
 
-func (x *ColumnConstraint_Unique) String() string {
+func (x *ColumnConstraint_Unique) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -419,7 +419,7 @@ func (x *ColumnConstraint_Default) Reset() {
 	}
 }
 
-func (x *ColumnConstraint_Default) String() string {
+func (x *ColumnConstraint_Default) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

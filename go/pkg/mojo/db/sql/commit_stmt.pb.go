@@ -44,7 +44,7 @@ func (x *CommitStmt) Reset() {
 	}
 }
 
-func (x *CommitStmt) String() string {
+func (x *CommitStmt) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

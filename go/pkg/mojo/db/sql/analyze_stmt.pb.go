@@ -45,7 +45,7 @@ func (x *AnalyzeSmt) Reset() {
 	}
 }
 
-func (x *AnalyzeSmt) String() string {
+func (x *AnalyzeSmt) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
