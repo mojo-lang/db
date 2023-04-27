@@ -1,9 +1,10 @@
 package db
 
 import (
+	"unsafe"
+
 	jsoniter "github.com/json-iterator/go"
 	"github.com/mojo-lang/core/go/pkg/mojo/core"
-	"unsafe"
 )
 
 func init() {
@@ -15,10 +16,10 @@ type DeleteTimeCodec struct {
 }
 
 func (codec *DeleteTimeCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
-	any := iter.ReadAny()
+	a := iter.ReadAny()
 	deleteTime := (*DeleteTime)(ptr)
 	deleteTime.Val = &core.Timestamp{}
-	any.ToVal(deleteTime.Val)
+	a.ToVal(deleteTime.Val)
 }
 
 func (codec *DeleteTimeCodec) IsEmpty(ptr unsafe.Pointer) bool {

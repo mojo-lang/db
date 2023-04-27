@@ -10,7 +10,7 @@ require (
 	google.golang.org/protobuf v1.30.0
 	gorm.io/driver/mysql v1.3.3
 	gorm.io/driver/postgres v1.5.0
-	gorm.io/driver/sqlite v1.3.1
+	gorm.io/driver/sqlite v1.5.0
 	gorm.io/gorm v1.25.0
 )
 
@@ -30,7 +30,7 @@ require (
 	github.com/jackc/pgx/v5 v5.3.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
-	github.com/mattn/go-sqlite3 v1.14.9 // indirect
+	github.com/mattn/go-sqlite3 v1.14.16 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/mojo-lang/document/go v0.0.0-20230427070517-a007d4b8d5e5 // indirect
