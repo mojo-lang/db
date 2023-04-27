@@ -4,13 +4,13 @@ go 1.18
 
 require (
 	github.com/json-iterator/go v1.1.12
-	github.com/mojo-lang/core/go v0.0.0-20230427070306-34ab6ed73f1c
-	github.com/mojo-lang/lang/go v0.0.0-20230427071021-4d8911209d5a
+	github.com/mojo-lang/core/go v0.0.0-20230427095043-961105c650c8
+	github.com/mojo-lang/lang/go v0.0.0-20230427095418-142f6e7329e6
 	github.com/stretchr/testify v1.8.1
 	google.golang.org/protobuf v1.30.0
 	gorm.io/driver/mysql v1.3.3
 	gorm.io/driver/postgres v1.5.0
-	gorm.io/driver/sqlite v1.5.0
+	gorm.io/driver/sqlite v1.4.4
 	gorm.io/gorm v1.25.0
 )
 
@@ -33,7 +33,7 @@ require (
 	github.com/mattn/go-sqlite3 v1.14.16 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	github.com/mojo-lang/document/go v0.0.0-20230427070517-a007d4b8d5e5 // indirect
+	github.com/mojo-lang/document/go v0.0.0-20230427095224-881190052073 // indirect
 	github.com/phpdave11/gofpdf v1.4.2 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/stephenafamo/goldmark-pdf v0.0.0-20210426082656-1b7b737070eb // indirect
