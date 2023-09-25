@@ -42,7 +42,7 @@ func New(cfg *Config) *DB {
             return db
         }
     } else if db.Config.Driver == MysqlDriverName {
-        if d, err := gorm.Open(mysql.Open(db.Config.Dsn), &gorm.Config{}); err != nil {
+        if d, err := gorm.Open(mysql.New(mysql.Config{DSN: db.Config.Dsn, DefaultStringSize: uint(db.Config.DefaultStringSize)}), &gorm.Config{}); err != nil {
             return nil
         } else {
             db.DB = config(d)
@@ -57,7 +57,7 @@ func New(cfg *Config) *DB {
             return db
         }
 	} else if db.Config.Driver == DmDriverName {
-		if d, err := gorm.Open(dm.Open(db.Config.Dsn), &gorm.Config{
+		if d, err := gorm.Open(dm.New(dm.Config{DSN: db.Config.Dsn, DefaultStringSize: uint(db.Config.DefaultStringSize)}), &gorm.Config{
 			DisableForeignKeyConstraintWhenMigrating: true,
 		}); err != nil {
 			return nil
@@ -67,5 +67,5 @@ func New(cfg *Config) *DB {
 		}
 
     }
-    return nil
+	return nil
 }

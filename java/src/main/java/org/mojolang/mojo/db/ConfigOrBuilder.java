@@ -116,6 +116,12 @@ public interface ConfigOrBuilder extends
   boolean getEnableLogAccessResponse();
 
   /**
+   * <code>uint64 default_string_size = 14;</code>
+   * @return The defaultStringSize.
+   */
+  long getDefaultStringSize();
+
+  /**
    * <code>bool disable_auto_migrate = 20;</code>
    * @return The disableAutoMigrate.
    */

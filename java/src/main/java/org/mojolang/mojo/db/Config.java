@@ -274,6 +274,17 @@ private static final long serialVersionUID = 0L;
     return enableLogAccessResponse_;
   }
 
+  public static final int DEFAULT_STRING_SIZE_FIELD_NUMBER = 14;
+  private long defaultStringSize_ = 0L;
+  /**
+   * <code>uint64 default_string_size = 14;</code>
+   * @return The defaultStringSize.
+   */
+  @java.lang.Override
+  public long getDefaultStringSize() {
+    return defaultStringSize_;
+  }
+
   public static final int DISABLE_AUTO_MIGRATE_FIELD_NUMBER = 20;
   private boolean disableAutoMigrate_ = false;
   /**
@@ -338,6 +349,9 @@ private static final long serialVersionUID = 0L;
     if (enableLogAccessResponse_ != false) {
       output.writeBool(13, enableLogAccessResponse_);
     }
+    if (defaultStringSize_ != 0L) {
+      output.writeUInt64(14, defaultStringSize_);
+    }
     if (disableAutoMigrate_ != false) {
       output.writeBool(20, disableAutoMigrate_);
     }
@@ -400,6 +414,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(13, enableLogAccessResponse_);
     }
+    if (defaultStringSize_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(14, defaultStringSize_);
+    }
     if (disableAutoMigrate_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(20, disableAutoMigrate_);
@@ -451,6 +469,8 @@ private static final long serialVersionUID = 0L;
         != other.getEnableLogAccessRequest()) return false;
     if (getEnableLogAccessResponse()
         != other.getEnableLogAccessResponse()) return false;
+    if (getDefaultStringSize()
+        != other.getDefaultStringSize()) return false;
     if (getDisableAutoMigrate()
         != other.getDisableAutoMigrate()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -501,6 +521,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENABLE_LOG_ACCESS_RESPONSE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableLogAccessResponse());
+    hash = (37 * hash) + DEFAULT_STRING_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDefaultStringSize());
     hash = (37 * hash) + DISABLE_AUTO_MIGRATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDisableAutoMigrate());
@@ -654,6 +677,7 @@ private static final long serialVersionUID = 0L;
       enableLogAccess_ = false;
       enableLogAccessRequest_ = false;
       enableLogAccessResponse_ = false;
+      defaultStringSize_ = 0L;
       disableAutoMigrate_ = false;
       return this;
     }
@@ -732,6 +756,9 @@ private static final long serialVersionUID = 0L;
         result.enableLogAccessResponse_ = enableLogAccessResponse_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.defaultStringSize_ = defaultStringSize_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.disableAutoMigrate_ = disableAutoMigrate_;
       }
     }
@@ -822,6 +849,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEnableLogAccessResponse() != false) {
         setEnableLogAccessResponse(other.getEnableLogAccessResponse());
+      }
+      if (other.getDefaultStringSize() != 0L) {
+        setDefaultStringSize(other.getDefaultStringSize());
       }
       if (other.getDisableAutoMigrate() != false) {
         setDisableAutoMigrate(other.getDisableAutoMigrate());
@@ -921,9 +951,14 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00001000;
               break;
             } // case 104
+            case 112: {
+              defaultStringSize_ = input.readUInt64();
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 112
             case 160: {
               disableAutoMigrate_ = input.readBool();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               break;
             } // case 160
             default: {
@@ -1613,6 +1648,38 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long defaultStringSize_ ;
+    /**
+     * <code>uint64 default_string_size = 14;</code>
+     * @return The defaultStringSize.
+     */
+    @java.lang.Override
+    public long getDefaultStringSize() {
+      return defaultStringSize_;
+    }
+    /**
+     * <code>uint64 default_string_size = 14;</code>
+     * @param value The defaultStringSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultStringSize(long value) {
+      
+      defaultStringSize_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 default_string_size = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultStringSize() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      defaultStringSize_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private boolean disableAutoMigrate_ ;
     /**
      * <code>bool disable_auto_migrate = 20;</code>
@@ -1630,7 +1697,7 @@ private static final long serialVersionUID = 0L;
     public Builder setDisableAutoMigrate(boolean value) {
       
       disableAutoMigrate_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -1639,7 +1706,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDisableAutoMigrate() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       disableAutoMigrate_ = false;
       onChanged();
       return this;

@@ -13,4 +13,5 @@
 | `enableLogAccess` | `boolean` |  | N |  |
 | `enableLogAccessRequest` | `boolean` |  | N |  |
 | `enableLogAccessResponse` | `boolean` |  | N |  |
+| `defaultStringSize` | `integer` | `UInt64` | N |  |
 | `disableAutoMigrate` | `boolean` |  | N |  | disable auto migration for the init the database |
