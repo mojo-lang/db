@@ -1,6 +1,7 @@
 package db
 
 import (
+	dm "github.com/smilextay/gorm-dm"
     "gorm.io/driver/mysql"
     "gorm.io/driver/postgres"
     "gorm.io/driver/sqlite"
@@ -11,6 +12,7 @@ const (
     PostgresDriverName = "postgres"
     MysqlDriverName    = "mysql"
     SqliteDriverName   = "sqlite"
+    DmDriverName       = "dm"
 )
 
 type DB struct {
@@ -54,6 +56,16 @@ func New(cfg *Config) *DB {
             db.DB = config(d)
             return db
         }
+	} else if db.Config.Driver == DmDriverName {
+		if d, err := gorm.Open(dm.Open(db.Config.Dsn), &gorm.Config{
+			DisableForeignKeyConstraintWhenMigrating: true,
+		}); err != nil {
+			return nil
+		} else {
+			db.DB = config(d)
+			return db
+		}
+
     }
     return nil
 }
