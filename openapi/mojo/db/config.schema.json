@@ -11,6 +11,11 @@
             "description": "debug mode, default is false",
             "type": "boolean"
         },
+        "defaultStringSize": {
+            "title": "mojo.core.UInt64",
+            "type": "integer",
+            "format": "UInt64"
+        },
         "disableAutoMigrate": {
             "title": "mojo.core.Bool",
             "description": "disable auto migration for the init the database",
