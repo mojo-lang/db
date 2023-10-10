@@ -47,7 +47,7 @@ func (x *OverClause) Reset() {
 	}
 }
 
-func (x *OverClause) ToText() string {
+func (x *OverClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

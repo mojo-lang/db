@@ -45,7 +45,7 @@ func (x *CreateTriggerStmt) Reset() {
 	}
 }
 
-func (x *CreateTriggerStmt) ToText() string {
+func (x *CreateTriggerStmt) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

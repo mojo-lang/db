@@ -41,7 +41,7 @@ func (x *ColumnAssignment) Reset() {
 	}
 }
 
-func (x *ColumnAssignment) ToText() string {
+func (x *ColumnAssignment) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -99,7 +99,7 @@ func (x *SetClause) Reset() {
 	}
 }
 
-func (x *SetClause) ToText() string {
+func (x *SetClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

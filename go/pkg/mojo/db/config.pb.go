@@ -54,7 +54,7 @@ func (x *Config) Reset() {
 	}
 }
 
-func (x *Config) ToText() string {
+func (x *Config) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

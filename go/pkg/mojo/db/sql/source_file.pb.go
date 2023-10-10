@@ -41,7 +41,7 @@ func (x *SourceFile) Reset() {
 	}
 }
 
-func (x *SourceFile) ToText() string {
+func (x *SourceFile) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

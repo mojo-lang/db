@@ -37,7 +37,7 @@ func (x *TableScope) Reset() {
 	}
 }
 
-func (x *TableScope) ToText() string {
+func (x *TableScope) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

@@ -44,7 +44,7 @@ func (x *AsSubqueryClause) Reset() {
 	}
 }
 
-func (x *AsSubqueryClause) ToText() string {
+func (x *AsSubqueryClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

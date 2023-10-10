@@ -41,7 +41,7 @@ func (x *TriggerName) Reset() {
 	}
 }
 
-func (x *TriggerName) ToText() string {
+func (x *TriggerName) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

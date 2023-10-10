@@ -44,7 +44,7 @@ func (x *WindowClause) Reset() {
 	}
 }
 
-func (x *WindowClause) ToText() string {
+func (x *WindowClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

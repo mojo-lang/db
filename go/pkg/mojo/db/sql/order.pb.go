@@ -50,7 +50,7 @@ func (x Order) Enum() *Order {
 	return p
 }
 
-func (x Order) ToText() string {
+func (x Order) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 

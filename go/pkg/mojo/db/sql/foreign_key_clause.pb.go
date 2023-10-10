@@ -54,7 +54,7 @@ func (x ForeignKeyClause_MatchType) Enum() *ForeignKeyClause_MatchType {
 	return p
 }
 
-func (x ForeignKeyClause_MatchType) ToText() string {
+func (x ForeignKeyClause_MatchType) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -100,7 +100,7 @@ func (x ForeignKeyClause_TriggerAction_Trigger) Enum() *ForeignKeyClause_Trigger
 	return p
 }
 
-func (x ForeignKeyClause_TriggerAction_Trigger) ToText() string {
+func (x ForeignKeyClause_TriggerAction_Trigger) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -155,7 +155,7 @@ func (x ForeignKeyClause_TriggerAction_Action) Enum() *ForeignKeyClause_TriggerA
 	return p
 }
 
-func (x ForeignKeyClause_TriggerAction_Action) ToText() string {
+func (x ForeignKeyClause_TriggerAction_Action) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -201,7 +201,7 @@ func (x *ForeignKeyClause) Reset() {
 	}
 }
 
-func (x *ForeignKeyClause) ToText() string {
+func (x *ForeignKeyClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -305,7 +305,7 @@ func (x *ForeignKeyClause_TriggerAction) Reset() {
 	}
 }
 
-func (x *ForeignKeyClause_TriggerAction) ToText() string {
+func (x *ForeignKeyClause_TriggerAction) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

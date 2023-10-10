@@ -53,7 +53,7 @@ func (x Dialect) Enum() *Dialect {
 	return p
 }
 
-func (x Dialect) ToText() string {
+func (x Dialect) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 

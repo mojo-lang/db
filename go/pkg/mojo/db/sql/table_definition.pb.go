@@ -40,7 +40,7 @@ func (x *TableDefinition) Reset() {
 	}
 }
 
-func (x *TableDefinition) ToText() string {
+func (x *TableDefinition) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

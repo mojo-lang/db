@@ -60,7 +60,7 @@ func (x UpdateStmt_Type) Enum() *UpdateStmt_Type {
 	return p
 }
 
-func (x UpdateStmt_Type) ToText() string {
+func (x UpdateStmt_Type) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -108,7 +108,7 @@ func (x *UpdateStmt) Reset() {
 	}
 }
 
-func (x *UpdateStmt) ToText() string {
+func (x *UpdateStmt) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

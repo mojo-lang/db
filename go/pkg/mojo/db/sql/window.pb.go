@@ -42,7 +42,7 @@ func (x *Window) Reset() {
 	}
 }
 
-func (x *Window) ToText() string {
+func (x *Window) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -117,7 +117,7 @@ func (x *Window_Frame) Reset() {
 	}
 }
 
-func (x *Window_Frame) ToText() string {
+func (x *Window_Frame) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -215,7 +215,7 @@ func (x *Window_Frame_Bound) Reset() {
 	}
 }
 
-func (x *Window_Frame_Bound) ToText() string {
+func (x *Window_Frame_Bound) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

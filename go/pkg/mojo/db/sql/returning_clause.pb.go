@@ -44,7 +44,7 @@ func (x *ReturningClause) Reset() {
 	}
 }
 
-func (x *ReturningClause) ToText() string {
+func (x *ReturningClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

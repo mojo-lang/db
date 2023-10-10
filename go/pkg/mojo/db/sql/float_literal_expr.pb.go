@@ -48,7 +48,7 @@ func (x *FloatLiteralExpr) Reset() {
 	}
 }
 
-func (x *FloatLiteralExpr) ToText() string {
+func (x *FloatLiteralExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

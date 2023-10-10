@@ -43,7 +43,7 @@ func (x *AccessControlStmt) Reset() {
 	}
 }
 
-func (x *AccessControlStmt) ToText() string {
+func (x *AccessControlStmt) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

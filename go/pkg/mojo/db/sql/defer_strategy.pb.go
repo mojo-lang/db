@@ -50,7 +50,7 @@ func (x DeferStrategy_Strategy) Enum() *DeferStrategy_Strategy {
 	return p
 }
 
-func (x DeferStrategy_Strategy) ToText() string {
+func (x DeferStrategy_Strategy) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -89,7 +89,7 @@ func (x *DeferStrategy) Reset() {
 	}
 }
 
-func (x *DeferStrategy) ToText() string {
+func (x *DeferStrategy) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

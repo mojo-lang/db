@@ -34,7 +34,7 @@ type UniRecord struct {
 	CreateTime *core.Timestamp `protobuf:"bytes,5,opt,name=create_time,json=createTime,proto3" json:"createTime,omitempty"`
 	UpdateTime *core.Timestamp `protobuf:"bytes,6,opt,name=update_time,json=updateTime,proto3" json:"updateTime,omitempty"`
 	DeleteTime *DeleteTime     `protobuf:"bytes,7,opt,name=delete_time,json=deleteTime,proto3" json:"deleteTime,omitempty"`
-	TableName  string          `protobuf:"bytes,10,opt,name=table_name,json=tableName,proto3" json:"tableName,omitempty" db:"-" gorm:"-"`
+	TableName  string          `protobuf:"bytes,10,opt,name=table_name,json=tableName,proto3" json:"tableName,omitempty" db:"table_name,-" gorm:"-"`
 }
 type UniRecordData struct{ core.Object }
 
@@ -47,7 +47,7 @@ func (x *UniRecord) Reset() {
 	}
 }
 
-func (x *UniRecord) ToText() string {
+func (x *UniRecord) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

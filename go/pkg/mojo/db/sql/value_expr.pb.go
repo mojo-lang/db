@@ -43,7 +43,7 @@ func (x *ValueExpr) Reset() {
 	}
 }
 
-func (x *ValueExpr) ToText() string {
+func (x *ValueExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

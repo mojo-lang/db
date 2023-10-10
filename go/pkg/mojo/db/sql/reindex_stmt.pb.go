@@ -43,7 +43,7 @@ func (x *ReindexStmt) Reset() {
 	}
 }
 
-func (x *ReindexStmt) ToText() string {
+func (x *ReindexStmt) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

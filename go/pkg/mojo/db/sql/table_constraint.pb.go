@@ -45,7 +45,7 @@ func (x *TableConstraint) Reset() {
 	}
 }
 
-func (x *TableConstraint) ToText() string {
+func (x *TableConstraint) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -156,7 +156,7 @@ func (x *TableConstraint_PrimaryKey) Reset() {
 	}
 }
 
-func (x *TableConstraint_PrimaryKey) ToText() string {
+func (x *TableConstraint_PrimaryKey) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -211,7 +211,7 @@ func (x *TableConstraint_Unique) Reset() {
 	}
 }
 
-func (x *TableConstraint_Unique) ToText() string {
+func (x *TableConstraint_Unique) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -266,7 +266,7 @@ func (x *TableConstraint_ForeignKey) Reset() {
 	}
 }
 
-func (x *TableConstraint_ForeignKey) ToText() string {
+func (x *TableConstraint_ForeignKey) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

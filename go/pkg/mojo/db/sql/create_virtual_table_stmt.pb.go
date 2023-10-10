@@ -43,7 +43,7 @@ func (x *CreateVirtualTableStmt) Reset() {
 	}
 }
 
-func (x *CreateVirtualTableStmt) ToText() string {
+func (x *CreateVirtualTableStmt) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

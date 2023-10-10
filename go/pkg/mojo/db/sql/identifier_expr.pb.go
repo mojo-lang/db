@@ -44,7 +44,7 @@ func (x *IdentifierExpr) Reset() {
 	}
 }
 
-func (x *IdentifierExpr) ToText() string {
+func (x *IdentifierExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

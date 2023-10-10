@@ -45,7 +45,7 @@ func (x *IntoClause) Reset() {
 	}
 }
 
-func (x *IntoClause) ToText() string {
+func (x *IntoClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

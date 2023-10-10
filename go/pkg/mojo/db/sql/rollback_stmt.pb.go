@@ -45,7 +45,7 @@ func (x *RollbackStmt) Reset() {
 	}
 }
 
-func (x *RollbackStmt) ToText() string {
+func (x *RollbackStmt) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

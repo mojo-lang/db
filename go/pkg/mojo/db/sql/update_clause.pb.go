@@ -43,7 +43,7 @@ func (x *UpdateClause) Reset() {
 	}
 }
 
-func (x *UpdateClause) ToText() string {
+func (x *UpdateClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

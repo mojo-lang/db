@@ -99,7 +99,7 @@ func (x BinaryExpr_Operator) Enum() *BinaryExpr_Operator {
 	return p
 }
 
-func (x BinaryExpr_Operator) ToText() string {
+func (x BinaryExpr_Operator) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -151,7 +151,7 @@ func (x CompoundSelect_Operator) Enum() *CompoundSelect_Operator {
 	return p
 }
 
-func (x CompoundSelect_Operator) ToText() string {
+func (x CompoundSelect_Operator) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -194,7 +194,7 @@ func (x JoinClause_Operator) Enum() *JoinClause_Operator {
 	return p
 }
 
-func (x JoinClause_Operator) ToText() string {
+func (x JoinClause_Operator) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -240,7 +240,7 @@ func (x NullExpr_Operator) Enum() *NullExpr_Operator {
 	return p
 }
 
-func (x NullExpr_Operator) ToText() string {
+func (x NullExpr_Operator) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -301,7 +301,7 @@ func (x UnaryExpr_Operator) Enum() *UnaryExpr_Operator {
 	return p
 }
 
-func (x UnaryExpr_Operator) ToText() string {
+func (x UnaryExpr_Operator) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -346,7 +346,7 @@ func (x *BetweenExpr) Reset() {
 	}
 }
 
-func (x *BetweenExpr) ToText() string {
+func (x *BetweenExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -450,7 +450,7 @@ func (x *BinaryExpr) Reset() {
 	}
 }
 
-func (x *BinaryExpr) ToText() string {
+func (x *BinaryExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -559,7 +559,7 @@ func (x *CaseExpr) Reset() {
 	}
 }
 
-func (x *CaseExpr) ToText() string {
+func (x *CaseExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -653,7 +653,7 @@ func (x *CastExpr) Reset() {
 	}
 }
 
-func (x *CastExpr) ToText() string {
+func (x *CastExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -738,7 +738,7 @@ func (x *Column) Reset() {
 	}
 }
 
-func (x *Column) ToText() string {
+func (x *Column) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -815,7 +815,7 @@ func (x *AllColumn) Reset() {
 	}
 }
 
-func (x *AllColumn) ToText() string {
+func (x *AllColumn) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -863,7 +863,7 @@ func (x *DerivedColumn) Reset() {
 	}
 }
 
-func (x *DerivedColumn) ToText() string {
+func (x *DerivedColumn) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -935,7 +935,7 @@ func (x *CompoundSelect) Reset() {
 	}
 }
 
-func (x *CompoundSelect) ToText() string {
+func (x *CompoundSelect) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1123,7 +1123,7 @@ func (x *ExistsExpr) Reset() {
 	}
 }
 
-func (x *ExistsExpr) ToText() string {
+func (x *ExistsExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1240,7 +1240,7 @@ func (x *Expression) Reset() {
 	}
 }
 
-func (x *Expression) ToText() string {
+func (x *Expression) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1642,7 +1642,7 @@ func (x *Expressions) Reset() {
 	}
 }
 
-func (x *Expressions) ToText() string {
+func (x *Expressions) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1694,7 +1694,7 @@ func (x *FromClause) Reset() {
 	}
 }
 
-func (x *FromClause) ToText() string {
+func (x *FromClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1781,7 +1781,7 @@ func (x *FunctionCallExpr) Reset() {
 	}
 }
 
-func (x *FunctionCallExpr) ToText() string {
+func (x *FunctionCallExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1870,7 +1870,7 @@ func (x *GlobExpr) Reset() {
 	}
 }
 
-func (x *GlobExpr) ToText() string {
+func (x *GlobExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1970,7 +1970,7 @@ func (x *GroupByClause) Reset() {
 	}
 }
 
-func (x *GroupByClause) ToText() string {
+func (x *GroupByClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2049,7 +2049,7 @@ func (x *HavingClause) Reset() {
 	}
 }
 
-func (x *HavingClause) ToText() string {
+func (x *HavingClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2135,7 +2135,7 @@ func (x *InExpr) Reset() {
 	}
 }
 
-func (x *InExpr) ToText() string {
+func (x *InExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2286,7 +2286,7 @@ func (x *IsExpr) Reset() {
 	}
 }
 
-func (x *IsExpr) ToText() string {
+func (x *IsExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2383,7 +2383,7 @@ func (x *JoinClause) Reset() {
 	}
 }
 
-func (x *JoinClause) ToText() string {
+func (x *JoinClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2493,7 +2493,7 @@ func (x *LikeExpr) Reset() {
 	}
 }
 
-func (x *LikeExpr) ToText() string {
+func (x *LikeExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2597,7 +2597,7 @@ func (x *LimitClause) Reset() {
 	}
 }
 
-func (x *LimitClause) ToText() string {
+func (x *LimitClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2716,7 +2716,7 @@ func (x *MatchExpr) Reset() {
 	}
 }
 
-func (x *MatchExpr) ToText() string {
+func (x *MatchExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2818,7 +2818,7 @@ func (x *NullExpr) Reset() {
 	}
 }
 
-func (x *NullExpr) ToText() string {
+func (x *NullExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2911,7 +2911,7 @@ func (x *OffsetClause) Reset() {
 	}
 }
 
-func (x *OffsetClause) ToText() string {
+func (x *OffsetClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2990,7 +2990,7 @@ func (x *OrderByClause) Reset() {
 	}
 }
 
-func (x *OrderByClause) ToText() string {
+func (x *OrderByClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3069,7 +3069,7 @@ func (x *Ordering) Reset() {
 	}
 }
 
-func (x *Ordering) ToText() string {
+func (x *Ordering) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3148,7 +3148,7 @@ func (x *ParenthesizedExpr) Reset() {
 	}
 }
 
-func (x *ParenthesizedExpr) ToText() string {
+func (x *ParenthesizedExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3230,7 +3230,7 @@ func (x *RegexpExpr) Reset() {
 	}
 }
 
-func (x *RegexpExpr) ToText() string {
+func (x *RegexpExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3331,7 +3331,7 @@ func (x *SelectClause) Reset() {
 	}
 }
 
-func (x *SelectClause) ToText() string {
+func (x *SelectClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3428,7 +3428,7 @@ func (x *SelectStmt) Reset() {
 	}
 }
 
-func (x *SelectStmt) ToText() string {
+func (x *SelectStmt) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3593,7 +3593,7 @@ func (x *SubqueryExpr) Reset() {
 	}
 }
 
-func (x *SubqueryExpr) ToText() string {
+func (x *SubqueryExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3672,7 +3672,7 @@ func (x *Table) Reset() {
 	}
 }
 
-func (x *Table) ToText() string {
+func (x *Table) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3764,7 +3764,7 @@ func (x *TableName) Reset() {
 	}
 }
 
-func (x *TableName) ToText() string {
+func (x *TableName) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3828,7 +3828,7 @@ func (x *TableFunctionName) Reset() {
 	}
 }
 
-func (x *TableFunctionName) ToText() string {
+func (x *TableFunctionName) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3897,7 +3897,7 @@ func (x *TableQuery) Reset() {
 	}
 }
 
-func (x *TableQuery) ToText() string {
+func (x *TableQuery) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -3957,7 +3957,7 @@ func (x *UnaryExpr) Reset() {
 	}
 }
 
-func (x *UnaryExpr) ToText() string {
+func (x *UnaryExpr) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -4050,7 +4050,7 @@ func (x *ValuesClause) Reset() {
 	}
 }
 
-func (x *ValuesClause) ToText() string {
+func (x *ValuesClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -4129,7 +4129,7 @@ func (x *WhereClause) Reset() {
 	}
 }
 
-func (x *WhereClause) ToText() string {
+func (x *WhereClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -4206,7 +4206,7 @@ func (x *TemporaryTable) Reset() {
 	}
 }
 
-func (x *TemporaryTable) ToText() string {
+func (x *TemporaryTable) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -4272,7 +4272,7 @@ func (x *WithClause) Reset() {
 	}
 }
 
-func (x *WithClause) ToText() string {
+func (x *WithClause) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -4355,7 +4355,7 @@ func (x *CaseExpr_Branch) Reset() {
 	}
 }
 
-func (x *CaseExpr_Branch) ToText() string {
+func (x *CaseExpr_Branch) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -4409,7 +4409,7 @@ func (x *JoinClause_Constraint) Reset() {
 	}
 }
 
-func (x *JoinClause_Constraint) ToText() string {
+func (x *JoinClause_Constraint) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

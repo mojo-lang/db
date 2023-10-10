@@ -43,7 +43,7 @@ func (x *TransactionManagementStmt) Reset() {
 	}
 }
 
-func (x *TransactionManagementStmt) ToText() string {
+func (x *TransactionManagementStmt) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
