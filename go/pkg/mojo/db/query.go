@@ -195,6 +195,10 @@ func generateFilterQuery(filter *lang.Expression) (string, []interface{}, error)
 					if expr := binary.RightArgument.GetNullLiteralExpr(); expr != nil {
 						return lq + " IS NOT NULL", lbs, nil
 					}
+				case "~=":
+					if expr := binary.RightArgument.GetStringLiteralExpr(); expr != nil {
+						return lq + " LIKE '%" + expr.Value + "%'", lbs, nil
+					}
 				}
 				rq, rbs, err := generateFilterQuery(binary.RightArgument)
 				if err != nil {
