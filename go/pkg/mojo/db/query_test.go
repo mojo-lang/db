@@ -53,7 +53,7 @@ func TestQuery(t *testing.T) {
 	}
 }
 
-func TestGenerateFilterQuery1(t *testing.T) {
+func TestGenerateExpressionQuery1(t *testing.T) {
 	filter := &lang.Expression{
 		Expression: &lang.Expression_BinaryExpr{
 			BinaryExpr: &lang.BinaryExpr{
@@ -64,14 +64,14 @@ func TestGenerateFilterQuery1(t *testing.T) {
 		},
 	}
 
-	sql, params, err := generateFilterQuery(filter)
+	sql, params, err := GenerateExpressionQuery(filter)
 	assert.NoError(t, err)
 	assert.NotEmpty(t, sql)
 	assert.Equal(t, "age > 20", sql)
 	_ = params
 }
 
-func TestGenerateFilterQuery2(t *testing.T) {
+func TestGenerateExpressionQuery2(t *testing.T) {
 	filter := &lang.Expression{
 		Expression: &lang.Expression_BinaryExpr{
 			BinaryExpr: &lang.BinaryExpr{
@@ -88,7 +88,7 @@ func TestGenerateFilterQuery2(t *testing.T) {
 		},
 	}
 
-	sql, params, err := generateFilterQuery(filter)
+	sql, params, err := GenerateExpressionQuery(filter)
 	assert.NoError(t, err)
 	assert.NotEmpty(t, sql)
 	assert.Equal(t, "age BETWEEN 10 AND 20", sql)

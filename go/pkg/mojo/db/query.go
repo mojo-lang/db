@@ -129,7 +129,7 @@ func ApplyField(d *gorm.DB, field *QueryField) (*gorm.DB, error) {
 }
 
 func ApplyFilter(d *gorm.DB, filter *lang.Expression) (*gorm.DB, error) {
-	query, bindings, err := generateFilterQuery(filter)
+	query, bindings, err := GenerateExpressionQuery(filter)
 	if err != nil {
 		return nil, err
 	}
@@ -166,11 +166,11 @@ func ApplyPagination(d *gorm.DB, pageSize int32, pageToken string, skip int32) (
 	return d, nil
 }
 
-func generateFilterQuery(filter *lang.Expression) (string, []interface{}, error) {
+func GenerateExpressionQuery(filter *lang.Expression) (string, []interface{}, error) {
 	switch filter.Expression.(type) {
 	case *lang.Expression_ParenthesizedExpr:
 		expr := filter.GetParenthesizedExpr()
-		q, bs, err := generateFilterQuery(expr.Expression)
+		q, bs, err := GenerateExpressionQuery(expr.Expression)
 		if err != nil {
 			return "", nil, err
 		}
@@ -181,7 +181,7 @@ func generateFilterQuery(filter *lang.Expression) (string, []interface{}, error)
 		if op := binary.GetOperator(); op != nil {
 			switch op.Symbol {
 			case "and", "or", "==", "!=", ">", "<", ">=", "<=", "~=":
-				lq, lbs, err := generateFilterQuery(binary.LeftArgument)
+				lq, lbs, err := GenerateExpressionQuery(binary.LeftArgument)
 				if err != nil {
 					return "", nil, err
 				}
@@ -200,29 +200,29 @@ func generateFilterQuery(filter *lang.Expression) (string, []interface{}, error)
 						return lq + " LIKE '%" + expr.Value + "%'", lbs, nil
 					}
 				}
-				rq, rbs, err := generateFilterQuery(binary.RightArgument)
+				rq, rbs, err := GenerateExpressionQuery(binary.RightArgument)
 				if err != nil {
 					return "", nil, err
 				}
 				return lq + " " + toSQLOperator(op.Symbol) + " " + rq, append(lbs, rbs...), nil
 			case "in", "!in":
-				lq, lbs, err := generateFilterQuery(binary.LeftArgument)
+				lq, lbs, err := GenerateExpressionQuery(binary.LeftArgument)
 				if err != nil {
 					return "", nil, err
 				}
 				if b := binary.RightArgument.GetBinaryExpr(); b != nil && b.GetOperator().GetSymbol() == "..=" {
-					blq, blbs, err := generateFilterQuery(b.LeftArgument)
+					blq, blbs, err := GenerateExpressionQuery(b.LeftArgument)
 					if err != nil {
 						return "", nil, err
 					}
-					brq, brbs, err := generateFilterQuery(b.RightArgument)
+					brq, brbs, err := GenerateExpressionQuery(b.RightArgument)
 					if err != nil {
 						return "", nil, err
 					}
 
 					return lq + " BETWEEN " + blq + " AND " + brq, append(lbs, append(blbs, brbs...)...), nil
 				} else if a := binary.RightArgument.GetArrayLiteralExpr(); a != nil {
-					rq, rbs, err := generateFilterQuery(binary.RightArgument)
+					rq, rbs, err := GenerateExpressionQuery(binary.RightArgument)
 					if err != nil {
 						return "", nil, err
 					}
@@ -256,7 +256,7 @@ func generateFilterQuery(filter *lang.Expression) (string, []interface{}, error)
 		var statement string
 		var parameters []interface{}
 		for i, item := range arr.Elements {
-			s, sp, err := generateFilterQuery(item)
+			s, sp, err := GenerateExpressionQuery(item)
 			if err != nil {
 				return "", nil, err
 			}
