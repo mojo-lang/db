@@ -46,6 +46,55 @@ func (q *Query) AddField(name string, values ...interface{}) *Query {
 	return q
 }
 
+func (q *Query) ApplyTotalCount(d *gorm.DB) *gorm.DB {
+	if q != nil {
+		var err error
+		tx := d
+
+		tx = tx.Select("COUNT(*)")
+
+		if len(q.Fields) > 0 {
+			for _, field := range q.Fields {
+				if tx, err = ApplyField(tx, field); err != nil {
+					_ = d.AddError(err)
+					return d
+				}
+			}
+		}
+		if q.Filter != nil {
+			if tx, err = ApplyFilter(tx, q.Filter); err != nil {
+				_ = d.AddError(err)
+				return d
+			}
+		}
+		if q.Unique && q.FieldMask != nil && len(q.Uniques) == 0 {
+			//TODO make sure the path be a simple field name
+			for _, p := range q.FieldMask.Paths {
+				q.Uniques = append(q.Uniques, p)
+			}
+		}
+
+		if len(q.Uniques) > 0 {
+			tx = d.Distinct(q.Uniques)
+		}
+		if q.Order != nil {
+			if tx, err = ApplyOrder(tx, q.Order); err != nil {
+				_ = d.AddError(err)
+				return d
+			}
+		}
+
+		if q.Skip > 0 {
+			tx = d.Offset(int(q.Skip))
+		} else if q.Limit > 0 {
+			tx = d.Limit(q.Limit)
+		}
+
+		return tx
+	}
+	return d
+}
+
 func (q *Query) Apply(d *gorm.DB) *gorm.DB {
 	if q != nil {
 		var err error
@@ -156,10 +205,15 @@ func ApplyFieldMask(d *gorm.DB, fieldMask *core.FieldMask) (*gorm.DB, error) {
 
 func ApplyPagination(d *gorm.DB, pageSize int32, pageToken string, skip int32) (*gorm.DB, error) {
 	if d != nil && pageSize > 0 {
-		index, err := strconv.ParseInt(pageToken, 10, 64)
-		if err != nil {
-			return nil, err
+		var index int64 = 0
+		var err error
+		if len(pageToken) > 0 {
+			index, err = strconv.ParseInt(pageToken, 10, 64)
+			if err != nil {
+				return nil, err
+			}
 		}
+
 		offset := pageSize*int32(index) + skip
 		return d.Offset(int(offset)).Limit(int(pageSize)), nil
 	}
