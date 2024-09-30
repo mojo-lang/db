@@ -16,13 +16,20 @@ type QueryField struct {
 	Keywords []interface{} `json:"keywords,omitempty"`
 }
 
+type CalcField struct {
+	Name      string   `json:"name,omitempty"`
+	Functions []string `json:"functions,omitempty"` // sum, min, max, avg
+	Alias     []string `json:"alias,omitempty"`     // alias to sum(field)
+}
+
 type Query struct {
-	Fields    []*QueryField    `json:"fields,omitempty"`
-	Filter    *lang.Expression `json:"filter,omitempty"`
-	Order     *core.Ordering   `json:"order,omitempty"`
-	Unique    bool             `json:"unique,omitempty"`
-	Uniques   []string         `json:"uniques,omitempty"`
-	FieldMask *core.FieldMask  `json:"fieldMask,omitempty"`
+	Fields     []*QueryField    `json:"fields,omitempty"`
+	Filter     *lang.Expression `json:"filter,omitempty"`
+	Order      *core.Ordering   `json:"order,omitempty"`
+	Unique     bool             `json:"unique,omitempty"`
+	Uniques    []string         `json:"uniques,omitempty"`
+	FieldMask  *core.FieldMask  `json:"fieldMask,omitempty"`
+	CalcFields []*CalcField     `json:"calcFields,omitempty"`
 
 	PageSize  int32  `json:"pageSize,omitempty"`
 	PageToken string `json:"pageToken,omitempty"`
@@ -46,12 +53,40 @@ func (q *Query) AddField(name string, values ...interface{}) *Query {
 	return q
 }
 
-func (q *Query) ApplyTotalCount(d *gorm.DB) *gorm.DB {
+func (q *Query) ApplyStat(d *gorm.DB) *gorm.DB {
 	if q != nil {
 		var err error
 		tx := d
 
-		tx = tx.Select("COUNT(*)")
+		builder := &strings.Builder{}
+		for i, field := range q.CalcFields {
+			if i > 0 {
+				builder.WriteString(", ")
+			}
+			for j, fun := range field.Functions {
+				if j > 0 {
+					builder.WriteString(", ")
+				}
+				if len(field.Name) == 0 && strings.ToLower(fun) == "count" {
+					field.Name = "*"
+				}
+
+				if field.Name == "*" {
+					if len(field.Functions) == len(field.Alias) && len(field.Alias[j]) > 0 {
+						builder.WriteString(fmt.Sprintf("%s(%s) as %s", fun, field.Name, field.Alias[j]))
+					} else {
+						builder.WriteString(fmt.Sprintf("%s(%s)", fun, field.Name))
+					}
+				} else {
+					alias := field.Name + "_" + strings.ToLower(fun)
+					if len(field.Functions) == len(field.Alias) && len(field.Alias[j]) > 0 {
+						alias = field.Alias[j]
+					}
+					builder.WriteString(fmt.Sprintf("%s(%s) as %s", fun, field.Name, alias))
+				}
+			}
+		}
+		tx = tx.Select(builder.String())
 
 		if len(q.Fields) > 0 {
 			for _, field := range q.Fields {
@@ -75,7 +110,7 @@ func (q *Query) ApplyTotalCount(d *gorm.DB) *gorm.DB {
 		}
 
 		if len(q.Uniques) > 0 {
-			tx = d.Distinct(q.Uniques)
+			tx = tx.Distinct(q.Uniques)
 		}
 		if q.Order != nil {
 			if tx, err = ApplyOrder(tx, q.Order); err != nil {
@@ -85,12 +120,20 @@ func (q *Query) ApplyTotalCount(d *gorm.DB) *gorm.DB {
 		}
 
 		if q.Skip > 0 {
-			tx = d.Offset(int(q.Skip))
+			tx = tx.Offset(int(q.Skip))
 		} else if q.Limit > 0 {
-			tx = d.Limit(q.Limit)
+			tx = tx.Limit(q.Limit)
 		}
 
 		return tx
+	}
+	return d
+}
+
+func (q *Query) ApplyTotalCount(d *gorm.DB) *gorm.DB {
+	if q != nil {
+		q.CalcFields = []*CalcField{{Name: "*", Functions: []string{"COUNT"}}}
+		return q.ApplyStat(d)
 	}
 	return d
 }

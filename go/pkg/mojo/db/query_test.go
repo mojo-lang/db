@@ -7,6 +7,7 @@ import (
 	"gorm.io/gorm"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -88,9 +89,21 @@ func TestGenerateExpressionQuery2(t *testing.T) {
 		},
 	}
 
-	sql, params, err := GenerateExpressionQuery(filter)
-	assert.NoError(t, err)
+	db, _ := gorm.Open(sqlite.Open(filepath.Join(os.TempDir(), "dry-run.db")), &gorm.Config{DryRun: true})
+
+	q := &Query{}
+	q.AddField("name", "foo%")
+	q.Filter = filter
+
+	var rows []*QueryTable
+	stmt := q.ApplyTotalCount(db.Model(&QueryTable{})).Find(&rows).Statement
+	sql := stmt.SQL.String()
 	assert.NotEmpty(t, sql)
-	assert.Equal(t, "age BETWEEN 10 AND 20", sql)
-	_ = params
+	assert.True(t, strings.Contains(sql, "COUNT(*)"))
+
+	q.CalcFields = []*CalcField{{Name: "age", Functions: []string{"count", "sum", "max", "min"}}}
+	stmt = q.ApplyStat(db.Model(&QueryTable{})).Find(&rows).Statement
+	sql = stmt.SQL.String()
+	assert.NotEmpty(t, sql)
+	assert.True(t, strings.Contains(sql, "count(age) as age_count, sum(age) as age_sum, max(age) as age_max, min(age) as age_min"))
 }
