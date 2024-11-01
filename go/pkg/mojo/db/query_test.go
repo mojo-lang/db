@@ -36,7 +36,7 @@ func TestQuery(t *testing.T) {
 	db := &DB{DB: d, Config: nil}
 	var rows []*QueryTable
 
-	if q.Apply(db.Model(&QueryTable{}).DB).Find(&rows).Error != nil || len(rows) != 2 {
+	if q.Apply(db.Model(&QueryTable{}).DB, nil).Find(&rows).Error != nil || len(rows) != 2 {
 		t.Errorf("quey by name, expects: %v, got: %v", 2, len(rows))
 	}
 
@@ -49,7 +49,7 @@ func TestQuery(t *testing.T) {
 			},
 		},
 	}
-	if q.Apply(db.Model(&QueryTable{}).DB).Find(&rows).Error != nil || len(rows) != 1 {
+	if q.Apply(db.Model(&QueryTable{}).DB, nil).Find(&rows).Error != nil || len(rows) != 1 {
 		t.Errorf("quey by name, expects: %v, got: %v", 1, len(rows))
 	}
 }
@@ -65,7 +65,7 @@ func TestGenerateExpressionQuery1(t *testing.T) {
 		},
 	}
 
-	sql, params, err := GenerateExpressionQuery(filter)
+	sql, params, err := GenerateExpressionQuery(nil, filter, nil)
 	assert.NoError(t, err)
 	assert.NotEmpty(t, sql)
 	assert.Equal(t, "age > 20", sql)
@@ -96,13 +96,13 @@ func TestGenerateExpressionQuery2(t *testing.T) {
 	q.Filter = filter
 
 	var rows []*QueryTable
-	stmt := q.ApplyTotalCount(db.Model(&QueryTable{})).Find(&rows).Statement
+	stmt := q.ApplyTotalCount(db.Model(&QueryTable{}), nil).Find(&rows).Statement
 	sql := stmt.SQL.String()
 	assert.NotEmpty(t, sql)
 	assert.True(t, strings.Contains(sql, "COUNT(*)"))
 
 	q.CalcFields = []*CalcField{{Name: "age", Functions: []string{"count", "sum", "max", "min"}}}
-	stmt = q.ApplyStat(db.Model(&QueryTable{})).Find(&rows).Statement
+	stmt = q.ApplyStat(db.Model(&QueryTable{}), nil).Find(&rows).Statement
 	sql = stmt.SQL.String()
 	assert.NotEmpty(t, sql)
 	assert.True(t, strings.Contains(sql, "count(age) as age_count, sum(age) as age_sum, max(age) as age_max, min(age) as age_min"))

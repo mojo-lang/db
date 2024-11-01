@@ -20,6 +20,7 @@ type CalcField struct {
 	Name      string   `json:"name,omitempty"`
 	Functions []string `json:"functions,omitempty"` // sum, min, max, avg
 	Alias     []string `json:"alias,omitempty"`     // alias to sum(field)
+	GroupBy   string   `json:"groupBy,omitempty"`
 }
 
 type Query struct {
@@ -35,6 +36,43 @@ type Query struct {
 	PageToken string `json:"pageToken,omitempty"`
 	Skip      int32  `json:"skip,omitempty"`
 	Limit     int    `json:"limit,omitempty"`
+}
+
+type FieldType int
+
+const (
+	FieldTypeBool     FieldType = iota + 1
+	FieldTypeInteger  FieldType = iota + 1
+	FieldTypeFloat    FieldType = iota + 1
+	FieldTypeString   FieldType = iota + 1
+	FieldTypeBytes    FieldType = iota + 1
+	FieldTypeDatetime FieldType = iota + 1
+	FieldTypeJSON     FieldType = iota + 1
+	FieldTypeGeometry FieldType = iota + 1
+)
+
+type FieldInfo struct {
+	Type     FieldType
+	Repeated bool
+}
+type FieldsInfo map[string]FieldInfo
+
+func (f FieldsInfo) FieldRepeated(field string) bool {
+	if f != nil {
+		if info, ok := f[field]; ok {
+			return info.Repeated
+		}
+	}
+	return false
+}
+
+func (f FieldsInfo) FieldType(field string) FieldType {
+	if f != nil {
+		if info, ok := f[field]; ok {
+			return info.Type
+		}
+	}
+	return FieldType(0)
 }
 
 func (q *Query) AddField(name string, values ...interface{}) *Query {
@@ -53,7 +91,7 @@ func (q *Query) AddField(name string, values ...interface{}) *Query {
 	return q
 }
 
-func (q *Query) ApplyStat(d *gorm.DB) *gorm.DB {
+func (q *Query) ApplyStat(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
 	if q != nil {
 		var err error
 		tx := d
@@ -97,7 +135,7 @@ func (q *Query) ApplyStat(d *gorm.DB) *gorm.DB {
 			}
 		}
 		if q.Filter != nil {
-			if tx, err = ApplyFilter(tx, q.Filter); err != nil {
+			if tx, err = ApplyFilter(tx, q.Filter, fieldsInfo); err != nil {
 				_ = d.AddError(err)
 				return d
 			}
@@ -109,6 +147,7 @@ func (q *Query) ApplyStat(d *gorm.DB) *gorm.DB {
 			}
 		}
 
+		//TODO should be move to sub query
 		if len(q.Uniques) > 0 {
 			tx = tx.Distinct(q.Uniques)
 		}
@@ -130,15 +169,15 @@ func (q *Query) ApplyStat(d *gorm.DB) *gorm.DB {
 	return d
 }
 
-func (q *Query) ApplyTotalCount(d *gorm.DB) *gorm.DB {
+func (q *Query) ApplyTotalCount(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
 	if q != nil {
 		q.CalcFields = []*CalcField{{Name: "*", Functions: []string{"COUNT"}}}
-		return q.ApplyStat(d)
+		return q.ApplyStat(d, fieldsInfo)
 	}
 	return d
 }
 
-func (q *Query) Apply(d *gorm.DB) *gorm.DB {
+func (q *Query) Apply(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
 	if q != nil {
 		var err error
 		tx := d
@@ -151,7 +190,7 @@ func (q *Query) Apply(d *gorm.DB) *gorm.DB {
 			}
 		}
 		if q.Filter != nil {
-			if tx, err = ApplyFilter(tx, q.Filter); err != nil {
+			if tx, err = ApplyFilter(tx, q.Filter, fieldsInfo); err != nil {
 				_ = d.AddError(err)
 				return d
 			}
@@ -220,8 +259,8 @@ func ApplyField(d *gorm.DB, field *QueryField) (*gorm.DB, error) {
 	return d, nil
 }
 
-func ApplyFilter(d *gorm.DB, filter *lang.Expression) (*gorm.DB, error) {
-	query, bindings, err := GenerateExpressionQuery(filter)
+func ApplyFilter(d *gorm.DB, filter *lang.Expression, fieldsInfo FieldsInfo) (*gorm.DB, error) {
+	query, bindings, err := GenerateExpressionQuery(d, filter, fieldsInfo)
 	if err != nil {
 		return nil, err
 	}
@@ -263,11 +302,11 @@ func ApplyPagination(d *gorm.DB, pageSize int32, pageToken string, skip int32) (
 	return d, nil
 }
 
-func GenerateExpressionQuery(filter *lang.Expression) (string, []interface{}, error) {
+func GenerateExpressionQuery(d *gorm.DB, filter *lang.Expression, fieldsInfo FieldsInfo) (string, []interface{}, error) {
 	switch filter.Expression.(type) {
 	case *lang.Expression_ParenthesizedExpr:
 		expr := filter.GetParenthesizedExpr()
-		q, bs, err := GenerateExpressionQuery(expr.Expression)
+		q, bs, err := GenerateExpressionQuery(d, expr.Expression, fieldsInfo)
 		if err != nil {
 			return "", nil, err
 		}
@@ -276,9 +315,61 @@ func GenerateExpressionQuery(filter *lang.Expression) (string, []interface{}, er
 	case *lang.Expression_BinaryExpr:
 		binary := filter.GetBinaryExpr()
 		if op := binary.GetOperator(); op != nil {
+			if d != nil && fieldsInfo != nil {
+				switch op.Symbol {
+				case "==", "!=":
+					l := binary.LeftArgument.GetIdentifierExpr()
+					r := binary.RightArgument.GetStringLiteralExpr()
+					if l != nil && r != nil && fieldsInfo.FieldRepeated(l.GetName()) {
+						switch d.Dialector.Name() {
+						case PostgresDriverName:
+							if op.Symbol == "==" {
+								return "'" + r.Value + "' = " + "ANY(" + l.GetName() + ")", nil, nil
+							} else {
+								return "NOT ('" + r.Value + "' = " + "ANY(coalesce(" + l.GetName() + ", array[]::text[])))", nil, nil
+							}
+						}
+					}
+				case "in", "!in":
+					r := binary.RightArgument.GetIdentifierExpr()
+					if r != nil && fieldsInfo.FieldRepeated(r.GetName()) {
+						operator := "="
+						if op.Symbol == "!in" {
+							operator = "!="
+						}
+						if l := binary.LeftArgument.GetStringLiteralExpr(); l != nil {
+							switch d.Dialector.Name() {
+							case PostgresDriverName:
+								return "'" + l.Value + "'" + operator + "ANY(" + r.GetName() + ")", nil, nil
+							}
+						}
+						if l := binary.RightArgument.GetArrayLiteralExpr(); l != nil {
+							var strs []string
+							for _, element := range l.Elements {
+								if s := element.GetStringLiteralExpr(); s != nil {
+									strs = append(strs, core.QuoteString(s.Value))
+								}
+							}
+							if len(strs) > 0 {
+								switch d.Dialector.Name() {
+								case PostgresDriverName:
+									if op.Symbol == "in" {
+										return r.GetName() + " @>" + "'{" + strings.Join(strs, ",") + "}'", nil, nil
+									} else {
+										return "NOT (" + r.GetName() + " @>" + "'{" + strings.Join(strs, ",") + "}')", nil, nil
+									}
+								}
+							} else {
+								// TODO
+							}
+						}
+					}
+				}
+			}
+
 			switch op.Symbol {
 			case "and", "or", "==", "!=", ">", "<", ">=", "<=", "~=":
-				lq, lbs, err := GenerateExpressionQuery(binary.LeftArgument)
+				lq, lbs, err := GenerateExpressionQuery(d, binary.LeftArgument, fieldsInfo)
 				if err != nil {
 					return "", nil, err
 				}
@@ -297,33 +388,33 @@ func GenerateExpressionQuery(filter *lang.Expression) (string, []interface{}, er
 						return lq + " LIKE '%" + expr.Value + "%'", lbs, nil
 					}
 				}
-				rq, rbs, err := GenerateExpressionQuery(binary.RightArgument)
+				rq, rbs, err := GenerateExpressionQuery(d, binary.RightArgument, fieldsInfo)
 				if err != nil {
 					return "", nil, err
 				}
-				return lq + " " + toSQLOperator(op.Symbol) + " " + rq, append(lbs, rbs...), nil
+				return lq + " " + toSQLOperator(d, op.Symbol, fieldsInfo) + " " + rq, append(lbs, rbs...), nil
 			case "in", "!in":
-				lq, lbs, err := GenerateExpressionQuery(binary.LeftArgument)
+				lq, lbs, err := GenerateExpressionQuery(d, binary.LeftArgument, fieldsInfo)
 				if err != nil {
 					return "", nil, err
 				}
 				if b := binary.RightArgument.GetBinaryExpr(); b != nil && b.GetOperator().GetSymbol() == "..=" {
-					blq, blbs, err := GenerateExpressionQuery(b.LeftArgument)
+					blq, blbs, err := GenerateExpressionQuery(d, b.LeftArgument, fieldsInfo)
 					if err != nil {
 						return "", nil, err
 					}
-					brq, brbs, err := GenerateExpressionQuery(b.RightArgument)
+					brq, brbs, err := GenerateExpressionQuery(d, b.RightArgument, fieldsInfo)
 					if err != nil {
 						return "", nil, err
 					}
 
 					return lq + " BETWEEN " + blq + " AND " + brq, append(lbs, append(blbs, brbs...)...), nil
 				} else if a := binary.RightArgument.GetArrayLiteralExpr(); a != nil {
-					rq, rbs, err := GenerateExpressionQuery(binary.RightArgument)
+					rq, rbs, err := GenerateExpressionQuery(d, binary.RightArgument, fieldsInfo)
 					if err != nil {
 						return "", nil, err
 					}
-					return lq + " " + toSQLOperator(op.Symbol) + " " + rq, append(lbs, rbs...), nil
+					return lq + " " + toSQLOperator(d, op.Symbol, fieldsInfo) + " " + rq, append(lbs, rbs...), nil
 				}
 			default:
 				return "", nil, errors.New(fmt.Sprintf("not supported operator %s in SQL", op.Symbol))
@@ -353,7 +444,7 @@ func GenerateExpressionQuery(filter *lang.Expression) (string, []interface{}, er
 		var statement string
 		var parameters []interface{}
 		for i, item := range arr.Elements {
-			s, sp, err := GenerateExpressionQuery(item)
+			s, sp, err := GenerateExpressionQuery(d, item, fieldsInfo)
 			if err != nil {
 				return "", nil, err
 			}
@@ -370,7 +461,7 @@ func GenerateExpressionQuery(filter *lang.Expression) (string, []interface{}, er
 	return "", nil, nil
 }
 
-func toSQLOperator(symbol string) string {
+func toSQLOperator(d *gorm.DB, symbol string, fieldsInfo FieldsInfo) string {
 	switch symbol {
 	case "and":
 		return "AND"
