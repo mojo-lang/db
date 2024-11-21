@@ -75,6 +75,17 @@ func (f FieldsInfo) FieldType(field string) FieldType {
 	return FieldType(0)
 }
 
+func (q *Query) preprocess() {
+	if q != nil {
+		if q.Unique && q.FieldMask != nil && len(q.Uniques) == 0 {
+			//TODO make sure the path be a simple field name
+			for _, p := range q.FieldMask.Paths {
+				q.Uniques = append(q.Uniques, p)
+			}
+		}
+	}
+}
+
 func (q *Query) AddField(name string, values ...interface{}) *Query {
 	if q != nil {
 		for _, field := range q.Fields {
@@ -92,6 +103,8 @@ func (q *Query) AddField(name string, values ...interface{}) *Query {
 }
 
 func (q *Query) ApplyStat(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
+	q.preprocess()
+
 	if q != nil {
 		var err error
 		tx := d
@@ -119,8 +132,14 @@ func (q *Query) ApplyStat(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
 					alias := field.Name + "_" + strings.ToLower(fun)
 					if len(field.Functions) == len(field.Alias) && len(field.Alias[j]) > 0 {
 						alias = field.Alias[j]
+					} else if strings.Contains(field.Name, "DISTINCT") { // like distinct name
+						alias = ""
 					}
-					builder.WriteString(fmt.Sprintf("%s(%s) as %s", fun, field.Name, alias))
+					if len(alias) > 0 {
+						builder.WriteString(fmt.Sprintf("%s(%s) as %s", fun, field.Name, alias))
+					} else {
+						builder.WriteString(fmt.Sprintf("%s(%s)", fun, field.Name))
+					}
 				}
 			}
 		}
@@ -140,16 +159,13 @@ func (q *Query) ApplyStat(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
 				return d
 			}
 		}
-		if q.Unique && q.FieldMask != nil && len(q.Uniques) == 0 {
-			//TODO make sure the path be a simple field name
-			for _, p := range q.FieldMask.Paths {
-				q.Uniques = append(q.Uniques, p)
-			}
-		}
 
 		//TODO should be move to sub query
 		if len(q.Uniques) > 0 {
-			tx = tx.Distinct(q.Uniques)
+			if len(q.CalcFields) == 1 && len(q.CalcFields[0].Functions) == 1 && strings.ToLower(q.CalcFields[0].Functions[0]) == "count" {
+			} else {
+				tx = tx.Distinct(q.Uniques)
+			}
 		}
 		if q.Order != nil {
 			if tx, err = ApplyOrder(tx, q.Order); err != nil {
@@ -170,14 +186,23 @@ func (q *Query) ApplyStat(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
 }
 
 func (q *Query) ApplyTotalCount(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
+	q.preprocess()
+
 	if q != nil {
-		q.CalcFields = []*CalcField{{Name: "*", Functions: []string{"COUNT"}}}
+		if len(q.Uniques) > 0 {
+			q.CalcFields = []*CalcField{{Name: "DISTINCT (" + strings.Join(q.Uniques, ",") + ")", Functions: []string{"COUNT"}}}
+		} else {
+			q.CalcFields = []*CalcField{{Name: "*", Functions: []string{"COUNT"}}}
+		}
+
 		return q.ApplyStat(d, fieldsInfo)
 	}
 	return d
 }
 
 func (q *Query) Apply(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
+	q.preprocess()
+
 	if q != nil {
 		var err error
 		tx := d
@@ -193,12 +218,6 @@ func (q *Query) Apply(d *gorm.DB, fieldsInfo FieldsInfo) *gorm.DB {
 			if tx, err = ApplyFilter(tx, q.Filter, fieldsInfo); err != nil {
 				_ = d.AddError(err)
 				return d
-			}
-		}
-		if q.Unique && q.FieldMask != nil && len(q.Uniques) == 0 {
-			//TODO make sure the path be a simple field name
-			for _, p := range q.FieldMask.Paths {
-				q.Uniques = append(q.Uniques, p)
 			}
 		}
 
