@@ -1,6 +1,7 @@
-package db
+package query
 
 import (
+	db2 "github.com/mojo-lang/db/go/pkg/mojo/db"
 	"github.com/mojo-lang/lang/go/pkg/mojo/lang"
 	"github.com/stretchr/testify/assert"
 	"gorm.io/driver/sqlite"
@@ -31,9 +32,9 @@ func TestQuery(t *testing.T) {
 		Save(&QueryTable{Name: "foo-", Age: 40})
 
 	q := &Query{}
-	q.AddField("name", "foo%")
+	q.AddFieldQuery("name", "foo%")
 
-	db := &DB{DB: d, Config: nil}
+	db := &db2.DB{DB: d, Config: nil}
 	var rows []*QueryTable
 
 	if q.Apply(db.Model(&QueryTable{}).DB, nil).Find(&rows).Error != nil || len(rows) != 2 {
@@ -92,17 +93,17 @@ func TestGenerateExpressionQuery2(t *testing.T) {
 	db, _ := gorm.Open(sqlite.Open(filepath.Join(os.TempDir(), "dry-run.db")), &gorm.Config{DryRun: true})
 
 	q := &Query{}
-	q.AddField("name", "foo%")
+	q.AddFieldQuery("name", "foo%")
 	q.Filter = filter
 
 	var rows []*QueryTable
-	stmt := q.ApplyTotalCount(db.Model(&QueryTable{}), nil).Find(&rows).Statement
+	stmt := q.TotalCount(db.Model(&QueryTable{}), nil).Find(&rows).Statement
 	sql := stmt.SQL.String()
 	assert.NotEmpty(t, sql)
 	assert.True(t, strings.Contains(sql, "COUNT(*)"))
 
-	q.CalcFields = []*CalcField{{Name: "age", Functions: []string{"count", "sum", "max", "min"}}}
-	stmt = q.ApplyStat(db.Model(&QueryTable{}), nil).Find(&rows).Statement
+	q.Calculates = []*FieldCalculate{{Name: "age", Functions: []string{"count", "sum", "max", "min"}}}
+	stmt = q.Calculate(db.Model(&QueryTable{}), nil).Find(&rows).Statement
 	sql = stmt.SQL.String()
 	assert.NotEmpty(t, sql)
 	assert.True(t, strings.Contains(sql, "count(age) as age_count, sum(age) as age_sum, max(age) as age_max, min(age) as age_min"))
