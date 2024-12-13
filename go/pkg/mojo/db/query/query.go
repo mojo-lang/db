@@ -95,6 +95,12 @@ func (q *Query) Apply(d *gorm.DB, meta Fields) *gorm.DB {
 		tx = tx.Distinct(q.Uniques)
 	}
 
+	if q.FieldMask != nil {
+		if tx, err = ApplyFieldMask(tx, q.FieldMask); err != nil {
+			return tx
+		}
+	}
+
 	if tx, err = q.applyQuery(tx, meta); err != nil {
 		_ = tx.AddError(err)
 		return tx
@@ -120,11 +126,6 @@ func (q *Query) applyQuery(d *gorm.DB, meta Fields) (tx *gorm.DB, err error) {
 	}
 	if q.Order != nil {
 		if tx, err = ApplyOrder(tx, q.Order); err != nil {
-			return
-		}
-	}
-	if q.FieldMask != nil {
-		if tx, err = ApplyFieldMask(tx, q.FieldMask); err != nil {
 			return
 		}
 	}
