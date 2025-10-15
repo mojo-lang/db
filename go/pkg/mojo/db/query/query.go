@@ -78,7 +78,13 @@ func (q *Query) TotalCount(d *gorm.DB, meta Fields) *gorm.DB {
 		q.Calculates = []*FieldCalculate{{Name: "*", Functions: []string{"COUNT"}}}
 	}
 
-	return q.Calculate(d, meta)
+	ps, pt := q.PageSize, q.PageToken
+	q.PageSize = 0
+	q.PageToken = ""
+	tx := q.Calculate(d, meta)
+	q.PageSize = ps
+	q.PageToken = pt
+	return tx
 }
 
 func (q *Query) Apply(d *gorm.DB, meta Fields) *gorm.DB {
@@ -142,6 +148,7 @@ func (q *Query) applyQuery(d *gorm.DB, meta Fields) (tx *gorm.DB, err error) {
 			tx = d.Limit(q.Limit)
 		}
 	}
+
 	return
 }
 

@@ -22,34 +22,31 @@ func ApplyFieldCalculate(d *gorm.DB, calculates []*FieldCalculate, meta Fields) 
 			if j > 0 {
 				builder.WriteString(", ")
 			}
+			if len(field.Alias) < len(field.Functions) {
+				field.Alias = append(field.Alias, "")
+			}
+
 			if len(field.Name) == 0 && strings.ToLower(fun) == "count" {
 				field.Name = "*"
 			}
 
 			if field.Name == "*" {
-				if len(field.Functions) == len(field.Alias) && len(field.Alias[j]) > 0 {
-					builder.WriteString(fmt.Sprintf("%s(%s) as %s", fun, field.Name, field.Alias[j]))
-				} else {
-					builder.WriteString(fmt.Sprintf("%s(%s)", fun, field.Name))
+				if len(field.Alias[j]) == 0 {
+					field.Alias[j] = "count"
 				}
 			} else {
-				alias := field.Name + "_" + strings.ToLower(fun)
-				if len(field.Functions) == 1 {
-					alias = field.Name
-				}
-
-				if len(field.Functions) == len(field.Alias) && len(field.Alias[j]) > 0 {
-					alias = field.Alias[j]
-				} else if strings.Contains(field.Name, "DISTINCT") { // like distinct name
-					alias = ""
-				}
-
-				if len(alias) > 0 {
-					builder.WriteString(fmt.Sprintf("%s(%s) as %s", fun, field.Name, alias))
-				} else {
-					builder.WriteString(fmt.Sprintf("%s(%s)", fun, field.Name))
+				alias := field.Alias[j]
+				if len(alias) == 0 {
+					if strings.Contains(field.Name, "DISTINCT") { // like distinct name
+						alias = field.Name + "_distinct_" + strings.ToLower(fun)
+					} else {
+						alias = field.Name + "_" + strings.ToLower(fun)
+					}
+					
+					field.Alias[j] = alias
 				}
 			}
+			builder.WriteString(fmt.Sprintf("%s(%s) as %s", fun, field.Name, field.Alias[j]))
 		}
 	}
 
